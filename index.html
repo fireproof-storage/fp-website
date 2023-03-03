@@ -10,6 +10,11 @@
     <style>
         .code-sample {
             transform: rotate(-5deg);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .code-sample:hover {
+            transform: scale(1.2);
         }
 
         .my-hero {
@@ -48,6 +53,73 @@
             100% {
                 background-position: 0% 50%;
                 background-rotate: 270deg;
+            }
+        }
+
+        .copy-icon {
+            position: relative;
+            height: 1em;
+            left: 1rem;
+            top: 0em;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .copy-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .copy-icon:active {
+            /* Start the shake animation and make the animation last for 0.5 seconds */
+            animation: shake .75s;
+
+            /* When the animation is finished, start again */
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translate(5px, 5px) rotate(0deg);
+            }
+
+            10% {
+                transform: translate(-5px, -2px) rotate(-1deg);
+            }
+
+            20% {
+                transform: translate(-3px, 0px) rotate(1deg);
+            }
+
+            30% {
+                transform: translate(3px, 2px) rotate(0deg);
+            }
+
+            40% {
+                transform: translate(5px, -5px) rotate(1deg);
+            }
+
+            50% {
+                transform: translate(-5px, 2px) rotate(-1deg);
+            }
+
+            60% {
+                transform: translate(-3px, 5px) rotate(0deg);
+            }
+
+            70% {
+                transform: translate(3px, 5px) rotate(-1deg);
+            }
+
+            80% {
+                transform: translate(-5px, -5px) rotate(1deg);
+            }
+
+            90% {
+                transform: translate(5px, 2px) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(5px, -2px) rotate(-1deg);
             }
         }
     </style>
@@ -92,12 +164,13 @@ import Fireproof from 'fireproof';
 
 const database = new Fireproof();
 const ok = await database.put({
-name: 'alice',
-age: 42
+  name: 'alice',
+  age: 42
 });
 
 const doc = await database.get(ok.id);
-console.log(doc.name); // 'alice'
+
+console.log(doc.name, doc.age); // 'alice', 42
             </pre>
                             <button class="bg-gray-800 text-white p-2 rounded mt-2 shadow">Run</button>
                         </div>
@@ -110,7 +183,7 @@ console.log(doc.name); // 'alice'
                     <!-- Embedded App -->
                     <div class="bg-gray-200 rounded p-5">
                         <iframe src="https://bafybeife4hgyl6gm5lga6nwwnidtmmjpwypocri2r6b2djc5ljer775hdi.ipfs.w3s.link/"
-                            frameborder="0" class="w-full" style="height: 512px !important;"></iframe>
+                            frameborder="0" class="w-full" style="height: 480px !important;"></iframe>
                     </div>
                 </div>
             </div>
@@ -123,11 +196,29 @@ console.log(doc.name); // 'alice'
     <!-- npm install -->
     <section class="py-10 fireproof">
         <div class="container mx-auto px-64">
-            <pre class="text-3xl text-center text-white bg-gray-900 rounded py-3 flex items-end justify-center h-32">
-    npm install @fireproof-storage/fireproof
-            </pre>
+
+
+
+            <code id="install-command"
+                class="text-3xl text-center text-white bg-gray-900 rounded py-3 flex items-center justify-center h-32 word-wrap: break-word;">
+
+
+
+                npm install @fireproof-storage/fireproof
+    
+                <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                  </svg>
+
+            </code>
         </div>
     </section>
+
+
+    <!-- Features Heading -->
+    <h1 class="text-6xl font-bold text-center mt-10 mb-5">Immutable • Cloudless • Verifiable</h1>
+
+
 
     <!-- Features Grid -->
     <section class="py-24">
@@ -280,3 +371,15 @@ console.log(doc.name); // 'alice'
         </div>
     </footer>
 </body>
+<script>
+    const installCommand = document.querySelector('#install-command');
+    installCommand.addEventListener('click', () => {
+        navigator.clipboard.writeText(installCommand.textContent.trim())
+            .then(() => {
+                console.log('Copied to clipboard');
+            })
+            .catch(err => {
+                console.error('Failed to copy to clipboard', err);
+            });
+    });
+</script>
