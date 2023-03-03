@@ -7,7 +7,22 @@
     <title>Product Landing Page</title>
     <!-- Add Tailwind CSS -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <!-- Include the PrismJS CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css" />
+
     <style>
+        .token.operator {
+            background-color: transparent;
+        }
+
+        code[class*=language-],
+        pre[class*=language-] {
+            text-shadow: 0 1px #000;
+            font-size: .75rem;
+        }
+
+
         .code-sample {
             transform: rotate(-5deg);
             transition: transform 0.2s ease-in-out;
@@ -15,6 +30,10 @@
 
         .code-sample:hover {
             transform: scale(1.2);
+        }
+
+        .code-sample pre {
+            overflow: scroll;
         }
 
         .my-hero {
@@ -182,26 +201,31 @@
                     <!-- Code Sample -->
                     <div class="code-sample">
                         <div class="bg-gray-200 p-5 rounded">
-                            <pre class="text-xs bg-gray-800 p-5 rounded">
-import Fireproof from '@fireproof-storage/fireproof';
+                            <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
+<code class="language-javascript">import Fireproof from '@fireproof-storage/fireproof';
 
 const database = Fireproof.storage("my-app-db");
 const ok = await database.put({
-  name: 'alice',
-  age: 42
+    name: 'alice',
+    age: 42
 });
 
 const doc = await database.get(ok.id);
 
 console.log(doc.name, doc.age); // 'alice', 42
-								</pre>
+</code></pre>
                             <button class="bg-gray-800 text-white p-2 rounded mt-2 shadow">Run</button>
                         </div>
                         <p class="mt-2 text-center text-gray-900">Quickly add dynamic data to any app or page.</p>
                     </div>
+
+
+
+
+
                 </div>
 
-                
+
                 <div class="w-1/2 pl-20">
                     <!-- Embedded App -->
                     <div class="bg-gray-200 rounded p-5">
@@ -235,9 +259,9 @@ console.log(doc.name, doc.age); // 'alice', 42
     <section class="py-24">
         <div class="container mx-auto px-5">
             <div class="flex items-center mb-10">
-                <p class="mr-3"><strong>Fireproof</strong> is local-first software, operating directly in the browser and automatically synchronizing with the
-                    distributed IPFS storage network. It uses verifiable operations and encrypted, immutable data — making it more
-                    reliable than the cloud.</p>
+                <p class="mr-3"><strong>Fireproof</strong> is local-first software, operating directly in the browser
+                    and automatically synchronizing with the distributed IPFS storage network. It uses verifiable
+                    operations and encrypted, immutable data — making it more reliable than the cloud.</p>
             </div>
             <h2 class="text-2xl font-bold mb-5">Database Features</h2>
 
@@ -381,6 +405,9 @@ console.log(doc.name, doc.age); // 'alice', 42
         </div>
     </footer>
 </body>
+<!-- Include the PrismJS JavaScript file -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
 <script>
     const installCommand = document.querySelector('#install-command');
     installCommand.addEventListener('click', () => {
@@ -392,6 +419,7 @@ console.log(doc.name, doc.age); // 'alice', 42
                 console.error('Failed to copy to clipboard', err);
             });
     });
+    Prism.highlightAll();
 </script>
 
 </html>
