@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fireproof  - Immutable realtime database</title>
+    <title>Fireproof - Immutable realtime database</title>
     <!-- Add Tailwind CSS -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
     <!-- Include the PrismJS CSS file -->
@@ -37,7 +37,7 @@
         }
 
         .my-hero {
-            background-image: url(/crowd-blurred.jpg);
+            background-image: url(./crowd-blurred.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -93,28 +93,50 @@
             animation-iteration-count: infinite;
         }
 
+
+
+        @keyframes beat {
+            0% {
+                background-image: url('./copied-small.png');
+                background-size: 5%;
+                /* background-origin: top right; */
+
+            }
+            100% {
+                background-image: none;
+
+            }
+            /* 100% {
+                background-image: url('./copied-small.png');
+            } */
+        }
+
         #install-command {
             cursor: pointer;
+            background-size: 20%;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-image: none;
+        }
 
+        #install-command:focus {
+            -webkit-animation: beat 0.3s ease-in-out backwards;
+            animation:         beat 0.3s ease-in-out backwards;
+        }
+  
+        #install-command:active {
+            -webkit-animation: none;
+            animation: shake 1s ease-in-out;
+
+            /* transition: color 0.2s step-start; */
+            color: #ff8200;
         }
 
         #install-command:hover {
-            transition: color 0.5s ease-in-out;
-            color: #ffa000;
+            /* transition: color 0.2s ease-in-out; */
+            color: #ffb700;
         }
 
-        #install-command:active {
-            transition: color 0.5s step-start;
-            color: #ff8200
-        }
-
-        #install-command:active {
-            /* Start the shake animation and make the animation last for 0.5 seconds */
-            animation: shake 1s;
-
-            /* When the animation is finished, start again */
-            animation-iteration-count: infinite;
-        }
 
         @keyframes shake {
             0% {
@@ -219,10 +241,6 @@ console.log(doc.name, doc.age); // 'alice', 42
                         <p class="mt-2 text-center text-gray-900">Quickly add dynamic data to any app or page.</p>
                     </div>
 
-
-
-
-
                 </div>
 
 
@@ -240,7 +258,7 @@ console.log(doc.name, doc.age); // 'alice', 42
     <!-- npm install -->
     <section class="py-10 fireproof">
         <div class="container mx-auto px-64">
-            <code id="install-command"
+            <code id="install-command" tabindex="1"
                 class="text-3xl text-center text-white bg-gray-900 rounded py-3 flex items-center justify-center h-32 word-wrap: break-word;">
 					npm install @fireproof-storage/fireproof
 
@@ -334,17 +352,19 @@ console.log(doc.name, doc.age); // 'alice', 42
         <div class="container mx-auto px-5">
             <h2 class="text-2xl font-bold mb-5">What Our Customers Say</h2>
             <div class="flex">
+
+                
                 <div class="w-1/3 pr-5">
                     <!-- Customer 1 -->
                     <div class="bg-white p-5 rounded">
                         <div class="flex">
-                            <img src="https://bafybeidoqe2swf67ai33oc75h73h4ikvmw26jfuz6hgue3hvdbqwoed7oq.ipfs.w3s.link/Screen%20Shot%202022-12-05%20at%2011.21.55%20AM.png"
+                            <img src="https://picsum.photos/200"
                                 alt="Screenshot 1" class="h-64 w-64 mr-5" />
                             <div>
                                 <p class="text-gray-700 mt-5">
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                                 </p>
-                                <img src="https://bafybeicq7mgcarpnz4nxj5jchveczsgewyozcuhok5wydd3h7w4zxu5nyi.ipfs.w3s.link/assets/0.png"
+                                <img src="https://picsum.photos/200"
                                     alt="Customer 1" class="mt-5 float-right rounded-full" />
                             </div>
                         </div>
