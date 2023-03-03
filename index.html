@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fireproof - Immutable realtime database</title>
@@ -12,218 +11,317 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css" />
 
     <style>
-        .token.operator {
-            background-color: transparent;
+      .token.operator {
+        background-color: transparent;
+      }
+
+      code[class*='language-'],
+      pre[class*='language-'] {
+        text-shadow: 0 1px #000;
+        font-size: 0.75rem;
+      }
+
+      .code-sample {
+        transform: rotate(-5deg);
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .code-sample:hover {
+        transform: scale(1.2);
+      }
+
+      .code-sample pre {
+        overflow: scroll;
+      }
+
+      .my-hero {
+        background-image: url(./crowd-blurred.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .shadow {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease-in-out;
+      }
+
+      .shadow:hover {
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .fireproof {
+        background: linear-gradient(-45deg, #000000, #ff6f00, #ffa000, #000, #ff8200);
+        background-size: 400% 400%;
+        animation: gradient 30s ease infinite;
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
         }
 
-        code[class*=language-],
-        pre[class*=language-] {
-            text-shadow: 0 1px #000;
-            font-size: .75rem;
+        50% {
+          background-position: 100% 50%;
+          background-rotate: 180deg;
         }
 
+        100% {
+          background-position: 0% 50%;
+          background-rotate: 270deg;
+        }
+      }
 
-        .code-sample {
-            transform: rotate(-5deg);
-            transition: transform 0.2s ease-in-out;
+      .copy-icon {
+        position: relative;
+        height: 1em;
+        left: 1rem;
+        top: 0em;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      #install-command:hover .copy-icon {
+        transform: scale(1.1);
+        /* Start the shake animation and make the animation last for 0.5 seconds */
+        animation: shake 0.75s;
+
+        /* When the animation is finished, start again */
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes beat {
+        0% {
+          background-image: url('./copied-small.png');
+          background-size: 5%;
+          /* background-origin: top right; */
         }
 
-        .code-sample:hover {
-            transform: scale(1.2);
+        100% {
+          background-image: none;
         }
 
-        .code-sample pre {
-            overflow: scroll;
-        }
-
-        .my-hero {
-            background-image: url(./crowd-blurred.jpg);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .shadow {
-            box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease-in-out;
-        }
-
-        .shadow:hover {
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-        }
-
-
-        .fireproof {
-            background: linear-gradient(-45deg, #000000, #ff6f00, #ffa000, #000, #ff8200);
-            background-size: 400% 400%;
-            animation: gradient 30s ease infinite;
-        }
-
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-                background-rotate: 180deg;
-            }
-
-            100% {
-                background-position: 0% 50%;
-                background-rotate: 270deg;
-            }
-        }
-
-        .copy-icon {
-            position: relative;
-            height: 1em;
-            left: 1rem;
-            top: 0em;
-            transition: transform 0.2s ease-in-out;
-
-        }
-
-        #install-command:hover .copy-icon {
-            transform: scale(1.1);
-            /* Start the shake animation and make the animation last for 0.5 seconds */
-            animation: shake 0.75s;
-
-            /* When the animation is finished, start again */
-            animation-iteration-count: infinite;
-        }
-
-
-
-        @keyframes beat {
-            0% {
-                background-image: url('./copied-small.png');
-                background-size: 5%;
-                /* background-origin: top right; */
-
-            }
-            100% {
-                background-image: none;
-
-            }
-            /* 100% {
+        /* 100% {
                 background-image: url('./copied-small.png');
             } */
+      }
+
+      #install-command {
+        cursor: pointer;
+        background-size: 20%;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-image: none;
+      }
+
+      #install-command:focus {
+        -webkit-animation: beat 0.3s ease-in-out backwards;
+        animation: beat 0.3s ease-in-out backwards;
+      }
+
+      #install-command:active {
+        -webkit-animation: none;
+        animation: shake 1s ease-in-out;
+
+        /* transition: color 0.2s step-start; */
+        color: #ff8200;
+      }
+
+      #install-command:hover {
+        /* transition: color 0.2s ease-in-out; */
+        color: #ffb700;
+      }
+
+      @keyframes shake {
+        0% {
+          transform: translate(3px, 3px) rotate(0deg);
         }
 
-        #install-command {
-            cursor: pointer;
-            background-size: 20%;
-            background-position: center bottom;
-            background-repeat: no-repeat;
-            background-image: none;
+        10% {
+          transform: translate(-3px, -2px) rotate(-1deg);
         }
 
-        #install-command:focus {
-            -webkit-animation: beat 0.3s ease-in-out backwards;
-            animation:         beat 0.3s ease-in-out backwards;
-        }
-  
-        #install-command:active {
-            -webkit-animation: none;
-            animation: shake 1s ease-in-out;
-
-            /* transition: color 0.2s step-start; */
-            color: #ff8200;
+        20% {
+          transform: translate(-3px, 0px) rotate(1deg);
         }
 
-        #install-command:hover {
-            /* transition: color 0.2s ease-in-out; */
-            color: #ffb700;
+        30% {
+          transform: translate(-3px, 3px) rotate(0deg);
         }
 
-
-        @keyframes shake {
-            0% {
-                transform: translate(3px, 3px) rotate(0deg);
-            }
-
-            10% {
-                transform: translate(-3px, -2px) rotate(-1deg);
-            }
-
-            20% {
-                transform: translate(-3px, 0px) rotate(1deg);
-            }
-
-            30% {
-                transform: translate(-3px, 3px) rotate(0deg);
-
-            }
-
-            40% {
-                transform: translate(3px, -3px) rotate(1deg);
-            }
-
-            50% {
-                transform: translate(-3px, 2px) rotate(-1deg);
-            }
-
-            60% {
-                transform: translate(3px, 2px) rotate(0deg);
-
-            }
-
-            70% {
-                transform: translate(3px, 3px) rotate(-1deg);
-            }
-
-            80% {
-                transform: translate(-3px, -3px) rotate(1deg);
-            }
-
-            90% {
-                transform: translate(3px, 2px) rotate(0deg);
-            }
-
-            100% {
-                transform: translate(3px, -2px) rotate(-1deg);
-            }
+        40% {
+          transform: translate(3px, -3px) rotate(1deg);
         }
+
+        50% {
+          transform: translate(-3px, 2px) rotate(-1deg);
+        }
+
+        60% {
+          transform: translate(3px, 2px) rotate(0deg);
+        }
+
+        70% {
+          transform: translate(3px, 3px) rotate(-1deg);
+        }
+
+        80% {
+          transform: translate(-3px, -3px) rotate(1deg);
+        }
+
+        90% {
+          transform: translate(3px, 2px) rotate(0deg);
+        }
+
+        100% {
+          transform: translate(3px, -2px) rotate(-1deg);
+        }
+      }
+
+      /* cube */
+
+.cubeContainer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  perspective: 1000px;
+  margin: 0 auto;
+}
+
+#cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotatecube 20s infinite;
+}
+
+#cube div.face  {
+  width: 400px;
+  height: 400px;
+  display: block;
+  position: absolute;
+  border: none;
+  line-height: 400px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+@keyframes rotatecube {
+  0% {
+    transform: rotateX(0deg) rotateY(360deg) rotateZ(90deg);
+  }
+
+  25% {
+    transform: rotateX(90deg) rotateY(270deg) rotateZ(180deg);
+  }
+
+  50% {
+    transform: rotateX(180deg) rotateY(180deg) rotateZ(0deg);
+  }
+
+  75% {
+    transform: rotateX(270deg) rotateY(90deg) rotateZ(360deg);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(0deg) rotateZ(270deg);
+  }
+}
+
+.cubeContainer #cube .front {
+  transform: translateZ(200px);
+  /* background-color: rgba(255, 0, 0, 0.5); */
+}
+
+/* .cubeContainer #cube .face {
+
+} */
+
+/* .face img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+} */
+
+/* .face p {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+
+} */
+
+/* .face img:last-child {
+  margin-top: 2rem;
+  float: none;
+  display: block;
+  margin: auto;
+} */
+
+
+
+
+.back {
+  transform: translateZ(-200px) rotateY(180deg);
+  /* background: rgba(0, 255, 0, 0.5); */
+}
+
+.right {
+  transform: rotateY(-90deg) translateZ(200px);
+  /* background: rgba(0, 0, 255, 0.5); */
+}
+
+.left {
+  transform: rotateY(90deg) translateZ(200px);
+  /* background: rgba(0, 255, 255, 0.5); */
+}
+
+.top {
+  transform: rotateX(-90deg) translateZ(200px);
+  /* background: rgba(255, 0, 255, 0.5); */
+}
+
+.bottom {
+  transform: rotateX(90deg) translateZ(200px);
+  /* background: rgba(255, 255, 0, 0.5); */
+}
+
     </style>
-</head>
+  </head>
 
-<body class="bg-gray-900 text-white">
+  <body class="bg-gray-900 text-white">
     <!-- Menu -->
     <header class="bg-gray-800 py-4 px-5 flex items-center justify-between">
-        <a href="#">
-            <img src="./logo.svg" alt="Logo" style="height: 64px; width: auto;" />
-        </a>
-        <nav class="nav-menu">
-            <ul class="flex">
-                <li class="mr-6">
-                    <a href="#">Documentation</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#">Pricing</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#"
-                        class="px-4 py-2 fireproof text-grey-200 font-medium rounded-lg hover:bg-yellow-800 transition duration-150 ease-in-out outline focus:outline-none">
-                        Get Started Free</a>
-                </li>
-            </ul>
-        </nav>
+      <a href="#">
+        <img src="./logo.svg" alt="Logo" style="height: 64px; width: auto" />
+      </a>
+      <nav class="nav-menu">
+        <ul class="flex">
+          <li class="mr-6">
+            <a href="#">Documentation</a>
+          </li>
+          <li class="mr-6">
+            <a href="#">Pricing</a>
+          </li>
+          <li class="mr-6">
+            <a href="#" class="px-4 py-2 fireproof text-grey-200 font-medium rounded-lg hover:bg-yellow-800 transition duration-150 ease-in-out outline focus:outline-none"> Get Started Free</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Hero -->
     <section class="bg-white py-16 my-hero">
-        <div class="container mx-auto px-5 relative">
-            <h1 class="text-3xl gray-800 font-bold mb-5" style="width: 40px; float:left">Light up your data.</h1>
+      <div class="container mx-auto px-5 relative">
+        <h1 class="text-3xl gray-800 font-bold mb-5" style="width: 40px; float: left">Light up your data.</h1>
 
-            <div class="flex items-center justify-center">
-                <div class="w-1/3 pl-5">
-
-
-                    <!-- Code Sample -->
-                    <div class="code-sample">
-                        <div class="bg-gray-200 p-5 rounded">
-                            <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
+        <div class="flex items-center justify-center">
+          <div class="w-1/3 pl-5">
+            <!-- Code Sample -->
+            <div class="code-sample">
+              <div class="bg-gray-200 p-5 rounded">
+                <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
 <code class="language-javascript">import Fireproof from '@fireproof-storage/fireproof';
 
 const database = Fireproof.storage("my-app-db");
@@ -233,179 +331,168 @@ const ok = await database.put({
 });
 
 const doc = await database.get(ok.id);
-
 console.log(doc.name, doc.age); // 'alice', 42
 </code></pre>
-                            <button class="bg-gray-800 text-white p-2 rounded mt-2 shadow">Run</button>
-                        </div>
-                        <p class="mt-2 text-center text-gray-900">Quickly add dynamic data to any app or page.</p>
-                    </div>
-
-                </div>
-
-
-                <div class="w-1/2 pl-20">
-                    <!-- Embedded App -->
-                    <div class="bg-gray-200 rounded p-5">
-                        <iframe src="https://bafybeife4hgyl6gm5lga6nwwnidtmmjpwypocri2r6b2djc5ljer775hdi.ipfs.w3s.link/"
-                            frameborder="0" class="w-full" style="height: 512px !important;"></iframe>
-                    </div>
-                </div>
+                <button class="bg-gray-800 text-white p-2 rounded mt-2 shadow">Run</button>
+              </div>
+              <p class="mt-2 text-center text-gray-900">Quickly add dynamic data to any app or page.</p>
             </div>
+          </div>
+
+          <div class="w-1/2 pl-20">
+            <!-- Embedded App -->
+            <div class="bg-gray-200 rounded p-5">
+              <iframe src="https://bafybeife4hgyl6gm5lga6nwwnidtmmjpwypocri2r6b2djc5ljer775hdi.ipfs.w3s.link/" frameborder="0" class="w-full" style="height: 512px !important"></iframe>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- npm install -->
     <section class="py-10 fireproof">
-        <div class="container mx-auto px-64">
-            <code id="install-command" tabindex="1"
-                class="text-3xl text-center text-white bg-gray-900 rounded py-3 flex items-center justify-center h-32 word-wrap: break-word;">
-					npm install @fireproof-storage/fireproof
+      <div class="container mx-auto px-64">
+        <code id="install-command" tabindex="1" class="text-3xl text-center text-white bg-gray-900 rounded py-3 flex items-center justify-center h-32 word-wrap: break-word;">
+          npm install @fireproof-storage/fireproof
 
-					<svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"
-						/>
-					</svg>
-				</code>
-        </div>
+          <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+          </svg>
+        </code>
+      </div>
     </section>
 
     <!-- Features Grid -->
     <section class="py-24">
-        <div class="container mx-auto px-5">
-            <div class="flex items-center mb-10">
-                <p class="mr-3"><strong>Fireproof</strong> is local-first software, operating directly in the browser
-                    and automatically synchronizing with the distributed IPFS storage network. It uses verifiable
-                    operations and encrypted, immutable data — making it more reliable than the cloud.</p>
-            </div>
-            <h2 class="text-2xl font-bold mb-5">Database Features</h2>
-
-            <!-- Feature 1 -->
-            <div class="flex bg-white p-5 rounded mb-10">
-                <div class="w-1/2 flex items-center justify-center">
-                    <img src="https://picsum.photos/200" alt="Feature 1" class="h-64 w-64 object-cover rounded-lg" />
-                </div>
-                <div class="w-1/2 p-5">
-                    <h3 class="text-lg font-bold mb-3 text-gray-700">Feature 1</h3>
-                    <p class="text-gray-700 mb-5">
-                        Lorem
-                    </p>
-                    <p class="text-gray-700 mb-5">
-                        Lorem
-                    </p>
-                </div>
-            </div>
-            <!-- Feature 2 -->
-            <div class="flex flex-wrap bg-white p-5 rounded mb-10">
-                <div class="w-full md:w-1/2 p-5">
-                    <h3 class="text-lg font-bold mb-3 text-gray-700">Feature 2</h3>
-                    <p class="text-gray-700 mb-5">
-                        Lorem
-                    </p>
-                    <p class="text-gray-700 mb-5">
-                        Lorem
-                    </p>
-                </div>
-                <div class="w-full md:w-1/2 flex items-center justify-center">
-                    <img src="https://picsum.photos/200" alt="Feature 2" class="h-64 w-64 object-cover" />
-                </div>
-            </div>
-
-            <!-- Feature 3 -->
-            <div class="flex flex-wrap bg-white p-5 rounded">
-                <div class="w-full md:w-1/2 flex items-center justify-center">
-                    <img src="https://picsum.photos/200" alt="Feature 3" class="h-64 w-64 object-cover" />
-                </div>
-                <div class="w-full md:w-1/2 p-5">
-                    <h3 class="text-lg font-bold mb-3 text-gray-700">Feature 3</h3>
-                    <p class="text-gray-700 mb-5">
-                        Lorem
-                    </p>
-                    <p class="text-gray-700 mb-5">
-                        Lorem
-                    </p>
-                </div>
-            </div>
+      <div class="container mx-auto px-5">
+        <div class="flex items-center mb-10">
+          <p class="mr-3"><strong>Fireproof</strong> is local-first software, operating directly in the browser and automatically synchronizing with the distributed IPFS storage network. It uses verifiable operations and encrypted, immutable data — making it more reliable than the cloud.</p>
         </div>
-    </section>
+        <h2 class="text-2xl font-bold mb-5">Database Features</h2>
 
+        <!-- Feature 1 -->
+        <div class="flex bg-white p-5 rounded mb-10">
+          <div class="w-1/2 flex items-center justify-center">
+            <img src="https://picsum.photos/200" alt="Feature 1" class="h-64 w-64 object-cover rounded-lg" />
+          </div>
+          <div class="w-1/2 p-5">
+            <h3 class="text-lg font-bold mb-3 text-gray-700">Feature 1</h3>
+            <p class="text-gray-700 mb-5">Lorem</p>
+            <p class="text-gray-700 mb-5">Lorem</p>
+          </div>
+        </div>
+        <!-- Feature 2 -->
+        <div class="flex flex-wrap bg-white p-5 rounded mb-10">
+          <div class="w-full md:w-1/2 p-5">
+            <h3 class="text-lg font-bold mb-3 text-gray-700">Feature 2</h3>
+            <p class="text-gray-700 mb-5">Lorem</p>
+            <p class="text-gray-700 mb-5">Lorem</p>
+          </div>
+          <div class="w-full md:w-1/2 flex items-center justify-center">
+            <img src="https://picsum.photos/200" alt="Feature 2" class="h-64 w-64 object-cover" />
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="flex flex-wrap bg-white p-5 rounded">
+          <div class="w-full md:w-1/2 flex items-center justify-center">
+            <img src="https://picsum.photos/200" alt="Feature 3" class="h-64 w-64 object-cover" />
+          </div>
+          <div class="w-full md:w-1/2 p-5">
+            <h3 class="text-lg font-bold mb-3 text-gray-700">Feature 3</h3>
+            <p class="text-gray-700 mb-5">Lorem</p>
+            <p class="text-gray-700 mb-5">Lorem</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Call to Action -->
     <section class="bg-gray-900 py-16">
-        <div class="container mx-auto px-5">
-            <div class="bg-gray-800 p-16 rounded-lg w-5/6 mx-auto">
-                <h2 class="text-2xl font-bold mb-5 text-center text-white">Get Started Today</h2>
-                <form class="flex items-center justify-center">
-                    <input type="email" class="bg-white p-4 text-gray-900 rounded mr-5 w-64"
-                        placeholder="Enter your email address here" />
-                    <button class="bg-indigo-500 text-white p-4 rounded">Get Started</button>
-                </form>
-            </div>
+      <div class="container mx-auto px-5">
+        <div class="bg-gray-800 p-16 rounded-lg w-5/6 mx-auto">
+          <h2 class="text-2xl font-bold mb-5 text-center text-white">Get Started Today</h2>
+          <form class="flex items-center justify-center">
+            <input type="email" class="bg-white p-4 text-gray-900 rounded mr-5 w-64" placeholder="Enter your email address here" />
+            <button class="bg-indigo-500 text-white p-4 rounded">Get Started</button>
+          </form>
         </div>
+      </div>
     </section>
 
     <!-- Social Proof -->
     <section class="py-16">
-        <div class="container mx-auto px-5">
-            <h2 class="text-2xl font-bold mb-5">What Our Customers Say</h2>
-            <div class="flex">
-
-                
-                <div class="w-1/3 pr-5">
-                    <!-- Customer 1 -->
-                    <div class="bg-white p-5 rounded">
-                        <div class="flex">
-                            <img src="https://picsum.photos/200"
-                                alt="Screenshot 1" class="h-64 w-64 mr-5" />
-                            <div>
-                                <p class="text-gray-700 mt-5">
-                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                </p>
-                                <img src="https://picsum.photos/200"
-                                    alt="Customer 1" class="mt-5 float-right rounded-full" />
-                            </div>
-                        </div>
-                    </div>
+      <div class="cubeContainer container">
+        <div id="cube">
+          <div class="face front">
+            <div class="p-5 rounded bg-white">
+              <div class="flex">
+                <img src="https://picsum.photos/200" alt="Screenshot 1" class="h-48 w-48 mr-5" />
+                <div>
+                  <p class="text-gray-700 mt-5">"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</p>
+                  <img src="https://picsum.photos/200" alt="Customer 1" class="mt-5 float-right rounded-full" />
                 </div>
-
-                <div class="w-1/3 pr-5">
-                    <!-- Customer 2 -->
-                    <div class="bg-white p-5 rounded">
-                        <div class="flex">
-                            <img src="https://bafybeidoqe2swf67ai33oc75h73h4ikvmw26jfuz6hgue3hvdbqwoed7oq.ipfs.w3s.link/Screen%20Shot%202022-12-05%20at%2011.21.55%20AM.png"
-                                alt="Screenshot 1" class="h-64 w-64 mr-5" />
-                            <div>
-                                <p class="text-gray-700 mt-5">
-                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                </p>
-                                <img src="https://bafybeicq7mgcarpnz4nxj5jchveczsgewyozcuhok5wydd3h7w4zxu5nyi.ipfs.w3s.link/assets/3.png"
-                                    alt="Customer 1" class="mt-5 float-right rounded-full" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-1/3 pr-5">
-                    <!-- Customer 3 -->
-                    <div class="bg-white p-5 rounded">
-                        <div class="flex">
-                            <img src="https://bafybeidoqe2swf67ai33oc75h73h4ikvmw26jfuz6hgue3hvdbqwoed7oq.ipfs.w3s.link/Screen%20Shot%202022-12-05%20at%2011.21.55%20AM.png"
-                                alt="Screenshot 1" class="h-64 w-64 mr-5" />
-                            <div>
-                                <p class="text-gray-700 mt-5">
-                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                </p>
-                                <img src="https://bafybeicq7mgcarpnz4nxj5jchveczsgewyozcuhok5wydd3h7w4zxu5nyi.ipfs.w3s.link/assets/1.png"
-                                    alt="Customer 1" class="mt-5 float-right rounded-full" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
+          <div class="face back">
+            <div class="p-5 rounded bg-white">
+              <div class="flex">
+                <img src="https://picsum.photos/200" alt="Screenshot 2" class="h-48 w-48 mr-5" />
+                <div>
+                  <p class="text-gray-700 mt-5">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."</p>
+                  <img src="https://picsum.photos/200" alt="Customer 2" class="mt-5 float-right rounded-full" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="face right">
+            <div class="p-5 rounded bg-white">
+              <div class="flex">
+                <img src="https://picsum.photos/200" alt="Screenshot 3" class="h-48 w-48 mr-5" />
+                <div>
+                  <p class="text-gray-700 mt-5">"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium."</p>
+                  <img src="https://picsum.photos/200" alt="Customer 3" class="mt-5 float-right rounded-full" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="face left">
+            <div class="p-5 rounded bg-white">
+              <div class="flex">
+                <img src="https://picsum.photos/200" alt="Screenshot 4" class="h-48 w-48 mr-5" />
+                <div>
+                  <p class="text-gray-700 mt-5">"Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit."</p>
+                  <img src="https://picsum.photos/200" alt="Customer 4" class="mt-5 float-right rounded-full" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="face top">
+            <div class="p-5 rounded bg-white">
+              <div class="flex">
+                <img src="https://picsum.photos/200" alt="Screenshot 5" class="h-48 w-48 mr-5" />
+                <div>
+                  <p class="text-gray-700 mt-5">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."</p>
+                  <img src="https://picsum.photos/200" alt="Customer 5" class="mt-5 float-right rounded-full" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="face bottom bg-white">
+            <div class="p-5 rounded">
+              <div class="flex">
+                <img src="https://picsum.photos/200" alt="Screenshot 6" class="h-48 w-48 mr-5 rounded" />
+                <div>
+                  <p class="text-gray-700 mt-5">"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident."</p>
+                  <img src="https://picsum.photos/200" alt="Customer 6" class="mt-5 float-right rounded-full" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Features Heading -->
@@ -413,33 +500,33 @@ console.log(doc.name, doc.age); // 'alice', 42
 
     <!-- Footer -->
     <footer class="bg-gray-800 py-5">
-        <div class="container mx-auto px-5">
-            <ul class="flex">
-                <li class="mr-6">
-                    <a href="#">Twitter</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#">Instagram</a>
-                </li>
-            </ul>
-        </div>
+      <div class="container mx-auto px-5">
+        <ul class="flex">
+          <li class="mr-6">
+            <a href="#">Twitter</a>
+          </li>
+          <li class="mr-6">
+            <a href="#">Instagram</a>
+          </li>
+        </ul>
+      </div>
     </footer>
-</body>
-<!-- Include the PrismJS JavaScript file -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  </body>
+  <!-- Include the PrismJS JavaScript file -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
 
-<script>
-    const installCommand = document.querySelector('#install-command');
+  <script>
+    const installCommand = document.querySelector('#install-command')
     installCommand.addEventListener('click', () => {
-        navigator.clipboard.writeText(installCommand.textContent.trim())
-            .then(() => {
-                console.log('Copied to clipboard');
-            })
-            .catch(err => {
-                console.error('Failed to copy to clipboard', err);
-            });
-    });
-    Prism.highlightAll();
-</script>
-
+      navigator.clipboard
+        .writeText(installCommand.textContent.trim())
+        .then(() => {
+          console.log('Copied to clipboard')
+        })
+        .catch((err) => {
+          console.error('Failed to copy to clipboard', err)
+        })
+    })
+    Prism.highlightAll()
+  </script>
 </html>
