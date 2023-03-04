@@ -9,20 +9,32 @@
     <!-- Include the PrismJS CSS file -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css" />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css"
+    />
+    <link
+      rel="preload"
+      href="https://bafybeihf3shrcnwglnkaooeyha5m4aynygx364bgvtxcw2wy5mvt5dupii.ipfs.w3s.link/"
+      as="document"
+    />
     <style>
+      footer h1 {
+        font-size: 5rem;
+      }
+
       .flex-wrap {
         border: 2px solid #ff8200;
       }
 
       .blurbblur {
-        
-        background: linear-gradient(-45deg, #000000, #ff6f00, #ffa000, #000, #ff8200);
-        background-size: 400% 400%;
-        animation: gradient 30s ease infinite;
+        background: #000;
 
+        filter: blur(60px);
+      }
 
-        filter: blur(30px);
+      .code-app {
+        min-width: 25rem;
       }
 
       .token.operator {
@@ -200,7 +212,7 @@
         width: 400px;
         height: 400px;
         position: relative;
-        perspective: 1000px;
+        perspective: 800px;
         margin: 0 auto;
       }
 
@@ -293,6 +305,9 @@
           animation-fill-mode: forwards;
         }
       }
+      .github-fork-ribbon:before {
+        background-color: #ff6f00;
+      }
     </style>
   </head>
 
@@ -304,17 +319,14 @@
       </a>
       <nav class="nav-menu">
         <ul class="flex">
-          <li class="mr-6">
+          <li class="mr-8">
             <a href="#">Documentation</a>
           </li>
-          <li class="mr-6">
+          <li class="mr-8">
             <a href="#">Pricing</a>
           </li>
-          <li class="mr-6">
-            <a
-              href="#"
-              class="px-4 py-2 fireproof text-grey-200 font-medium rounded-lg hover:bg-yellow-800 transition duration-150 ease-in-out outline focus:outline-none"
-            >
+          <li class="mr-8">
+            <a href="#" class="px-4 py-2 fireproof text-white font-medium rounded-lg outline focus:outline-none">
               Get Started Free</a
             >
           </li>
@@ -344,17 +356,17 @@ const ok = await database.put({
 const doc = await database.get(ok.id);
 console.log(doc.name, doc.age); // 'alice', 42
 </code></pre>
-                <button class="bg-gray-800 text-white p-2 rounded mt-2 shadow">Run</button>
+                <!-- <button class="bg-gray-800 text-white p-2 rounded mt-2 shadow">Run</button> -->
               </div>
               <p class="mt-2 text-center text-gray-900">Quickly add dynamic data to any app or page.</p>
             </div>
           </div>
 
-          <div class="w-1/2 pl-20">
+          <div class="w-2/5 pl-20">
             <!-- Embedded App -->
-            <div class="bg-gray-200 rounded p-5">
+            <div class="bg-gray-300 rounded p-5 code-app">
               <iframe
-                src="https://bafybeife4hgyl6gm5lga6nwwnidtmmjpwypocri2r6b2djc5ljer775hdi.ipfs.w3s.link/"
+                src="https://bafybeihf3shrcnwglnkaooeyha5m4aynygx364bgvtxcw2wy5mvt5dupii.ipfs.w3s.link/"
                 frameborder="0"
                 class="w-full"
                 style="height: 512px !important"
@@ -366,12 +378,21 @@ console.log(doc.name, doc.age); // 'alice', 42
     </section>
 
     <!-- npm install -->
-    <section class="py-10 fireproof">
+    <section class="py-10 fireproof" style="position: relative">
       <div class="container mx-auto px-64">
+        <a
+          class="github-fork-ribbon right-bottom"
+          href="https://github.com/jchris/fireproof"
+          target="_blank"
+          data-ribbon="Fork me on GitHub"
+          title="Fork me on GitHub"
+          >Fork me on GitHub</a
+        >
+
         <code
           id="install-command"
           tabindex="1"
-          class="text-3xl text-center text-white bg-gray-900 rounded py-3 flex items-center justify-center h-32 word-wrap: break-word;"
+          class="text-3xl text-center text-white bg-gray-900 rounded py-3 px-10 flex items-center justify-center h-32 word-wrap: break-word;"
         >
           npm install @fireproof-storage/fireproof
 
@@ -395,11 +416,9 @@ console.log(doc.name, doc.age); // 'alice', 42
     </section>
 
     <!-- Features Grid -->
-    <section class="py-24 px-64">
-      <div class="container mx-auto px-5 text-gray-700">
+    <section class="pt-24 px-64">
+      <div class="container mx-auto px-5 text-gray-400">
         <div class="flex items-center mb-10">
-
-
           <div class="relative">
             <div class="absolute top-0 left-0 w-full h-full rounded blurbblur"></div>
             <p class="z-10 relative text-2xl">
@@ -408,8 +427,6 @@ console.log(doc.name, doc.age); // 'alice', 42
               immutable data — making it more reliable than the cloud.
             </p>
           </div>
-
-
         </div>
         <h2 class="text-4xl font-bold mb-24 text-center">Database Features</h2>
 
@@ -560,12 +577,12 @@ listener.on('person', (key) => {
           <div class="w-full md:w-1/2 p-5">
             <h3 class="text-lg font-bold mb-3 text-gray-700">Automatic Replication</h3>
             <p class="text-gray-700 mb-5">
-              Syncing state is <strong>as easy as sending a link</strong> to the latest database head and Fireproof will handle the rest,
-              ensuring your data is always up-to-date and accessible from any device or browser. Whether you're working
-              from your desktop, laptop, or mobile device, Fireproof ensures that your data is always up-to-date and
-              accessible. Documents changes are persisted to Filecoin via web3.storage and made available over IPFS and
-              a global content delivery network. With automatic replication, you never have to worry about losing
-              important information or manually transferring data between devices.
+              Syncing state is <strong>as easy as sending a link</strong> to the latest database head and Fireproof will
+              handle the rest, ensuring your data is always up-to-date and accessible from any device or browser.
+              Whether you're working from your desktop, laptop, or mobile device, Fireproof ensures that your data is
+              always up-to-date and accessible. Documents changes are persisted to Filecoin via web3.storage and made
+              available over IPFS and a global content delivery network. With automatic replication, you never have to
+              worry about losing important information or manually transferring data between devices.
             </p>
           </div>
         </div>
@@ -576,11 +593,11 @@ listener.on('person', (key) => {
             <h3 class="text-lg font-bold mb-3 text-gray-700">Cryptographic Proofs</h3>
             <p class="text-gray-700 mb-5">
               UCAN cryptographic proof chains link updates to authorized agents, ensuring data security and integrity.
-              Portable, signed proofs <strong>eliminate the need for secret bearer tokens</strong>. Transactions are functional
-              transforms of hash-linked graphs, ensuring data consistency across nodes. Each transaction is a unique
-              immutable hash, enabling efficient data sharing. Cryptographic proofs available for all operations make
-              Fireproof ideal for smart contracts and trustless environments. Proof chains also improve performance by
-              allowing for cryptographic verification of changes.
+              Portable, signed proofs <strong>eliminate the need for secret bearer tokens</strong>. Transactions are
+              functional transforms of hash-linked graphs, ensuring data consistency across nodes. Each transaction is a
+              unique immutable hash, enabling efficient data sharing. Cryptographic proofs available for all operations
+              make Fireproof ideal for smart contracts and trustless environments. Proof chains also improve performance
+              by allowing for cryptographic verification of changes.
             </p>
           </div>
           <div class="w-full md:w-1/2 flex items-center justify-center">
@@ -605,7 +622,9 @@ listener.on('person', (key) => {
   ]
 }</code></pre>
               </div>
-              <p class="mt-2 text-center text-gray-900">Save costs and increase trust with cryptographic verifiability.</p>
+              <p class="mt-2 text-center text-gray-900">
+                Save costs and increase trust with cryptographic verifiability.
+              </p>
             </div>
           </div>
         </div>
@@ -613,65 +632,52 @@ listener.on('person', (key) => {
     </section>
 
     <!-- Call to Action -->
-    <section class="bg-gray-900 py-16">
+    <section class="bg-gray-900 py-16 text-gray-400">
       <div class="container mx-auto px-5">
-
-
-        <div class="relative">
-          <div class="absolute top-0 left-0 w-full h-full rounded blurbblur"></div>
-          <p class="z-10 relative text-2xl">
-            Whether you're a small startup or a large enterprise, Fireproof is the perfect tool for developers and early
-            adopters who want to take advantage of its advanced database capabilities. So why wait? See for yourself how
-            Fireproof can light up your data and help you achieve your goals.
-          </p>
-        </div>
-
-
-        <div class="bg-gray-800 p-16 rounded-lg w-5/6 mx-auto">
-          <h2 class="text-2xl font-bold mb-5 text-center text-white">Get Started Today</h2>
-          <form class="flex items-center justify-center">
+        <div class="bg-gray-800 p-16 rounded-lg w-full mx-auto">
+          <h2 class="text-2xl font-bold mb-5 text-center text-white">Experience the Developer Console</h2>
+          <form class="flex m-10 items-center justify-center">
             <input
               type="email"
               class="bg-white p-4 text-gray-900 rounded mr-5 w-64"
               placeholder="Enter your email address here"
             />
-            <button class="bg-indigo-500 text-white p-4 rounded">Get Started</button>
+            <button class="p-4 fireproof text-white font-medium rounded-lg outline focus:outline-none">
+              Get Started Today
+            </button>
           </form>
+          <p class="mt-10 text-center text-xl">
+            Fireproof is free to use and scale. Access advanced features with credit card verification.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- Social Proof -->
-    <section class="py-16">
+    <section class="py-16 px-64">
+      <div class="container mx-auto px-5 text-gray-400">
+        <h2 class="text-4xl font-bold mb-24 text-center">Our Community</h2>
 
-
-<div class="container">
-  
         <div class="relative">
           <div class="absolute top-0 left-0 w-full h-full rounded blurbblur"></div>
           <p class="z-10 relative text-2xl">
-            Read about how our users and customers take advantage of cryptographic verifiability to lower costs and explore
-          new business models. Fireproof's advanced database capabiliities and easy front-end installation make it a tool
-          of choice for early adopters like YOU. In our customer testimonials, you will see how Fireproof's unique
-          combination of cryptographic verifiability, low-cost and peer-to-peer architecture, and easy-to-use development
-          tools have allowed them to save on costs and explore new business models.
-          </p>
-          <p class="z-10 relative text-2xl">
-            But seriously, don't you want your project to be featured on the rotating cube? Email the project lead
-            <a href="mailto:jchris@gmail.com">Chris Anderson</a> or direct message
-            <a href="https://twitter.com/FireproofStorge">Fireproof Storage</a> on Twitter.
+            Learn how people is saving costs and innovating with new business models. Fireproof's advanced
+            database capabilities and easy front-end installation make it a tool of choice for early adopters.
+            <strong> You know you want to be on the cube! </strong> 
+            <a href="mailto:jchris@gmail.com">Email the project lead</a> or direct message
+            <a href="https://twitter.com/FireproofStorge">Fireproof Storage on Twitter</a> to get featured.
           </p>
         </div>
-</div>
+      </div>
 
-
-      <div class="cubeContainer container">
+      <div class="cubeContainer container py-32 mb-64">
         <div id="cube">
           <div class="face front">
             <div class="p-5 rounded bg-white">
               <div class="flex">
                 <img src="https://picsum.photos/200" alt="Screenshot 1" class="h-48 w-48 mr-5" />
                 <div>
+                  <p class="text-gray-700 mt-5 text-sm strong">Creator</p>
                   <p class="text-gray-700 mt-5 text-sm italic">
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                   </p>
@@ -757,18 +763,30 @@ listener.on('person', (key) => {
     <!-- Features Heading -->
 
     <!-- Footer -->
-    <footer class="bg-gray-800 py-5">
+    <footer class="fireproof py-5 mt-64">
       <div class="container mx-auto px-5">
         <ul class="flex">
           <li class="mr-6">
             <a href="#">Twitter</a>
           </li>
           <li class="mr-6">
-            <a href="#">Instagram</a>
+            <a href="#">GitHub</a>
+          </li>
+          <li class="mr-6">
+            <a href="#">TikTok</a>
+          </li>
+          <li class="mr-6">
+            <a href="#">Discord</a>
+          </li>
+          <li class="mr-6">
+            <a href="#">Stack Overflow</a>
           </li>
         </ul>
-        <h1 class="text-6xl font-bold text-center mt-10 mb-5">Local • Immutable • Distributed</h1>
-        <h1 class="text-6xl font-bold text-center mt-10 mb-5">Realtime • Verifiable • Cloudless</h1>
+        <h1 class="font-bold text-center mt-10 mb-5">
+          Local • Immutable • Distributed <br />
+          Realtime • Verifiable • Cloudless
+        </h1>
+        <img class="mx-auto py-10" src="./logo.svg" alt="Logo" style="width: 80%" />
       </div>
     </footer>
   </body>
