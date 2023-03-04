@@ -11,6 +11,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css" />
 
     <style>
+      .flex-wrap {
+        border: 2px solid #ff8200;
+      }
+
+      .blurbblur {
+        
+        background: linear-gradient(-45deg, #000000, #ff6f00, #ffa000, #000, #ff8200);
+        background-size: 400% 400%;
+        animation: gradient 30s ease infinite;
+
+
+        filter: blur(30px);
+      }
+
       .token.operator {
         background-color: transparent;
       }
@@ -21,12 +35,15 @@
         font-size: 0.75rem;
       }
 
-      .my-hero .code-sample {
-        transform: rotate(-5deg);
+      .code-sample {
         transition: transform 0.2s ease-in-out;
       }
 
-      .my-hero .code-sample:hover {
+      .my-hero .code-sample {
+        transform: rotate(-5deg);
+      }
+
+      .code-sample:hover {
         transform: scale(1.2);
       }
 
@@ -378,19 +395,26 @@ console.log(doc.name, doc.age); // 'alice', 42
     </section>
 
     <!-- Features Grid -->
-    <section class="py-24 px-64 bg-white">
+    <section class="py-24 px-64">
       <div class="container mx-auto px-5 text-gray-700">
         <div class="flex items-center mb-10">
-          <p class="mr-3 text-2xl">
-            <strong>Fireproof</strong> is local-first software, operating directly in the browser and automatically
-            synchronizing with the distributed IPFS storage network. It uses verifiable operations and encrypted,
-            immutable data — making it more reliable than the cloud.
-          </p>
+
+
+          <div class="relative">
+            <div class="absolute top-0 left-0 w-full h-full rounded blurbblur"></div>
+            <p class="z-10 relative text-2xl">
+              <strong>Fireproof</strong> is local-first software, operating directly in the browser and automatically
+              synchronizing with the distributed IPFS storage network. It uses verifiable operations and encrypted,
+              immutable data — making it more reliable than the cloud.
+            </p>
+          </div>
+
+
         </div>
-        <h2 class="text-4xl font-bold m-24  text-center">Database Features</h2>
+        <h2 class="text-4xl font-bold mb-24 text-center">Database Features</h2>
 
         <!-- Feature 1 -->
-        <div class="flex flex-wrap bg-white p-5 rounded mb-32">
+        <div class="flex flex-wrap bg-white p-5 rounded mb-10 mx-20">
           <div class="w-4/5 md:w-1/2 flex items-center justify-center">
             <!-- Code Sample -->
             <div class="code-sample">
@@ -412,9 +436,9 @@ await index.query({ range: [41, 44] })
             <h3 class="text-lg font-bold mb-3 text-gray-700">Flexible Data</h3>
             <p class="text-gray-700 mb-5">
               Access your JSON data from any app or website with a simple put, get, and delete interface. Embed, index,
-              and organize files of any size using IPFS links. Handle data variety and schema drift by writing
-              JavaScript functions to define indexes, making it easy to normalize data and simplify indexing and
-              searching.
+              and organize files of any size using IPFS links. Handle <strong>data variety and schema drift</strong> by
+              writing JavaScript functions to define indexes, making it easy to normalize data and simplify indexing and
+              searching. Queries run locally, making Fireproof faster than any cloud database.
             </p>
           </div>
         </div>
@@ -425,9 +449,11 @@ await index.query({ range: [41, 44] })
             <h3 class="text-lg font-bold mb-3 text-gray-700">Immutable History</h3>
             <p class="text-gray-700 mb-5">
               MVCC versioning and Merkle causal history tracking ensure that you can always recover the desired version
-              of your data, and load a stable snapshot of the database. Immutable data structures simplify replication
-              and improve performance, while enabling roll back to old data whenever needed, giving you peace of mind
-              knowing your data is secure.
+              of your data, and <strong>query a stable snapshot</strong> of the database. Immutable data structures
+              simplify replication and improve performance, while enabling roll back to old data whenever needed, giving
+              you peace of mind knowing your data is secure. Merkle clocks and hash trees are used to provide lossless
+              merging and immutable and self-validating data structures, making replicating changes safe and efficient,
+              and making Fireproof ideal for smart contract and other trustless applications.
             </p>
           </div>
           <div class="w-full md:w-1/2 flex items-center justify-center">
@@ -447,8 +473,8 @@ const database = Fireproof.snapshot(clock)
         </div>
 
         <!-- Feature 3 -->
-        <div class="flex flex-wrap bg-white p-5 rounded mb-10">
-          <div class="w-full md:w-1/2 flex items-center justify-center">
+        <div class="flex flex-wrap bg-white p-5 rounded mb-10 mx-20">
+          <div class="w-4/5 md:w-1/2 flex items-center justify-center">
             <!-- Code Sample -->
             <div class="code-sample">
               <div class="bg-gray-200 p-5 rounded px-4">
@@ -471,8 +497,8 @@ listener.on('person', (key) => {
               Get instant notifications of changes to your data, with real-time updates synced across all devices and
               apps. Fireproof uses a combination of WebRTC and IPFS to provide fast and efficient real-time updates,
               giving you real-time access to your data without the need for constant polling or manual refresh. Whether
-              you're building an online collaboration tool, a real-time dashboard, or just want to keep your UI
-              up-to-date in real-time, Fireproof has you covered.
+              you're building an online collaboration tool, a real-time dashboard, or just want to
+              <strong>keep your UI up-to-date</strong> in real-time, Fireproof has you covered.
             </p>
           </div>
         </div>
@@ -484,55 +510,62 @@ listener.on('person', (key) => {
             <p class="text-gray-700 mb-5">
               With self-sovereign identity users have full control over their personal data and identity, without
               relying on a central authority. This enables new business models and the creation of apps that serve users
-              first. Fireproof's self-sovereign identity solution is built on industry standards such as Decentralized
-              Identifiers (DIDs) and UCAN. Users can choose to use Fireproof storage services or store data with other
-              backends such as web3.storage, further ensuring the security and sovereignty of their data.
+              first. Fireproof's self-sovereign identity solution is <strong>built on industry standards</strong> such
+              as Decentralized Identifiers (DIDs) and UCAN. Users can choose to use Fireproof storage services or store
+              data with other backends such as web3.storage, further ensuring the security and sovereignty of their
+              data.
             </p>
           </div>
           <div class="w-full md:w-1/2 flex items-center justify-center">
-           <!-- Code Sample -->
-           <div class="code-sample">
-            <div class="bg-gray-200 p-5 rounded px-4">
-              <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
+            <!-- Code Sample -->
+            <div class="code-sample">
+              <div class="bg-gray-200 p-5 rounded px-4">
+                <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
 <code class="language-javascript">const proof = await Client.delegate({
   issuer: alice,
   audience: bob.principal,
-  capabilities: [
-    {
-      can: 'file/link',
+  capabilities: [{
+      can: 'clock/advance',
       with: `file://${alice.did()}/friends/${bob.did()}/`,
-    },
-  ],
+    }]
 })
 </code></pre>
+              </div>
+              <p class="mt-2 text-center text-gray-900">UCAN delegation so you are only limited by your imagination.</p>
             </div>
-            <p class="mt-2 text-center text-gray-900">UCAN delegation so you are only limited by your imagination.</p>
-          </div>
-            
           </div>
         </div>
 
         <!-- Feature 5 -->
-        <div class="flex flex-wrap bg-white p-5 rounded mb-10">
-          <div class="w-full md:w-1/2 flex items-center justify-center">
-            <img src="https://picsum.photos/200" alt="Feature 3" class="h-64 w-64 object-cover rounded-lg" />
+        <div class="flex flex-wrap bg-white p-5 rounded mb-10 mx-20">
+          <div class="w-4/5 md:w-1/2 flex items-center justify-center">
+            <!-- Code Sample -->
+            <div class="code-sample">
+              <div class="bg-gray-200 p-5 rounded px-4">
+                <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
+    <code class="language-ascii">
+                                  ____
+                        __...---~'    `~~~----...__
+                     _===============================
+,----------------._/'      `---..._______...---'
+(_______________||_) . .  ,--'
+    /    /.---'         `/
+   '--------_- - - - - _/
+             `--------'
+ </code></pre>
+              </div>
+              <p class="mt-2 text-center text-gray-900">Your data is out of this world!</p>
+            </div>
           </div>
           <div class="w-full md:w-1/2 p-5">
             <h3 class="text-lg font-bold mb-3 text-gray-700">Automatic Replication</h3>
             <p class="text-gray-700 mb-5">
-              Fireproof's automatic replication feature ensures that your data is always available, no matter where you
-              are or what device you're using. Whether you're collaborating in real-time with a peer swarm or uploading
-              your data to the cloud, Fireproof makes sure your data is always there when you need it. With automatic
-              replication, you never have to worry about losing important information or having to manually transfer
-              data between devices.
-            </p>
-            <p class="text-gray-700 mb-5">
-              Syncing state is as easy as sending a link to the latest database head and Fireproof will handle the rest,
+              Syncing state is <strong>as easy as sending a link</strong> to the latest database head and Fireproof will handle the rest,
               ensuring your data is always up-to-date and accessible from any device or browser. Whether you're working
               from your desktop, laptop, or mobile device, Fireproof ensures that your data is always up-to-date and
-              accessible. Fireproof provides automatic replication of your data to ensure it is always accessible.
-              Documents changes are persisted to Filecoin via web3.storage and made available over IPFS and a global
-              content delivery network.
+              accessible. Documents changes are persisted to Filecoin via web3.storage and made available over IPFS and
+              a global content delivery network. With automatic replication, you never have to worry about losing
+              important information or manually transferring data between devices.
             </p>
           </div>
         </div>
@@ -542,19 +575,38 @@ listener.on('person', (key) => {
           <div class="w-full md:w-1/2 p-5">
             <h3 class="text-lg font-bold mb-3 text-gray-700">Cryptographic Proofs</h3>
             <p class="text-gray-700 mb-5">
-              Fireproof's cryptographic proofs provide secure and efficient verification of updates and changes to your
-              data. The UCAN protocol uses cryptographic proof chains to link updates to authorized agents, ensuring the
-              integrity and security of your data. These proofs are portable, like bearer tokens, and are signed by
-              end-user device keys, eliminating the need to hide proofs for security. Merkle clocks and hash trees are
-              used to provide immutable and self-validating data structures, making merging changes safe and efficient.
-              With cryptographic proofs available for all operations, Fireproof is an ideal document database for use in
-              smart contracts and other applications running in trustless environments. Proof chains also provide
-              performance benefits, allowing recipients to skip costly I/O operations and instead verify changes
-              cryptographically.
+              UCAN cryptographic proof chains link updates to authorized agents, ensuring data security and integrity.
+              Portable, signed proofs <strong>eliminate the need for secret bearer tokens</strong>. Transactions are functional
+              transforms of hash-linked graphs, ensuring data consistency across nodes. Each transaction is a unique
+              immutable hash, enabling efficient data sharing. Cryptographic proofs available for all operations make
+              Fireproof ideal for smart contracts and trustless environments. Proof chains also improve performance by
+              allowing for cryptographic verification of changes.
             </p>
           </div>
           <div class="w-full md:w-1/2 flex items-center justify-center">
-            <img src="https://picsum.photos/200" alt="Feature 2" class="h-64 w-64 object-cover rounded-lg" />
+            <!-- Code Sample -->
+            <div class="code-sample">
+              <div class="bg-gray-200 p-5 rounded px-4">
+                <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
+<code class="language-javascript">{
+  "aud": "did:key:z6MkfQhLHBSFMuR7bQXTQeqe5kYUW51HpfZeaymgy1zkP2jM",
+  "att": [{
+      "with": "wnfs://demouser.fission.name/public/photos/",
+      "can": "wnfs/OVERWRITE"
+    },{
+      "with": "wnfs://demouser.fission.name/public/notes/",
+      "can": "wnfs/OVERWRITE"
+    }],
+  "exp": 9256939505,
+  "iss": "did:key:z6Mkr5aefin1DzjG7MBJ3nsFCsnvHKEvTb2C4YAJwbxt1jFS",
+  "prf": [
+    "eyJhbGciOiJFZERTQSIsI...xZ7WeYVAIATDl8EmcOKj9OqOSw0Vg8VCA",
+    "eyJhbGciOiJFZERTQSIsI...xZ7WeYVAIATDl8EmcOKj9OqOSw0Vg8VCA"
+  ]
+}</code></pre>
+              </div>
+              <p class="mt-2 text-center text-gray-900">Save costs and increase trust with cryptographic verifiability.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -563,11 +615,18 @@ listener.on('person', (key) => {
     <!-- Call to Action -->
     <section class="bg-gray-900 py-16">
       <div class="container mx-auto px-5">
-        <p>
-          Whether you're a small startup or a large enterprise, Fireproof is the perfect tool for developers and early
-          adopters who want to take advantage of its advanced database capabilities. So why wait? See for yourself how
-          Fireproof can light up your data and help you achieve your goals.
-        </p>
+
+
+        <div class="relative">
+          <div class="absolute top-0 left-0 w-full h-full rounded blurbblur"></div>
+          <p class="z-10 relative text-2xl">
+            Whether you're a small startup or a large enterprise, Fireproof is the perfect tool for developers and early
+            adopters who want to take advantage of its advanced database capabilities. So why wait? See for yourself how
+            Fireproof can light up your data and help you achieve your goals.
+          </p>
+        </div>
+
+
         <div class="bg-gray-800 p-16 rounded-lg w-5/6 mx-auto">
           <h2 class="text-2xl font-bold mb-5 text-center text-white">Get Started Today</h2>
           <form class="flex items-center justify-center">
@@ -584,19 +643,28 @@ listener.on('person', (key) => {
 
     <!-- Social Proof -->
     <section class="py-16">
-      <p>
-        Read about how our users and customers take advantage of cryptographic verifiability to lower costs and explore
-        new business models. Fireproof's advanced database capabiliities and easy front-end installation make it a tool
-        of choice for early adopters like YOU. In our customer testimonials, you will see how Fireproof's unique
-        combination of cryptographic verifiability, low-cost and peer-to-peer architecture, and easy-to-use development
-        tools have allowed them to save on costs and explore new business models.
-      </p>
 
-      <p>
-        But seriously, don't you want your project to be featured on the rotating cube? Email the project lead
-        <a href="mailto:jchris@gmail.com">Chris Anderson</a> or direct message
-        <a href="https://twitter.com/FireproofStorge">Fireproof Storage</a> on Twitter.
-      </p>
+
+<div class="container">
+  
+        <div class="relative">
+          <div class="absolute top-0 left-0 w-full h-full rounded blurbblur"></div>
+          <p class="z-10 relative text-2xl">
+            Read about how our users and customers take advantage of cryptographic verifiability to lower costs and explore
+          new business models. Fireproof's advanced database capabiliities and easy front-end installation make it a tool
+          of choice for early adopters like YOU. In our customer testimonials, you will see how Fireproof's unique
+          combination of cryptographic verifiability, low-cost and peer-to-peer architecture, and easy-to-use development
+          tools have allowed them to save on costs and explore new business models.
+          </p>
+          <p class="z-10 relative text-2xl">
+            But seriously, don't you want your project to be featured on the rotating cube? Email the project lead
+            <a href="mailto:jchris@gmail.com">Chris Anderson</a> or direct message
+            <a href="https://twitter.com/FireproofStorge">Fireproof Storage</a> on Twitter.
+          </p>
+        </div>
+</div>
+
+
       <div class="cubeContainer container">
         <div id="cube">
           <div class="face front">
