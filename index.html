@@ -2,16 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./flame.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fireproof - Immutable realtime database</title>
     <!-- Add Tailwind CSS -->
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="./tailwind.min.css" rel="stylesheet" />
     <!-- Include the PrismJS CSS file -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="./prism.min.css" />
+    <link rel="stylesheet" href="./prism-tomorrow.min.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css"
+      href="./gh-fork-ribbon.min.css"
     />
     <link
       rel="preload"
@@ -828,7 +829,7 @@ const doc = await fireproof.get(ok.id)
     </footer>
   </body>
   <!-- Include the PrismJS JavaScript file -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="./prism.min.js"></script>
 
   <script>
     const installCommand = document.querySelector('#install-command')
