@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./flame.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="width=1024">
+
     <title>Fireproof - Immutable realtime database</title>
     <!-- Add Tailwind CSS -->
     <link href="./tailwind.min.css" rel="stylesheet" />
@@ -386,7 +388,7 @@ console.log(doc.type, doc.completed); // 'todo', false
 
     <!-- npm install -->
     <section class="py-10 fireproof" style="position: relative">
-      <div class="container mx-auto px-64">
+      <div class="container mx-auto lg:px-64 px-32">
         <a
           class="github-fork-ribbon right-bottom"
           href="https://github.com/jchris/fireproof"
@@ -423,7 +425,7 @@ console.log(doc.type, doc.completed); // 'todo', false
     </section>
 
     <!-- Features Grid -->
-    <section class="pt-24 px-64">
+    <section class="pt-24 px-10 lg:px-32">
       <div class="container mx-auto px-5 text-gray-400">
         <div class="flex items-center mb-10">
           <div class="relative">
@@ -438,8 +440,8 @@ console.log(doc.type, doc.completed); // 'todo', false
         <h2 class="text-4xl font-bold mb-24 text-center">Database Features</h2>
 
         <!-- Feature 1 -->
-        <div class="flex flex-wrap bg-white p-5 rounded mb-10 mx-20">
-          <div class="w-4/5 md:w-1/2 flex items-center justify-center">
+        <div class="smaller-feature flex flex-wrap bg-white p-5 rounded mb-10 mx-10 lg:mx-20">
+          <div class="w-full md:w-1/2 flex items-center justify-center">
             <!-- Code Sample -->
             <div class="code-sample">
               <div class="bg-gray-200 p-5 rounded px-4">
@@ -458,7 +460,7 @@ await index.query({ range: [41, 44] })
 
           <div class="w-full md:w-1/2 p-5">
             <h3 class="text-lg font-bold mb-3 text-gray-700">Flexible Data</h3>
-            <p class="text-gray-700 mb-5">
+            <p class="text-sm text-gray-700 mb-5">
               Access your JSON data from any app or website with a simple put, get, and delete interface. Embed, index,
               and organize files of any size using IPFS links. Handle <strong>data variety and schema drift</strong> by
               writing JavaScript functions to define indexes, making it easy to normalize data and simplify indexing and
@@ -471,7 +473,7 @@ await index.query({ range: [41, 44] })
         <div class="flex flex-wrap bg-white p-5 rounded mb-10">
           <div class="w-full md:w-1/2 p-5">
             <h3 class="text-lg font-bold mb-3 text-gray-700">Immutable History</h3>
-            <p class="text-gray-700 mb-5">
+            <p class="text-sm text-gray-700 mb-5">
               MVCC versioning and Merkle causal history tracking ensure that you can always recover the desired version
               of your data, and <strong>query a stable snapshot</strong> of the database. Immutable data structures
               simplify replication and improve performance, while enabling roll back to old data whenever needed, giving
@@ -497,8 +499,8 @@ const database = Fireproof.snapshot(clock)
         </div>
 
         <!-- Feature 3 -->
-        <div class="flex flex-wrap bg-white p-5 rounded mb-10 mx-20">
-          <div class="w-4/5 md:w-1/2 flex items-center justify-center">
+        <div class="flex flex-wrap bg-white p-5 rounded mb-10 mx-10 lg:mx-20">
+          <div class="w-full md:w-1/2 flex items-center justify-center">
             <!-- Code Sample -->
             <div class="code-sample">
               <div class="bg-gray-200 p-5 rounded px-4">
@@ -517,7 +519,7 @@ listener.on('person', (key) => {
           </div>
           <div class="w-full md:w-1/2 p-5">
             <h3 class="text-lg font-bold mb-3 text-gray-700">Real-time Updates</h3>
-            <p class="text-gray-700 mb-5">
+            <p class="text-sm text-gray-700 mb-5">
               Get instant notifications of changes to your data, with real-time updates synced across all devices and
               apps. Fireproof uses a combination of WebRTC and IPFS to provide fast and efficient real-time updates,
               giving you real-time access to your data without the need for constant polling or manual refresh. Whether
@@ -531,7 +533,7 @@ listener.on('person', (key) => {
         <div class="flex flex-wrap bg-white p-5 rounded mb-10">
           <div class="w-full md:w-1/2 p-5">
             <h3 class="text-lg font-bold mb-3 text-gray-700">Self-sovereign Identity</h3>
-            <p class="text-gray-700 mb-5">
+            <p class="text-sm text-gray-700 mb-5">
               With self-sovereign identity users have full control over their personal data and identity, without
               relying on a central authority. This enables new business models and the creation of apps that serve users
               first. Fireproof's self-sovereign identity solution is <strong>built on industry standards</strong> such
@@ -561,8 +563,8 @@ listener.on('person', (key) => {
         </div>
 
         <!-- Feature 5 -->
-        <div class="flex flex-wrap bg-white p-5 rounded mb-10 mx-20">
-          <div class="w-4/5 md:w-1/2 flex items-center justify-center">
+        <div class="flex flex-wrap bg-white p-5 rounded mb-10 mx-10 lg:mx-20">
+          <div class="w-full md:w-1/2 flex items-center justify-center">
             <!-- Code Sample -->
             <div class="code-sample">
               <div class="bg-gray-200 p-5 rounded px-4">
@@ -583,7 +585,7 @@ listener.on('person', (key) => {
           </div>
           <div class="w-full md:w-1/2 p-5">
             <h3 class="text-lg font-bold mb-3 text-gray-700">Automatic Replication</h3>
-            <p class="text-gray-700 mb-5">
+            <p class="text-sm text-gray-700 mb-5">
               Syncing state is <strong>as easy as sending a link</strong> to the latest database head and Fireproof will
               handle the rest, ensuring your data is always up-to-date and accessible from any device or browser.
               Whether you're working from your desktop, laptop, or mobile device, Fireproof ensures that your data is
@@ -598,7 +600,7 @@ listener.on('person', (key) => {
         <div class="flex flex-wrap bg-white p-5 rounded mb-10">
           <div class="w-full md:w-1/2 p-5">
             <h3 class="text-lg font-bold mb-3 text-gray-700">Cryptographic Proofs</h3>
-            <p class="text-gray-700 mb-5">
+            <p class="text-sm text-gray-700 mb-5">
               UCAN cryptographic proof chains link updates to authorized agents, ensuring data security and integrity.
               Portable, signed proofs <strong>eliminate the need for secret bearer tokens</strong>. Transactions are
               functional transforms of hash-linked graphs, ensuring data consistency across nodes. Each transaction is a
@@ -630,15 +632,15 @@ listener.on('person', (key) => {
 }</code></pre>
               </div>
               <p class="mt-2 text-center text-gray-900">
-                Save costs and increase trust with cryptographic verifiability.
+                Reduce costs and increase trust with cryptographic verifiability.
               </p>
             </div>
           </div>
         </div>
 
         <!-- Feature 7 -->
-        <div class="flex flex-wrap bg-white p-5 rounded mx-20">
-          <div class="w-4/5 md:w-1/2 flex items-center justify-center">
+        <div class="flex flex-wrap bg-white p-5 rounded mx-10 lg:mx-20">
+          <div class="w-full md:w-1/2 flex items-center justify-center">
             <!-- Code Sample -->
             <div class="code-sample">
               <div class="bg-gray-200 p-5 rounded px-4">
@@ -655,7 +657,7 @@ const doc = await fireproof.get(ok.id)
           </div>
           <div class="w-full md:w-1/2 p-5">
             <h3 class="text-lg font-bold mb-3 text-gray-700">Easy Setup</h3>
-            <p class="text-gray-700 mb-5">
+            <p class="text-sm text-gray-700 mb-5">
               As a developer who wants to deliver value to users and businesses, you know that time is of the essence.
               You are always looking for ways to increase your productivity and efficiency, so that you can deliver
               results faster and more effectively. Easy library installation and setup is a critical aspect of this, as
