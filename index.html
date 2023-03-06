@@ -1,361 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./flame.svg" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-    <meta name="viewport" content="width=1024">
 
-    <title>Fireproof - Immutable realtime database</title>
-    <!-- Add Tailwind CSS -->
-    <link href="./tailwind.min.css" rel="stylesheet" />
-    <!-- Include the PrismJS CSS file -->
-    <link rel="stylesheet" href="./prism.min.css" />
-    <link rel="stylesheet" href="./prism-tomorrow.min.css" />
-    <link
-      rel="stylesheet"
-      href="./gh-fork-ribbon.min.css"
-    />
-    <style>
-      footer h1 {
-        font-size: 5rem;
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./flame.svg" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+  <meta name="viewport" content="width=1024">
+  <meta property="og:image" content="https://fireproof.storage/card.png">
+  <meta property="og:image:secure_url" content="https://fireproof.storage/card.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="694">
+  <meta property="og:image:height" content="388">
+
+  <meta property="og:type" content="product" />
+  <meta property="og:title" content="Immutable Realtime Database" />
+  <meta property="og:description" content="The quickest way to bring live data to your app." />
+  <meta property="og:url" content="https://fireproof.storage/" />
+  <meta property="og:site_name" content="Fireproof Storage" />
+
+  <title>Fireproof - Immutable realtime database</title>
+  <!-- Add Tailwind CSS -->
+  <link href="./tailwind.min.css" rel="stylesheet" />
+  <!-- Include the PrismJS CSS file -->
+  <link rel="stylesheet" href="./prism.min.css" />
+  <link rel="stylesheet" href="./prism-tomorrow.min.css" />
+  <link rel="stylesheet" href="./gh-fork-ribbon.min.css" />
+  <style>
+    footer h1 {
+      font-size: 5rem;
+    }
+
+    .feature-grid .flex-wrap {
+      border: 2px solid #ff8200;
+    }
+
+    .blurbblur {
+      background: #000;
+
+      filter: blur(60px);
+    }
+
+    .code-app {
+      min-width: 25rem;
+    }
+
+    .token.operator {
+      background-color: transparent;
+    }
+
+    html code[class*='language-'],
+    html pre[class*='language-'] {
+      text-shadow: 0 1px #000;
+      font-size: 0.75rem;
+    }
+
+    html .feature-grid .code-sample code {
+      max-width: 18em;
+      /* font-size: 0.5rem; */
+      /* line-height: 1; */
+    }
+
+    .code-sample {
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .my-hero .code-sample {
+      transform: rotate(-5deg);
+    }
+
+    .code-sample:hover {
+      transform: scale(1.2);
+    }
+
+    .code-sample pre {
+      overflow: scroll;
+    }
+
+
+
+    .my-hero {
+      background-image: url(./crowd-blurred.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .shadow {
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .shadow:hover {
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .fireproof {
+      background: linear-gradient(-45deg, #000000, #ff6f00, #ffa000, #000, #ff8200);
+      background-size: 400% 400%;
+      animation: gradient 30s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
       }
 
-      .feature-grid  .flex-wrap {
-        border: 2px solid #ff8200;
+      50% {
+        background-position: 100% 50%;
+        background-rotate: 180deg;
       }
 
-      .blurbblur {
-        background: #000;
+      100% {
+        background-position: 0% 50%;
+        background-rotate: 270deg;
+      }
+    }
 
-        filter: blur(60px);
+    .copy-icon {
+      position: relative;
+      height: 1em;
+      left: 1rem;
+      top: 0em;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    #install-command:hover .copy-icon {
+      transform: scale(1.1);
+      /* Start the shake animation and make the animation last for 0.5 seconds */
+      animation: shake 0.75s;
+
+      /* When the animation is finished, start again */
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes beat {
+      0% {
+        background-image: url('./copied-small.png');
+        background-size: 5%;
+        /* background-origin: top right; */
       }
 
-      .code-app {
-        min-width: 25rem;
-      }
-
-      .token.operator {
-        background-color: transparent;
-      }
-
-      html code[class*='language-'],
-      html pre[class*='language-'] {
-        text-shadow: 0 1px #000;
-        font-size: 0.75rem;
-      }
-
-      html .feature-grid .code-sample code {
-        max-width: 18em;
-        /* font-size: 0.5rem; */
-        /* line-height: 1; */
-      }
-
-      .code-sample {
-        transition: transform 0.2s ease-in-out;
-      }
-
-      .my-hero .code-sample {
-        transform: rotate(-5deg);
-      }
-
-      .code-sample:hover {
-        transform: scale(1.2);
-      }
-
-      .code-sample pre {
-        overflow: scroll;
-      }
-
-
-
-      .my-hero {
-        background-image: url(./crowd-blurred.jpg);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-
-      .shadow {
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
-        transition: box-shadow 0.3s ease-in-out;
-      }
-
-      .shadow:hover {
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-      }
-
-      .fireproof {
-        background: linear-gradient(-45deg, #000000, #ff6f00, #ffa000, #000, #ff8200);
-        background-size: 400% 400%;
-        animation: gradient 30s ease infinite;
-      }
-
-      @keyframes gradient {
-        0% {
-          background-position: 0% 50%;
-        }
-
-        50% {
-          background-position: 100% 50%;
-          background-rotate: 180deg;
-        }
-
-        100% {
-          background-position: 0% 50%;
-          background-rotate: 270deg;
-        }
-      }
-
-      .copy-icon {
-        position: relative;
-        height: 1em;
-        left: 1rem;
-        top: 0em;
-        transition: transform 0.2s ease-in-out;
-      }
-
-      #install-command:hover .copy-icon {
-        transform: scale(1.1);
-        /* Start the shake animation and make the animation last for 0.5 seconds */
-        animation: shake 0.75s;
-
-        /* When the animation is finished, start again */
-        animation-iteration-count: infinite;
-      }
-
-      @keyframes beat {
-        0% {
-          background-image: url('./copied-small.png');
-          background-size: 5%;
-          /* background-origin: top right; */
-        }
-
-        100% {
-          background-image: none;
-        }
-
-        /* 100% {
-                background-image: url('./copied-small.png');
-            } */
-      }
-
-      #install-command {
-        cursor: pointer;
-        background-size: 20%;
-        background-position: center bottom;
-        background-repeat: no-repeat;
+      100% {
         background-image: none;
       }
 
-      #install-command:focus {
-        -webkit-animation: beat 0.3s ease-in-out backwards;
-        animation: beat 0.3s ease-in-out backwards;
+      /* 100% {
+                background-image: url('./copied-small.png');
+            } */
+    }
+
+    #install-command {
+      cursor: pointer;
+      background-size: 20%;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      background-image: none;
+    }
+
+    #install-command:focus {
+      -webkit-animation: beat 0.3s ease-in-out backwards;
+      animation: beat 0.3s ease-in-out backwards;
+    }
+
+    #install-command:active {
+      -webkit-animation: none;
+      animation: shake 1s ease-in-out;
+
+      /* transition: color 0.2s step-start; */
+      color: #ff8200;
+    }
+
+    #install-command:hover {
+      /* transition: color 0.2s ease-in-out; */
+      color: #ffb700;
+    }
+
+    @keyframes shake {
+      0% {
+        transform: translate(3px, 3px) rotate(0deg);
       }
 
-      #install-command:active {
-        -webkit-animation: none;
-        animation: shake 1s ease-in-out;
-
-        /* transition: color 0.2s step-start; */
-        color: #ff8200;
+      10% {
+        transform: translate(-3px, -2px) rotate(-1deg);
       }
 
-      #install-command:hover {
-        /* transition: color 0.2s ease-in-out; */
-        color: #ffb700;
+      20% {
+        transform: translate(-3px, 0px) rotate(1deg);
       }
 
-      @keyframes shake {
-        0% {
-          transform: translate(3px, 3px) rotate(0deg);
-        }
-
-        10% {
-          transform: translate(-3px, -2px) rotate(-1deg);
-        }
-
-        20% {
-          transform: translate(-3px, 0px) rotate(1deg);
-        }
-
-        30% {
-          transform: translate(-3px, 3px) rotate(0deg);
-        }
-
-        40% {
-          transform: translate(3px, -3px) rotate(1deg);
-        }
-
-        50% {
-          transform: translate(-3px, 2px) rotate(-1deg);
-        }
-
-        60% {
-          transform: translate(3px, 2px) rotate(0deg);
-        }
-
-        70% {
-          transform: translate(3px, 3px) rotate(-1deg);
-        }
-
-        80% {
-          transform: translate(-3px, -3px) rotate(1deg);
-        }
-
-        90% {
-          transform: translate(3px, 2px) rotate(0deg);
-        }
-
-        100% {
-          transform: translate(3px, -2px) rotate(-1deg);
-        }
+      30% {
+        transform: translate(-3px, 3px) rotate(0deg);
       }
 
-      /* cube */
-
-      .cubeContainer {
-        width: 400px;
-        height: 400px;
-        position: relative;
-        perspective: 800px;
-        margin: 0 auto;
+      40% {
+        transform: translate(3px, -3px) rotate(1deg);
       }
 
-      #cube {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        transform-style: preserve-3d;
-        animation: rotatecube 20s infinite;
-        transform-origin: 50% 50% -100px;
-        
+      50% {
+        transform: translate(-3px, 2px) rotate(-1deg);
       }
 
-      .face .bg-white {
-        min-height: 100%;
+      60% {
+        transform: translate(3px, 2px) rotate(0deg);
       }
 
-      #cube div.face {
-        width: 400px;
-        height: 400px;
-        display: block;
-        position: absolute;
-        border: none;
-        line-height: normal;
-        text-align: center;
-        font-size: 24px;
-        font-weight: bold;
-        overflow: hidden;
-        transform-origin: 50% 50% -100px;
+      70% {
+        transform: translate(3px, 3px) rotate(-1deg);
       }
 
-      .front {
-        transform: translateZ(100px);
+      80% {
+        transform: translate(-3px, -3px) rotate(1deg);
       }
 
-      .back {
-        transform: translateZ(-100px) rotateY(180deg);
+      90% {
+        transform: translate(3px, 2px) rotate(0deg);
       }
 
-      .right {
-        transform: rotateY(-90deg) translateZ(100px);
+      100% {
+        transform: translate(3px, -2px) rotate(-1deg);
+      }
+    }
+
+    /* cube */
+
+    .cubeContainer {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      perspective: 800px;
+      margin: 0 auto;
+    }
+
+    #cube {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      animation: rotatecube 20s infinite;
+      transform-origin: 50% 50% -100px;
+
+    }
+
+    .face .bg-white {
+      min-height: 100%;
+    }
+
+    #cube div.face {
+      width: 400px;
+      height: 400px;
+      display: block;
+      position: absolute;
+      border: none;
+      line-height: normal;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      overflow: hidden;
+      transform-origin: 50% 50% -100px;
+    }
+
+    .front {
+      transform: translateZ(100px);
+    }
+
+    .back {
+      transform: translateZ(-100px) rotateY(180deg);
+    }
+
+    .right {
+      transform: rotateY(-90deg) translateZ(100px);
+    }
+
+    .left {
+      transform: rotateY(90deg) translateZ(100px);
+    }
+
+    .top {
+      transform: rotateX(-90deg) rotateZ(-90deg) translateZ(100px);
+    }
+
+    .bottom {
+      transform: rotateX(90deg) rotateZ(-90deg) translateZ(100px);
+    }
+
+    @keyframes rotatecube {
+      0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        animation-timing-function: ease;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
       }
 
-      .left {
-        transform: rotateY(90deg) translateZ(100px);
+      20% {
+        transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
+        animation-timing-function: ease;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
       }
 
-      .top {
-        transform: rotateX(-90deg) rotateZ(-90deg) translateZ(100px);
+      40% {
+        transform: rotateX(90deg) rotateY(90deg) rotateZ(0deg);
+        animation-timing-function: ease;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
       }
 
-      .bottom {
-        transform: rotateX(90deg) rotateZ(-90deg) translateZ(100px);
+      60% {
+        transform: rotateX(0deg) rotateY(270deg) rotateZ(0deg);
+        animation-timing-function: ease;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
       }
 
-      @keyframes rotatecube {
-        0% {
-          transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-          animation-timing-function: ease;
-          animation-duration: 1s;
-          animation-fill-mode: forwards;
-        }
-        20% {
-          transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
-          animation-timing-function: ease;
-          animation-duration: 1s;
-          animation-fill-mode: forwards;
-        }
-        40% {
-          transform: rotateX(90deg) rotateY(90deg) rotateZ(0deg);
-          animation-timing-function: ease;
-          animation-duration: 1s;
-          animation-fill-mode: forwards;
-        }
-        60% {
-          transform: rotateX(0deg) rotateY(270deg) rotateZ(0deg);
-          animation-timing-function: ease;
-          animation-duration: 1s;
-          animation-fill-mode: forwards;
-        }
-        80% {
-          transform: rotateX(-90deg) rotateY(270deg) rotateZ(0deg);
-          animation-timing-function: ease;
-          animation-duration: 1s;
-          animation-fill-mode: forwards;
-        }
-        100% {
-          transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-          animation-timing-function: ease;
-          animation-duration: 1s;
-          animation-fill-mode: forwards;
-        }
+      80% {
+        transform: rotateX(-90deg) rotateY(270deg) rotateZ(0deg);
+        animation-timing-function: ease;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
       }
-      .github-fork-ribbon:before {
-        background-color: #ff6f00;
+
+      100% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        animation-timing-function: ease;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
       }
-    </style>
-  </head>
+    }
 
-  <body class="bg-gray-900 text-white">
-    <!-- Menu -->
-    <header class="bg-gray-800 py-4 px-5 flex items-center justify-between">
-      <a href="#">
-        <img src="./logo-animated.svg" alt="Fireproof Logo" style="height: 64px; width: auto" />
-      </a>
-      <nav class="nav-menu">
-        <ul class="flex">
-          <li class="mr-8">
-            <a href="#">Documentation</a>
-          </li>
-          <li class="mr-8">
-            <a href="#">Pricing</a>
-          </li>
-          <li class="mr-8">
-            <a href="#" class="px-4 py-2 fireproof text-white font-medium rounded-lg outline focus:outline-none">
-              Get Started Free</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
+    .github-fork-ribbon:before {
+      background-color: #ff6f00;
+    }
+  </style>
+</head>
 
-    <!-- Hero -->
-    <img
-      src="./lightup3.png"
-      alt="Light up your data."
-      style="height: 200px; width: auto; left: 1rem; position: absolute; transform: rotate(-5deg)"
-    />
-    <section class="bg-white py-16 my-hero">
-      <div class="container mx-auto px-5 relative">
-        <!-- <h1 class="text-3xl gray-800 font-bold mb-5" style="width: 40px; float: left">Light up your data.</h1> -->
-        <div class="flex items-center justify-center">
-          <div class="w-1/3 pl-5">
-            <!-- Code Sample -->
-            <div class="code-sample">
-              <div class="bg-gray-200 p-5 rounded">
-                <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable={false}>
+<body class="bg-gray-900 text-white">
+  <!-- Menu -->
+  <header class="bg-gray-800 py-4 px-5 flex items-center justify-between">
+    <a href="#">
+      <img src="./logo-animated.svg" alt="Fireproof Logo" style="height: 64px; width: auto" />
+    </a>
+    <nav class="nav-menu">
+      <ul class="flex">
+        <li class="mr-8">
+          <a href="#">Documentation</a>
+        </li>
+        <li class="mr-8">
+          <a href="#">Pricing</a>
+        </li>
+        <li class="mr-8">
+          <a href="#" class="px-4 py-2 fireproof text-white font-medium rounded-lg outline focus:outline-none">
+            Get Started Free</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <img src="./lightup3.png" alt="Light up your data."
+    style="height: 200px; width: auto; left: 1rem; position: absolute; transform: rotate(-5deg)" />
+  <section class="bg-white py-16 my-hero">
+    <div class="container mx-auto px-5 relative">
+      <!-- <h1 class="text-3xl gray-800 font-bold mb-5" style="width: 40px; float: left">Light up your data.</h1> -->
+      <div class="flex items-center justify-center">
+        <div class="w-1/3 pl-5">
+          <!-- Code Sample -->
+          <div class="code-sample">
+            <div class="bg-gray-200 p-5 rounded">
+              <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable={false}>
 <code class="language-javascript">import Fireproof from '@fireproof-storage/fireproof';
 
 const database = Fireproof.storage("my-todos");
@@ -368,44 +379,30 @@ const ok = await database.put({
 const doc = await database.get(ok.id);
 console.log(doc.type, doc.completed); // 'todo', false
 </code></pre>
-                <!-- <button class="bg-gray-800 text-white p-2 rounded mt-2 shadow">Run</button> -->
-              </div>
-              <p class="mt-2 text-center text-gray-900">Quickly add dynamic data to any app or page.</p>
+              <!-- <button class="bg-gray-800 text-white p-2 rounded mt-2 shadow">Run</button> -->
             </div>
+            <p class="mt-2 text-center text-gray-900">Quickly add dynamic data to any app or page.</p>
           </div>
+        </div>
 
-          <div class="w-2/5 pl-20">
-            <!-- Embedded App -->
-            <div class="bg-gray-300 rounded p-5 code-app">
-              <iframe
-                src="./demo/"
-                frameborder="0"
-                class="w-full"
-                style="height: 512px !important"
-              ></iframe>
-            </div>
+        <div class="w-2/5 pl-20">
+          <!-- Embedded App -->
+          <div class="bg-gray-300 rounded p-5 code-app">
+            <iframe src="./demo/" frameborder="0" class="w-full" style="height: 512px !important"></iframe>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- npm install -->
-    <section class="py-10 fireproof" style="position: relative">
-      <div class="container mx-auto lg:px-64 px-32">
-        <a
-          class="github-fork-ribbon right-bottom"
-          href="https://github.com/jchris/fireproof"
-          target="_blank"
-          data-ribbon="Fork me on GitHub"
-          title="Fork me on GitHub"
-          >Fork me on GitHub</a
-        >
+  <!-- npm install -->
+  <section class="py-10 fireproof" style="position: relative">
+    <div class="container mx-auto lg:px-64 px-32">
+      <a class="github-fork-ribbon right-bottom" href="https://github.com/jchris/fireproof" target="_blank"
+        data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
 
-        <code
-          id="install-command"
-          tabindex="1"
-          class="text-3xl text-center text-white bg-gray-900 rounded py-3 px-10 flex items-center justify-center h-32 word-wrap: break-word;"
-        >
+      <code id="install-command" tabindex="1"
+        class="text-3xl text-center text-white bg-gray-900 rounded py-3 px-10 flex items-center justify-center h-32 word-wrap: break-word;">
           npm install @fireproof/core
 
           <svg
@@ -424,20 +421,20 @@ console.log(doc.type, doc.completed); // 'todo', false
             />
           </svg>
         </code>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Quick Start -->
-    <section>
-      <div class="container mx-auto mt-24 px-5 text-gray-400">
-        <h2 class="text-4xl font-bold mb-12 text-center">Quick Start</h2>
+  <!-- Quick Start -->
+  <section>
+    <div class="container mx-auto mt-24 px-5 text-gray-400">
+      <h2 class="text-4xl font-bold mb-12 text-center">Quick Start</h2>
 
-        <div class="flex flex-wrap justify-around p-5">
-          <div class="w-full  flex items-center justify-center">
-            <!-- Code Sample -->
-            <div class="code-sample">
-              <div class="bg-gray-200 p-5 mb-5 rounded px-4">
-                <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
+      <div class="flex flex-wrap justify-around p-5">
+        <div class="w-full  flex items-center justify-center">
+          <!-- Code Sample -->
+          <div class="code-sample">
+            <div class="bg-gray-200 p-5 mb-5 rounded px-4">
+              <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
 <code class="language-javascript">// npm install @fireproof/core
 
 import { Fireproof } from '@fireproof/core'
@@ -446,48 +443,48 @@ const ok = await fireproof.put({ hello: 'world' })
 const doc = await fireproof.get(ok.id)
 
 // 🤫 window.fireproof = fireproof // for dev</code></pre>
-              </div>
-              
             </div>
-          </div>
-          <div class="w-3/5 text-gray-400 py-5">
-            <h3 class="text-lg font-bold mb-3 text-center">Drop this in app.js or app.tsx and go!</h3>
-            <p class="text-sm mb-5">
-              Adopting tools that prioritize developer exprience
-              has componding effects — increasing your team's expectations of what they can accomplish, while
-              inculcating a habit of continuous improvement.
-            </p>
+
           </div>
         </div>
-      </div>
-      </div>
-    </section>
-
-
-
-    <!-- Features Grid -->
-    <section class="feature-grid pt-10 px-10 lg:px-32">
-      <div class="container mx-auto px-5 text-gray-400">
-        <h2 class="text-4xl font-bold mb-12 text-center">Database Features</h2>
-
-        <div class="flex items-center mb-12">
-          <div class="relative">
-            <div class="absolute top-0 left-0 w-full h-full rounded blurbblur"></div>
-            <p class="z-10 relative text-xl">
-              <strong>Fireproof</strong> is local-first software, operating directly in the browser and automatically
-              synchronizing with the distributed IPFS storage network. It uses verifiable operations and encrypted,
-              immutable data — making it more reliable than the cloud.
-            </p>
-          </div>
+        <div class="w-3/5 text-gray-400 py-5">
+          <h3 class="text-lg font-bold mb-3 text-center">Drop this in app.js or app.tsx and go!</h3>
+          <p class="text-sm mb-5">
+            Adopting tools that prioritize developer exprience
+            has componding effects — increasing your team's expectations of what they can accomplish, while
+            inculcating a habit of continuous improvement.
+          </p>
         </div>
+      </div>
+    </div>
+    </div>
+  </section>
 
-        <!-- Feature 1 -->
-        <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10 mx-10 lg:mx-20 ">
-          <div class="w-full md:w-1/2 flex items-center justify-center">
-            <!-- Code Sample -->
-            <div class="code-sample">
-              <div class="bg-gray-200 p-5 rounded px-4">
-                <pre class="text-xs bg-gray-800 p-5 rounded">
+
+
+  <!-- Features Grid -->
+  <section class="feature-grid pt-10 px-10 lg:px-32">
+    <div class="container mx-auto px-5 text-gray-400">
+      <h2 class="text-4xl font-bold mb-12 text-center">Database Features</h2>
+
+      <div class="flex items-center mb-12">
+        <div class="relative">
+          <div class="absolute top-0 left-0 w-full h-full rounded blurbblur"></div>
+          <p class="z-10 relative text-xl">
+            <strong>Fireproof</strong> is local-first software, operating directly in the browser and automatically
+            synchronizing with the distributed IPFS storage network. It uses verifiable operations and encrypted,
+            immutable data — making it more reliable than the cloud.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 1 -->
+      <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10 mx-10 lg:mx-20 ">
+        <div class="w-full md:w-1/2 flex items-center justify-center">
+          <!-- Code Sample -->
+          <div class="code-sample">
+            <div class="bg-gray-200 p-5 rounded px-4">
+              <pre class="text-xs bg-gray-800 p-5 rounded">
 <code class="language-javascript">new Index(database, function (doc, map) {
   if (doc.type === 'person') {
     map(doc.age, doc)
@@ -495,58 +492,58 @@ const doc = await fireproof.get(ok.id)
 })
 await index.query({ range: [41, 44] })
 </code></pre>
-              </div>
-              <p class="mt-2 text-center text-gray-900">Query JSON data with any structure.</p>
             </div>
-          </div>
-
-          <div class="w-full md:w-2/5 p-5">
-            <h3 class="text-lg font-bold mb-3 text-gray-700">Flexible Data</h3>
-            <p class="text-sm text-gray-700 mb-5">
-              Access your JSON data from any app or website with a simple put, get, and delete interface. Embed, index,
-              and organize files of any size using IPFS links. Handle <strong>data variety and schema drift</strong> by
-              writing JavaScript functions to define indexes, making it easy to normalize data and simplify indexing and
-              searching. Queries run locally, making Fireproof faster than any cloud database.
-            </p>
+            <p class="mt-2 text-center text-gray-900">Query JSON data with any structure.</p>
           </div>
         </div>
 
-        <!-- Feature 2 -->
-        <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10">
-          <div class="w-full md:w-1/2 p-5">
-            <h3 class="text-lg font-bold mb-3 text-gray-700">Immutable History</h3>
-            <p class="text-sm text-gray-700 mb-5">
-              MVCC versioning and Merkle causal history tracking ensure that you can always recover the desired version
-              of your data, and <strong>query a stable snapshot</strong> of the database. Immutable data structures
-              simplify replication and improve performance, while enabling roll back to old data whenever needed, giving
-              you peace of mind knowing your data is secure. Merkle clocks and hash trees are used to provide lossless
-              merging and immutable and self-validating data structures, making replicating changes safe and efficient,
-              and making Fireproof ideal for smart contract and other trustless applications.
-            </p>
-          </div>
-          <div class="w-full md:w-1/2 flex items-center justify-center">
-            <!-- Code Sample -->
-            <div class="code-sample">
-              <div class="bg-gray-200 p-5 rounded px-4">
-                <pre class="text-xs bg-gray-800 p-5 rounded">
+        <div class="w-full md:w-2/5 p-5">
+          <h3 class="text-lg font-bold mb-3 text-gray-700">Flexible Data</h3>
+          <p class="text-sm text-gray-700 mb-5">
+            Access your JSON data from any app or website with a simple put, get, and delete interface. Embed, index,
+            and organize files of any size using IPFS links. Handle <strong>data variety and schema drift</strong> by
+            writing JavaScript functions to define indexes, making it easy to normalize data and simplify indexing and
+            searching. Queries run locally, making Fireproof faster than any cloud database.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10">
+        <div class="w-full md:w-1/2 p-5">
+          <h3 class="text-lg font-bold mb-3 text-gray-700">Immutable History</h3>
+          <p class="text-sm text-gray-700 mb-5">
+            MVCC versioning and Merkle causal history tracking ensure that you can always recover the desired version
+            of your data, and <strong>query a stable snapshot</strong> of the database. Immutable data structures
+            simplify replication and improve performance, while enabling roll back to old data whenever needed, giving
+            you peace of mind knowing your data is secure. Merkle clocks and hash trees are used to provide lossless
+            merging and immutable and self-validating data structures, making replicating changes safe and efficient,
+            and making Fireproof ideal for smart contract and other trustless applications.
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 flex items-center justify-center">
+          <!-- Code Sample -->
+          <div class="code-sample">
+            <div class="bg-gray-200 p-5 rounded px-4">
+              <pre class="text-xs bg-gray-800 p-5 rounded">
 <code class="language-javascript">const clock = JSON.stringify(fireproof.clock)
 // '["bafy...inmu"]'
 
 const database = Fireproof.snapshot(clock)
 </code></pre>
-              </div>
-              <p class="mt-2 text-center text-gray-900">Add undo to your app! Jump to any point in history.</p>
             </div>
+            <p class="mt-2 text-center text-gray-900">Add undo to your app! Jump to any point in history.</p>
           </div>
         </div>
+      </div>
 
-        <!-- Feature 3 -->
-        <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10 mx-10 lg:mx-20">
-          <div class="w-full md:w-1/2 flex items-center justify-center">
-            <!-- Code Sample -->
-            <div class="code-sample">
-              <div class="bg-gray-200 p-5 rounded px-4">
-                <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
+      <!-- Feature 3 -->
+      <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10 mx-10 lg:mx-20">
+        <div class="w-full md:w-1/2 flex items-center justify-center">
+          <!-- Code Sample -->
+          <div class="code-sample">
+            <div class="bg-gray-200 p-5 rounded px-4">
+              <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
 <code class="language-javascript">new Listener(fireproof, (doc, emit) => {
   if (doc.name) { emit('person') }
 })
@@ -555,40 +552,40 @@ listener.on('person', (key) => {
   console.log('Person event:', key)
 })
 </code></pre>
-              </div>
-              <p class="mt-2 text-center text-gray-900">Repaint your UI when data changes.</p>
             </div>
-          </div>
-          <div class="w-full md:w-1/2 p-5">
-            <h3 class="text-lg font-bold mb-3 text-gray-700">Real-time Updates</h3>
-            <p class="text-sm text-gray-700 mb-5">
-              Get instant notifications of changes to your data, with real-time updates synced across all devices and
-              apps. Fireproof uses a combination of WebRTC and IPFS to provide fast and efficient real-time updates,
-              giving you real-time access to your data without the need for constant polling or manual refresh. Whether
-              you're building an online collaboration tool, a real-time dashboard, or just want to
-              <strong>keep your UI up-to-date</strong> in real-time, Fireproof has you covered.
-            </p>
+            <p class="mt-2 text-center text-gray-900">Repaint your UI when data changes.</p>
           </div>
         </div>
+        <div class="w-full md:w-1/2 p-5">
+          <h3 class="text-lg font-bold mb-3 text-gray-700">Real-time Updates</h3>
+          <p class="text-sm text-gray-700 mb-5">
+            Get instant notifications of changes to your data, with real-time updates synced across all devices and
+            apps. Fireproof uses a combination of WebRTC and IPFS to provide fast and efficient real-time updates,
+            giving you real-time access to your data without the need for constant polling or manual refresh. Whether
+            you're building an online collaboration tool, a real-time dashboard, or just want to
+            <strong>keep your UI up-to-date</strong> in real-time, Fireproof has you covered.
+          </p>
+        </div>
+      </div>
 
-        <!-- Feature 4 -->
-        <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10">
-          <div class="w-full md:w-1/2 p-5">
-            <h3 class="text-lg font-bold mb-3 text-gray-700">Self-sovereign Identity</h3>
-            <p class="text-sm text-gray-700 mb-5">
-              With self-sovereign identity users have full control over their personal data and identity, without
-              relying on a central authority. This enables new business models and the creation of apps that serve users
-              first. Fireproof's self-sovereign identity solution is <strong>built on industry standards</strong> such
-              as Decentralized Identifiers (DIDs) and UCAN. Users can choose to use Fireproof storage services or store
-              data with other backends such as web3.storage, further ensuring the security and sovereignty of their
-              data.
-            </p>
-          </div>
-          <div class="w-full md:w-1/2 flex items-center justify-center">
-            <!-- Code Sample -->
-            <div class="code-sample">
-              <div class="bg-gray-200 p-5 rounded px-4">
-                <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
+      <!-- Feature 4 -->
+      <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10">
+        <div class="w-full md:w-1/2 p-5">
+          <h3 class="text-lg font-bold mb-3 text-gray-700">Self-sovereign Identity</h3>
+          <p class="text-sm text-gray-700 mb-5">
+            With self-sovereign identity users have full control over their personal data and identity, without
+            relying on a central authority. This enables new business models and the creation of apps that serve users
+            first. Fireproof's self-sovereign identity solution is <strong>built on industry standards</strong> such
+            as Decentralized Identifiers (DIDs) and UCAN. Users can choose to use Fireproof storage services or store
+            data with other backends such as web3.storage, further ensuring the security and sovereignty of their
+            data.
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 flex items-center justify-center">
+          <!-- Code Sample -->
+          <div class="code-sample">
+            <div class="bg-gray-200 p-5 rounded px-4">
+              <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
 <code class="language-javascript">const proof = await Client.delegate({
   issuer: alice,
   audience: bob.principal,
@@ -598,19 +595,19 @@ listener.on('person', (key) => {
     }]
 })
 </code></pre>
-              </div>
-              <p class="mt-2 text-center text-gray-900">UCAN delegation so you are only limited by your imagination.</p>
             </div>
+            <p class="mt-2 text-center text-gray-900">UCAN delegation so you are only limited by your imagination.</p>
           </div>
         </div>
+      </div>
 
-        <!-- Feature 5 -->
-        <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10 mx-10 lg:mx-20">
-          <div class="w-full md:w-1/2 flex items-center justify-center">
-            <!-- Code Sample -->
-            <div class="code-sample">
-              <div class="bg-gray-200 p-5 rounded px-4">
-                <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
+      <!-- Feature 5 -->
+      <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10 mx-10 lg:mx-20">
+        <div class="w-full md:w-1/2 flex items-center justify-center">
+          <!-- Code Sample -->
+          <div class="code-sample">
+            <div class="bg-gray-200 p-5 rounded px-4">
+              <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
     <code class="language-ascii">
                                   ____
                         __...---~'    `~~~----...__
@@ -621,41 +618,41 @@ listener.on('person', (key) => {
    '--------_- - - - - _/
              `--------'
  </code></pre>
-              </div>
-              <p class="mt-2 text-center text-gray-900">Your data is out of this world!</p>
             </div>
-          </div>
-          <div class="w-full md:w-1/2 p-5">
-            <h3 class="text-lg font-bold mb-3 text-gray-700">Automatic Replication</h3>
-            <p class="text-sm text-gray-700 mb-5">
-              Syncing state is <strong>as easy as sending a link</strong> to the latest database head and Fireproof will
-              handle the rest, ensuring your data is always up-to-date and accessible from any device or browser.
-              Whether you're working from your desktop, laptop, or mobile device, Fireproof ensures that your data is
-              always up-to-date and accessible. Documents changes are persisted to Filecoin via web3.storage and made
-              available over IPFS and a global content delivery network. With automatic replication, you never have to
-              worry about losing important information or manually transferring data between devices.
-            </p>
+            <p class="mt-2 text-center text-gray-900">Your data is out of this world!</p>
           </div>
         </div>
+        <div class="w-full md:w-1/2 p-5">
+          <h3 class="text-lg font-bold mb-3 text-gray-700">Automatic Replication</h3>
+          <p class="text-sm text-gray-700 mb-5">
+            Syncing state is <strong>as easy as sending a link</strong> to the latest database head and Fireproof will
+            handle the rest, ensuring your data is always up-to-date and accessible from any device or browser.
+            Whether you're working from your desktop, laptop, or mobile device, Fireproof ensures that your data is
+            always up-to-date and accessible. Documents changes are persisted to Filecoin via web3.storage and made
+            available over IPFS and a global content delivery network. With automatic replication, you never have to
+            worry about losing important information or manually transferring data between devices.
+          </p>
+        </div>
+      </div>
 
-        <!-- Feature 6 -->
-        <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10">
-          <div class="w-full md:w-1/2 p-5">
-            <h3 class="text-lg font-bold mb-3 text-gray-700">Cryptographic Proofs</h3>
-            <p class="text-sm text-gray-700 mb-5">
-              UCAN cryptographic proof chains link updates to authorized agents, ensuring data security and integrity.
-              Portable, signed proofs <strong>eliminate the need for secret bearer tokens</strong>. Transactions are
-              functional transforms of hash-linked graphs, ensuring data consistency across nodes. Each transaction is a
-              unique immutable hash, enabling efficient data sharing. Cryptographic proofs available for all operations
-              make Fireproof ideal for smart contracts and trustless environments. Proof chains also improve performance
-              by allowing for cryptographic verification of changes.
-            </p>
-          </div>
-          <div class="w-full md:w-1/2 flex items-center justify-center">
-            <!-- Code Sample -->
-            <div class="code-sample">
-              <div class="bg-gray-200 p-5 rounded px-4">
-                <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
+      <!-- Feature 6 -->
+      <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10">
+        <div class="w-full md:w-1/2 p-5">
+          <h3 class="text-lg font-bold mb-3 text-gray-700">Cryptographic Proofs</h3>
+          <p class="text-sm text-gray-700 mb-5">
+            UCAN cryptographic proof chains link updates to authorized agents, ensuring data security and integrity.
+            Portable, signed proofs <strong>eliminate the need for secret bearer tokens</strong>. Transactions are
+            functional transforms of hash-linked graphs, ensuring data consistency across nodes. Each transaction is a
+            unique immutable hash, enabling efficient data sharing. Cryptographic proofs available for all operations
+            make Fireproof ideal for smart contracts and trustless environments. Proof chains also improve performance
+            by allowing for cryptographic verification of changes.
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 flex items-center justify-center">
+          <!-- Code Sample -->
+          <div class="code-sample">
+            <div class="bg-gray-200 p-5 rounded px-4">
+              <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
 <code class="language-javascript">{
   "aud": "did:key:z6MkfQhLHBSFMuR7bQXTQeqe5kYUW51HpfZeaymgy1zkP2jM",
   "att": [{
@@ -672,159 +669,156 @@ listener.on('person', (key) => {
     "eyJhbGciOiJFZERTQSIsI...xZ7WeYVAIATDl8EmcOKj9OqOSw0Vg8VCA"
   ]
 }</code></pre>
-              </div>
-              <p class="mt-2 text-center text-gray-900">
-                Reduce costs and increase trust with cryptographic verifiability.
-              </p>
             </div>
+            <p class="mt-2 text-center text-gray-900">
+              Reduce costs and increase trust with cryptographic verifiability.
+            </p>
           </div>
-        </div>
-
-        
-    </section>
-
-    <!-- Call to Action -->
-    <section class="bg-gray-900 py-16 text-gray-400">
-      <div class="container mx-auto px-5">
-        <div class="bg-gray-800 p-16 rounded-lg w-full mx-auto">
-          <h2 class="text-2xl font-bold mb-5 text-center text-white">Experience the Developer Console</h2>
-          <form class="flex m-10 items-center justify-center">
-            <input
-              type="email"
-              class="bg-white p-4 text-gray-900 rounded mr-5 w-64"
-              placeholder="Enter your email address here"
-            />
-            <button class="p-4 fireproof text-white font-medium rounded-lg outline focus:outline-none">
-              Get Started Today
-            </button>
-          </form>
-          <p class="mt-10 text-center text-xl">
-            Fireproof is free to use and scale. Access advanced features with credit card verification.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Social Proof -->
-    <section class="py-16 px-64 hidden">
-      <div class="container mx-auto px-5 text-gray-400">
-        <h2 class="text-4xl font-bold mb-24 text-center">Our Community</h2>
-
-        <div class="relative">
-          <div class="absolute top-0 left-0 w-full h-full rounded blurbblur"></div>
-          <p class="z-10 relative text-2xl">
-            Learn how people are saving costs and innovating with new business models. Fireproof's advanced database
-            capabilities and easy front-end installation make it a tool of choice for early adopters.
-            <!-- <strong> You know you want to be on the cube! </strong> -->
-            <a href="mailto:jchris@gmail.com">Email the project lead</a> or direct message
-            <a href="https://twitter.com/FireproofStorge">Fireproof Storage on Twitter</a> to get featured.
-          </p>
         </div>
       </div>
 
-      <div class="cubeContainer container py-32 mb-64">
-        <div id="cube">
-          <div class="face front">
-            <div class="p-5 rounded bg-white">
-              <div class="flex">
-                <img src="https://picsum.photos/200" alt="Screenshot 1" class="h-48 w-48 mr-5" />
-                <div>
-                  <p class="text-gray-700 mt-5 text-sm strong">Creator</p>
-                  <p class="text-gray-700 mt-5 text-sm italic">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                  </p>
-                  <img src="https://picsum.photos/200" alt="Customer 1" class="mt-5 float-right rounded-full" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="face back">
-            <div class="p-5 rounded bg-white">
-              <div class="flex">
-                <img src="https://picsum.photos/200" alt="Screenshot 2" class="h-48 w-48 mr-5" />
-                <div>
-                  <p class="text-gray-700 mt-5 text-sm italic">
-                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
-                  </p>
-                  <img src="https://picsum.photos/200" alt="Customer 2" class="mt-5 float-right rounded-full" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="face right">
-            <div class="p-5 rounded bg-white">
-              <div class="flex">
-                <img src="https://picsum.photos/200" alt="Screenshot 3" class="h-48 w-48 mr-5" />
-                <div>
-                  <p class="text-gray-700 mt-5 text-sm italic">
-                    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium."
-                  </p>
-                  <img src="https://picsum.photos/200" alt="Customer 3" class="mt-5 float-right rounded-full" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="face left">
-            <div class="p-5 rounded bg-white">
-              <div class="flex">
-                <img src="https://picsum.photos/200" alt="Screenshot 4" class="h-48 w-48 mr-5" />
-                <div>
-                  <p class="text-gray-700 mt-5 text-sm italic">
-                    "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est
-                    eligendi optio cumque nihil impedit."
-                  </p>
-                  <img src="https://picsum.photos/200" alt="Customer 4" class="mt-5 float-right rounded-full" />
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="face top">
-            <div class="p-5 rounded bg-white">
-              <div class="flex">
-                <img src="https://picsum.photos/200" alt="Screenshot 5" class="h-48 w-48 mr-5" />
-                <div>
-                  <p class="text-gray-700 mt-5 text-sm italic">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus
-                    error sit voluptatem accusantium doloremque laudantium."
-                  </p>
-                  <img src="https://picsum.photos/200" alt="Customer 5" class="mt-5 float-right rounded-full" />
-                </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-gray-900 py-16 text-gray-400">
+    <div class="container mx-auto px-5">
+      <div class="bg-gray-800 p-16 rounded-lg w-full mx-auto">
+        <h2 class="text-2xl font-bold mb-5 text-center text-white">Experience the Developer Console</h2>
+        <form class="flex m-10 items-center justify-center">
+          <input type="email" class="bg-white p-4 text-gray-900 rounded mr-5 w-64"
+            placeholder="Enter your email address here" />
+          <button class="p-4 fireproof text-white font-medium rounded-lg outline focus:outline-none">
+            Get Started Today
+          </button>
+        </form>
+        <p class="mt-10 text-center text-xl">
+          Fireproof is free to use and scale. Access advanced features with credit card verification.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="py-16 px-64 hidden">
+    <div class="container mx-auto px-5 text-gray-400">
+      <h2 class="text-4xl font-bold mb-24 text-center">Our Community</h2>
+
+      <div class="relative">
+        <div class="absolute top-0 left-0 w-full h-full rounded blurbblur"></div>
+        <p class="z-10 relative text-2xl">
+          Learn how people are saving costs and innovating with new business models. Fireproof's advanced database
+          capabilities and easy front-end installation make it a tool of choice for early adopters.
+          <!-- <strong> You know you want to be on the cube! </strong> -->
+          <a href="mailto:jchris@gmail.com">Email the project lead</a> or direct message
+          <a href="https://twitter.com/FireproofStorge">Fireproof Storage on Twitter</a> to get featured.
+        </p>
+      </div>
+    </div>
+
+    <div class="cubeContainer container py-32 mb-64">
+      <div id="cube">
+        <div class="face front">
+          <div class="p-5 rounded bg-white">
+            <div class="flex">
+              <img src="https://picsum.photos/200" alt="Screenshot 1" class="h-48 w-48 mr-5" />
+              <div>
+                <p class="text-gray-700 mt-5 text-sm strong">Creator</p>
+                <p class="text-gray-700 mt-5 text-sm italic">
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                </p>
+                <img src="https://picsum.photos/200" alt="Customer 1" class="mt-5 float-right rounded-full" />
               </div>
             </div>
           </div>
-          <div class="face bottom">
-            <div class="p-5 rounded bg-white">
-              <div class="flex">
-                <img src="https://picsum.photos/200" alt="Screenshot 6" class="h-48 w-48 mr-5 rounded" />
-                <div>
-                  <p class="text-gray-700 mt-5 text-sm italic">
-                    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                    deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
-                    provident."
-                  </p>
-                  <img src="https://picsum.photos/200" alt="Customer 6" class="mt-5 float-right rounded-full" />
-                </div>
+        </div>
+        <div class="face back">
+          <div class="p-5 rounded bg-white">
+            <div class="flex">
+              <img src="https://picsum.photos/200" alt="Screenshot 2" class="h-48 w-48 mr-5" />
+              <div>
+                <p class="text-gray-700 mt-5 text-sm italic">
+                  "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+                </p>
+                <img src="https://picsum.photos/200" alt="Customer 2" class="mt-5 float-right rounded-full" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="face right">
+          <div class="p-5 rounded bg-white">
+            <div class="flex">
+              <img src="https://picsum.photos/200" alt="Screenshot 3" class="h-48 w-48 mr-5" />
+              <div>
+                <p class="text-gray-700 mt-5 text-sm italic">
+                  "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium."
+                </p>
+                <img src="https://picsum.photos/200" alt="Customer 3" class="mt-5 float-right rounded-full" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="face left">
+          <div class="p-5 rounded bg-white">
+            <div class="flex">
+              <img src="https://picsum.photos/200" alt="Screenshot 4" class="h-48 w-48 mr-5" />
+              <div>
+                <p class="text-gray-700 mt-5 text-sm italic">
+                  "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est
+                  eligendi optio cumque nihil impedit."
+                </p>
+                <img src="https://picsum.photos/200" alt="Customer 4" class="mt-5 float-right rounded-full" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="face top">
+          <div class="p-5 rounded bg-white">
+            <div class="flex">
+              <img src="https://picsum.photos/200" alt="Screenshot 5" class="h-48 w-48 mr-5" />
+              <div>
+                <p class="text-gray-700 mt-5 text-sm italic">
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus
+                  error sit voluptatem accusantium doloremque laudantium."
+                </p>
+                <img src="https://picsum.photos/200" alt="Customer 5" class="mt-5 float-right rounded-full" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="face bottom">
+          <div class="p-5 rounded bg-white">
+            <div class="flex">
+              <img src="https://picsum.photos/200" alt="Screenshot 6" class="h-48 w-48 mr-5 rounded" />
+              <div>
+                <p class="text-gray-700 mt-5 text-sm italic">
+                  "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+                  deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
+                  provident."
+                </p>
+                <img src="https://picsum.photos/200" alt="Customer 6" class="mt-5 float-right rounded-full" />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Features Heading -->
+  <!-- Features Heading -->
 
-    <!-- Footer -->
-    <footer class="fireproof py-5 mt-12">
-      <div class="container mx-auto px-5">
-        <ul class="flex">
-          <li class="mr-6">
-            <a href="https://twitter.com/FireproofStorge">Twitter</a>
-          </li>
-          <li class="mr-6">
-            <a href="https://github.com/fireproof-storage/fireproof">GitHub</a>
-          </li>
-          <!-- <li class="mr-6">
+  <!-- Footer -->
+  <footer class="fireproof py-5 mt-12">
+    <div class="container mx-auto px-5">
+      <ul class="flex">
+        <li class="mr-6">
+          <a href="https://twitter.com/FireproofStorge">Twitter</a>
+        </li>
+        <li class="mr-6">
+          <a href="https://github.com/fireproof-storage/fireproof">GitHub</a>
+        </li>
+        <!-- <li class="mr-6">
             <a href="#">TikTok</a>
           </li>
           <li class="mr-6">
@@ -833,30 +827,31 @@ listener.on('person', (key) => {
           <li class="mr-6">
             <a href="#">Stack Overflow</a>
           </li> -->
-        </ul>
-        <h1 class="font-bold text-center mt-10 mb-5">
-          Local • Immutable • Distributed <br />
-          Realtime • Verifiable • Cloudless
-        </h1>
-        <img class="mx-auto py-10" src="./logo-animated.svg" alt="Fireproof Logo" style="width: 80%" />
-      </div>
-    </footer>
-  </body>
-  <!-- Include the PrismJS JavaScript file -->
-  <script src="./prism.min.js"></script>
+      </ul>
+      <h1 class="font-bold text-center mt-10 mb-5">
+        Local • Immutable • Distributed <br />
+        Realtime • Verifiable • Cloudless
+      </h1>
+      <img class="mx-auto py-10" src="./logo-animated.svg" alt="Fireproof Logo" style="width: 80%" />
+    </div>
+  </footer>
+</body>
+<!-- Include the PrismJS JavaScript file -->
+<script src="./prism.min.js"></script>
 
-  <script>
-    const installCommand = document.querySelector('#install-command')
-    installCommand.addEventListener('click', () => {
-      navigator.clipboard
-        .writeText(installCommand.textContent.trim())
-        .then(() => {
-          console.log('Copied to clipboard')
-        })
-        .catch((err) => {
-          console.error('Failed to copy to clipboard', err)
-        })
-    })
-    Prism.highlightAll()
-  </script>
+<script>
+  const installCommand = document.querySelector('#install-command')
+  installCommand.addEventListener('click', () => {
+    navigator.clipboard
+      .writeText(installCommand.textContent.trim())
+      .then(() => {
+        console.log('Copied to clipboard')
+      })
+      .catch((err) => {
+        console.error('Failed to copy to clipboard', err)
+      })
+  })
+  Prism.highlightAll()
+</script>
+
 </html>
