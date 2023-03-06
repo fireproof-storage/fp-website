@@ -44,10 +44,16 @@
         background-color: transparent;
       }
 
-      code[class*='language-'],
-      pre[class*='language-'] {
+      html code[class*='language-'],
+      html pre[class*='language-'] {
         text-shadow: 0 1px #000;
         font-size: 0.75rem;
+      }
+
+      html .feature-grid .code-sample code {
+        max-width: 18em;
+        /* font-size: 0.5rem; */
+        /* line-height: 1; */
       }
 
       .code-sample {
@@ -65,6 +71,8 @@
       .code-sample pre {
         overflow: scroll;
       }
+
+
 
       .my-hero {
         background-image: url(./crowd-blurred.jpg);
@@ -425,7 +433,7 @@ console.log(doc.type, doc.completed); // 'todo', false
     </section>
 
     <!-- Features Grid -->
-    <section class="pt-24 px-10 lg:px-32">
+    <section class="feature-grid pt-24 px-10 lg:px-32">
       <div class="container mx-auto px-5 text-gray-400">
         <div class="flex items-center mb-10">
           <div class="relative">
@@ -440,7 +448,7 @@ console.log(doc.type, doc.completed); // 'todo', false
         <h2 class="text-4xl font-bold mb-24 text-center">Database Features</h2>
 
         <!-- Feature 1 -->
-        <div class="smaller-feature flex flex-wrap bg-white p-5 rounded mb-10 mx-10 lg:mx-20">
+        <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10 mx-10 lg:mx-20 ">
           <div class="w-full md:w-1/2 flex items-center justify-center">
             <!-- Code Sample -->
             <div class="code-sample">
@@ -458,7 +466,7 @@ await index.query({ range: [41, 44] })
             </div>
           </div>
 
-          <div class="w-full md:w-1/2 p-5">
+          <div class="w-full md:w-2/5 p-5">
             <h3 class="text-lg font-bold mb-3 text-gray-700">Flexible Data</h3>
             <p class="text-sm text-gray-700 mb-5">
               Access your JSON data from any app or website with a simple put, get, and delete interface. Embed, index,
@@ -470,7 +478,7 @@ await index.query({ range: [41, 44] })
         </div>
 
         <!-- Feature 2 -->
-        <div class="flex flex-wrap bg-white p-5 rounded mb-10">
+        <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10">
           <div class="w-full md:w-1/2 p-5">
             <h3 class="text-lg font-bold mb-3 text-gray-700">Immutable History</h3>
             <p class="text-sm text-gray-700 mb-5">
@@ -499,7 +507,7 @@ const database = Fireproof.snapshot(clock)
         </div>
 
         <!-- Feature 3 -->
-        <div class="flex flex-wrap bg-white p-5 rounded mb-10 mx-10 lg:mx-20">
+        <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10 mx-10 lg:mx-20">
           <div class="w-full md:w-1/2 flex items-center justify-center">
             <!-- Code Sample -->
             <div class="code-sample">
@@ -530,7 +538,7 @@ listener.on('person', (key) => {
         </div>
 
         <!-- Feature 4 -->
-        <div class="flex flex-wrap bg-white p-5 rounded mb-10">
+        <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10">
           <div class="w-full md:w-1/2 p-5">
             <h3 class="text-lg font-bold mb-3 text-gray-700">Self-sovereign Identity</h3>
             <p class="text-sm text-gray-700 mb-5">
@@ -563,7 +571,7 @@ listener.on('person', (key) => {
         </div>
 
         <!-- Feature 5 -->
-        <div class="flex flex-wrap bg-white p-5 rounded mb-10 mx-10 lg:mx-20">
+        <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10 mx-10 lg:mx-20">
           <div class="w-full md:w-1/2 flex items-center justify-center">
             <!-- Code Sample -->
             <div class="code-sample">
@@ -597,7 +605,7 @@ listener.on('person', (key) => {
         </div>
 
         <!-- Feature 6 -->
-        <div class="flex flex-wrap bg-white p-5 rounded mb-10">
+        <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10">
           <div class="w-full md:w-1/2 p-5">
             <h3 class="text-lg font-bold mb-3 text-gray-700">Cryptographic Proofs</h3>
             <p class="text-sm text-gray-700 mb-5">
@@ -639,7 +647,7 @@ listener.on('person', (key) => {
         </div>
 
         <!-- Feature 7 -->
-        <div class="flex flex-wrap bg-white p-5 rounded mx-10 lg:mx-20">
+        <div class="flex flex-wrap justify-around bg-white p-5 rounded mx-10 lg:mx-20">
           <div class="w-full md:w-1/2 flex items-center justify-center">
             <!-- Code Sample -->
             <div class="code-sample">
@@ -694,16 +702,16 @@ const doc = await fireproof.get(ok.id)
     </section>
 
     <!-- Social Proof -->
-    <section class="py-16 px-64">
+    <section class="py-16 px-64 hidden">
       <div class="container mx-auto px-5 text-gray-400">
         <h2 class="text-4xl font-bold mb-24 text-center">Our Community</h2>
 
         <div class="relative">
           <div class="absolute top-0 left-0 w-full h-full rounded blurbblur"></div>
           <p class="z-10 relative text-2xl">
-            Learn how people is saving costs and innovating with new business models. Fireproof's advanced database
+            Learn how people are saving costs and innovating with new business models. Fireproof's advanced database
             capabilities and easy front-end installation make it a tool of choice for early adopters.
-            <strong> You know you want to be on the cube! </strong>
+            <!-- <strong> You know you want to be on the cube! </strong> -->
             <a href="mailto:jchris@gmail.com">Email the project lead</a> or direct message
             <a href="https://twitter.com/FireproofStorge">Fireproof Storage on Twitter</a> to get featured.
           </p>
@@ -807,12 +815,12 @@ const doc = await fireproof.get(ok.id)
       <div class="container mx-auto px-5">
         <ul class="flex">
           <li class="mr-6">
-            <a href="#">Twitter</a>
+            <a href="https://twitter.com/FireproofStorge">Twitter</a>
           </li>
           <li class="mr-6">
-            <a href="#">GitHub</a>
+            <a href="https://github.com/fireproof-storage/fireproof">GitHub</a>
           </li>
-          <li class="mr-6">
+          <!-- <li class="mr-6">
             <a href="#">TikTok</a>
           </li>
           <li class="mr-6">
@@ -820,7 +828,7 @@ const doc = await fireproof.get(ok.id)
           </li>
           <li class="mr-6">
             <a href="#">Stack Overflow</a>
-          </li>
+          </li> -->
         </ul>
         <h1 class="font-bold text-center mt-10 mb-5">
           Local • Immutable • Distributed <br />
