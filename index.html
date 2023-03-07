@@ -331,8 +331,12 @@
       background-color: #ff6f00;
     }
 
+    html,
     body {
       overflow-x: hidden;
+    }
+    body {
+      position: relative
     }
   </style>
 </head>
@@ -447,9 +451,9 @@ const ok = await fireproof.put({ hello: 'world' })
 const doc = await fireproof.get(ok.id)
 
 // 🤫 window.fireproof = fireproof // for dev</code></pre>
-<h3 class="mt-2 text-center text-gray-900">Drop this in app.js or app.tsx and go!</h3>
+              <h3 class="mt-2 text-center text-gray-900">Drop this in app.js or app.tsx and go!</h3>
 
-</div>
+            </div>
 
           </div>
         </div>
@@ -497,9 +501,9 @@ const doc = await fireproof.get(ok.id)
 })
 await index.query({ range: [41, 44] })
 </code></pre>
-<p class="mt-2 text-center text-gray-900">Query JSON data with any structure.</p>
-</div>
-</div>
+              <p class="mt-2 text-center text-gray-900">Query JSON data with any structure.</p>
+              </div>
+              </div>
         </div>
 
         <div class="w-full xl:w-1/2 p-5">
@@ -536,10 +540,10 @@ await index.query({ range: [41, 44] })
 
 const database = Fireproof.snapshot(clock)
 </code></pre>
-<p class="mt-2 text-center text-gray-900">Add undo to your app! Jump to any point in history.</p>
-</div>
-</div>
-</div>
+              <p class="mt-2 text-center text-gray-900">Add undo to your app! Jump to any point in history.</p>
+              </div>
+              </div>
+              </div>
       </div>
 
       <!-- Feature 3 -->
@@ -557,9 +561,9 @@ listener.on('person', (key) => {
   console.log('Person event:', key)
 })
 </code></pre>
-<p class="mt-2 text-center text-gray-900">Repaint your UI when data changes.</p>
-</div>
-</div>
+              <p class="mt-2 text-center text-gray-900">Repaint your UI when data changes.</p>
+              </div>
+              </div>
         </div>
         <div class="w-full xl:w-1/2 p-5">
           <h3 class="text-lg font-bold mb-3 text-gray-700">Real-time Updates</h3>
@@ -600,8 +604,8 @@ listener.on('person', (key) => {
     }]
 })
 </code></pre>
-<p class="mt-2 text-center text-gray-900">UCAN delegation so you are only limited by your imagination.</p>
-</div>
+              <p class="mt-2 text-center text-gray-900">UCAN delegation so you are only limited by your imagination.</p>
+              </div>
           </div>
         </div>
       </div>
@@ -623,8 +627,8 @@ listener.on('person', (key) => {
    '--------_- - - - - _/
              `--------'
 </code></pre>
-<p class="mt-2 text-center text-gray-900">Your data is out of this world!</p>
-</div>
+              <p class="mt-2 text-center text-gray-900">Your data is out of this world!</p>
+              </div>
           </div>
         </div>
         <div class="w-full xl:w-1/2 p-5">
@@ -671,10 +675,10 @@ listener.on('person', (key) => {
     "eyJhbGciOiJTQSsI...xZ7WeYV9OqOSw0Vg8VCA"
   ]
 }</code></pre>
-<p class="mt-2 text-center text-gray-900">
-  Reduce costs and increase trust with cryptographic verifiability.
-</p>
-</div>
+              <p class="mt-2 text-center text-gray-900">
+                Reduce costs and increase trust with cryptographic verifiability.
+              </p>
+              </div>
           </div>
         </div>
       </div>
