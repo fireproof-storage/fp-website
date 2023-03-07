@@ -224,8 +224,8 @@
     /* cube */
 
     .cubeContainer {
-      width: 400px;
-      height: 400px;
+      width: 18rem;
+      height: 18rem;
       position: relative;
       perspective: 800px;
       margin: 0 auto;
@@ -236,9 +236,9 @@
       height: 100%;
       position: absolute;
       transform-style: preserve-3d;
-      animation: rotatecube 20s infinite;
+      animation: rotatecube 40s infinite;
       transform-origin: 50% 50% -100px;
-
+      animation-play-state: paused;
     }
 
     .face .bg-white {
@@ -246,15 +246,8 @@
     }
 
     #cube div.face {
-      width: 400px;
-      height: 400px;
       display: block;
       position: absolute;
-      border: none;
-      line-height: normal;
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
       overflow: hidden;
       transform-origin: 50% 50% -100px;
     }
@@ -706,7 +699,7 @@ listener.on('person', (key) => {
   </section>
 
   <!-- Social Proof -->
-  <section class="py-16 px-64 hidden">
+  <section class="py-16 px-64">
     <div class="container mx-auto px-5 text-gray-400">
       <h2 class="text-4xl font-bold mb-24 text-center">Our Community</h2>
 
@@ -715,7 +708,7 @@ listener.on('person', (key) => {
         <p class="z-10 relative text-2xl">
           Learn how people are saving costs and innovating with new business models. Fireproof's advanced database
           capabilities and easy front-end installation make it a tool of choice for early adopters.
-          <!-- <strong> You know you want to be on the cube! </strong> -->
+          <strong> You know you want to be on the cube! </strong>
           <a href="mailto:jchris@gmail.com">Email the project lead</a> or direct message
           <a href="https://twitter.com/FireproofStorge">Fireproof Storage on Twitter</a> to get featured.
         </p>
@@ -724,86 +717,82 @@ listener.on('person', (key) => {
 
     <div class="cubeContainer container py-32 mb-64">
       <div id="cube">
-        <div class="face front">
-          <div class="p-5 rounded bg-white">
+        <div class="h-64 w-64 face front">
+          <div class="p-5 rounded bg-white text-gray-700">
             <div class="flex">
-              <img src="https://picsum.photos/200" alt="Screenshot 1" class="h-48 w-48 mr-5" />
-              <div>
-                <p class="text-gray-700 mt-5 text-sm strong">Creator</p>
-                <p class="text-gray-700 mt-5 text-sm italic">
-                  J. Chris Anderson
+              <!-- <img src="./assets/people-jchris.jpg" alt="Screenshot 1" class="h-48 w-48 mr-5" /> -->
+              <div class="justify-around items-center">
+                <p class=" mt-5 text-sm  strong">J. Chris Anderson</p>
+                <img src="./assets/people-jchris.jpg" alt="Customer 1" class="mt-5 h-24 w-24 float-right rounded-full" />
+                <p class="mt-5 text-xs italic ">
+                  Fireproof creator, previously co-founded Couchbase. Building distributed databases since 2009.
                 </p>
-                <img src="https://picsum.photos/200" alt="Customer 1" class="mt-5 float-right rounded-full" />
               </div>
             </div>
           </div>
         </div>
-        <div class="face back">
+        <div class="h-64 w-64 face back">
           <div class="p-5 rounded bg-white">
-            <div class="flex">
-              <img src="https://picsum.photos/200" alt="Screenshot 2" class="h-48 w-48 mr-5" />
+            <div>
+              <!-- <img src="/assets/quotes-" alt="Screenshot 3" class="max-h-64 w-64 mr-5" /> -->
               <div>
-                <p class="text-gray-700 mt-5 text-sm italic">
-                  "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
-                </p>
-                <img src="https://picsum.photos/200" alt="Customer 2" class="mt-5 float-right rounded-full" />
+                <img src="/assets/people-damien.jpg" alt="Customer 1" class="h-32 w-32 mt-6 float-right rounded-full" />
+                <p class="text-gray-700 mt-5 ">Damien Katz</p>
+                <p class="text-gray-700 text-sm italic">Advisor</p>
+                <p class="text-gray-700 text-sm italic">Erlanger of the Year</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="face right">
+        <div class="h-64 w-64 face right">
           <div class="p-5 rounded bg-white">
-            <div class="flex">
-              <img src="https://picsum.photos/200" alt="Screenshot 3" class="h-48 w-48 mr-5" />
+            <div>
+              <img src="/assets/quotes-jv2.jpeg" alt="Screenshot 3" class="max-h-64 w-64 mr-5" />
               <div>
-                <p class="text-gray-700 mt-5 text-sm italic">
-                  "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium."
-                </p>
-                <img src="https://picsum.photos/200" alt="Customer 3" class="mt-5 float-right rounded-full" />
+                <img src="/assets/people-jnthnvictr.png" alt="Customer 1" class="h-28 w-28 mt-6 float-right rounded-full" />
+                <p class="text-gray-700 mt-5 ">Jonathan Victor</p>
+                <p class="text-gray-700 text-sm italic">Advisor</p>
+                <p class="text-gray-700 text-sm italic">Web3 Maven - Protocol Labs</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="face left">
+        <div class="h-64 w-64 face left">
           <div class="p-5 rounded bg-white">
-            <div class="flex">
-              <img src="https://picsum.photos/200" alt="Screenshot 4" class="h-48 w-48 mr-5" />
+            <div>
+              <img src="./assets/quotes-nuno.png" alt="Screenshot 2" class="max-h-48 w-48" />
               <div>
-                <p class="text-gray-700 mt-5 text-sm italic">
-                  "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est
-                  eligendi optio cumque nihil impedit."
-                </p>
-                <img src="https://picsum.photos/200" alt="Customer 4" class="mt-5 float-right rounded-full" />
+                <img src="./assets/people-nuno.jpeg" alt="Customer 1" class="mt-5 h-28 w-28 float-right rounded-full" />
+                <p class="text-gray-700 mt-5 ">Nuno Job</p>
+                <p class="text-gray-700 text-sm italic">Advisor</p>
+                <p class="text-gray-700 text-sm italic">Co-founder at Decipad</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="face top">
+        <div class="h-64 w-64 face top">
           <div class="p-5 rounded bg-white">
-            <div class="flex">
-              <img src="https://picsum.photos/200" alt="Screenshot 5" class="h-48 w-48 mr-5" />
+            <div>
+              <img src="/assets/quotes-brian.png" alt="Screenshot 3" class="max-h-64 w-64 mr-5" />
               <div>
-                <p class="text-gray-700 mt-5 text-sm italic">
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus
-                  error sit voluptatem accusantium doloremque laudantium."
-                </p>
-                <img src="https://picsum.photos/200" alt="Customer 5" class="mt-5 float-right rounded-full" />
+                <img src="/assets/people-brian.jpg" alt="Customer 1" class="h-28 w-28 mt-6 float-right rounded-full" />
+                <p class="text-gray-700 mt-5 ">Brian LeRoux</p>
+                <p class="text-gray-700 text-sm italic">Advisor</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="face bottom">
+        <div class="h-64 w-64 face bottom">
           <div class="p-5 rounded bg-white">
-            <div class="flex">
-              <img src="https://picsum.photos/200" alt="Screenshot 6" class="h-48 w-48 mr-5 rounded" />
+            <div>
+              <img src="./assets/quotes-logan.png" alt="Screenshot 6" class="max-h-48 w-48" />
               <div>
-                <p class="text-gray-700 mt-5 text-sm italic">
-                  "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                  deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
-                  provident."
+                <p class="text-gray-700 mt-5 text-sm ">
+                  <img src="./assets/people-logan.jpg" alt="Customer 6" class="mt-5 h-28 w-28 float-right rounded-full" />
+                <p class="text-gray-700 mt-5 ">Logan Lentz</p>
+                <p class="text-gray-700 text-sm italic">Early Adopter</p>
                 </p>
-                <img src="https://picsum.photos/200" alt="Customer 6" class="mt-5 float-right rounded-full" />
               </div>
             </div>
           </div>
@@ -812,7 +801,6 @@ listener.on('person', (key) => {
     </div>
   </section>
 
-  <!-- Features Heading -->
 
   <!-- Footer -->
   <footer class="fireproof py-5 mt-12">
@@ -873,6 +861,82 @@ listener.on('person', (key) => {
     input.value = ""
     fetch(scriptURL, { method: 'POST', body: requestBody, mode: 'no-cors' })
   })
+
+
+
+
+  // // The debounce function receives our function as a parameter
+  // const debounce = (fn) => {
+  //   // This holds the requestAnimationFrame reference, so we can cancel it if we wish
+  //   let frame;
+  //   // The debounce function returns a new function that can receive a variable number of arguments
+  //   return (...params) => {
+  //     // If the frame variable has been defined, clear it now, and queue for next frame
+  //     if (frame) { cancelAnimationFrame(frame); }
+  //     // Queue our function call for the next frame
+  //     frame = requestAnimationFrame(() => {
+  //       // Call our function and pass any params we received
+  //       fn(...params);
+  //     });
+  //   }
+  // };
+
+
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const cubeElement = document.getElementById("cube");
+    let isPaused = false;
+    function handleClick(event) {
+      if (isPaused) {
+        cubeElement.style.animationPlayState = "running";
+      } else {
+        cubeElement.style.animationPlayState = "paused";
+      }
+      isPaused = !isPaused;
+    }
+
+    setInterval(() => {
+      cubeElement.removeEventListener('click', handleClick);
+      cubeElement.addEventListener('click', handleClick);
+    }, 500);
+
+    cubeElement.style.animationPlayState = "running";
+
+    //   console.log('setup cube', cubeElement)
+    //   let isDragging = false;
+    //   let startPosition = 0;
+    //   let currentPosition = 0;
+
+    //   cubeElement.addEventListener('pointerdown', (event) => {
+    //     isDragging = true;
+    //     startPosition = event.clientX;
+    //   });
+
+    //   cubeElement.addEventListener('pointermove', (event) => {
+    //     if (isDragging) {
+    //       currentPosition = event.clientX;
+    //       const delta = currentPosition - startPosition;
+    //       const pathLength = 200; // the length of the animation path in pixels
+    //       const positionPercentage = delta / pathLength * 100;
+    //       const newPosition = Math.min(Math.max(positionPercentage, 0), 100); // limit position to 0-100
+    //       console.log('newPosition', newPosition)
+    //       cubeElement.style.setProperty('--path-position', `${newPosition}%`);
+    //     }
+  });
+
+
+  //   cubeElement.addEventListener('pointerup', () => {
+  //     isDragging = false;
+  //   });
+
+
+
+  // });
+
+
+
 </script>
 
 </html>
