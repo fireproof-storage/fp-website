@@ -241,6 +241,14 @@
       animation-play-state: paused;
     }
 
+    @media not all and (min-resolution:.001dpcm) {
+      @media {
+        html #cube {
+          transform-origin: center;
+        }
+      }
+    }
+
     .face .bg-white {
       min-height: 100%;
     }
@@ -328,6 +336,7 @@
     body {
       overflow-x: hidden;
     }
+
     body {
       position: relative
     }
@@ -495,8 +504,8 @@ const doc = await fireproof.get(ok.id)
 await index.query({ range: [41, 44] })
 </code></pre>
               <p class="mt-2 text-center text-gray-900">Query JSON data with any structure.</p>
-              </div>
-              </div>
+            </div>
+            </div>
         </div>
 
         <div class="w-full xl:w-1/2 p-5">
@@ -534,9 +543,9 @@ await index.query({ range: [41, 44] })
 const database = Fireproof.snapshot(clock)
 </code></pre>
               <p class="mt-2 text-center text-gray-900">Add undo to your app! Jump to any point in history.</p>
-              </div>
-              </div>
-              </div>
+            </div>
+            </div>
+            </div>
       </div>
 
       <!-- Feature 3 -->
@@ -555,8 +564,8 @@ listener.on('person', (key) => {
 })
 </code></pre>
               <p class="mt-2 text-center text-gray-900">Repaint your UI when data changes.</p>
-              </div>
-              </div>
+            </div>
+            </div>
         </div>
         <div class="w-full xl:w-1/2 p-5">
           <h3 class="text-lg font-bold mb-3 text-gray-700">Real-time Updates</h3>
@@ -598,7 +607,7 @@ listener.on('person', (key) => {
 })
 </code></pre>
               <p class="mt-2 text-center text-gray-900">UCAN delegation so you are only limited by your imagination.</p>
-              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -621,7 +630,7 @@ listener.on('person', (key) => {
              `--------'
 </code></pre>
               <p class="mt-2 text-center text-gray-900">Your data is out of this world!</p>
-              </div>
+            </div>
           </div>
         </div>
         <div class="w-full xl:w-1/2 p-5">
@@ -671,7 +680,7 @@ listener.on('person', (key) => {
               <p class="mt-2 text-center text-gray-900">
                 Reduce costs and increase trust with cryptographic verifiability.
               </p>
-              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -725,7 +734,8 @@ listener.on('person', (key) => {
                 <p class="mt-5 text-sm strong">J. Chris Anderson</p>
                 <img src="./assets/people-jchris.jpg" alt="Customer 1" class="mt-5 h-24 w-24 float-right rounded-full" />
                 <p class="mt-5 text-xs italic ">
-                  Fireproof creator, previously co-founded <a href="https://www.couchbase.com">Couchbase</a>. Building distributed
+                  Fireproof creator, previously co-founded <a href="https://www.couchbase.com">Couchbase</a>. Building
+                  distributed
                   databases since 2009.
                 </p>
               </div>
@@ -795,7 +805,7 @@ listener.on('person', (key) => {
                   <img src="./assets/people-mikeal.jpg" alt="Customer 6" class="mt-5 h-28 w-28 float-right rounded-full" />
                   <p class="text-gray-700 text-sm strong mt-5 ">Mikeal Rogers</p>
                   <p class="text-gray-700 text-sm italic">Advisor</p>
-                  <p class="text-gray-700 text-sm italic">Creator of NodeConf, request, and <a href="https://ipld.io">IPLD</a></p>
+                <p class="text-gray-700 text-sm italic">Creator of NodeConf, request, and <a href="https://ipld.io">IPLD</a></p>
                 </p>
               </div>
             </div>
