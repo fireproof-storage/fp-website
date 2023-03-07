@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="./flame.svg" />
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-  <meta name="viewport" content="width=1024">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <meta name="viewport" content="width=1024"> -->
   <meta property="og:image" content="https://fireproof.storage/card.png">
   <meta property="og:image:secure_url" content="https://fireproof.storage/card.png">
   <meta property="og:image:type" content="image/png">
@@ -361,8 +361,8 @@
   <section class="bg-white py-16 my-hero">
     <div class="container mx-auto px-5 relative">
       <!-- <h1 class="text-3xl gray-800 font-bold mb-5" style="width: 40px; float: left">Light up your data.</h1> -->
-      <div class="flex items-center justify-center">
-        <div class="w-1/3 pl-5">
+      <div class="sm:flex items-center justify-center">
+        <div class="w-4/5 sm:w-1/3 sm:pl-5 ml-5 sm:ml-0 sm:pt-0 pt-32">
           <!-- Code Sample -->
           <div class="code-sample">
             <div class="bg-gray-200 p-5 rounded">
@@ -480,7 +480,7 @@ const doc = await fireproof.get(ok.id)
 
       <!-- Feature 1 -->
       <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10 mx-10 lg:mx-20 ">
-        <div class="w-full md:w-1/2 flex items-center justify-center">
+        <div class="w-full xl:w-1/2 flex items-center justify-center">
           <!-- Code Sample -->
           <div class="code-sample">
             <div class="bg-gray-200 p-5 rounded px-4">
@@ -497,7 +497,7 @@ await index.query({ range: [41, 44] })
           </div>
         </div>
 
-        <div class="w-full md:w-2/5 p-5">
+        <div class="w-full xl:w-1/2 p-5">
           <h3 class="text-lg font-bold mb-3 text-gray-700">Flexible Data</h3>
           <p class="text-sm text-gray-700 mb-5">
             Access your JSON data from any app or website with a simple put, get, and delete interface. Embed, index,
@@ -510,7 +510,7 @@ await index.query({ range: [41, 44] })
 
       <!-- Feature 2 -->
       <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10">
-        <div class="w-full md:w-1/2 p-5">
+        <div class="w-full xl:w-1/2 p-5">
           <h3 class="text-lg font-bold mb-3 text-gray-700">Immutable History</h3>
           <p class="text-sm text-gray-700 mb-5">
             MVCC versioning and Merkle causal history tracking ensure that you can always recover the desired version
@@ -521,7 +521,7 @@ await index.query({ range: [41, 44] })
             and making Fireproof ideal for smart contract and other trustless applications.
           </p>
         </div>
-        <div class="w-full md:w-1/2 flex items-center justify-center">
+        <div class="w-full xl:w-1/2 flex items-center justify-center">
           <!-- Code Sample -->
           <div class="code-sample">
             <div class="bg-gray-200 p-5 rounded px-4">
@@ -539,7 +539,7 @@ const database = Fireproof.snapshot(clock)
 
       <!-- Feature 3 -->
       <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10 mx-10 lg:mx-20">
-        <div class="w-full md:w-1/2 flex items-center justify-center">
+        <div class="w-full xl:w-1/2 flex items-center justify-center">
           <!-- Code Sample -->
           <div class="code-sample">
             <div class="bg-gray-200 p-5 rounded px-4">
@@ -556,7 +556,7 @@ listener.on('person', (key) => {
             <p class="mt-2 text-center text-gray-900">Repaint your UI when data changes.</p>
           </div>
         </div>
-        <div class="w-full md:w-1/2 p-5">
+        <div class="w-full xl:w-1/2 p-5">
           <h3 class="text-lg font-bold mb-3 text-gray-700">Real-time Updates</h3>
           <p class="text-sm text-gray-700 mb-5">
             Get instant notifications of changes to your data, with real-time updates synced across all devices and
@@ -570,7 +570,7 @@ listener.on('person', (key) => {
 
       <!-- Feature 4 -->
       <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10">
-        <div class="w-full md:w-1/2 p-5">
+        <div class="w-full xl:w-1/2 p-5">
           <h3 class="text-lg font-bold mb-3 text-gray-700">Self-sovereign Identity</h3>
           <p class="text-sm text-gray-700 mb-5">
             With self-sovereign identity users have full control over their personal data and identity, without
@@ -581,7 +581,7 @@ listener.on('person', (key) => {
             data.
           </p>
         </div>
-        <div class="w-full md:w-1/2 flex items-center justify-center">
+        <div class="w-full xl:w-1/2 flex items-center justify-center">
           <!-- Code Sample -->
           <div class="code-sample">
             <div class="bg-gray-200 p-5 rounded px-4">
@@ -591,7 +591,7 @@ listener.on('person', (key) => {
   audience: bob.principal,
   capabilities: [{
       can: 'clock/advance',
-      with: `file://${alice.did()}/friends/${bob.did()}/`,
+      with: `${alice.did()}/${bob.did()}/`,
     }]
 })
 </code></pre>
@@ -603,7 +603,7 @@ listener.on('person', (key) => {
 
       <!-- Feature 5 -->
       <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10 mx-10 lg:mx-20">
-        <div class="w-full md:w-1/2 flex items-center justify-center">
+        <div class="w-full xl:w-1/2 flex items-center justify-center">
           <!-- Code Sample -->
           <div class="code-sample">
             <div class="bg-gray-200 p-5 rounded px-4">
@@ -622,7 +622,7 @@ listener.on('person', (key) => {
             <p class="mt-2 text-center text-gray-900">Your data is out of this world!</p>
           </div>
         </div>
-        <div class="w-full md:w-1/2 p-5">
+        <div class="w-full xl:w-1/2 p-5">
           <h3 class="text-lg font-bold mb-3 text-gray-700">Automatic Replication</h3>
           <p class="text-sm text-gray-700 mb-5">
             Syncing state is <strong>as easy as sending a link</strong> to the latest database head and Fireproof will
@@ -637,7 +637,7 @@ listener.on('person', (key) => {
 
       <!-- Feature 6 -->
       <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10">
-        <div class="w-full md:w-1/2 p-5">
+        <div class="w-full xl:w-1/2 p-5">
           <h3 class="text-lg font-bold mb-3 text-gray-700">Cryptographic Proofs</h3>
           <p class="text-sm text-gray-700 mb-5">
             UCAN cryptographic proof chains link updates to authorized agents, ensuring data security and integrity.
@@ -648,7 +648,7 @@ listener.on('person', (key) => {
             by allowing for cryptographic verification of changes.
           </p>
         </div>
-        <div class="w-full md:w-1/2 flex items-center justify-center">
+        <div class="w-full xl:w-1/2 flex items-center justify-center">
           <!-- Code Sample -->
           <div class="code-sample">
             <div class="bg-gray-200 p-5 rounded px-4">
@@ -722,7 +722,7 @@ listener.on('person', (key) => {
               <div>
                 <p class="text-gray-700 mt-5 text-sm strong">Creator</p>
                 <p class="text-gray-700 mt-5 text-sm italic">
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                  J. Chris Anderson
                 </p>
                 <img src="https://picsum.photos/200" alt="Customer 1" class="mt-5 float-right rounded-full" />
               </div>
