@@ -344,13 +344,13 @@
         <li class="mr-8">
           <a href="/docs/">Documentation</a>
         </li>
-        <li class="mr-8">
+        <!-- <li class="mr-8">
           <a href="#">Pricing</a>
-        </li>
-        <li class="mr-8">
+        </li> -->
+        <!-- <li class="mr-8">
           <a href="#" class="px-4 py-2 fireproof text-white font-medium rounded-lg outline focus:outline-none">
             Get Started Free</a>
-        </li>
+        </li> -->
       </ul>
     </nav>
   </header>
@@ -654,19 +654,16 @@ listener.on('person', (key) => {
             <div class="bg-gray-200 p-5 rounded px-4">
               <pre class="text-xs bg-gray-800 p-5 rounded" contenteditable="true">
 <code class="language-javascript">{
-  "aud": "did:key:z6MkfQhLHBSFMuR7bQXTQeqe5kYUW51HpfZeaymgy1zkP2jM",
+  "aud": "did:key:z6MkfQhLHBSi...xpfZeaymgy1zkP2jM",
   "att": [{
       "with": "wnfs://demouser.fission.name/public/photos/",
       "can": "wnfs/OVERWRITE"
-    },{
-      "with": "wnfs://demouser.fission.name/public/notes/",
-      "can": "wnfs/OVERWRITE"
     }],
   "exp": 9256939505,
-  "iss": "did:key:z6Mkr5aefin1DzjG7MBJ3nsFCsnvHKEvTb2C4YAJwbxt1jFS",
+  "iss": "did:key:z6Mkr5aefini...xb2C4YAJwbxt1jFS",
   "prf": [
-    "eyJhbGciOiJFZERTQSIsI...xZ7WeYVAIATDl8EmcOKj9OqOSw0Vg8VCA",
-    "eyJhbGciOiJFZERTQSIsI...xZ7WeYVAIATDl8EmcOKj9OqOSw0Vg8VCA"
+    "JQSIseyJhbGcIiOi...xZ7OqOSw0Vg8VCAWEmcO",
+    "eyJhbGciOiJTQSsI...xZ7WeYV9OqOSw0Vg8VCA"
   ]
 }</code></pre>
             </div>
@@ -685,11 +682,11 @@ listener.on('person', (key) => {
     <div class="container mx-auto px-5">
       <div class="bg-gray-800 p-16 rounded-lg w-full mx-auto">
         <h2 class="text-2xl font-bold mb-5 text-center text-white">Experience the Developer Console</h2>
-        <form class="flex m-10 items-center justify-center">
-          <input type="email" class="bg-white p-4 text-gray-900 rounded mr-5 w-64"
+        <form id="early-access" class="flex m-10 items-center justify-center">
+          <input type="email" class="bg-white p-4 text-gray-900 rounded mr-5 w-64" name="email"
             placeholder="Enter your email address here" />
           <button class="p-4 fireproof text-white font-medium rounded-lg outline focus:outline-none">
-            Get Started Today
+            Request Early Access
           </button>
         </form>
         <p class="mt-10 text-center text-xl">
@@ -852,6 +849,21 @@ listener.on('person', (key) => {
       })
   })
   Prism.highlightAll()
+
+  const form = document.querySelector("#early-access")
+  const submitButton = document.querySelector("#early-access button")
+  const input = document.querySelector("#early-access input")
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzZzco1OiDSs-Hj7Ru7Rr829KSC32NT4Org9mygIWVSdWnmgLRoNFGR-1P0nxDWblUAYQ/exec'
+  form.addEventListener('submit', e => {
+    submitButton.classList.add('cursor-not-allowed');
+    submitButton.classList.remove('fireproof');
+    submitButton.disabled = true
+    e.preventDefault()
+    let requestBody = new FormData(form)
+    input.placeholder = "Thanks!"
+    input.value = ""
+    fetch(scriptURL, { method: 'POST', body: requestBody, mode: 'no-cors' })
+  })
 </script>
 
 </html>
