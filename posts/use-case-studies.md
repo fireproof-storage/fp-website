@@ -1,6 +1,7 @@
 ---
 title: Great opportunites to use Fireproof
 author: J Chris Anderson
+date: 2023-03-20
 metaDescription: There are many easy ways to start contributing to Fireproof
 summary: Verifiable data makes so many use-cases more relaxing.
 tags:

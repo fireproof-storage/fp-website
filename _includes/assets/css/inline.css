@@ -363,7 +363,7 @@ article .byline {
   text-align: right;
 }
 
-.tags a {
+article a {
   text-decoration: underline;
 }
 .buzzwords li {
