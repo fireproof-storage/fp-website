@@ -21,7 +21,7 @@ Cryptographic content identifiers (CIDs) enable developers to reference AI model
 
 If you need to quickly and securely check if a small piece of data is part of a larger set, [consistent hash (Merkle) trees](https://en.wikipedia.org/wiki/Merkle_tree) offer an efficient solution. Merkle hash trees make it easy to check if a small piece of data is part of a bigger set, and they do this quickly and securely. Imagine a tree where each leaf is a small chunk of data. You can create a unique fingerprint, or hash, for each chunk. Then, combine pairs of fingerprints and create a new hash for each pair. Keep doing this until you reach the root, creating a single hash that represents the whole tree. This root hash is like a summary of all the data in the tree. Anyone who has the root hash can validate if their copy of the entire tree is untampered with -- any changes and the root hash won't match.
 
-![A Merkle consistent hash tree](/static/img/screen-shot-2023-03-20-at-3.52.32-pm.png "Merkle tree figure from Wikipedia")
+[![A Merkle consistent hash tree](/static/img/screen-shot-2023-03-20-at-3.52.32-pm.png "Merkle tree figure from Wikipedia")](https://en.wikipedia.org/wiki/Merkle_tree)
 
 Now, let's say you want to check if a small piece of data is part of this big set. You don't need the whole tree—just the fingerprints you used to create the top hash. With only a few of these, you can recreate the top hash and confirm that the data is part of the set. This is super useful in AI because it speeds up tasks like analyzing data and making decisions. Plus, it's perfect for areas where you need quick, accurate results, like healthcare and cybersecurity. Merkle hash trees help make AI solutions more reliable, secure, and efficient, allowing AI workloads to be used in situations where trust and accountability are paramount.
 
@@ -35,7 +35,7 @@ When a piece of data is requested by a program, it goes through multiple layers 
 
 The same concept of caching and integrity checking applies to data requests across a network. Starting at the fast, local cache in a user's browser, the system verifies the data's integrity before moving on to the next layer. If the data is not found in the local cache, the request continues to the network cache layers, such as HTTP caches, Memcached, or server filesystem caches. At each stage, integrity checks are performed to ensure that the data is accurate and has not been tampered with. This layered approach to caching and integrity checks allows for quick, efficient, and reliable data retrieval in both single-machine and networked environments.
 
-![Proofs are integral for compute acceleration.](/static/img/computermemoryhierarchy.png " Figure is from a great article on computer memory speeds.")
+[![Proofs are integral for compute acceleration.](/static/img/computermemoryhierarchy.png " Figure is from a great article on computer memory speeds.")](https://www.microcontrollertips.com/the-complexities-of-cache/)
 
 Proofs play a critical role in these network requests as well. When a secure connection is established between your computer and a website, a handshake process verifies the website's identity before creating a secret communication channel. The secure connection is the easy part, but how do you decide if it's really them?
 
