@@ -18,7 +18,7 @@
 
 			{% if doc.data.tags %}
 				<p class="tags">Tagged: 
-    			{% for tag in post.data.tags %}
+    			{% for tag in doc.data.tags %}
 						{%- if tag != "post" -%}
 							{% set tagUrl %}/tags/{{ tag }}/{% endset %}
 							<a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
