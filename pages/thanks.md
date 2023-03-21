@@ -6,8 +6,8 @@ section: thanks
 date: 2023-03-17
 permalink: /thanks/index.html
 eleventyNavigation:
-  key: Thanks
-  order: 2
+  key: Community
+  order: 3
 ---
 ### J Chris Anderson
 Founder

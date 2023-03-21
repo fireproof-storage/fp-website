@@ -360,3 +360,6 @@ article .byline {
 .tags a {
   text-decoration: underline;
 }
+.buzzwords li {
+  padding-top: 0.75em;
+}
