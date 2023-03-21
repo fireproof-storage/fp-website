@@ -3,9 +3,10 @@ title: External Indexers
 metaDescription: Connect a domain specific indexer
 summary: Connect a domain specific indexer like a full text engine or image classifier
 tags:
-  - MVCC
-  - Transactions
-  - Snapshots
+  - Index
+  - Query
+  - Fulltext
+  - GraphQL
 ---
 Fireproof is designed to make indexing in external indexers efficient and seamless. Each database tracks it's change history and provides a feed of changes since any clock. If you don't provide a clock, you'll get all changes. Each change includes it's clock, so if you keep track of a high water mark, you can safely restart your indexing process and know you aren't missing any updates.
 
@@ -64,3 +65,13 @@ The `search` method takes two arguments: the query string and an optional `optio
 The `withFlexsearch` function creates a Flexsearch index object and keeps it updated with changes to the Fireproof database. It does this by listening to changes in the database and adding or removing documents from the index as needed.
 
 The `search` method simply searches the Flexsearch index for documents that match the given query string. Because the index is always up-to-date with the database, searches are fast and accurate.
+
+## Connection to GraphQL
+
+The technique used in `withFlexsearch` for adding search functionality to a Fireproof database could also be used for connecting to a GraphQL query index. Instead of using Flexsearch to index the data, you would use a GraphQL query index such as Elasticsearch or Apollo Studio.
+
+To implement this, you would need to create a new function, similar to `withFlexsearch`, that listens to changes in the Fireproof database and updates the GraphQL index accordingly. This function could be called `withGraphQL`.
+
+Similar to withFlexsearch, `withGraphQL` would take a Fireproof database object as its first argument and an optional configuration object as its second argument. The returned object would contain a single method, `query`, which could be used to perform GraphQL queries on the indexed data.
+
+To ensure that the GraphQL index is always up-to-date with the Fireproof database, you would need to listen to changes in the database and update the index with any new data. This can be done by copying the `changesSince` code from `withFlexsearch`. Once the data has been indexed, you can use GraphQL to query it. Because the index is always up-to-date with the Fireproof database, you can be sure that your queries will return accurate results.
