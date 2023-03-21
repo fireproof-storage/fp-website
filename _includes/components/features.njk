@@ -1,0 +1,212 @@
+<!-- Features Grid -->
+<section class="feature-grid pt-10 px-4 sm:px-10 lg:px-32">
+  <div class="container mx-auto px-5 text-gray-400">
+    <h2 class="text-4xl font-bold mb-12 text-center">Database Features</h2>
+
+    <div class="flex items-center mb-12">
+      <div class="relative">
+        <div class="absolute top-0 left-0 w-full h-full rounded blurbblur"></div>
+        <p class="z-10 relative text-xl">
+          <strong>Fireproof</strong> is local-first software, operating directly in the browser and automatically
+            synchronizing with the distributed IPFS storage network. It uses verifiable operations and encrypted,
+            immutable data — making it more reliable than the cloud.
+          </p>
+      </div>
+    </div>
+
+    <!-- Feature 1 -->
+    <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10 mx-4 sm:mx-4 sm:mx-10 lg:mx-20 ">
+      <div class="w-full xl:w-1/2 flex items-center justify-center">
+        <!-- Code Sample -->
+        <div class="code-sample">
+          <div class="bg-gray-200 p-5 rounded px-4">
+            <pre class="text-xs bg-gray-800 p-5 rounded">
+<code class="language-javascript">new Index(database, function (doc, map) {
+  if (doc.type === 'person') {
+    map(doc.age, doc)
+  }
+})
+await index.query({ range: [41, 44] })
+</code></pre>
+            <p class="mt-2 text-center text-gray-900">Query JSON data with any structure.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full xl:w-1/2 p-5">
+        <h3 class="text-lg font-bold mb-3 text-gray-700">Flexible Data</h3>
+        <p class="text-sm text-gray-700 mb-5">
+            Access your JSON data from any app or website with a simple put, get, and delete interface. Embed, index,
+            and organize files of any size using IPFS links. Handle <strong>data variety and schema drift</strong> by
+            writing JavaScript functions to define indexes, making it easy to normalize data and simplify indexing and
+            searching. Queries run locally, making Fireproof faster than any cloud database.
+          </p>
+      </div>
+    </div>
+
+    <!-- Feature 2 -->
+    <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10">
+      <div class="w-full xl:w-1/2 p-5">
+        <h3 class="text-lg font-bold mb-3 text-gray-700">Immutable History</h3>
+        <p class="text-sm text-gray-700 mb-5">
+            MVCC versioning and Merkle causal history tracking ensure that you can always recover the desired version
+            of your data, and <strong>query a stable snapshot</strong> of the database. Immutable data structures
+            simplify replication and improve performance, while enabling roll back to old data whenever needed, giving
+            you peace of mind knowing your data is secure. Merkle clocks and hash trees are used to provide lossless
+            merging and immutable and self-validating data structures, making replicating changes safe and efficient,
+            and making Fireproof ideal for smart contract and other trustless applications.
+          </p>
+      </div>
+      <div class="w-full xl:w-1/2 flex items-center justify-center">
+        <!-- Code Sample -->
+        <div class="code-sample">
+          <div class="bg-gray-200 p-5 rounded px-4">
+            <pre class="text-xs bg-gray-800 p-5 rounded">
+<code class="language-javascript">const clock = JSON.stringify(fireproof.clock)
+// '["bafy...inmu"]'
+
+const database = Fireproof.snapshot(clock)
+</code></pre>
+            <p class="mt-2 text-center text-gray-900">Add undo to your app! Jump to any point in history.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 3 -->
+    <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10 mx-4 sm:mx-10 lg:mx-20">
+      <div class="w-full xl:w-1/2 flex items-center justify-center">
+        <!-- Code Sample -->
+        <div class="code-sample">
+          <div class="bg-gray-200 p-5 rounded px-4">
+            <pre class="text-xs bg-gray-800 p-5 rounded">
+<code class="language-javascript">new Listener(fireproof, (doc, emit) => {
+  if (doc.name) { emit('person') }
+})
+
+listener.on('person', (key) => {
+  console.log('Person event:', key)
+})
+</code></pre>
+            <p class="mt-2 text-center text-gray-900">Repaint your UI when data changes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w-full xl:w-1/2 p-5">
+        <h3 class="text-lg font-bold mb-3 text-gray-700">Real-time Updates</h3>
+        <p class="text-sm text-gray-700 mb-5">
+            Get instant notifications of changes to your data, with real-time updates synced across all devices and
+            apps. Fireproof uses a combination of WebRTC and IPFS to provide fast and efficient real-time updates,
+            giving you real-time access to your data without the need for constant polling or manual refresh. Whether
+            you're building an online collaboration tool, a real-time dashboard, or just want to
+            <strong>keep your UI up-to-date</strong> in real-time, Fireproof has you covered.
+          </p>
+      </div>
+    </div>
+
+    <!-- Feature 4 -->
+    <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10">
+      <div class="w-full xl:w-1/2 p-5">
+        <h3 class="text-lg font-bold mb-3 text-gray-700">Self-sovereign Identity</h3>
+        <p class="text-sm text-gray-700 mb-5">
+            With self-sovereign identity users have full control over their personal data and identity, without
+            relying on a central authority. This enables new business models and the creation of apps that serve users
+            first. Fireproof's self-sovereign identity solution is <strong>built on industry standards</strong> such
+            as Decentralized Identifiers (DIDs) and UCAN. Users can choose to use Fireproof storage services or store
+            data with other backends such as web3.storage, further ensuring the security and sovereignty of their
+            data.
+          </p>
+      </div>
+      <div class="w-full xl:w-1/2 flex items-center justify-center">
+        <!-- Code Sample -->
+        <div class="code-sample">
+          <div class="bg-gray-200 p-5 rounded px-4">
+            <pre class="text-xs bg-gray-800 p-5 rounded">
+<code class="language-javascript">const proof = await Client.delegate({
+  issuer: alice,
+  audience: bob.principal,
+  capabilities: [{
+      can: 'clock/advance',
+      with: `${alice.did()}/${bob.did()}/`,
+    }]
+})
+</code></pre>
+            <p class="mt-2 text-center text-gray-900">UCAN delegation so you are only limited by your imagination.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 5 -->
+    <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10 mx-4 sm:mx-10 lg:mx-20">
+      <div class="w-full xl:w-1/2 flex items-center justify-center">
+        <!-- Code Sample -->
+        <div class="code-sample">
+          <div class="bg-gray-200 p-5 rounded px-4">
+            <pre class="text-xs bg-gray-800 p-5 rounded">
+    <code class="language-ascii">
+                                  ____
+                        __...---~'    `~~~----...__
+                     _===============================
+,----------------._/'      `---..._______...---'
+(_______________||_) . .  ,--'
+    /    /.---'         `/
+   '--------_- - - - - _/
+             `--------'
+</code></pre>
+              <p class="mt-2 text-center text-gray-900">Your data is out of this world!</p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full xl:w-1/2 p-5">
+          <h3 class="text-lg font-bold mb-3 text-gray-700">Automatic Replication</h3>
+          <p class="text-sm text-gray-700 mb-5">
+            Syncing state is <strong>as easy as sending a link</strong> to the latest database head and Fireproof will
+            handle the rest, ensuring your data is always up-to-date and accessible from any device or browser.
+            Whether you're working from your desktop, laptop, or mobile device, Fireproof ensures that your data is
+            always up-to-date and accessible. Documents changes are persisted to Filecoin via web3.storage and made
+            available over IPFS and a global content delivery network. With automatic replication, you never have to
+            worry about losing important information or manually transferring data between devices.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="flex flex-wrap justify-around bg-white p-5 rounded mb-10">
+        <div class="w-full xl:w-1/2 p-5">
+          <h3 class="text-lg font-bold mb-3 text-gray-700">Cryptographic Proofs</h3>
+          <p class="text-sm text-gray-700 mb-5">
+            UCAN cryptographic proof chains link updates to authorized agents, ensuring data security and integrity.
+            Portable, signed proofs <strong>eliminate the need for secret bearer tokens</strong>. Transactions are
+            functional transforms of hash-linked graphs, ensuring data consistency across nodes. Each transaction is a
+            unique immutable hash, enabling efficient data sharing. Cryptographic proofs available for all operations
+            make Fireproof ideal for smart contracts and trustless environments. Proof chains also improve performance
+            by allowing for cryptographic verification of changes.
+          </p>
+        </div>
+        <div class="w-full xl:w-1/2 flex items-center justify-center">
+          <!-- Code Sample -->
+          <div class="code-sample">
+            <div class="bg-gray-200 p-5 rounded px-4">
+              <pre class="text-xs bg-gray-800 p-5 rounded">
+<code class="language-javascript">{
+  "aud": "did:key:z6MkfQhLHBSi...xpfZeaymgy1zkP2jM",
+  "att": [{
+      "with": "wnfs://demouser.fission.name/public/photos/",
+      "can": "wnfs/OVERWRITE"
+    }],
+  "exp": 9256939505,
+  "iss": "did:key:z6Mkr5aefini...xb2C4YAJwbxt1jFS",
+  "prf": [
+    "JQSIseyJhbGcIiOi...xZ7OqOSw0Vg8VCAWEmcO",
+    "eyJhbGciOiJTQSsI...xZ7WeYV9OqOSw0Vg8VCA"
+  ]
+}</code></pre>
+            <p class="mt-2 text-center text-gray-900">
+                Reduce costs and increase trust with cryptographic verifiability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

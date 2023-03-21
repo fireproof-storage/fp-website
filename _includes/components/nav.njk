@@ -1,0 +1,18 @@
+<!-- Menu -->
+<a href="/">
+  <img src="{{ '/static/img/logo-animated.svg' | url }}" alt="Fireproof Logo" style="height: 64px; width: auto"/>
+</a>
+<nav class="nav-menu">
+  {% set navPages = collections.all | eleventyNavigation %}
+  <ul class="flex">
+    {%- for entry in navPages %}
+      <li class="mr-6">
+        <a href="{{ entry.url | url }}"{% if entry.url == page.url %} data-current="current item"{% endif %}>{{ entry.title }}</a>
+      </li>
+    {%- endfor %}
+    <li class="mr-8">
+      <a href="https://buy.stripe.com/test_14k2b7bTL3132oU6op" class="px-4 py-2 fireproof text-white font-medium rounded-lg outline focus:outline-none">
+            Access</a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,39 @@
+<!-- Hero -->
+<img src="./static/img/lightup-big5.png" alt="Light up your data."
+    style="height: 200px; width: auto; left: 1rem; position: absolute; transform: rotate(-5deg)"/>
+<section class="bg-white py-16 my-hero">
+  <div class="container mx-auto px-5 relative">
+    <!-- <h1 class="text-3xl gray-800 font-bold mb-5" style="width: 40px; float: left">Light up your data.</h1> -->
+    <div class="sm:flex items-center justify-center">
+      <div class="w-11/12 sm:w-2/3 xl:w-2/5 sm:pl-5 ml-5 sm:ml-0 sm:pt-0 pt-32">
+        <!-- Code Sample -->
+        <div class="code-sample">
+          <div class="bg-gray-200 p-5 rounded">
+            <pre class="text-xs bg-gray-800 p-5 rounded">
+<code class="language-javascript">import { Fireproof } from '@fireproof/core'
+
+const database = Fireproof.storage("my-todos");
+const ok = await database.put({
+    type: 'todo',
+    title: 'try the useFireproof() hook',
+    completed: false
+});
+
+const doc = await database.get(ok.id);
+console.log(doc.type, doc.completed); // 'todo', false
+</code></pre>
+            <!-- <button class="bg-gray-800 text-white p-2 rounded mt-2 shadow">Run</button> -->
+          </div>
+          <p class="mt-2 text-center text-gray-900">Quickly add dynamic data to any app or page.</p>
+        </div>
+      </div>
+
+      <div class="w-2/5 sm:pl-20 mt-12 sm:mt-0">
+        <!-- Embedded App -->
+        <div class="bg-gray-300 rounded p-5 code-app">
+          <iframe src="./demo/" frameborder="0" class="w-full" style="height: 512px !important"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

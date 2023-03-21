@@ -1,0 +1,41 @@
+<!-- Footer -->
+<footer class="fireproof py-5 mt-12">
+  <div class="container mx-auto px-5">
+    <ul class="flex">
+          {% set navPages = collections.all | eleventyNavigation %}
+
+      <li class="mr-6">
+        <a href="https://twitter.com/FireproofStorge">Twitter</a>
+      </li>
+      <li class="mr-6">
+        <a href="https://github.com/fireproof-storage/fireproof">GitHub</a>
+      </li>
+      <!-- <li class="mr-6">
+            <a href="#">TikTok</a>
+          </li>
+          <li class="mr-6">
+            <a href="#">Discord</a>
+          </li>
+          <li class="mr-6">
+            <a href="#">Stack Overflow</a>
+          </li> -->
+                {%- for entry in navPages %}
+        <li class="mr-6">
+          <a href="{{ entry.url | url }}"{% if entry.url == page.url %} data-current="current item"{% endif %}>{{ entry.title }}</a>
+        </li>
+      {%- endfor %}
+
+    </ul>
+
+<!-- Menu -->
+
+
+
+
+    <h1 class="font-bold text-center mt-10 mb-5">
+        Local • Immutable • Distributed <br/>
+        Realtime • Verifiable • Cloudless
+      </h1>
+    <img class="mx-auto py-10" src="/static/img/logo-animated.svg" alt="Fireproof Logo" style="width: 80%"/>
+  </div>
+</footer>

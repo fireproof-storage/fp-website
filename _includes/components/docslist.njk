@@ -1,0 +1,31 @@
+<section>
+	{% for doc in docslist %}
+		<article{% if doc.url == url %} data-current="current item"{% endif %}>
+			<h3>
+				<a href="{{ doc.url | url }}">
+					{% if doc.data.title %}
+						{{ doc.data.title }}
+					{% else %}
+						Untitled
+					{% endif %}
+				</a>
+			</h3>
+			{% if doc.data.summary %}
+				<p>
+					{{ doc.data.summary }}
+				</p>
+			{% endif %}
+
+			{% if doc.data.tags %}
+				<p class="tags">Tagged: 
+    			{% for tag in post.data.tags %}
+						{%- if tag != "post" -%}
+							{% set tagUrl %}/tags/{{ tag }}/{% endset %}
+							<a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+						{%- endif -%}
+					{% endfor %}
+				</p>
+			{% endif %}
+		</article>
+	{% endfor %}
+</section>

@@ -1,0 +1,24 @@
+---
+layout: layouts/default.njk
+section: documentation
+---
+
+
+{{ layoutContent | safe }}
+
+  {% if tags %}
+    <p class="tags">Tagged: 
+    {% for tag in tags %}
+      {%- if tag != "post" -%}
+        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+        <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+      {%- endif -%}
+    {% endfor %}
+    </p>
+  {% endif %}
+
+
+<nav class="px-12 pt-4 pb-10">
+  <a href="{{ '/developer/' | url }}">← more documentation</a>
+</nav>
+
