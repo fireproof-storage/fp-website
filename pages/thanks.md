@@ -2,9 +2,9 @@
 layout: layouts/contact.njk
 title: Background and qualifications
 metaDescription: Discover the expert team committed to reshaping the future of real-time database solutions for React and mobile app developers
-section: team
+section: thanks
 date: 2023-03-17
-permalink: /team/index.html
+permalink: /thanks/index.html
 eleventyNavigation:
   key: Team
   order: 2
