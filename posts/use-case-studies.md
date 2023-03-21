@@ -8,7 +8,7 @@ tags:
   - applications
 ---
 
-From supply chain management to legal data management, Fireproof has a wide range of use cases that can benefit various industries. Cryptographic verifiability ensures the authenticity and integrity of stored data, providing peace of mind for users. In this article, we will explore some of the great opportunities to use Fireproof, including real-world case studies and use cases in different industries.
+From supply chain management to legal data, Fireproof has a wide range of use cases that can benefit various industries. Cryptographic verifiability ensures the authenticity and integrity of stored data, providing peace of mind for users. In this article, we will explore some of the great opportunities to use Fireproof, including real-world case studies and use cases in different industries.
 
 Here are a few ways to use Fireproof:
 
