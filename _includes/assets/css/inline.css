@@ -26,6 +26,12 @@ html pre[class*='language-'] {
   font-size: 0.75rem;
 }
 
+html article.post code[class*='language-'],
+html article.post pre[class*='language-'] {
+  text-shadow: 0 1px #000;
+  font-size: 1rem;
+}
+
 html .feature-grid .code-sample code {
   max-width: 18em;
   /* font-size: 0.5rem; */
