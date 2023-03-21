@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/default.njk
 pagination:
   data: collections.authors
   size: 1
@@ -11,7 +11,6 @@ eleventyComputed:
   metaDescription: "An archive of all posts by the author: {{ author }}."
 ---
 
-<h1>{{ title }}</h1>
 
 <section>
 	{% for post in collections.authors[author] | reverse %}
