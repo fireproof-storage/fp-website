@@ -5,6 +5,8 @@ summary: This React hook handles login and upload.
 tags:
   - React
   - JavaScript
+  - web3.storage
+  - IPFS
 ---
 Allows you to connect to any service that accepts [CAR file uploads.](https://car.ipfs.io) Today [this means web3.storage.](https://web3.storage/docs/how-tos/work-with-car-files/)  Don't worry you don't have to do anything, this is the hardest part.
 
