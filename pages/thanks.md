@@ -38,7 +38,7 @@ Alan Shaw is a London-based web developer with expertise in Node.js and Meteor. 
 
 ### Travis Vachon
 
-Travis Vachon is an experienced software engineer with a passion for open-source development. He is currently involved in various projects related to decentralized technologies, including Fireproof immutable real-time database, and Estuary, a custom IPFS/Filecoin node that simplifies pinning IPFS content and making Filecoin deals. Travis is also a contributor to several other open-source projects, such as Slate, Solid React Components, and clj-turtle. He has expertise in programming languages such as Java, Go, TypeScript, and Clojure and is continuously exploring new technologies to create innovative solutions.
+Travis Vachon is an experienced software engineer with a passion for open-source development. He is currently involved in various projects related to decentralized technologies, including Fireproof immutable real-time databas. Travis is also a contributor to several other open-source projects, such as Slate, Solid React Components, and clj-turtle. He has expertise in programming languages such as Java, Go, TypeScript, and Clojure and is continuously exploring new technologies to create innovative solutions.
 
 ### Meghan Sinnott
 
