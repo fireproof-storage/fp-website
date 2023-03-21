@@ -1,0 +1,24 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+permalink: /tags/{{ tag }}/
+layout: layouts/default.njk
+eleventyComputed:
+  title: "Tagged “{{ tag }}”"
+  metaDescription: "All posts from the Blog tagged with “{{ tag }}”"
+---
+
+
+{% set postslist = collections[tag] %}
+{% include "components/postslist.njk" %}
+
+<nav>
+  <a href="{{ '/blog/' | url }}">← Blog index</a>
+</nav>

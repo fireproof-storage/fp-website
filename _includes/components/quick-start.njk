@@ -1,0 +1,36 @@
+<!-- Quick Start -->
+<section>
+  <div class="container mx-auto mt-24 px-5 text-gray-400">
+    <h2 class="text-4xl font-bold mb-12 text-center">Quick Start</h2>
+
+    <div class="flex flex-wrap justify-around p-5">
+      <div class="w-full  flex items-center justify-center">
+        <!-- Code Sample -->
+        <div class="code-sample">
+          <div class="bg-gray-200 p-5 mb-5 rounded px-4">
+            <pre class="text-xs bg-gray-800 p-5 rounded">
+<code class="language-javascript">// npm install @fireproof/core
+
+import { Fireproof } from '@fireproof/core'
+const fireproof = Fireproof.storage()
+const ok = await fireproof.put({ hello: 'world' })
+const doc = await fireproof.get(ok.id)
+
+// 🤫 window.fireproof = fireproof // for dev</code></pre>
+            <h3 class="mt-2 text-center text-gray-900">Drop this in app.js or app.tsx and go!</h3>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="w-3/5 text-gray-400 py-5">
+        <p class="text-sm mb-5">
+            Adopting tools that prioritize developer exprience
+            has componding effects — increasing your team's expectations of what they can accomplish, while
+            inculcating a habit of continuous improvement.
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

@@ -1,0 +1,11 @@
+---
+layout: layouts/default.njk
+section: documentation
+permalink: /developer/index.html
+---
+
+{{ layoutContent | safe }}
+
+{% set docslist = collections.documentation %}
+{% include "components/docslist.njk" %}
+
