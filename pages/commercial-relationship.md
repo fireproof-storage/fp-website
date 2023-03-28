@@ -9,6 +9,8 @@ eleventyNavigation:
   order: 0
 ---
 
+Fireproof offers priority support services, including proactive monitoring, 24/7 technical support, and a dedicated team of experts. For businesses looking for development services, our network of application developer partners provides access to Fireproof experts, training and support, and innovative tools and services. Our onboarding and installation services help businesses get up and running quickly and efficiently, with optimization of historical data, tuning of queries and workloads, and integration with existing IT systems and security infrastructure. Certified installations ensure a stable snapshot of the code, with access to frequent quality improvements, advanced security features, scalability and performance, automated backups, and 24/7 support.
+
 ### Priority support
 
 Fireproof offers priority support services for enterprise customers, similar to industry standard offerings from leading database vendors. Our priority support provides a dedicated team of experts with deep understanding of your Fireproof environment and activities, and ongoing engagement with your team. We also provide a single point of contact who maintains continuous focus on your account, partnering with you to manage support-related cases, assist in platform and performance management, and unlock developer productivity.

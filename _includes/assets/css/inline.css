@@ -357,6 +357,7 @@ article.post ol {
 article.post ul {
   list-style: disc;
   padding-left: 2rem;
+  margin-bottom: 1rem;
 }
 
 article .byline {
