@@ -1,5 +1,5 @@
 ---
-title: Glossary of cloudless computing
+title:  Cloudless glossary
 metaDescription: 
 summary: Words, terms, and definitions relevant to cloudless
 tags:
