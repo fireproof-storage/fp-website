@@ -15,11 +15,11 @@ Elevate your experience by joining Fireproof Access member for $1 / month. Today
 
 *Thank you early adopters for supporting our successful launch!*
 
-#### Available today:
+#### Available today
 
 * Direct connection with core team and community through the Fireproof Access chat server
 
-#### Coming soon:
+#### Coming soon
 
 * Metered services like index, replicate, monitor, and user management
 * Developer dashboard for monitoring Fireproof databases and tracking query history
