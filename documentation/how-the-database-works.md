@@ -10,7 +10,7 @@ In this article, we will explore how Fireproof works as a decentralized realtime
 
 ### Document Storage and Lookup
 
-Fireproof stores documents using prolly-trees, which a type of B-Tree that allows for efficient replication as the data changes. Each node in the tree contains a list of child nodes, which can be either leaf nodes or internal nodes. Leaf nodes contain the actual data, while internal nodes contain pointers to other nodes in the tree. To retrieve a specific document, Fireproof uses a unique content identifier (CID) that points to the root node of the prolly tree. Once the root node is retrieved, the system can traverse the tree to find the appropriate leaf node containing the desired document.
+Fireproof stores documents using prolly-trees, which are a type of B-Tree that allows for efficient replication as the data changes. This is because no matter what order of operations, the same data ends up with the same physical layout and same Merkle hash root, making sync cheap and fast. Each node in the tree contains a list of child nodes, which can be either leaf nodes or internal nodes. Leaf nodes contain the actual data, while internal nodes contain pointers to other nodes in the tree. To retrieve a specific document, Fireproof uses a unique content identifier (CID) that points to the root node of the prolly tree. Once the root node is retrieved, the system can traverse the tree to find the appropriate leaf node containing the desired document.
 
 ![Fireproof architecture](/static/img/architecture.png)
 
