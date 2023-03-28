@@ -1,5 +1,5 @@
 <section>
-	{% for doc in docslist %}
+	{% for doc in docslist | reverse %}
 		<article{% if doc.url == url %} data-current="current item"{% endif %}>
 			<h3>
 				<a href="{{ doc.url | url }}">
