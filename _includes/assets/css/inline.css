@@ -369,3 +369,8 @@ article a {
 .buzzwords li {
   padding-top: 0.75em;
 }
+
+form[name=contact] input, form[name=contact] textarea {
+  margin: 0.5em 0;
+  padding: 4px;
+}

@@ -1,5 +1,4 @@
 ---
-layout: layouts/contact.njk
 title: Background and qualifications
 metaDescription: Discover the expert team committed to reshaping the future of real-time database solutions for React and mobile app developers
 section: thanks
