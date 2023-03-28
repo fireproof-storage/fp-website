@@ -21,6 +21,10 @@ Fireproof Access includes:
 * Metered services like index, replicate, monitor, and user management (coming soon)
 * Developer dashboard for monitoring Fireproof databases and tracking query history (coming soon)
 
+### Priority support
+
+Enterprise licensing, priority support, and development services are available for on-premises and custom installations at market rates. [Contact us for details.]()
+
 ### Open source community
 
 The core Fireproof database will always be free (as in speech), and we are proud to be part of a thriving community. We encourage contributions from everyone, and we strive to ensure Fireproof can make every application better, for free.
