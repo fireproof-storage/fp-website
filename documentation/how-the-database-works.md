@@ -6,7 +6,7 @@ tags:
   - Architecture
   - Database
 ---
-In this article, we will explore how Fireproof works as a decentralized realtime database, including how it handles document storage and lookup, event feeds, map-reduce, transactions, replication, encryption, and distributed authorization.
+In this article, we will explore how Fireproof works as a decentralized realtime database, including how it handles document storage and lookup, event feeds, map-reduce, transactions, replication, encryption, and distributed authorization. If you prefer a video presentation of similar content, catch [my talk on the recent IPLD community call.](https://www.youtube.com/watch?v=IAystzwgemU)
 
 ### Document Storage and Lookup
 
