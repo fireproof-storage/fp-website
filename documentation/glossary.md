@@ -4,9 +4,8 @@ metaDescription:
 summary: Words, terms, and definitions relevant to cloudless
 tags:
   - Cloudless
-  - UCAN
-  - Snapshots
 ---
+
 
 ### Bacalhau
 Bacalhau is a protocol implementation of compute-over-data that operates on IPLD and IPFS data structures. It allows for the execution of functions over data while maintaining data privacy and integrity. The project is hosted on [github.com/bacalhau-project/bacalhau](https://github.com/bacalhau-project/bacalhau).
@@ -23,11 +22,21 @@ Compute-over-data (CoD) is a computing paradigm that enables calculations to be 
 ### Deterministic computing
 A computing model in which a system's behavior is entirely predictable and reproducible, given the same initial conditions and input. [Learn more](https://en.wikipedia.org/wiki/Deterministic_system)
 
+### Hash-linked data
+Data structures connected by cryptographic hashes, ensuring the integrity and authenticity of the data, as any alteration would result in a different hash and break the chain of links. [Learn more](https://en.wikipedia.org/wiki/Hash_graph)
+
+
 ### IPLD (InterPlanetary Linked Data) 
 A protocol and set of tools for linking and addressing distributed data structures across different decentralized systems, like IP
 
+### Location-independent links
+Links that point to a specific piece of data or resource regardless of its physical location, enabling greater flexibility and resilience in distributed systems. [Learn more](https://en.wikipedia.org/wiki/Content-addressable_storage)
+
 ### Merkle DAG (Directed Acyclic Graph)
 A tree-like data structure used to store and verify data in a decentralized and distributed manner, ensuring data integrity and authenticity. [Learn more](https://docs.ipfs.tech/concepts/merkle-dag/)
+
+### Non-extractable keypairs
+A type of cryptographic key pair that is securely stored within a device or browser and cannot be extracted or exported, providing an added layer of security for sensitive operations like authentication and signing. [Learn more](https://www.w3.org/TR/webauthn/)
 
 ### Saturn CDN (Content Delivery Network)
 Saturn CDN is a content delivery network that leverages the decentralized infrastructure of IPFS and other Web3 technologies to efficiently distribute content. It enables faster content delivery and increased resilience compared to traditional, centralized CDNs.
@@ -43,9 +52,6 @@ Data that can be cryptographically proven to be authentic, accurate, and unalter
 
 ### w3up (Web 3 Uploads)
 w3up, or Web 3 Uploads, is a tool for uploading data to IPFS and other Web3 storage networks. It simplifies the process of storing and retrieving content on decentralized networks. The project can be found on [github.com/web3-storage/ipfs-car](https://github.com/web3-storage/ipfs-car).
-
-
-
 
 
 
