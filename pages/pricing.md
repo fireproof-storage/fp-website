@@ -18,7 +18,7 @@ Elevate your experience by joining Fireproof Access member for $1 / month. Today
 Fireproof Access includes:
 
 * Direct connection with core team and community through the Fireproof Access chat server
-* Metered services like index, replicate, monitor, and user management.
+* Metered services like index, replicate, monitor, and user management (coming soon)
 * Developer dashboard for monitoring Fireproof databases and tracking query history (coming soon)
 
 ### Open source community
