@@ -9,8 +9,8 @@ const Post = createClass({
     const entry = this.props.entry;
 
     return html`
-      <main>
-        <article>
+      <main class="bg-gray-900 text-white">
+        <article class="post text-gray-200 feature-grid pt-10 px-4 sm:px-12 lg:px-48 xl:px-64 text-xl">
           <h1>${entry.getIn(["data", "title"], null)}</h1>
           <p>
             <small>
