@@ -1,6 +1,6 @@
 ---
 layout: layouts/contact.njk
-title: Commercial Relationship
+title: Commercial Quickstart
 metaDescription: Fireproof may be the easiest database to start with, but it's also among the most capable. Take our relationship to the next level.
 date: 2017-01-01T00:00:00.000Z
 permalink: /commercial-relationship/index.html

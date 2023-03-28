@@ -1,6 +1,6 @@
 ---
 title: Join Fireproof Access
-metaDescription: This is a sample meta description. If one is not present in your page/post's front matter, the default metadata.description will be used instead.
+metaDescription: The benefits of becoming a member.
 date: 2017-01-01T00:00:00.000Z
 permalink: /pricing/index.html
 eleventyNavigation:
