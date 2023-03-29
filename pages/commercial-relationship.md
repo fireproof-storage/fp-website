@@ -1,6 +1,6 @@
 ---
 layout: layouts/contact.njk
-title: Commercial Quickstart
+title: Support & Services
 metaDescription: Fireproof may be the easiest database to start with, but it's also among the most capable. Take our relationship to the next level.
 date: 2017-01-01T00:00:00.000Z
 permalink: /commercial-relationship/index.html
@@ -10,6 +10,17 @@ eleventyNavigation:
 ---
 
 Fireproof offers priority support services, including proactive monitoring, 24/7 technical support, and a dedicated team of experts. For businesses looking for development services, our network of application developer partners provides access to Fireproof experts, training and support, and innovative tools and services. Our onboarding and installation services help businesses get up and running quickly and efficiently, with optimization of historical data, tuning of queries and workloads, and integration with existing IT systems and security infrastructure. Certified installations ensure a stable snapshot of the code, with access to frequent quality improvements, advanced security features, scalability and performance, automated backups, and 24/7 support.
+
+### Quickstart onboarding package
+
+At Fireproof, we understand that getting started with a new database system can be challenging, and that's why we offer a Quickstart onboarding package. Our experienced team will review your use case and provide guidance on best practices, configure your application and replication topology, optimize onboarding of historical data, tune queries and workloads for your specific performance needs, and deploy your data to any cloud or server. We will also help integrate Fireproof with your existing authorization systems and databases. Here's what you can expect from the onboarding process:
+
+* **Assess your needs:** We'll begin by learning about your specific needs and use case to ensure we configure Fireproof to meet your requirements.
+* **Recommend architecture:** Based on our assessment, we'll recommend an architecture that will provide optimal performance and scalability for your use case.
+* **Deploy Fireproof to minimize risk**: Our team will work with you to deploy Fireproof in a way that minimizes risk and ensures a smooth transition to the new system.
+* **Collaborate on implementation**: Throughout the process, we'll work closely with your team to ensure the implementation is a collaborative effort, and that everyone is aligned and informed.
+
+By working with us for onboarding and installation, you can save costs and time while ensuring a smooth transition to Fireproof for your business. Contact us to learn more about how our Quickstart onboarding package can benefit your business. 
 
 ### Certified installations
 
