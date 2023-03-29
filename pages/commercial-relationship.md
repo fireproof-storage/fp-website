@@ -31,5 +31,5 @@ No environment is too complex for Fireproof. Certified installations ensure a st
 
 ### Connect with us
 
-[Click this link to set up a call with Fireproof founder Chris Anderson](https://savvycal.com/jchris/fireproof), where we can assess your business needs and decide how Fireproof can best support your success. Alternately email the customer success team at [support@fireproof.storage](mailto:support@fireproof.storage) or fill out this form:
+[Click this link to set up an initial call with the team](https://savvycal.com/jchris/fireproof), where we can assess your business needs and decide how Fireproof can best support your success. Alternately email the customer success team at [customer-success@fireproof.storage](mailto:customer-success@fireproof.storage) or fill out this form:
 
