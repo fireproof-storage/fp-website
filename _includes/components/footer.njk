@@ -2,13 +2,16 @@
 <footer class="fireproof py-5 mt-12">
   <div class="container mx-auto px-5">
     <ul class="flex">
-          {% set navPages = collections.all | eleventyNavigation %}
+      {% set navPages = collections.all | eleventyNavigation %}
 
       <li class="mr-6">
         <a href="https://twitter.com/FireproofStorge">Twitter</a>
       </li>
       <li class="mr-6">
         <a href="https://github.com/fireproof-storage/fireproof">GitHub</a>
+      </li>
+      <li class="mr-6">
+        <a href="https://www.linkedin.com/company/fireproof-storage/">LinkedIn</a>
       </li>
       <!-- <li class="mr-6">
             <a href="#">TikTok</a>
@@ -19,7 +22,7 @@
           <li class="mr-6">
             <a href="#">Stack Overflow</a>
           </li> -->
-                {%- for entry in navPages %}
+      {%- for entry in navPages %}
         <li class="mr-6">
           <a href="{{ entry.url | url }}"{% if entry.url == page.url %} data-current="current item"{% endif %}>{{ entry.title }}</a>
         </li>
@@ -27,18 +30,15 @@
 
     </ul>
 
-<!-- Menu -->
-
-
-
+    <!-- Menu -->
 
     <ul class="buzzwords text-6xl sm:text-7xl md:text-9xl font-bold text-center mt-10 mb-5">
-        <li>Local</li>
-        <li>Immutable</li>
-        <li>Distributed</li>
-        <li>Realtime</li>
-        <li>Verifiable</li>
-        <li>Cloudless</li>
+      <li>Local</li>
+      <li>Immutable</li>
+      <li>Distributed</li>
+      <li>Realtime</li>
+      <li>Verifiable</li>
+      <li>Cloudless</li>
     </ul>
     <img class="mx-auto py-12" src="/static/img/logo-animated.svg" alt="Fireproof Logo" style="width: 80%"/>
   </div>

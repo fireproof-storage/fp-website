@@ -325,7 +325,7 @@ article.post p {
 
 article.post h4 {
   font-size: 1.6rem;
-  padding: .6rem 0;
+  padding: 0.6rem 0;
   clear: both;
 }
 
@@ -371,7 +371,21 @@ article a {
   padding-top: 0.75em;
 }
 
-form[name=contact] input, form[name=contact] textarea {
+form[name='contact'] input,
+form[name='contact'] textarea {
   margin: 0.5em 0;
   padding: 4px;
+}
+
+a[href$='#subscribe'] {
+  color: #011;
+  background: linear-gradient(-45deg, #ff0, #ff6f00, #ffa000, #ff0, #ff8200);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+  padding: 1rem;
+  display: block;
+  text-align: center;
+  margin: 1rem 10rem;
+  border-radius: 0.5rem;
+  border: 4px solid #ff8200;
 }

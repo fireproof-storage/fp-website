@@ -8,8 +8,7 @@ tags:
 
 Chris is an experienced entrepreneur and technologist with a passion for empowering users through revolutionary data structures. With a philosophy focused on decentralization and peer-to-peer computing, he has a track record of rewriting the database industry.
 
-```mermaid
-sequenceDiagram
+![sequenceDiagram
     participant FidoNet
     participant Web Apps
     participant Apache CouchDB
@@ -34,5 +33,12 @@ sequenceDiagram
     McKinsey & Company->>Protocol Labs: 2021
     Note over Protocol Labs: Worked on web3.storage<br/>product team,<br/>created developer-friendly UI components<br/>and new UCAN upload API
     Protocol Labs->>Fireproof: 2023
-    Note over Fireproof: Pursuing his passion<br/>for peer-to-peer empowerment<br/>and revolutionary data structures,<br/>building something even more successful
-```
+    Note over Fireproof: Pursuing his passion<br/>for peer-to-peer empowerment<br/>and revolutionary data structures,<br/>building something even more successful](/static/img/jchris-history.png)
+
+### Find Chris online
+
+* [Twitter](https://twitter.com/jchris)
+* [Github](https://github.com/jchris)
+* [LinkedIn](https://www.linkedin.com/in/jchris/)
+
+
