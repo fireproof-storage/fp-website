@@ -388,4 +388,11 @@ a[href$='#subscribe'] {
   margin: 1rem 10rem;
   border-radius: 0.5rem;
   border: 4px solid #ff8200;
+  transition: transform 0.2s ease-in-out;
 }
+
+a[href$='#subscribe']:hover {
+  color: #009;
+  transform: scale(1.2);
+}
+
