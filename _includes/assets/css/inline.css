@@ -368,7 +368,8 @@ article a {
   text-decoration: underline;
 }
 .buzzwords li {
-  padding-top: 0.75em;
+  padding: 0.25em;
+  display: inline-block;
 }
 
 form[name='contact'] input,
