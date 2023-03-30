@@ -1,6 +1,7 @@
 ---
 title: Background and qualifications
-metaDescription: Discover the expert team committed to reshaping the future of real-time database solutions for React and mobile app developers
+metaDescription: Discover the expert team committed to reshaping the future of
+  real-time database solutions for React and mobile app developers
 section: thanks
 date: 2023-03-17
 permalink: /thanks/index.html
@@ -9,9 +10,10 @@ eleventyNavigation:
   order: 3
 ---
 ### J Chris Anderson
+
 Founder
 
-Chris' interest in distributed computing dates back to the early 90s, when he engaged with early local BBS store-and-forward systems in Austin, Texas. In 2009, as a key player in the NoSQL movement, Chris contributed to Apache CouchDB, where he developed one of the first JavaScript Serverless APIs. This work established the foundation for Fireproof's cloudless computing approach, stemming from Chris's expertise in peer-to-peer data synchronization and serverless computing.
+Chris' interest in distributed computing dates back to the early 90s, when he engaged with early local BBS store-and-forward systems in Austin, Texas. In 2009, as a key player in the NoSQL movement, Chris contributed to Apache CouchDB, where he developed one of the first JavaScript Serverless APIs. This work established the foundation for Fireproof's cloudless computing approach, stemming from Chris' expertise in peer-to-peer data synchronization and serverless computing.
 
 With a notable record of startup achievements, Chris has extensive experience in various roles. He has founded companies, led engineering teams, and worked with clients to deliver inventive solutions. As Couchbase's ($BASE) co-founder, Chris designed Couchbase Mobile, a differentiator that secured valuable business cases such as United Airlines in-flight service and crew scheduling. Building technology that became mission-critical for front-line business processes like payments at Walmart and Apple, he gained an appreciation for the commercial relationships that buyers seek. Equipped with serverless integration knowledge from his time at FaunaDB, a multi-cloud transactional database, and client service skills developed at McKinsey & Company, Chris is well-prepared to navigate the complexities of both technology development and market strategy for Fireproof.
 
@@ -41,4 +43,4 @@ Travis Vachon is an experienced software engineer with a passion for open-source
 
 ### Meghan Sinnott
 
-Meghan is an accomplished community organizer, producer, and marketer. As the Director of Portland Made, Meghan supported local makers by organizing markets, meetups, and retail opportunities. Meghan produces live storytelling events for The Moth podcast. As the Global Brand Manager at Nutcase, Meghan elevated the brand to global prominence. She coordinates the 10,000 person World Naked Bike Ride in Portland, including securing sponsorships, recruiting volunteers, and collaborating with city agencies. Additionally, Meghan sits on the board of Umbrella, a non-profit organization providing fiscal sponsorship to transportation, art, and activist projects in Portland.  
+Meghan is an accomplished community organizer, producer, and marketer. As the Director of Portland Made, Meghan supported local makers by organizing markets, meetups, and retail opportunities. Meghan produces live storytelling events for The Moth podcast. As the Global Brand Manager at Nutcase, Meghan elevated the brand to global prominence. She coordinates the 10,000 person World Naked Bike Ride in Portland, including securing sponsorships, recruiting volunteers, and collaborating with city agencies. Additionally, Meghan sits on the board of Umbrella, a non-profit organization providing fiscal sponsorship to transportation, art, and activist projects in Portland.
