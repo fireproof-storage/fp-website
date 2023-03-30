@@ -9,9 +9,9 @@ eleventyNavigation:
 ---
 ### Fireproof Access
 
-Elevate your experience by joining [Fireproof Access for $1 / month](https://buy.stripe.com/test_aEUcPL8Hz9praVq146). Today, active membership gives you access to the Fireproof chat server, where you can get help with your apps and stay on top of the latest developments. Soon we'll be shipping the developer dashboard which is a hosted environment for tracking and managaing your Fireproof instances. Among the dashboard features will be additiona metered services, some provided by partners and some hosted by Fireproof. Upgrade to Fireproof Access today and unlock the full potential of our platform.
+Elevate your experience by joining [Fireproof Access for $1 / month](https://buy.stripe.com/aEU8xk8Ufebw7y87ss). Today, active membership gives you access to the Fireproof chat server, where you can get help with your apps and stay on top of the latest developments. Soon we'll be shipping the developer dashboard which is a hosted environment for tracking and managaing your Fireproof instances. Among the dashboard features will be additiona metered services, some provided by partners and some hosted by Fireproof. Upgrade to Fireproof Access today and unlock the full potential of our platform.
 
-[**Fireproof Access – $1 / month**](https://buy.stripe.com/test_aEUcPL8Hz9praVq146#subscribe)
+[**Fireproof Access – $1 / month**](https://buy.stripe.com/aEU8xk8Ufebw7y87ss#subscribe)
 
 *Thank you early adopters for supporting our successful launch!*
 
