@@ -79,6 +79,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('static/img')
   eleventyConfig.addPassthroughCopy('docs')
   eleventyConfig.addPassthroughCopy('demo')
+  eleventyConfig.addPassthroughCopy('try-free')
   eleventyConfig.addPassthroughCopy('admin/')
 
   eleventyConfig.addPassthroughCopy({ tlas: '/' })
