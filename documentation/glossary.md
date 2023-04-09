@@ -45,7 +45,7 @@ Saturn CDN is a content delivery network that leverages the decentralized infras
 A digital identity model that allows individuals to own, control, and share their personal information without relying on a centralized authority. [Learn more](https://www.lawinsider.com/dictionary/verifiable-data)
 
 ### UCAN (User-Controlled Authorization Networks)
-A decentralized access control protocol that enables secure and verifiable data routing, allowing users to delegate access to their capabilities using public key cryptography. [Learn more](https://learn.mattr.global/docs/concepts/verifiable-data/)
+A [decentralized access control protocol](https://nftstorage.github.io/ucan.storage/) that enables secure and verifiable data routing, allowing users to delegate access to their capabilities using public key cryptography. [Learn more](https://learn.mattr.global/docs/concepts/verifiable-data/)
 
 ### Verifiable data
 Data that can be cryptographically proven to be authentic, accurate, and unaltered, ensuring trust and integrity in digital transactions. [Learn more](https://www.w3.org/TR/vc-data-model/)

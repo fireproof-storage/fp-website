@@ -2,7 +2,7 @@
 title: Join Fireproof Access
 metaDescription: The benefits of becoming a member.
 date: 2017-01-01T00:00:00.000Z
-permalink: /pricing/index.html
+permalink: /join/index.html
 eleventyNavigation:
   key: 
   order: 0
