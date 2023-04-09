@@ -1,12 +1,12 @@
 ---
-title: Background and qualifications
+title: Contributors
 metaDescription: Discover the expert team committed to reshaping the future of
   real-time database solutions for React and mobile app developers
 section: thanks
 date: 2023-03-17
 permalink: /thanks/index.html
 eleventyNavigation:
-  key: Community
+  key: Thanks
   order: 3
 ---
 ### J Chris Anderson
