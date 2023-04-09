@@ -3,10 +3,24 @@
   command = "eleventy"
 
 [[redirects]]
-  from = "/try-free/*"
+  from = "/try-free/docs"
   to = "/try-free/"
   status = 200
 
+[[redirects]]
+  from = "/try-free/doc"
+  to = "/try-free/"
+  status = 200
+
+[[redirects]]
+  from = "/try-free/changes"
+  to = "/try-free/"
+  status = 200
+
+[[redirects]]
+  from = "/try-free/dbindex"
+  to = "/try-free/"
+  status = 200
 
 # REDIRECT and HEADERS examples
 
