@@ -1,9 +1,9 @@
 ---
-layout: layouts/contact.njk
+layout: layouts/commercial.njk
 title: Support & Services
 metaDescription: Fireproof may be the easiest database to start with, but it's also among the most capable. Take our relationship to the next level.
 date: 2017-01-01T00:00:00.000Z
-permalink: /commercial-relationship/index.html
+permalink: /service-and-support/index.html
 eleventyNavigation:
   key: 
   order: 0
@@ -34,7 +34,7 @@ Additionally, Fireproof's priority support includes proactive monitoring of your
 
 ### Development services
 
-Development services and implementation consulting are essential for businesses looking to stay ahead of changes in platforms. Fireproof's network of application developer partners can help with custom application development and integration of existing applications with Fireproof. Partnering with these developers provides access to Fireproof experts, training and support, as well as access to a vast ecosystem of tools and services that can drive innovation and growth. With the right development services and implementation consulting, businesses can leverage Fireproof's expertise to stay ahead of the curve and succeed in today's dynamic business landscape. If you want to be considered among the application development partners, [join Fireproof Access and become part of the community.](/pricing/)
+Development services and implementation consulting are essential for businesses looking to stay ahead of changes in platforms. Fireproof's network of application developer partners can help with custom application development and integration of existing applications with Fireproof. Partnering with these developers provides access to Fireproof experts, training and support, as well as access to a vast ecosystem of tools and services that can drive innovation and growth. With the right development services and implementation consulting, businesses can leverage Fireproof's expertise to stay ahead of the curve and succeed in today's dynamic business landscape. If you want to be considered among the application development partners, [join Fireproof Access and become part of the community.](/join/)
 
 ### Onboarding and installation
 
@@ -42,5 +42,5 @@ We understand that getting started with a new database system can be a daunting 
 
 ### Connect with us
 
-[Click this link to set up an initial call with the team](https://savvycal.com/jchris/fireproof), where we can assess your business needs and decide how Fireproof can best support your success. Alternately email the customer success team at [customer-success@fireproof.storage](mailto:customer-success@fireproof.storage) or fill out this form:
+[Click this link to set up an initial call with the team](https://savvycal.com/jchris/fireproof), where we can assess your business needs and decide how Fireproof can best support your success. Alternately email the customer success team at [customer-success@fireproof.storage](mailto:customer-success@fireproof.storage).
 

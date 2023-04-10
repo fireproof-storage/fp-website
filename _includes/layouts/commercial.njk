@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="post text-gray-200 feature-grid pt-10 px-4 sm:px-12 lg:px-48 xl:px-64 text-xl">
+  <h1 class="text-4xl font-bold my-12 text-center">{{ title }}</h1>
+{{ layoutContent | safe }}
+</article>
+
+{% include "components/cta.njk" %}

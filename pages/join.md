@@ -3,15 +3,18 @@ title: Join Fireproof Access
 metaDescription: The benefits of becoming a member.
 date: 2017-01-01T00:00:00.000Z
 permalink: /join/index.html
+layout: layouts/commercial.njk
 eleventyNavigation:
   key: 
   order: 0
 ---
 ### Fireproof Access
 
-Elevate your experience by joining [Fireproof Access for $1 / month](https://buy.stripe.com/aEU8xk8Ufebw7y87ss). Today, active membership gives you access to the Fireproof chat server, where you can get help with your apps and stay on top of the latest developments. Soon we'll be shipping the developer dashboard which is a hosted environment for tracking and managaing your Fireproof instances. Among the dashboard features will be additiona metered services, some provided by partners and some hosted by Fireproof. Upgrade to Fireproof Access today and unlock the full potential of our platform.
+Elevate your experience by joining [Fireproof Access for $1 USD / month](https://access.fireproof.storage/checkout/access) or [€1 EUR / month](https://access.fireproof.storage/checkout/access-eu). Today, active membership gives you access to the Fireproof community forum, where you can get help with your apps and stay on top of the latest updates. Soon we'll be shipping the developer dashboard which is a hosted environment for tracking and managaing your Fireproof instances. Among the dashboard features will be additiona metered services, some provided by partners and some hosted by Fireproof. Upgrade to Fireproof Access today, your early support makes a huge difference!
 
-[**Fireproof Access – $1 / month**](https://buy.stripe.com/aEU8xk8Ufebw7y87ss#subscribe)
+#### Subscribe
+
+[**$1 USD / month**](https://access.fireproof.storage/checkout/access#subscribe) [**€1 EUR / month**](https://access.fireproof.storage/checkout/access-eu#subscribe)
 
 *Thank you early adopters for supporting our successful launch!*
 
@@ -27,7 +30,12 @@ Elevate your experience by joining [Fireproof Access for $1 / month](https://buy
 
 ### Enterprise support
 
-Learn more about [certified installations, priority support, and development services](/commercial-relationship/), available at market rates.
+Learn more about [certified installations, priority support, and development services](/service-and-support/), available at market rates.
+
+#### Echelon
+
+Please consider Fireproof Echelon, which offers all the benefits of Access, plus private team chat with Fireproof experts, for a special introductory price. [USD](https://access.fireproof.storage/checkout/echelon) or [EUR](https://access.fireproof.storage/checkout/echelon-eu)
+
 
 ### Open source community
 
