@@ -9,12 +9,12 @@ eleventyNavigation:
   order: 0
 ---
 
-With verified membership you get immediate access to the community forums as well as (coming soon) the ability to use [the developer dashboard](/try-free/) and metered services. The core Fireproof database is always free to use, and you can write full-featured apps in only your local browser, working with hosting of your choice. Connecting to the Fireproof dev tools unlocks extra power like replication and sync, that would require your own server to manage otherwise. Fireproof Access allows you to use pay-as-you-go services (coming soon) like syncing and monitoring. Minimum pricing is $1 / month, which is enough to run most small-scale applications.
+With verified membership you get immediate access to the developer forums as well as (coming soon) the ability to use [the developer dashboard](/try-free/) and metered services. The core Fireproof database is always free to use, and you can write full-featured apps in only your local browser, working with hosting of your choice. Connecting to the Fireproof dev tools unlocks extra power like replication and sync, that would require your own server to manage otherwise. Fireproof Access allows you to use pay-as-you-go services (coming soon) like syncing and monitoring. Minimum pricing is $1 / month, which is enough to run most small-scale applications.
 
 |                                        | Fireproof Access                          | Fireproof Echelon                       |
 |----------------------------------------|-------------------------------------------|-----------------------------------------|
-| Subscribe (**$ USD**)                          |  [**$1 USD / month**](https://access.fireproof.storage/checkout/access#subscribe)     | [**$100 USD / month**](https://access.fireproof.storage/checkout/echelon#subscribe)    |
-| Subscribe (**€ EUR**)                          |  [**€1 EUR / month**](https://access.fireproof.storage/checkout/access-eu#subscribe) | [**€100 EUR / month**](https://access.fireproof.storage/checkout/echelon-eu#subscribe) |
+| Subscribe (**$** or **€**)            |  [**$1 USD / month**](https://access.fireproof.storage/checkout/access#subscribe)     | [**$100 USD / month**](https://access.fireproof.storage/checkout/echelon#subscribe)    |
+|                                        |  [**€1 EUR / month**](https://access.fireproof.storage/checkout/access-eu#subscribe) | [**€100 EUR / month**](https://access.fireproof.storage/checkout/echelon-eu#subscribe) |
 | Developer Forum                        | ✅                                         | ✅                                       |
 | Developer Dashboard (Coming soon)      | ✅                                         | ✅                                       |
 | Metered Services (Coming soon)         | ✅                                         | ✅                                       |
