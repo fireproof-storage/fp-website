@@ -9,7 +9,7 @@ eleventyNavigation:
   order: 0
 ---
 
-The [core Fireproof database](https://www.npmjs.com/package/@fireproof/core) is always free to use, and you can write full-featured apps in only your local browser, working with hosting of your choice. With verified membership you get immediate access to the developer forums as well as (coming soon) the ability to use [the developer dashboard](/try-free/) and metered services. Connecting to the Fireproof dev tools unlocks extra power like replication and sync, that would require your own server to manage otherwise. Fireproof Access allows you to use pay-as-you-go services (coming soon) like syncing and monitoring. Minimum pricing is $1 / month, which is enough to run most small-scale applications.
+The [core Fireproof database](https://www.npmjs.com/package/@fireproof/core) is always free to use, and you can write full-featured apps in only your local browser, working with hosting of your choice. With verified membership you get immediate access to the developer forums as well as (coming soon) the ability to use [the developer dashboard](/try-free/) and metered services. Connecting to the Fireproof dev tools unlocks extra power like replication and sync, that would require your own server to manage otherwise. Fireproof Access allows you to use pay-as-you-go services (coming soon) like syncing and monitoring. Minimum pricing is $1 / month, which is enough to run a typical small-scale application.
 
 |                                        | Fireproof Access                          | Fireproof Echelon                       |
 |----------------------------------------|-------------------------------------------|-----------------------------------------|
