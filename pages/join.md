@@ -24,7 +24,7 @@ Elevate your experience by joining [Fireproof Access for $1 USD / month](https:/
 
 #### Coming soon
 
-* Metered services like index, replicate, monitor, and user management
+* Metered services like index, replicate, monitor, and sync
 * Developer dashboard for monitoring Fireproof databases and tracking query history
 
 ### Enterprise support
