@@ -20,7 +20,7 @@ With verified membership you get immediate access to the community forums as wel
 | Metered Services (Coming soon)         | ✅                                         | ✅                                       |
 | Private Team Chat with Fireproof Experts | ❌                                       | ✅                                       |
 | Quickstart Onboarding Package          | ❌                                         | ✅ (for a limited time)                  |
-| Enterprise Support                     | Market rates                               | Market rates                            |
+| Enterprise Support                     | ❌                                         | Contact us                               |
 
 
 *Thank you early adopters for making our launch a success!*
