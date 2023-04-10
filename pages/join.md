@@ -26,7 +26,6 @@ Elevate your experience by joining [Fireproof Access for $1 USD / month](https:/
 
 * Metered services like index, replicate, monitor, and user management
 * Developer dashboard for monitoring Fireproof databases and tracking query history
-* Invite anyone from your team for free, as long as you are willing to sponsor thier metered usage
 
 ### Enterprise support
 
