@@ -20,7 +20,7 @@ The [core Fireproof database](https://www.npmjs.com/package/@fireproof/core) is 
 | Metered Services (Coming soon)         | ✅                                         | ✅                                       |
 | Private Team Chat with Fireproof Experts | ❌                                       | ✅                                       |
 | Quickstart Onboarding Package          | ❌                                         | ✅ (for a limited time)                  |
-| Enterprise Support                     | ❌                                         | Contact us                               |
+| Enterprise Support                     | ❌                                         | [Contact us](mailto:customer-success@fireproof.storage)                               |
 
 
 *Thank you early adopters for making our launch a success!*
