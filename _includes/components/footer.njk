@@ -1,7 +1,7 @@
 <!-- Footer -->
 <footer class="fireproof py-5 mt-12">
   <div class="container mx-auto px-5">
-    <ul class="flex">
+    <ul class="flex justify-end">
       {% set navPages = collections.all | eleventyNavigation %}
 
       <li class="mr-6">
@@ -27,7 +27,12 @@
           <a href="{{ entry.url | url }}"{% if entry.url == page.url %} data-current="current item"{% endif %}>{{ entry.title }}</a>
         </li>
       {%- endfor %}
-
+      <!-- <li class="mr-6">
+        <a href="/legal/privacy/">Privacy</a>
+      </li>
+      <li class="mr-6">
+        <a href="/legal/terms/">Terms of Service</a>
+      </li>  -->
     </ul>
 
     <!-- Menu -->
