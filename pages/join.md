@@ -1,5 +1,5 @@
 ---
-title: Get the full Fireproof experience
+title: Get the complete Fireproof experience
 metaDescription: The benefits of becoming a member.
 date: 2017-01-01T00:00:00.000Z
 permalink: /join/index.html
