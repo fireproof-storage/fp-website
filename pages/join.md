@@ -4,12 +4,9 @@ metaDescription: The benefits of becoming a member.
 date: 2017-01-01T00:00:00.000Z
 permalink: /join/index.html
 layout: layouts/commercial.njk
-eleventyNavigation:
-  key: 
-  order: 0
 ---
 
-The [core Fireproof database](https://www.npmjs.com/package/@fireproof/core) is always free to use, and you can write full-featured apps in your local browser. With verified membership you get immediate access to the developer forums as well as (coming soon) the ability to use [the developer dashboard](/try-free/) and metered services. Connecting to the Fireproof dev tools unlocks extra power like replication and sync, that would require your own server to manage otherwise. Fireproof Access allows you to use pay-as-you-go services (coming soon) like syncing and monitoring. Minimum pricing is $1 / month, which is enough to run a typical small-scale application.
+The [core Fireproof database](https://www.npmjs.com/package/@fireproof/core) is always free to use, and you can write full-featured apps in your local browser. With verified membership you get immediate access to the developer forum and (coming soon) [the developer dashboard](/try-free/) and metered services like replication and sync. **Minimum pricing is $1 / month**, which is enough to run a typical small-scale application.
 
 |                                        | Fireproof Access                          | Fireproof Echelon                       |
 |----------------------------------------|-------------------------------------------|-----------------------------------------|
@@ -21,7 +18,6 @@ The [core Fireproof database](https://www.npmjs.com/package/@fireproof/core) is 
 | Private Team Chat with Fireproof Experts | ❌                                       | ✅                                       |
 | Quickstart Onboarding Package          | ❌                                         | ✅ (for a limited time)                  |
 | Enterprise Support                     | ❌                                         | [Contact us](mailto:customer-success@fireproof.storage)                               |
-
 
 *Thank you early adopters for making our launch a success!*
 
