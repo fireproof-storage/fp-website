@@ -1,0 +1,7 @@
+{
+    "layout": "layouts/documentation.njk",
+    "permalink": "legal/{{ title | slug }}/index.html",
+    "tags": [
+      "legal"
+    ]
+  }

@@ -9,4 +9,4 @@ eleventyNavigation:
   order: 1
 ---
 
-These articles are designed to help you write awesome apps with Fireproof. If you want to look at reference documentation generated from the source code, the [Fireproof JSDocs](/docs/) are here.
+These articles are designed to help you write awesome apps with Fireproof.
