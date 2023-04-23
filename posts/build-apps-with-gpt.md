@@ -23,7 +23,7 @@ In the same prompt, describe the app you want to build. Here are some examples t
 
 * Create a react app using Fireproof for tracking party invites. It should have a text input that creates a new document with the guest name, and an Index that lists all guests in a &lt;ul&gt;. ([Running copy here.](https://codepen.io/jchrisa/pen/zYmogWO))
 * Build a React app that allows you to create profiles for dogs, and browse to each profile. It should be optimized for mobile. Use Tailwind.
-* Build a photo grid app that with drag and drop ordering that references photos by url. Use tailwind and render all photos as squares. Keep grid arrangement in fireproof with one document for each gallery, that is: 4-16 photos arranged into a layout.
+* Build a photo grid app with drag and drop ordering that references photos by url. Use Tailwind and render all photos as squares. Keep grid arrangement in Fireproof with one document for each gallery, that is: 4-16 photos arranged into a layout.
 * Build an app using React, Fireproof, MagicLink, and Tailwind that allows user to create one-question multiple choice polls and collect the answers.
 * Create a note taking app using React, Tailwind, and Fireproof that stores each note as a large text string in a Fireproof document, and uses an Index to split the text of the documents into tokens for full text search. The app has an input field to search the documents via an index query.
 
