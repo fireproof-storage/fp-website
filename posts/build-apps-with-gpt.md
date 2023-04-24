@@ -14,7 +14,7 @@ We've been having fun writing apps using GPT, so we want to share some things th
 First of all, Fireproof is newer than the cutoff date of many of today's models. To make your AI into a Fireproof expert, we found kicking off your prompt with one line of gpt speak (acutally a tiny JS program) helps tremendously. Paste this to GPT 4 or 3.5 to enable it to write apps using Fireproof:
 
 ```
-import { Fireproof, Listener, Index } from '@fireproof/core'; const db = fireproof.storage('app-db-name'); const ok = await db.put({ any: 'json' }); const doc = await db.get(ok.id); await db.del(doc._id); const all = await db.allDocuments(); all.rows.map(({key, value}) => value); const listener = new Listener(db); listener.on('*', updateReactStateFn); const index = new Index(db, (doc, map) => map(doc.any, {fields: Object.keys(doc)})); const result = await index.query({range : ['a', 'z']}); result.rows.map(({ key }) => key);
+Fireproof/API/Usage: import { Fireproof, Listener, Index } from '@fireproof/core'; const db = fireproof.storage('app-db-name'); const ok = await db.put({ any: 'json' }); const doc = await db.get(ok.id); await db.del(doc._id); const all = await db.allDocuments(); all.rows.map(({key, value}) => value); const listener = new Listener(db); listener.on('*', updateReactStateFn); const index = new Index(db, (doc, map) => map(doc.any, {fields: Object.keys(doc)})); const result = await index.query({range : ['a', 'z']}); result.rows.map(({ key }) => key);
 ```
 
 ![Screenshot of party invite app written by ChatGPT running on CodePen](/static/img/screen-shot-2023-04-23-at-2.26.45-pm.png)
