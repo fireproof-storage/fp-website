@@ -7,7 +7,7 @@ summary: Get inside Merkle Trees, CRDTs, and Prolly Trees, and understand their
   location-independent data is making applications faster, cheaper, and more
   reliable.
 tags:
-  - post
+  - cloudless
 ---
 Necessity is the mother of invention, and to move from complex orchestrated cloud services to unstoppable protocols, we must transition from a location-centric model to one that emphasizes location-independent verifiable links. Immutable data structures and cryptographic proofs emerge as key components in this new paradigm, providing the means to verify that data remains unaltered during storage or transmission, a critical feature for managing and maintaining data integrity across diverse applications. In this new world accessibility, data integrity, and performance are all underpinned by the same mathematical foundations.
 
