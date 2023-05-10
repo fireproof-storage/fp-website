@@ -13,7 +13,7 @@ Necessity is the mother of invention, and to move from complex orchestrated clou
 
 Take, for instance, an AI model that's engaged in a healthcare application—perhaps a diagnostic tool. The training process for such a model would involve large amounts of sensitive patient data, which must remain unaltered and confidential to ensure accurate diagnoses and maintain patient privacy. A slight alteration in the training data could lead to drastically different—and potentially erroneous—diagnostic outputs.
 
-This is where the cryptographic proofs step in. By creating a tamper-proof data structure that stores the intermediate results of the data pipeline and their relationships, the integrity of the training data used in these models can be robustly verified. Any change in the data pipeline, such as an update or alteration to the training data, would necessitate the recomputation of only the affected parts of the tree. The rest of the results remain intact, reusable, and their integrity verifiable against their respective proofs. This generalizes especially well to use cases like tracking LoRA fine-tuning layer provenance.
+This is where the cryptographic proofs step in. By creating a tamper-proof data structure that stores the intermediate results of the data pipeline and their relationships, the integrity of the training data used in these models can be robustly verified. Any change in the data pipeline, such as an update or alteration to the training data, would necessitate the recomputation of only the affected parts of the tree. The rest of the results remain intact and reusable, and their integrity verifiable against their respective proofs. This generalizes especially well to use cases like tracking LoRA fine-tuning layer provenance.
 
 Merkle Trees, which are also known as hash trees, are foundational to technologies like [system software, blockchains and file sharing](https://fireproof.storage/posts/why-proofs-matter-for-ai/). Their primary purpose is to verify the integrity of data, and they do this in a way that significantly diminishes the amount of work required to confirm large data structures. 
 
@@ -23,7 +23,7 @@ Moreover, including details such as prompts, random seeds, and model specifics i
 
 ## Git and BitTorrent’s use of Merkle Trees
 
-The reliability of proofs in data systems is vital for replication and sync strategies, seen in peer-to-peer (P2P) file sharing networks. In these networks, verifiable references and proofs ensure data consistency across nodes. This is evident in BitTorrent, where [Merkle Trees facilitate efficient data verification](http://cs.wellesley.edu/~cs310/lectures/16.5_hash_apps_slides_handouts.pdf), [reduce torrent file size](http://bittorrent.org/beps/bep_0030.html), and allow [flexible verification](https://www.bitcoinsv.com/from-torrents-to-git-how-merkle-trees-protect-your-files), enhancing data transfer and reliability.
+The reliability of proofs in data systems is vital for replication and sync strategies, seen in peer-to-peer (P2P) file-sharing networks. In these networks, verifiable references and proofs ensure data consistency across nodes. This is evident in BitTorrent, where [Merkle Trees facilitate efficient data verification](http://cs.wellesley.edu/~cs310/lectures/16.5_hash_apps_slides_handouts.pdf), [reduce torrent file size](http://bittorrent.org/beps/bep_0030.html), and allow [flexible verification](https://www.bitcoinsv.com/from-torrents-to-git-how-merkle-trees-protect-your-files), enhancing data transfer and reliability.
 
 Immutable data structures like content-addressed public data graphs and trees, offer benefits such as traceability, data integrity, and efficient caching. These structures create unique versions of data with each change, ideal for systems prioritizing data integrity.
 
@@ -87,7 +87,7 @@ Merkle trees offer significant benefits for data replication, synchronization, a
 
 In today's digital landscape, robust and reliable data management systems are essential. Mobile point of sale (POS) systems, operating at the network edge, are well-suited for advanced data structures like immutable Merkle trees, and stand to benefit from features like secure components and cloudless analytics.
 
-Utilizing Fireproof’s location-independence, the application conducts analytics locally, enhancing performance and resilience by reducing cloud reliance. This design significantly cuts latency and increases the responsiveness of real-time applications. Data integrity is assured through Fireproof's hash verifiable data and immutable structures, ensuring system reliability even during network disruptions. The results of on-device analytics queries can be replicated to the application’s cloud, and any interesting results can be traced back to the source without worry about data integrity.
+Utilizing Fireproof’s location independence, the application conducts analytics locally, enhancing performance and resilience by reducing cloud reliance. This design significantly cuts latency and increases the responsiveness of real-time applications. Data integrity is assured through Fireproof's hash-verifiable data and immutable structures, ensuring system reliability even during network disruptions. The results of on-device analytics queries can be replicated to the application’s cloud, and any interesting results can be traced back to the source without worry about data integrity.
 
 Fireproof's location independence facilitates effective resource distribution. New functions can be distributed to all POS systems, enabling result collection without replicating entire datasets. This optimizes computational resources and reduces data transfer overhead—a key advantage in bandwidth-limited environments.
 
@@ -128,7 +128,7 @@ By following these steps, the append-only immutable Prolly Tree modifies records
 
 The immutable nature of Prolly Trees bestows them with several distinctive benefits. First, they offer impeccable versioning capabilities. Each version of the data remains intact and accessible, serving as a detailed and reliable history of data changes over time.
 
-Second, the Prolly Tree excels in concurrency management. Multiple operations can be performed concurrently without the risk of data conflicts or inconsistencies, making it an excellent choice for collaborative environments. Each operation is a function from the previous root to the new root, and merges are cheap, so you can bring together multiple trees into a single query at runtime.
+Second, the Prolly Tree excels in concurrency management. Multiple operations can be performed concurrently without the risk of data conflicts or inconsistencies, making it an excellent choice for collaborative environments. Each operation is a function from the previous root to the new root, and merges are cheap so that you can bring together multiple trees into a single query at runtime.
 
 Lastly, in the event of a crash, recovery is straightforward. Since each operation results in a new tree version, you can quickly revert to the previous stable state without data loss.
 
@@ -154,9 +154,9 @@ For prolly trees, chunk boundaries occur when the values of a rolling-hash funct
 
 The chunking function in a prolly tree must be resilient to the boundary-shift problem. In other words, it should not cause a cascade of boundary changes when an element is inserted or removed from the sequence. This stability is essential for minimizing write-amplification and maximizing structural sharing between tree revisions. [Read more about prolly tree chunking and see the source of some of the figures in this article.](https://www.dolthub.com/blog/2022-06-27-prolly-chunker/)
 
-## The Payoff: Location Indepedence and Data Synchronization
+## The Payoff: Location Independence and Data Synchronization
 
-Location independence is the ability to access, process, and manipulate data irrespective of its physical location, improving accessibility and data processing efficiency. But without immutability and cryptographic proofs, location independence doesn’t offer much. Adding proofs to immutable data structures creates many opportunities to optimize end user workflows.
+Location independence is the ability to access, process, and manipulate data irrespective of its physical location, improving accessibility and data processing efficiency. But without immutability and cryptographic proofs, location independence doesn’t offer much. Adding proofs to immutable data structures creates many opportunities to optimize end-user workflows.
 
 Each Fireproof read or write operation is accompanied by a cryptographic proof – essentially a list of content identifiers (CIDs) that represent blocks read, added, or removed during the operation. This proof acts as a verifiable record of the transaction, ensuring data integrity and establishing trust between entities. Moreover, it allows for the execution of queries locally, provided that all the blocks referenced in the proof are available. This approach fosters efficient data retrieval and manipulation while maintaining data integrity and verifiability.
 
