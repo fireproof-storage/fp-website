@@ -111,7 +111,7 @@ Building upon the principles of Merkle trees, let's now traverse into the realm 
 
 An immutable prolly tree, as its name suggests, is a tree data structure that is append-only - once data is written into it, it can't be modified. It also addresses its inner blocks by hash address, like a Merkle tree. This approach provides certain advantages, such as simplified versioning, reduced contention in concurrent systems, and improved crash recovery. This makes the prolly tree a perfect fit for systems that demand stringent data integrity. The challenge it overcomes is how to do all of that, but also have root hashes that are stable regardless of insertion order. The same data set gets the same address, no matter what. This is necessary for peer-to-peer replication, without it, a small data set can take forever to replicate, as there is no way for peers to determine if they have the same content. Without hash stability, you can also end up with major write amplification, as small changes can cascade through the whole tree. Read on to learn how prolly trees solve this.
 
-![Prolly tree blocks and chunks](/static/img/prolly-tree-example.png "Prolly tree blocks and chunks")
+![Prolly tree blocks and chunks](/static/img/screen-shot-2023-05-10-at-1.50.59-pm.png "Prolly tree blocks and chunks")
 
 Figure from [DoltDB's deep dive.](https://www.dolthub.com/blog/2022-06-27-prolly-chunker/)
 
