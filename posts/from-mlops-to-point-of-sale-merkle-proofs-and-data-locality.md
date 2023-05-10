@@ -2,13 +2,10 @@
 title: "From MLOps to point-of-sale: Merkle proofs and data locality"
 date: 2023-05-10T20:15:19.984Z
 author: J Chris Anderson
-summary: Explore the transformative potential of cryptographic proofs and
-  immutable data structures in revolutionizing data management, from enhancing
-  performance and ensuring data integrity to providing location independence.
-  Delve into the intricacies of Merkle Trees, CRDTs, and Prolly Trees, and
-  understand their applications in various fields like AI, blockchain, and
-  supply chain management. Learn how these technologies are making applications
-  faster, cheaper, and more reliable.
+summary: Get inside Merkle Trees, CRDTs, and Prolly Trees, and understand their
+  applications in AI, blockchain, supply chain management, etc. Learn how
+  location-independent data is making applications faster, cheaper, and more
+  reliable.
 tags:
   - post
 ---
