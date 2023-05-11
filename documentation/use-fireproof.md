@@ -10,7 +10,9 @@ tags:
  
  The hook takes two optional setup function arguments, `defineDatabaseFn` and `setupDatabaseFn`. See below for examples.
  
-The return value looks like `{ ready, database, addSubscriber }` where the `database` is your Fireproof instance that you can interact with using `put` and `get`, or via your indexes. The `ready` flag turns true after setup completes, you can use this to activate your UI. The `addSubscriber` function is used to update your app in realtime, see example. 
+The return value looks like `{ useLiveQuery, useLiveDocument, database, ready }` where the `database` is your Fireproof instance that you can interact with using `put` and `get`, or via your indexes. The `ready` flag turns true after setup completes, you can use this to activate your UI. The `useLiveQuery` and `useLiveDocument` functions are hooks used to update your app in realtime.
+
+Changes made via remote sync peers, or other members of your cloud replica group will appear automaticall if you use these APIs. Makes writing collaborative workgroup software, and multiplayer games super easy.
 
 ## Usage Example
 
