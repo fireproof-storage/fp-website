@@ -1,7 +1,7 @@
 ---
 title:  Encryption
-metaDescription: 
-summary: How to configure Fireproof encrpytion and how it works
+metaDescription: How to configure Fireproof encryption and how it works
+summary: How to configure Fireproof encryption and how it works
 tags:
   - Security
 ---
