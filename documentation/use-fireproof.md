@@ -16,7 +16,8 @@ Changes made via remote sync peers, or other members of your cloud replica group
 
 ## Usage Example
 
-In App.js:
+In larger apps you setup your context in App.js, and then use it in other components. This allows you to easily share
+your index definitions and other setup code across your app. Here is what you might see in App.js:
 
 ```js
 import { FireproofCtx, useFireproof } from '@fireproof/core/hooks/use-fireproof'
@@ -34,28 +35,75 @@ function App() {
 }
 ```
 
-In your components:
+And in your components, the `database` object and `useLiveQuery` and `useLiveDocument` hooks are available. In this example the `useLiveQuery` hook is used to display a list of todos, and the `database` object is used to add new todos:
 
 ```js
-import { FireproofCtx } from '@fireproof/core/hooks/use-fireproof'
+import { FireproofCtx } from '@fireproof/react'
+
+export default TodoList = () => {
+  const { database, useLiveQuery } = useContext(FireproofCtx)
+  const todos = useLiveQuery((doc) => doc.date).rows.map((row) => row.doc)
+  const [newTodo, setNewTodo] = useState('')
+
+  return (
+    <div>
+      <input type="text" onChange={(e) => setNewTodo(e.target.value)} />
+      <button onClick={() => database.put({text: newTodo, date: Date.now(), completed: false})}>Save</button>
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo._id}>
+            <input 
+              type="checkbox" 
+              checked={todo.completed}
+              onChange={() => database.put({...todo, completed: !todo.completed})} />
+            {todo.text}
+          </li>
+        ))}
+    </div>
+  )
+}
+```
+
+You can also subscribe directly to database updates, and redraw when necessary:
+
+```js
+import { FireproofCtx } from '@fireproof/react'
 
 function MyComponent() {
   // get Fireproof context
-  const { ready, database, addSubscriber } = useContext(FireproofCtx)
+  const { useLiveDocument } = useContext(FireproofCtx)
+  const [doc, saveDoc] = useLiveDocument({_id : "my-doc-id"})
+  
+  // a function to change the value of the document
+  const updateFn = async () => {
+    await saveDoc({ _id : "my-doc-id", hello: "world", updated_at: new Date()})
+  }
+
+  // render the document with a click handler to update it
+  return <pre onclick={updateFn}>{JSON.stringify(doc)}</pre>
+}
+```
+
+Here is the same example but without using the `useLiveDocument` hook:
+
+```js
+import { FireproofCtx } from '@fireproof/react'
+
+function MyComponent() {
+  // get Fireproof context
+  const { ready, database } = useContext(FireproofCtx)
 
   // set a default empty document
   const [doc, setDoc] = useState({})
-  
-  // function to load the document from the database
-  const getDataFn = async () => {
-    setDoc(await database.get("my-doc-id"))
-  }
-
-  // run that function when the database changes
-  addSubscriber('MyComponent', getDataFn)
 
   // run the loader on first mount
-  useEffect(() => getDataFn(), [])
+  useEffect(() => {
+    const getDataFn = async () => {
+      setDoc(await database.get("my-doc-id"))
+    }
+    getDataFn();
+    return database.subscribe(getDataFn)
+  }, [database])
 
   // a function to change the value of the document
   const updateFn = async () => {
@@ -63,11 +111,11 @@ function MyComponent() {
   }
 
   // render the document with a click handler to update it
-  return <pre onclick={updateFn}>JSON.stringify(doc)</pre>
+  return <pre onclick={updateFn}>{JSON.stringify(doc)}</pre>
 }
 ```
 
-This should result in a tiny application that updates the document when you click it. In a real appliction you'd probably query an index to present eg. all of the photos in a gallery.
+This should result in a tiny application that updates the document when you click it. In a real application you'd probably query an index to present eg. all of the photos in a gallery.
 
 ## Setup Functions
 
@@ -77,10 +125,10 @@ This should result in a tiny application that updates the document when you clic
 
  ```js
  const defineIndexes = (database) => {
-  database.allLists = new Index(database, function (doc, map) {
+  database.allLists = new Index(database, 'allLists', function (doc, map) {
     if (doc.type === 'list') map(doc.type, doc)
   })
-  database.todosByList = new Index(database, function (doc, map) {
+  database.todosByList = new Index(database, 'todosByList', function (doc, map) {
     if (doc.type === 'todo' && doc.listId) {
       map([doc.listId, doc.createdAt], doc)
     }
@@ -95,7 +143,7 @@ This should result in a tiny application that updates the document when you clic
  Asynchronous function that uses the database when it's ready, run this to load fixture data, insert a dataset from somewhere else, etc. Here's a simple example:
 
 
-```
+```js
 async function setupDatabase(database)) {
     const apiData = await (await fetch('https://dummyjson.com/products')).json()
     for (const product of apiData.products) {
@@ -104,9 +152,9 @@ async function setupDatabase(database)) {
 }
 ```
 
-Note there are no protections against you running the same thing over and over again, so you probably want to put some logic in there to do the right thing.
+Note there are no protections against you running the same setup over and over again, so you probably want to put some logic in there to do the right thing.
 
-Here is an example of generating deterministic fixtures, using `mulberry32` for determinstic randomness so re-runs give the same CID, avoiding unnecessary bloat at development time, taken from the TodoMVC demo app.
+Here is an example of generating deterministic fixtures, using `mulberry32` for deterministic randomness so re-runs give the same CID, avoiding unnecessary bloat at development time, taken from the TodoMVC demo app.
 
  ```js
  function mulberry32(a) {
