@@ -1,5 +1,5 @@
 ---
-title:  Encrpytion
+title:  Encryption
 metaDescription: 
 summary: How to configure Fireproof encrpytion and how it works
 tags:
@@ -8,7 +8,7 @@ tags:
 
 Fireproof uses a robust encryption scheme that operates at the block level to ensure the security of data. The process is end-to-end, meaning that data is encrypted as soon as it's written and remains encrypted until it's explicitly decrypted for reading, ensuring that the data is always secure during transit and at rest. The encryption is symmetric, meaning the same shared secret key is used for both encryption and decryption of data. This key is shared between the entities that are encrypting and decrypting data, making it a crucial aspect of data security in Fireproof.
 
-The encryption process itself employs the Advanced Encryption Standard (AES) in Galois/Counter Mode (GCM), a widely used encryption algorithm known for its security and efficiency. Depending on the level of security needed, Fireproof supports either a 128-bit or 256-bit key for the encryption. This encryption process is applied at the block level, making each block of data a discrete unit of encryption. In the context of databases, this encryption scheme is often explained using the concept of "proofs" or "Merkle proofs". These proofs describe the state of the database as a list of blocks with a root node. This root node, through a series of cryptographic hashes, effectively fingerprints the entire database state. As such, any query against the database can be verified as authentic and unaltered by comparing its associated Merkle proof with the current root of the database. This further enhances the integrity and security of data in Fireproof.
+The encryption process itself employs the Advanced Encryption Standard (AES) in Galois/Counter Mode (GCM), a widely used encryption algorithm known for its security and efficiency. Fireproof uses a 256-bit key for encryption. This encryption process is applied at the block level, making each block of data a discrete unit of encryption. In the context of databases, this encryption scheme is often explained using the concept of "proofs" or "Merkle proofs". These proofs describe the state of the database as a list of blocks with a root node. This root node, through a series of cryptographic hashes, effectively fingerprints the entire database state. As such, any query against the database can be verified as authentic and unaltered by comparing its associated Merkle proof with the current root of the database. This further enhances the integrity and security of data in Fireproof.
 
 ## Configuring encryption
 
@@ -22,19 +22,19 @@ However, it's crucial to remember that any process that needs to read the encryp
 
 ## How encryption works
 
-The path that cleartext data takes to become encrypted in Fireproof involves a series of steps, starting from blocksToEncryptedCarBlock() function and ending in a ready-to-save CAR file. Here are the steps in detail:
+The path that cleartext data takes to become encrypted in Fireproof involves a series of steps, starting from `blocksToEncryptedCarBlock()` function and ending in a ready-to-save CAR file. Here are the steps in detail:
 
-1. Starting with blocksToEncryptedCarBlock() Function: This function takes as input the CID of the root block in the block store, the blocks of data that need to be encrypted, and the key material for encryption.
-2. Conversion of Key Material: The key material, passed in as a hex string, is converted into a Buffer using Buffer.from(keyMaterial, 'hex'), which forms the encryption key.
+1. Starting with `blocksToEncryptedCarBlock()` Function: This function takes as input the CID of the root block in the block store, the blocks of data that need to be encrypted, and the key material for encryption.
+2. Conversion of Key Material: The key material, passed in as a hex string, is converted into a Buffer using `Buffer.from(keyMaterial, 'hex')`, which forms the encryption key.
 3. Creation of CID List: Next, a list of CIDs (Content Identifiers) is created from the blocks of data that need to be encrypted. This list is used to keep track of which blocks are being encrypted.
-4. Encryption of Blocks: For each block in the list of blocks, the encrypt generator function is called. This function takes the list of CIDs, a get function to retrieve the block associated with a CID, the encryption key, a hash function, a chunker, a cache, and the root CID as input.
-5. Atomic Encryption of Each Block: Inside the encrypt function, each block is atomically encrypted. This means that each block is encrypted individually, with the links inside each block pointing to the unencrypted block addresses. This is done by the codec.encrypt() function, which performs the actual encryption using the AES-GCM algorithm.
-6. Creation of Unencrypted Graph: After all blocks are encrypted, an unencrypted graph is created. This graph links to all the encrypted blocks, ordered by block address. This is achieved by the create() function from the 'prolly-trees/cid-set' module, which creates a new CID set from the list of CIDs of the encrypted blocks.
-7. Creation of Encrypted Root Block: A final unencrypted block is created that links to the unencrypted graph and a reference to the CID of the encrypted root block of the original graph. This is done using the encode function from the multiformats/block module. This block is the "encrypted root" block.
+4. Encryption of Blocks: For each block in the list of blocks, the `encrypt` generator function is called. This function takes the list of CIDs, a get function to retrieve the block associated with a CID, the encryption key, a hash function, a chunker, a cache, and the root CID as input.
+5. Atomic Encryption of Each Block: Inside the encrypt function, each block is atomically encrypted. This means that each block is encrypted individually, with the links inside each block pointing to the unencrypted block addresses. This is done by the `codec.encrypt()` function, which performs the actual encryption using the AES-GCM algorithm.
+6. Creation of Unencrypted Graph: After all blocks are encrypted, an unencrypted graph is created. This graph links to all the encrypted blocks, ordered by block address. This is achieved by the `create()` function from the `prolly-trees/cid-set` module, which creates a new CID set from the list of CIDs of the encrypted blocks.
+7. Creation of Encrypted Root Block: A final unencrypted block is created that links to the unencrypted graph and a reference to the CID of the encrypted root block of the original graph. This is done using the encode function from the `multiformats/block` module. This block is the "encrypted root" block.
 8. Yielding Encrypted Blocks and Root: All encrypted blocks, the unencrypted graph, and the encrypted root block are then yielded by the encrypt generator function.
-9. Aggregating Encrypted Blocks: The blocksToEncryptedCarBlock function collects all the yielded blocks and stores them in the encryptedBlocks array. It also keeps track of the last block yielded, which is the encrypted root block.
-10. Converting to CAR Format: Finally, the blocksToCarBlock function is called with the CID of the encrypted root block and the encryptedBlocks array as arguments. This function constructs a CAR (Content-Addressable Archives) file, which is a portable format for storing IPLD (InterPlanetary Linked Data) data. This is done by writing the root CIDs and the blocks into a buffer using a CAR block writer.
-11. Completing the Encryption Process: The blocksToEncryptedCarBlock function then returns the CAR file containing the encrypted blocks. This CAR file is ready to be saved to disk, pinned in IPFS, or stored in Filecoin.
+9. Aggregating Encrypted Blocks: The `blocksToEncryptedCarBlock` function collects all the yielded blocks and stores them in the `encryptedBlocks` array. It also keeps track of the last block yielded, which is the encrypted root block.
+10. Converting to CAR Format: Finally, the `blocksToCarBlock` function is called with the CID of the encrypted root block and the `encryptedBlocks` array as arguments. This function constructs a CAR (Content-Addressable Archives) file, which is a portable format for storing IPLD (InterPlanetary Linked Data) data. This is done by writing the root CIDs and the blocks into a buffer using a CAR block writer.
+11. Completing the Encryption Process: The `blocksToEncryptedCarBlock` function then returns the CAR file containing the encrypted blocks. This CAR file is ready to be saved to disk, pinned in IPFS, or stored in Filecoin or S3.
 
 So, to sum up, the cleartext data starts as a set of blocks in a block store, gets atomically encrypted block by block with an unencrypted graph linking all encrypted blocks, and finally gets packaged into a CAR file with a single root CID, ready to be saved or transferred. This encrypted CAR file represents the entire encrypted database state and cannot be read or queried until the entire file is decrypted back into a block store.
 
@@ -49,6 +49,8 @@ By default, each Fireproof installation maintains its key locally, and data sync
 Another pattern involves sharing the key with a server-side rendering agent. In this case, transactions are encrypted on the client side and replicated to the cloud as encrypted data. The server doesn't persist the key; instead, the client provides the key with each query. As a result, the server can access the database for the duration of the request or session. This approach requires trust in the server, but as the client can always roll back changes, the server can't cause permanent damage.
 
 ### Enjoy
+
+We hope this guide has helped you understand how Fireproof handles encryption and key management. If you have any questions or feedback, please [reach out to us.](developers@fireproof.storage)
 
 ```
 There was a block of data plain,
