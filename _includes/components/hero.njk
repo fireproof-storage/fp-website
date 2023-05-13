@@ -14,7 +14,7 @@
 
 export default function TodoList () {
   const { database, useLiveQuery } = useFireproof('my-app')
-  const todos = useLiveQuery((doc) => doc.date).rows.map((row) => row.doc)
+  const todos = useLiveQuery((doc) => doc.date).docs
   function createTodo(text) {
     database.put({type: 'todo', text, completed: false, date: Date.now()})
   } 
