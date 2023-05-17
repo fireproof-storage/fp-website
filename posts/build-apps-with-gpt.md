@@ -9,7 +9,7 @@ tags:
   - apps
   - React
 ---
-We've been having fun writing apps using GPT, so we want to share some things that worked.
+We've been having fun writing apps using GPT, so we want to share some things that worked. [Find a revised version of this post on Hackernoon.](https://hackernoon.com/get-chatgpt-to-focus-on-coding-on-the-right-apis-with-gptdoc-strings)
 
 First of all, Fireproof is newer than the cutoff date of many of today's models. To make your AI into a Fireproof expert, we found kicking off your prompt with one line of gpt speak (acutally a tiny JS program) helps tremendously. Paste this to GPT 4 or 3.5 to enable it to write apps using Fireproof:
 
