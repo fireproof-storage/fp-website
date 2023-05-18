@@ -12,13 +12,11 @@ Fireproof is designed to make indexing in external indexers efficient and seamle
 
 For single-user workloads it can often be enough to index the local dataset on page load, and use your index in memory. For larger data use-cases you probably want to use an indexer than remember everything it has added, and incrementally add new items as changes occur.
 
-The technique here can also be used with [vector indexers](https://github.com/tantaraio/voy) if you are managing LLM queries.
+The technique here can also be used with [vector indexers](https://github.com/tantaraio/voy) to manage LLM queries.
 
 ### Flexsearch for fulltext indexing
 
-The library ships with a test of the flexsearch integration, so that is a safe bet.
-
-The included `withFlexsearch` function is a utility that allows you to add full-text search capabilities to your Fireproof database using the Flexsearch library. This function takes in a Fireproof database object and returns an object with a single method: search.
+Fireproof ships with a flexsearch integration. The included `withFlexsearch` function is a utility that allows you to add full-text search capabilities to your Fireproof database using the Flexsearch library. This function takes in a Fireproof database object and returns an object with a single method: search.
 
 ```js
 const { Index } = flexsearch
