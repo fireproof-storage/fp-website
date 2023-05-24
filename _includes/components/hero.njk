@@ -10,16 +10,19 @@
         <div class="code-sample">
           <div class="bg-gray-200 p-5 rounded">
             <pre class="text-xs bg-gray-800 p-5 rounded">
-<code class="language-javascript">import { useFireproof } from '@fireproof/react'
+<code class="language-javascript">import { useLiveQuery } from 'use-fireproof'
 
 export default function TodoList () {
-  const { database, useLiveQuery } = useFireproof('my-app')
-  const todos = useLiveQuery((doc) => doc.date).docs
+  const todos = useLiveQuery('date').docs
   function createTodo(text) {
-    database.put({type: 'todo', text, completed: false, date: Date.now()})
+    useLiveQuery.database.put({
+      text, type: 'todo',
+      completed: false, 
+      date: Date.now()
+    })
   } 
   return &lt;&gt;&lt;input type=&quot;text&quot; 
-    onChange={(e) =&gt; createTodo(e.target.value)} /&gt;
+    onSubmit={(e) =&gt; createTodo(e.target.value)} /&gt;
     &lt;ul&gt;{todos.map((todo) =&gt; 
       &lt;li key={todo._id} 
         onClick={()=&gt; 
@@ -29,7 +32,7 @@ export default function TodoList () {
 }
 </code></pre>
             <!-- <button class="bg-gray-800 text-white p-2 rounded mt-2 shadow">Run</button> -->
-            <p class="mt-2 text-center text-gray-900">Live data in your React app.</p>
+            <p class="mt-2 text-center text-gray-900"><a href="https://codepen.io/jchrisa/pen/vYVVxez?editors=0010" style="text-decoration:underline">Live data</a> in your React app.</p>
           </div>
         </div>
       </div>
