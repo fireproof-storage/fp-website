@@ -6,23 +6,19 @@ tags:
   - React
   - JavaScript
 ---
-React hook to initialize a Fireproof database, automatically saving and loading the clock.
- 
-The hook takes two optional setup function arguments, `defineDatabaseFn` and `setupDatabaseFn`. See below for examples.
- 
-The return value looks like `{ useLiveQuery, useLiveDocument, database, ready }` where the `database` is the Fireproof instance that you can interact with using `put` and `get`, or via your indexes. The `ready` flag turns true after setup completes, you can use this to activate your UI. The `useLiveQuery` and `useLiveDocument` functions are hooks used to update your app in real-time.
+Using Fireproof in your React app is as easy as running:
 
-Changes made via remote sync peers, or other members of your cloud replica group will appear automatically if you use these APIs. Makes writing collaborative workgroup software, and multiplayer games super easy.
+```bash
+npm install @fireproof/react
+```
 
-### useLiveQuery
-
-And in your components, the `database` object and `useLiveQuery` and `useLiveDocument` hooks are available. In this example the `useLiveQuery` hook is used to display a list of todos, and the `database` object is used to add new todos:
+Then in your app, you can use the `useFireproof` hook to get access to the database and live query hooks. Here's an example to-do list that initializes the database and sets up automatic refresh for query results. It also uses the `database.put` function to add new todos. With sync connected, the list of todos will redraw for all users in real-time. Here's the code:
 
 ```js
-import { FireproofCtx } from '@fireproof/react'
+import { useFireproof } from '@fireproof/react'
 
 export default TodoList = () => {
-  const { database, useLiveQuery } = useContext(FireproofCtx)
+  const { database, useLiveQuery } = useFireproof("my-app-db")
   const todos = useLiveQuery((doc) => doc.date).docs
   const [newTodo, setNewTodo] = useState('')
 
@@ -40,43 +36,58 @@ export default TodoList = () => {
             {todo.text}
           </li>
         ))}
+      </ul>
     </div>
   )
 }
 ```
 
-### useLiveDocument
+This example shows calling `useFireproof` and `useLiveQuery`. It may be all you need to get started.
 
-You can also subscribe directly to database updates, and redraw when necessary:
+### `useFireproof`
+
+The `useFireproof` hook takes two optional setup function arguments, `defineDatabaseFn` and `setupDatabaseFn`. See below for examples.
+ 
+The return value looks like `{ useLiveQuery, useLiveDocument, database, ready }` where the `database` is the Fireproof instance that you can interact with using `put` and `get`, or via your indexes. The `ready` flag turns true after setup completes, you can use this to activate your UI. The `useLiveQuery` and `useLiveDocument` functions are hooks used to update your app in real-time.
+
+Changes made via remote sync peers, or other members of your cloud replica group will appear automatically if you use these APIs. Makes writing collaborative workgroup software, and multiplayer games super easy.
+
+### `useLiveQuery`
+
+And in your components, the `database` object and `useLiveQuery` and `useLiveDocument` hooks are available. 
+
+
+
+This [running CodePen example](https://codepen.io/jchrisa/pen/vYVVxez?editors=0010) uses the `useLiveQuery` to display a list of todos, and the `database.put` function to add new todos. With sync connected, the list of todos will redraw for all users in real-time. Here's the code:
+
+
+### `useLiveDocument`
+
+You can also subscribe directly to database updates, and automatically redraw when necessary. When sync is enabled you'll have both parties updating the same database in real-time. Here's an example of a simple shared text area (in real life you'd probably want to use an operational transform library like [Yjs](https://github.com/yjs/yjs) or [Automerge](https://automerge.org) for shared text areas, which both work great with Fireproof). Another simple use case for Live Document is a shared form, where multiple users can edit the same document at the same time. For something like a chat room you should use Live Query instead:
 
 ```js
-import { FireproofCtx } from '@fireproof/react'
+import { useFireproof } from '@fireproof/react'
 
 function MyComponent() {
-  // get Fireproof context
-  const { useLiveDocument } = useContext(FireproofCtx)
-  const [doc, saveDoc] = useLiveDocument({_id : "my-doc-id"})
-  
-  // a function to change the value of the document
-  const updateFn = async () => {
-    await saveDoc({ _id : "my-doc-id", hello: "world", updated_at: new Date()})
-  }
+  const { useLiveDocument } = useFireproof()
+  const [doc, setDoc, saveDoc] = useLiveDocument({ _id : "my-doc-id" })
 
-  // render the document with a click handler to update it
-  return <pre onclick={updateFn}>{JSON.stringify(doc)}</pre>
+  return <input
+          value={doc.text}
+          onChange={(e) => setDoc({text : e.target.value});}
+        /><button onClick={saveDoc}>Save</button>
 }
 ```
 
 ### Raw database subscription
 
-Here is the same example but without using the `useLiveDocument` hook:
+Here is an example that uses direct database APIs instead of document and query hooks. You might see this in more complex applications that want to manage low-level details.
 
 ```js
-import { FireproofCtx } from '@fireproof/react'
+import { useFireproof } from '@fireproof/react'
 
 function MyComponent() {
-  // get Fireproof context
-  const { ready, database } = useContext(FireproofCtx)
+  const { ready, database } = useFireproof()
 
   // set a default empty document
   const [doc, setDoc] = useState({})
@@ -105,7 +116,7 @@ This should result in a tiny application that updates the document when you clic
 ## Setup Functions
 
 
-### defineDatabaseFn 
+### `defineDatabaseFn` 
  
 Synchronous function that defines the database, run this before any async calls. You can use it to do stuff like set up Indexes. Here's an example:
 
@@ -124,7 +135,7 @@ const defineIndexes = (database) => {
 }
 ```
 
-### setupDatabaseFn
+### `setupDatabaseFn`
 
 #### A note on using Context
 
@@ -157,9 +168,7 @@ async function setupDatabase(database)) {
 }
 ```
 
-Note there are no protections against you running the same setup over and over again, so you probably want to put some logic in there to do the right thing.
-
-Here is an example of generating deterministic fixtures, using `mulberry32` for deterministic randomness so re-runs give the same CID, avoiding unnecessary bloat at development time, taken from the TodoMVC demo app.
+If you are running the same setup across multiple users installations, you probably want to use deterministic randomness to generate the same data on each run, so people can sync together. Here is an example of generating deterministic fixtures, using `mulberry32` for deterministic randomness so re-runs give the same CID, avoiding unnecessary bloat at development time, taken from the TodoMVC demo app.
 
 ```js
 function mulberry32(a) {
