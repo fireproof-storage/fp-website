@@ -64,7 +64,7 @@ const putResponse5 = await database.put(theDocumentV4)
 // throws new Error('MVCC conflict, document is changed, please reload the document and try again.')
 ```
 
-In this way you can protect against users being suprised by accidental data overwrites.
+In this way you can protect against users being surprised by accidental data overwrites.
 
 ## Time Travel
 

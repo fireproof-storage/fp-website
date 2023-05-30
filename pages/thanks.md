@@ -5,9 +5,6 @@ metaDescription: Discover the expert team committed to reshaping the future of
 section: thanks
 date: 2023-03-17
 permalink: /thanks/index.html
-eleventyNavigation:
-  key: About
-  order: 3
 ---
 ### J Chris Anderson
 

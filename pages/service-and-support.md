@@ -4,9 +4,6 @@ title: Support & Services
 metaDescription: Fireproof may be the easiest database to start with, but it's also among the most capable. Take our relationship to the next level.
 date: 2017-01-01T00:00:00.000Z
 permalink: /service-and-support/index.html
-eleventyNavigation:
-  key: 
-  order: 0
 ---
 
 Fireproof offers priority support services, including proactive monitoring, 24/7 technical support, and a dedicated team of experts. For businesses looking for development services, our network of application developer partners provides access to Fireproof experts, training and support, and innovative tools and services. Our onboarding and installation services help businesses get up and running quickly and efficiently, with optimization of historical data, tuning of queries and workloads, and integration with existing IT systems and security infrastructure. Certified installations ensure a stable snapshot of the code, with access to frequent quality improvements, advanced security features, scalability and performance, automated backups, and 24/7 support.
