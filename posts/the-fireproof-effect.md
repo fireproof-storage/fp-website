@@ -11,7 +11,7 @@ summary: Fireproof presents developers with a means to prototype and validate
 tags:
   - post
 ---
-Fireproof's approach to data management incorporates cryptographic techniques like Merkle proofs and prolly trees to enable cloudless, data-anywhere capabilities. Rather than relying on geographical location or source, Fireproof uses verified and content-addressed data, offering applications the convenience of interacting with the fastest copy. This location independence has the potential to significantly reduce operational burdens.
+Fireproof's approach to data management incorporates cryptographic techniques like Merkle proofs and prolly trees to enable [cloudless](https://www.oreilly.com/radar/the-paradigm-shift-to-cloudless-computing/), data-anywhere capabilities. Rather than relying on geographical location or source, Fireproof uses verified and content-addressed data, offering applications the convenience of interacting with the fastest copy. This location independence has the potential to significantly reduce operational burdens.
 
 **The Shift to Browser-First Line-of-Business Apps**
 
