@@ -11,6 +11,18 @@ summary: Fireproof presents developers with a means to prototype and validate
 tags:
   - post
 ---
+Imagine you're tasked with creating a new software application. You've heard the buzz about AI and no-code tools, but you're not a developer, and these tools still seem complicated and somehow inadequate. They're based on technology that wasn't designed for AI to use. You need a tool that is intuitive, adaptable, and above all, designed with the AI era in mind. This is where Fireproof comes in.
+
+Fireproof is a database designed specifically for AI-created apps. It's not merely about the database's advanced features, but rather about what you can do with it. It's optimized to make expressing business logic simple, and it seamlessly works with frontend frameworks like React, accelerating the process of creating and maintaining apps.
+
+Pair Fireproof with an AI like ChatGPT and you have a powerful team. You tell ChatGPT what you want your app to do, and it generates the code for you, with Fireproof as the robust and secure foundation. The result? An app creation process that's as simple as having a conversation.
+
+Think of it like FileMaker but supercharged with the most advanced AI available. Like having a personal software engineer at your disposal, capable of creating any application you can imagine.
+
+This is the promise of Fireproof: a database designed for the AI era, a tool that places the power of app development into your hands, regardless of your technical know-how. In the evolving landscape of AI-assisted app development, Fireproof emerges as a valuable ally, allowing you to leverage AI to its fullest potential.
+
+## How? Why? Where can I sign up?
+
 Fireproof's approach to data management incorporates cryptographic techniques like Merkle proofs and prolly trees to enable [cloudless](https://www.oreilly.com/radar/the-paradigm-shift-to-cloudless-computing/), data-anywhere capabilities. Rather than relying on geographical location or source, Fireproof uses verified and content-addressed data, offering applications the convenience of interacting with the fastest copy. This location independence has the potential to significantly reduce operational burdens.
 
 **The Shift to Browser-First Line-of-Business Apps**
