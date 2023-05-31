@@ -15,7 +15,7 @@ Imagine you're tasked with creating a new software application. You've heard the
 
 Fireproof is a database designed specifically for AI-created apps. It's not merely about the database's advanced features, but rather about what you can do with it. It's optimized to make expressing business logic simple, and it seamlessly works with frontend frameworks like React, accelerating the process of creating and maintaining apps.
 
-Pair Fireproof with an AI like ChatGPT and you have a powerful team. You tell ChatGPT what you want your app to do, and it generates the code for you, with Fireproof as the robust and secure foundation. The result? An app creation process that's as simple as having a conversation.
+Pair Fireproof with an AI like ChatGPT and you have a powerful team. [You tell ChatGPT what you want your app to do, and it generates the code for you](https://use-fireproof.com/docs/chatgpt-quick-start/), with Fireproof as the robust and secure foundation. The result? An app creation process that's as simple as having a conversation.
 
 Think of it like FileMaker but supercharged with the most advanced AI available. Like having a personal software engineer at your disposal, capable of creating any application you can imagine.
 
@@ -27,7 +27,7 @@ Fireproof's approach to data management incorporates cryptographic techniques li
 
 **The Shift to Browser-First Line-of-Business Apps**
 
-There is an observable shift toward building line-of-business applications with React among enterprises and consulting firms. Given React's compatibility with standardized services, mature single sign-on integration, and a rich ecosystem of tools, it emerges as an appealing medium for enterprise software development. 
+There is an [observable shift toward building line-of-business applications with React](https://www.gartner.com/en/documents/3823369) among enterprises and consulting firms. Given React's compatibility with standardized services, mature single sign-on integration, and a rich ecosystem of tools, it emerges as an appealing medium for enterprise software development. 
 
 **The Role of AI in Line-of-Business App Development**
 
