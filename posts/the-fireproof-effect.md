@@ -11,8 +11,6 @@ summary: Fireproof presents developers with a means to prototype and validate
 tags:
   - post
 ---
-[There is a longer version of this post available for the voracious.](https://gist.github.com/jchris/d0d98b0214d1a7d7d1a3d3c6f8615614)
-
 Fireproof's approach to data management incorporates cryptographic techniques like Merkle proofs and prolly trees to enable cloudless, data-anywhere capabilities. Rather than relying on geographical location or source, Fireproof uses verified and content-addressed data, offering applications the convenience of interacting with the fastest copy. This location independence has the potential to significantly reduce operational burdens.
 
 **The Shift to Browser-First Line-of-Business Apps**
@@ -38,6 +36,9 @@ Fireproof, catering to growing data demands and high-margin value-added services
 Fireproof's business model follows a familiar pattern in the database industry, combining metered services and premium support. By embedding the database within applications, Fireproof can offer high-margin application support relationships. This shifts the emphasis from mere data storage to enhancing data's value and impact on business.
 
 With its potential to drive a new era of agile app development, Fireproof is poised to be a significant contributor to the future of technology. Its approach to databases could provide a valuable opportunity for investors and developers keen on being part of the evolving landscape of data management and app development.
+
+[There is a longer version of this post available for the voracious.](https://gist.github.com/jchris/d0d98b0214d1a7d7d1a3d3c6f8615614)
+
 
 ## 🧑‍💻 TikTok Script 🤳
 
