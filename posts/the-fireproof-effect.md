@@ -11,7 +11,7 @@ summary: Fireproof presents developers with a means to prototype and validate
 tags:
   - post
 ---
-Imagine you're tasked with creating a new software application. You've heard the buzz about AI and no-code tools, but you're not a developer, and these tools still seem complicated and somehow inadequate. They're based on technology that wasn't designed for AI to use. You need a tool that is intuitive, adaptable, and above all, designed with the AI era in mind. This is where Fireproof comes in.
+Imagine you're tasked with creating a new software application and want to see how ChatGPT can help. You've heard the buzz about no-code tools, but they still seem like a lot to learn, and yet somehow inadequate. They're based on technology that wasn't designed for AI to use. You need a tool that is intuitive, adaptable, and above all, designed with the AI era in mind. This is where Fireproof comes in.
 
 Fireproof is a database designed specifically for AI-created apps. It's not merely about the database's advanced features, but rather about what you can do with it. It's optimized to make expressing business logic simple, and it seamlessly works with frontend frameworks like React, accelerating the process of creating and maintaining apps.
 
