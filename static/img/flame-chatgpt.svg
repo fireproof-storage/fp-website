@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="6000 6000 5000 5000"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil1 {fill:none}
+    .fil2 {animation: color-cycle-2 5s infinite; fill:#F16C12;}
+    .fil3 {animation: color-cycle-3 5s infinite; fill:#EE521C;}
+    .fil4 {animation: color-cycle-4 5s infinite; fill:#F58709;}
+    .fil5 {animation: color-cycle-5 5s infinite; fill:#F9A100;}
+    .fil0 {fill:white}
+
+    @keyframes color-cycle-2 {
+      0% {fill: #F16C12;}
+      25% {fill: #EE521C;}
+      50% {fill: #F58709;}
+      75% {fill: #F9A100;}
+      100% {fill: #F16C12;}
+    }
+    
+    @keyframes color-cycle-3 {
+      0% {fill: #EE521C;}
+      25% {fill: #F58709;}
+      50% {fill: #F9A100;}
+      75% {fill: #F16C12;}
+      100% {fill: #EE521C;}
+    }
+    
+    @keyframes color-cycle-4 {
+      0% {fill: #F58709;}
+      25% {fill: #F9A100;}
+      50% {fill: #F16C12;}
+      75% {fill: #EE521C;}
+      100% {fill: #F58709;}
+    }
+    
+    @keyframes color-cycle-5 {
+      0% {fill: #F9A100;}
+      25% {fill: #F16C12;}
+      50% {fill: #EE521C;}
+      75% {fill: #F58709;}
+      100% {fill: #F9A100;}
+    }
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <g id="_745203920">
+   <line class="fil1" x1="8333" y1="6034" x2="6342" y2= "9483" />
+   <polygon class="fil2" points="8997,7183 8391,7021 7669,7184 7006,8333 7006,8333 7489,8468 8333,8333 "/>
+   <path class="fil3" d="M7669 7183l647 0 681 0c0,-491 -267,-920 -663,-1149l-1 0 -664 1149z"/>
+   <path class="fil4" d="M8333 8333l-1327 0c0,0 0,0 0,1 0,0 -1,0 -1,0l-663 1149 775 257 552 -257 664 -1149 0 -1zm664 1150l594 230 733 -230 1 0c0,-491 -267,-920 -664,-1150l0 0 -664 1150z"/>
+   <path class="fil5" d="M7669 9483l-1327 0 664 1150 0 0 1327 0c-397,-230 -664,-659 -664,-1150l0 0zm2656 0l-1328 0 -664 1150 1328 0 664 -1150z"/>
+  </g>
+ </g>
+</svg>
