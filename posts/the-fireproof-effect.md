@@ -78,6 +78,6 @@ With its potential to drive a new era of agile app development, Fireproof is poi
 
 **Office Worker**: "That's the Fireproof Effect! It's not just about databases and apps, it's about unlocking potential, sparking innovation, and transforming careers. So what are you waiting for? Unleash your own Fireproof Effect!"
 
-(Ends with the office worker holding a superhero pose with a graphic of a fireproof logo and a 'Follow Your Passion' slogan appearing beside her.)
+(Ends with the office worker holding a superhero pose with a graphic of a fireproof logo and a 'Light Up Your Data' slogan appearing beside her.)
 
 (Background Music: Inspiring, upbeat corporate track)
