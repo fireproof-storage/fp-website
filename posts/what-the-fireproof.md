@@ -12,7 +12,7 @@ Database complexity is a big problem in the app development world, and getting b
 
 ### Problem
 
-When building new apps or features, developers are accustomed to heavy context switches when configuring databases, taking them away from the valuable action in the app codebase and into administration, provisioning, defining, and connecting databases. Even in the best-case scenario, database management can easily amount to half the time (and frustration) of getting to an app’s  “hello world” moment.
+When building new apps or features, developers are accustomed to heavy context switches when configuring databases, taking them away from the valuable action in the app codebase and into administration: provisioning, defining, and connecting databases. Even in the best-case scenario, database management can easily amount to half the time (and frustration) of getting to an app’s  “hello world” moment.
 
 In the era of AI, as app development becomes increasingly rapid and streamlined, traditional database models are falling short. Configuration and setup pause development while administrative and management demands grow proportionally. Traditional databases were built for a world that viewed applications as specialized, unique projects that require significant resources to maintain and modify. This is no longer a viable approach in this era of fast-paced application development. 
 
