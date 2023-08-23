@@ -15,6 +15,7 @@
         function setupDb(name) {
           dbName = name;
           db = fireproof(name);
+          window.db = db;
           connection = connect.s3(db, s3Info)
           db.subscribe(redraw);
           return db;
@@ -25,41 +26,44 @@
         }
 
         const redraw = async () => {
-          const result = await index(db, 'created').query({includeDocs: true});
-          document
-            .querySelector('ul')
-            .innerHTML = '';
-
-          for (const row of result.rows) {
-            const checkbox = document.createElement('input');
-            checkbox.setAttribute('type', 'checkbox');
-            if (row.doc.completed) {
-              checkbox.setAttribute('checked', true);
-            }
-            checkbox.onchange = () => {
-              row.doc.completed = !row
-                .doc
-                .completed
-                db
-                .put(row.doc);
-            }
-            const textSpan = document.createElement('span');
-            textSpan.innerText = row.doc.task;
-            const li = document.createElement('li');
-            li.appendChild(checkbox);
-            li.appendChild(textSpan);
+          try {
+            const result = await index(db, 'created').query({includeDocs: true});
             document
               .querySelector('ul')
-              .appendChild(li);
+              .innerHTML = '';
+
+            for (const row of result.rows) {
+              const checkbox = document.createElement('input');
+              checkbox.setAttribute('type', 'checkbox');
+              if (row.doc.completed) {
+                checkbox.setAttribute('checked', true);
+              }
+              checkbox.onchange = () => {
+                row.doc.completed = !row
+                  .doc
+                  .completed
+                  db
+                  .put(row.doc);
+              }
+              const textSpan = document.createElement('span');
+              textSpan.innerText = row.doc.task;
+              const li = document.createElement('li');
+              li.appendChild(checkbox);
+              li.appendChild(textSpan);
+              document
+                .querySelector('ul')
+                .appendChild(li);
+            }
+          } finally {
+            const chgs = await db.changes([], {dirty: true});
+            console.log('changes', chgs.rows.map(r => r.value.task), chgs)
           }
-
-          const chgs = await db.changes();
-          console.log('changes', chgs.rows.map(r => r.value.task))
-
         }
 
         async function initialize() {
-          setupDb(localStorage.getItem('dbName') || 'my-list');
+          ps = new URLSearchParams(location.search)
+          const listQ = ps.get('list')
+          setupDb(listQ || 'my-list');
           const input = document.querySelector('#list');
           input.value = dbName;
           redraw()
@@ -69,15 +73,18 @@
           e.preventDefault();
           const input = document.querySelector('#list');
           dbName = input.value;
-          localStorage.setItem('dbName', dbName);
+          history.pushState(null, '', location.pathname + '?list=' + encodeURIComponent(dbName));
           setupDb(dbName);
-          
+
           redraw();
         }
         window.changeList = changeList;
 
         async function onButtonClick(e) {
           e.preventDefault();
+          //          connection
+          //            .refresh()
+          //            .then(() => console.log('refreshed'))
           const input = document.querySelector('#todo');
           const ok = await db.put({created: Date.now(), task: input.value, completed: false});
           input.value = '';
