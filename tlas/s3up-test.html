@@ -25,28 +25,39 @@
           download: 'https://sam-app-s3uploadbucket-e6rv1dj2kydh.s3.us-east-2.amazonaws.com'
         }
 
+        let doing
         const redraw = async () => {
+          if (doing) {
+            return doing
+          }
+          doing = doRedraw(). finally(() => doing = null)
+          return doing
+        }
+
+        const doRedraw = async () => {
           try {
-            const result = await index(db, 'created').query({includeDocs: true});
+            const result = await index(db, 'created').query({includeDocs: false});
             document
               .querySelector('ul')
               .innerHTML = '';
 
+            document
+              .querySelector('#filecount')
+              .innerText = db._crdt.blocks.loader.carLog.length
             for (const row of result.rows) {
+              const doc = await db.get(row.id);
+              // doc = row.doc
               const checkbox = document.createElement('input');
               checkbox.setAttribute('type', 'checkbox');
-              if (row.doc.completed) {
+              if (doc.completed) {
                 checkbox.setAttribute('checked', true);
               }
               checkbox.onchange = () => {
-                row.doc.completed = !row
-                  .doc
-                  .completed
-                  db
-                  .put(row.doc);
+                doc.completed = !doc.completed;
+                db.put(doc);
               }
               const textSpan = document.createElement('span');
-              textSpan.innerText = row.doc.task;
+              textSpan.innerText = doc.task;
               const li = document.createElement('li');
               li.appendChild(checkbox);
               li.appendChild(textSpan);
@@ -82,12 +93,11 @@
 
         async function onButtonClick(e) {
           e.preventDefault();
-          //          connection
-          //            .refresh()
-          //            .then(() => console.log('refreshed'))
+
           const input = document.querySelector('#todo');
           const ok = await db.put({created: Date.now(), task: input.value, completed: false});
           input.value = '';
+
         }
         window.onButtonClick = onButtonClick;
 
@@ -96,6 +106,15 @@
           await connection.refresh()
         }
         window.connectionRefresh = connectionRefresh;
+
+        async function doCompact(e) {
+          e.preventDefault();
+          await db.compact()
+          document
+            .querySelector('#filecount')
+            .innerText = db._crdt.blocks.loader.carLog.length
+        }
+        window.doCompact = doCompact;
 
         window.onload = initialize;
         window.db = db;
@@ -109,6 +128,7 @@
     List:
     <input type="text" name="list" id="list"/>
     <button onclick="changeList(event)">Change List</button>
+    <button onclick="doCompact(event)">Compact <span id='filecount'>0</span></button>
     <h3>Todos</h3>
     <input type="text" name="todo" id="todo"/>
     <button onclick="onButtonClick(event)">Create Todo</button>
