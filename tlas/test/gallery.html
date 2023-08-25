@@ -37,9 +37,7 @@
 
       const draw = async () => {
         const result = await db.changes()
-        document
-          .querySelector('#filecount')
-          .innerText = db._crdt.blocks.loader.carLog.length
+
         document
           .querySelector('ul')
           .innerHTML = '';
