@@ -118,6 +118,9 @@
       async function verifyEmail(e) {
         const input = document.querySelector('#email');
         input.disabled = true
+        const val = input.value
+        const area = document.querySelector('#login')
+        area.innerHTML = 'Sending verification email to ' + val + '...'
         await cx.authorize(input.value)
         location.reload()
       }
