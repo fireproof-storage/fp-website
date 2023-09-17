@@ -1,0 +1,38 @@
+---
+title: Why Verifiable CRDTs Are the Future of Web Data
+date: 2023-09-17T18:04:17.564Z
+author: J Chris Anderson
+summary: CRDTs, when combined with immutable, content-addressed data, are
+  game-changers for web development.
+tags:
+  - post
+---
+CRDTs are class of data structures that are designed for lossless merging. If you are developer, you’re familiar with git, which is not a CRDT, but its merging and branching operates on many of the same principles. True CRDTs go further than git and guarantee automatic convergence across replicas. So instead of blocking updates until conflicts are resolved (think about a git rebase), CRDTs accumulate changes concurrently without blocking, and allow users to make conflict determinations after the fact.
+
+Some familiar uses of CRDTs include [Apple’s iCloud Notes.app](https://news.ycombinator.com/item?id=17744375), [Figma’s multiplayer editing](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/), [SoundCloud recent activity feeds](https://developers.soundcloud.com/blog/roshi-a-crdt-system-for-timestamped-events), and Apache CouchDB’s [peer-to-peer](https://sdtimes.com/couchdb/couchdb-brings-peer-based-data-replication/) sync. During my time working on CouchDB, I pioneered a [local-first application](https://www.inkandswitch.com/local-first/) style we called [CouchApps](https://news.ycombinator.com/item?id=623806). Since those days new libraries and tools like [Yjs](https://docs.yjs.dev), [Braid](https://braid.org), and [automerge](https://www.inkandswitch.com/automerge-rs/post/towards-production/) have emerged, with mature flexible CRDT implementations.
+
+At the same time another segment of the industry has matured: immutable data. Pioneered by languages like Clojure and databases like Datomic, immutable data structure research was put into overdrive by the crypto community, as hash-linked merkle-tree references are the basis of blockchains, and demand the same solutions. At the intersection of immutable data and cryptographic verifiability is an interesting space, where all data is cacheable, and all requests for data can be self-verifying. The [performance](https://josephg.com/blog/crdts-go-brrr/) and security implications are enormous, but the constraints of immutability and hash-linked content addressing require new ways of managing data.
+
+By combining CRDTs with immutable content-addressed data, we can build systems that accept updates with unlimited concurrency and run on any cloud, with only the barest infrastructure requirements. When all operations are verified for cryptographic integrity and data references are immutable, you can use any storage whether it is the browser, S3, or peer-to-peer systems like IPFS. In simple terms, when you are loading data by content address, you can use the fastest response you get, without having to trust the responder, or even know who they are. When data is self-validating, caches can be shared and workloads are inherently easy to accelerate.
+
+This robustness (it’s safe to merge CRDTs without worrying about order or replay problems) manifests as operational simplicity. This means you can go offline and come back, and merge cleanly. You can also build a database that recovers from crashes without losing data, or issues fan-in queries (like SoundCloud documents in the link above). Coupled with content-addressed immutable data, you get multi-version concurrency control, non-blocking merges, and verifiable snapshot references.
+
+All of the above is the foundation for a web data layer that is radically simply compared to the status quo. Instead of a database in the cloud, protected by a serverless function that converts API calls to database operations, you have an in-process embedded database that can replicate to commodity storage, and exchange transaction information over any secure channel, such as those supported by the browser, like WebRTC.
+
+## Radically simple web applications
+
+This next generation of web development will look like apps that run mostly in the (mobile) browser, with small local databases corresponding to the user’s data, replicated via the cloud to the user’s other devices. The apps will talk to remote APIs and (potentially local) LLMs and other AI models. Developers won’t have to run SaaS clouds, they can just ask the user to bring their own storage and compute. In practice, this looks like storage bundled by the app developer, provided by the users’ enterprise, or user-paid and provisioned on-demand with a frictionless sign-up process. Eg as a developer, your app runs using storage and services you don’t have to manage or even pay for. Developers can focus on writing features, not scaling backends.
+
+This robustness also makes interop with existing stacks super easy. A content-addressed CRDT can be referenced via a UUID-sized hash identifier and linked safely and immutably from any data system. Storage replication from cold backup to content-delivery network can be accomplished using commodity tools. So you can link to verifiable CRDTs from web content, and use them to power any kind of experience.
+
+For example, ride-hailing services can use verifiable CRDTs to manage driver-passenger interactions such as destination changes, chat, and tipping, with an end result that is archivable with a single CID that cryptographically seals the journey. Integration into existing enterprise platforms like SAP or Salesforce becomes effortless, as you can add new front-end features without altering the original code, linking only a simple reference in existing storage fields or session management software. 
+
+But most importantly, application development gets simpler when you are aligned with the web.
+
+The complexity in modern React development reflects a broader industry trend of escalating technical requirements, often driven by the needs of large, consumer-focused platforms. While these robust features are useful for big players like Facebook, they can obfuscate the simplicity and accessibility that initially made React popular, especially for single-page applications. It's a divergence that can alienate developers who prioritized deployment simplicity and who were satisfied with HTML enhanced by React and APIs.
+
+This shift toward full-stack complexity represents a departure from the original contract React had with its user base. That contract assumed that React apps could be deployed to basic HTML hosting platforms without requiring specialized backend systems. Now, as React increasingly integrates features tailored for full-stack applications—features that may be overkill for smaller projects—it risks sacrificing the very simplicity that many developers found so appealing. Rising interest in [frameworks like HTMX](https://htmx.org) can be seen as a reaction to React’s growing complexity.
+
+During an escalating trend toward full-stack complexity, verifiable CRDTs offer a simple alternative. By bringing resilient and secure multi-user collaboration to the browser, this new breed of databases reduces the cloud management burden faced by app developers. Verifiable data that can be trusted anywhere and used from the browser opens up the possibility for new applications and new business models. It’s also profoundly easy to integrate with existing systems, so the prospect of enhancing legacy ERP or CRM systems with data-driven features becomes much more affordable.
+
+If this sounds appealing to you, the latest Fireproof docs include a video demo so you can [see how simple building multi-user applications can be.](https://use-fireproof.com/docs/connect/)
