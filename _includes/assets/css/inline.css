@@ -2,9 +2,9 @@ footer h1 {
   font-size: 5rem;
 }
 
-.feature-grid .flex-wrap {
+/* .feature-grid .flex-wrap {
   border: 2px solid #ff8200;
-}
+} */
 
 .blurbblur {
   background: #000;
@@ -43,13 +43,13 @@ html .feature-grid .code-sample code {
 }
 
 .my-hero .code-sample {
-  transform: rotate(-5deg);
-  max-width: 33em;
+  /* transform: rotate(-5deg); */
+  /* max-width: 26em; */
 }
 
-.code-sample:hover {
+/* .code-sample:hover {
   transform: scale(1.2);
-}
+} */
 
 .code-sample pre {
   overflow: scroll;
@@ -74,7 +74,7 @@ html .feature-grid .code-sample code {
 .fireproof {
   background: linear-gradient(-45deg, #000000, #ff6f00, #ffa000, #000, #ff8200);
   background-size: 400% 400%;
-  animation: gradient 30s ease infinite;
+  animation: gradient 120s ease infinite;
 }
 
 @keyframes gradient {

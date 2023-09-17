@@ -1,51 +1,48 @@
 <!-- Hero -->
-<img src="./static/img/lightup-big5.png" alt="Light up your data."
-    style="height: 200px; width: auto; left: 1rem; position: absolute; transform: rotate(-5deg)"/>
 <section class="bg-white py-16 my-hero">
   <div class="container mx-auto px-5 relative">
     <!-- <h1 class="text-3xl gray-800 font-bold mb-5" style="width: 40px; float: left">Light up your data.</h1> -->
-    <div class="sm:flex items-center justify-center">
-      <div class="w-11/12 sm:w-2/3 xl:w-2/5 sm:pl-5 ml-5 sm:ml-0 sm:pt-0 pt-32">
+    <div class="md:flex items-center justify-center">
+
+      <div class="w-11/12 md:w-3/5 md:pl-10 mt-12 sm:mt-0 mb-4">
+        <div class="catchphrase text-2xl text-black bg-gray-200 p-5 rounded mx-10">
+          <h1 class="text-4xl font-bold">Live database for the web</h1>
+          <ul class="list-none list-inside">
+            <li class="m-4">Runs in the browser, works with any cloud</li>
+            <li class="m-4">Seamless multi-user collaboration with verifiable CRDTs</li>
+            <li class="m-4">Easily add features to any app or page</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="w-11/12 md:w-1/3">
         <!-- Code Sample -->
         <div class="code-sample">
           <div class="bg-gray-200 p-5 rounded">
             <pre class="text-xs bg-gray-800 p-5 rounded">
-<code class="language-javascript">import { useLiveQuery } from 'use-fireproof'
+<code class="language-javascript">import { fireproof } from 'use-fireproof'
 
-export default function TodoList () {
-  const todos = useLiveQuery('date').docs
-  function createTodo(text) {
-    useLiveQuery.database.put({
-      text, type: 'todo',
-      completed: false, 
-      date: Date.now()
-    })
-  } 
-  return &lt;&gt;&lt;input type=&quot;text&quot; 
-    onSubmit={(e) =&gt; createTodo(e.target.value)} /&gt;
-    &lt;ul&gt;{todos.map((todo) =&gt; 
-      &lt;li key={todo._id} 
-        onClick={()=&gt; 
-          database.put({...todo, completed: !todo.completed})}&gt;
-        {todo.text}
-      &lt;/li&gt;)}&lt;/ul&gt;&lt;/&gt;
-}
-</code></pre>
+const db = fireproof('bigco-team')
+const ok = await db.put({ hello: 'world' })
+const doc = await db.get(ok.id)
+await db.put({ hello: 'developers' })
+const { rows } = await db.query('hello')
+
+// optional cloud sync
+const cx = db.connect()
+cx.ready.then(() => {
+  if (!cx.authorized) {
+    cx.authorize(currentUser.email)
+  }
+})</code></pre>
             <!-- <button class="bg-gray-800 text-white p-2 rounded mt-2 shadow">Run</button> -->
-            <p class="mt-2 text-center text-gray-900"><a href="https://codepen.io/jchrisa/pen/vYVVxez?editors=0010" style="text-decoration:underline">Live data</a> in your React app.</p>
+            <p class="mt-2 text-center text-gray-900">
+              Add shared data to any <a href="https://use-fireproof.com/docs/react-tutorial" style="text-decoration:underline">React</a> or <a style="text-decoration:underline" href="https://use-fireproof.com/docs/database-api/basics">JavaScript</a> app
+            </p>
           </div>
         </div>
       </div>
 
-      <div class="w-2/5 sm:pl-20 mt-12 sm:mt-0">
-        <!-- Embedded App -->
-        <div class="bg-gray-300 rounded p-5 code-app">
-          <iframe src="./demo/" frameborder="0" class="w-full" style="height: 512px !important"></iframe>
-          <p class="mt-2 text-center text-gray-900">
-            See features like time travel in <a href="https://lucky-naiad-5aa507.netlify.app" style="text-decoration:underline">the full demo</a>.
-          </p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
