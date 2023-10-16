@@ -1,48 +1,16 @@
-<!-- Hero -->
-<section class="bg-white py-16 my-hero">
-  <div class="container mx-auto px-5 relative">
-    <!-- <h1 class="text-3xl gray-800 font-bold mb-5" style="width: 40px; float: left">Light up your data.</h1> -->
-    <div class="md:flex items-center justify-center">
-
-      <div class="w-11/12 md:w-3/5 md:pl-10 mt-12 sm:mt-0 mb-4">
-        <div class="catchphrase text-2xl text-black bg-gray-200 p-5 rounded mx-10">
-          <h1 class="text-4xl font-bold">Live database for the web</h1>
-          <ul class="list-none list-inside">
-            <li class="m-4">Runs in the browser, works with any cloud</li>
-            <li class="m-4">Seamless multi-user collaboration with verifiable CRDTs</li>
-            <li class="m-4">Easily add features to any app or page</li>
+<section class="py-12 my-hero md:-ml-12">
+  <div class="container mx-auto">
+    <div class="md:flex">
+      <div class="mt-12 sm:mt-0 mb-4">
+        <div class="catchphrase text-2xl rounded">
+          <h1 class="md:whitespace-nowrap text-6xl mb-14 font-bold fireproof-text">Live database for the web</h1>
+          <ul class="list-none ml-8 list-inside space-y-6">
+            <li class="m-4">Quickly add features to any app or page</li>
+            <li class="m-4">Seamless local-first collaboration with verifiable CRDTs</li>
+            <li class="m-4">Use any cloud to sync, share, and save</li>
           </ul>
         </div>
       </div>
-
-      <div class="w-11/12 md:w-1/3">
-        <!-- Code Sample -->
-        <div class="code-sample">
-          <div class="bg-gray-200 p-5 rounded">
-            <pre class="text-xs bg-gray-800 p-5 rounded">
-<code class="language-javascript">import { fireproof } from 'use-fireproof'
-
-const db = fireproof('amazing-data')
-const ok = await db.put({ hello: 'world' })
-const doc = await db.get(ok.id)
-await db.put({ hello: 'developers' })
-const { rows } = await db.query('hello')
-
-// optional cloud sync
-const cx = db.connect()
-cx.ready.then(() => {
-  if (!cx.authorized) {
-    cx.authorize(currentUser.email)
-  }
-})</code></pre>
-            <!-- <button class="bg-gray-800 text-white p-2 rounded mt-2 shadow">Run</button> -->
-            <p class="mt-2 text-center text-gray-900">
-              Add shared data to any <a href="https://use-fireproof.com/docs/react-tutorial" style="text-decoration:underline">React</a> or <a style="text-decoration:underline" href="https://use-fireproof.com/docs/database-api/basics">JavaScript</a> app
-            </p>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>

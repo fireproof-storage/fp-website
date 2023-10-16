@@ -1,0 +1,25 @@
+<section class="mx-auto py-12 clear-both">
+
+  <h2 class="text-4xl font-bold py-8 md:-ml-12">Connect to any cloud</h2>
+
+  <p class="mb-4">
+        Fireproof uses encrypted, immutable, self-verifying storage, so it works with nearly any backend you can imagine. Build your app first, and then choose where to deploy it. Our goal is to empower app devs to ship anywhere.
+      </p>
+
+  <nav class="flex py-4 my-8 mx-4">
+    <ul id="tabList" class="flex space-x-4 text-xl">
+      <span class="py-2 rounded-lg">Choose your backend:</span>
+      <li id="partyKitTab" class="py-2 px-4 rounded-lg selected">PartyKit</li>
+      <li id="s3Tab" class="py-2 px-4 rounded-lg">S3</li>
+      <li id="ipfsTab" class="py-2 px-4 rounded-lg">IPFS</li>
+    </ul>
+  </nav>
+
+  <div id="tabContent" class="leading-relaxed">
+    {# {% include "components/quick-start-chatgpt.njk" %} #}
+    {% include "components/quick-start-partykit.njk" %}
+    {# {% include "components/quick-start-react.njk" %}
+      {% include "components/quick-start-s3.njk" %}
+      {% include "components/quick-start-ipfs.njk" %} #}
+  </div>
+</section>

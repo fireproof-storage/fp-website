@@ -55,12 +55,12 @@ html .feature-grid .code-sample code {
   overflow: scroll;
 }
 
-.my-hero {
+/* .my-hero {
   background-image: url(./static/img/crowd-blurred.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
+} */
 
 .shadow {
   box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
@@ -74,6 +74,11 @@ html .feature-grid .code-sample code {
 .fireproof {
   background: linear-gradient(-45deg, #000000, #ff6f00, #ffa000, #000, #ff8200);
   background-size: 400% 400%;
+  animation: gradient 120s ease infinite;
+}
+
+.fireproof-text {
+  color: linear-gradient(-45deg, #000000, #ff6f00, #ffa000, #000, #ff8200);
   animation: gradient 120s ease infinite;
 }
 
@@ -414,4 +419,20 @@ article table td {
   /* border: 24px solid rgba(0,0,0,0); */
   background-color: rgba(0,0,25,0.25);
   padding: 0.5rem 1rem;
+}
+
+#featureTabList li:hover, #tabList li:hover {
+  background-color: #e1bd74;
+}
+
+#featureTabList li, #tabList li {
+  text-decoration: underline;
+}
+
+li.selected {
+  background-color: #e1bd74 !important;
+}
+
+#featureTabContent article:not(.active), #tabContent article:not(.active) {
+  display: none;
 }

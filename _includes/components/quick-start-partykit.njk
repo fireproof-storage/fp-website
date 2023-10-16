@@ -1,0 +1,34 @@
+<article id="partyKitContent" class="active">
+  <a href="https://magnetic-poetry.use-fireproof.com/">
+    <img src="/home/partykit-poem.png" alt="PartyKit Screenshot" class="float-right rounded-lg w-48 md:w-56 lg:w-64 xl:w-80 mr-4 mb-4">
+  </a>
+  <h3 class="text-2xl text-gray-800 italic mb-6 leading-relaxed">Real-time group collaboration with PartyKit</h3>
+  <p class="mb-4">
+    <a href="https://partykit.io">PartyKit</a> is optimized for high-performance and offers real-time sharing capabilities through websockets and CloudFlare workers.</p>
+  <p class="mb-4">Adding Fireproof to your PartyKit setup is straightforward. It requires only a single line of configuration and operates in its own room. This means you can easily integrate it with existing PartyKit applications.</p>
+  <p class="mb-4">First, install the Fireproof PartyKit connector:</p>
+  <pre class="block rounded p-3 text-lg"><code class="language-sh">npm install @fireproof/partykit</code></pre>
+  <p class="mb-4 mt-4  ">Second, configure the Fireproof party in your app's <code>`partykit.json`</code>:</p>
+  <pre class="block clear-both rounded p-3 text-lg"><code class="language-javascript">{
+  "name": "MY_APP_NAME",
+  "main": "src/partykit/server.ts",
+  "parties": {
+    "fireproof": "node_modules/@fireproof/partykit/src/server.ts"
+  }
+}</code></pre>
+<p class="mt-4 mb-4">Now when you <a href="https://docs.partykit.io/quickstart/#deploy-your-app">launch or deploy your PartyKit app</a>, it will automatically include the Fireproof functionality in a dedicated party.</p>
+  <pre class="block rounded p-3  text-lg"><code class="language-sh">npx partykit dev</code></pre>
+  <p class="mt-4 mb-4">Finally, connect the database to your PartyKit server in the front-end code:</p>
+  <pre class="block rounded p-3 text-lg"><code class="language-javascript">import { fireproof } from 'use-fireproof'
+import { connect } from '@fireproof/partykit'
+const database = fireproof('poetry-party')
+connect.partykit(database, process.env.NEXT_PUBLIC_PARTYKIT_HOST)
+</code></pre>
+  <p class="mt-4">That's it! Your Fireproof database will sync across all your PartyKit users.
+        Check out 
+        <a href="https://github.com/partykit/sketch-magnetic-poetry">the magnetic poetry app's code</a>
+        and jump to 
+        <a href="https://github.com/fireproof-storage/fireproof/blob/main/packages/connect-partykit/README.md">the Fireproof PartyKit connector docs</a>
+        to learn more.
+  </p>
+</article>
