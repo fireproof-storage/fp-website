@@ -62,7 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById(id).classList.add('active')
     })
   })
+})
 
+window.addEventListener('load', function () {
   const tm = document.querySelector('#trademark')
   // Apply echo effect to tm
   if (tm) {
@@ -82,14 +84,22 @@ function applyEchoEffect(element, echoCount) {
     // echo.style.width = '100%'
     // echo.style.height = '100%'
     echo.style.zIndex = echoCount - 1 - i
+
+    echo.style.scale = 1 - (i + 1) * 0.11
+
     element.parentElement.appendChild(echo)
     echoes.push(echo)
   }
 
-    element.style.opacity = 0
+  element.style.opacity = 0
 
-  // Get echoes
-  // let echoes = Array.from(element.parentElement.children)
+  // Recalculate top and left position after document reflow
+  window.addEventListener('resize', function () {
+    echoes.forEach(echo => {
+      echo.style.top = element.offsetTop + 'px'
+      echo.style.left = element.offsetLeft + 'px'
+    })
+  })
 
   // Apply effect on mouse move
   element.parentElement.addEventListener('mousemove', function (e) {
@@ -102,7 +112,7 @@ function applyEchoEffect(element, echoCount) {
 
     echoes.forEach((echo, index) => {
       let scale = 1 - (index + 1) * 0.1
-      echo.style.transform = `rotate(-5deg) scale(${scale}) translate(${offsetX}px, ${offsetY}px)`
+      echo.style.transform = `rotate(-5deg) translate(${offsetX}px, ${offsetY}px)`
     })
   })
 }
