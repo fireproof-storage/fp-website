@@ -62,4 +62,47 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById(id).classList.add('active')
     })
   })
+
+  const tm = document.querySelector('#trademark')
+  // Apply echo effect to tm
+  if (tm) {
+    applyEchoEffect(tm, 5)
+  }
 })
+
+function applyEchoEffect(element, echoCount) {
+  // Create echoes\
+  let echoes = []
+  for (let i = 0; i < echoCount; i++) {
+    let echo = element.cloneNode()
+    echo.style.position = 'absolute'
+    echo.style.top = element.offsetTop + 'px'
+    echo.style.left = element.offsetLeft + 'px'
+    echo.style.transform = 'rotate(-5deg)'
+    // echo.style.width = '100%'
+    // echo.style.height = '100%'
+    echo.style.zIndex = echoCount - 1 - i
+    element.parentElement.appendChild(echo)
+    echoes.push(echo)
+  }
+
+    element.style.opacity = 0
+
+  // Get echoes
+  // let echoes = Array.from(element.parentElement.children)
+
+  // Apply effect on mouse move
+  element.parentElement.addEventListener('mousemove', function (e) {
+    let rect = this.getBoundingClientRect()
+    let x = e.clientX - rect.left
+    let y = e.clientY - rect.top
+
+    let offsetX = ((x - this.offsetWidth / 2) / this.offsetWidth) * 50
+    let offsetY = ((y - this.offsetHeight / 2) / this.offsetHeight) * 50
+
+    echoes.forEach((echo, index) => {
+      let scale = 1 - (index + 1) * 0.1
+      echo.style.transform = `rotate(-5deg) scale(${scale}) translate(${offsetX}px, ${offsetY}px)`
+    })
+  })
+}
