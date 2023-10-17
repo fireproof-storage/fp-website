@@ -6,18 +6,18 @@
   {% set navPages = collections.all | eleventyNavigation %}
   <ul class="flex">
     <li class="mr-6">
-      <a href="https://use-fireproof.com/">Documentation</a>
+      <a href="https://use-fireproof.com/">Docs</a>
     </li>
     {%- for entry in navPages %}
       <li class="mr-6">
         <a href="{{ entry.url | url }}"{% if entry.url == page.url %} data-current="current item"{% endif %}>{{ entry.title }}</a>
       </li>
     {%- endfor %}
-    <li class="mr-6">
+    {# <li class="mr-6">
       <a href="/try-free/">Try Now</a>
-    </li>
+    </li> #}
     <li class="mr-8">
-      <a href="/join/" class="px-4 py-2 fireproof text-white whitespace-nowrap font-medium rounded-lg outline focus:outline-none">
+      <a href="https://discord.gg/xC55bhgf6n" class="px-4 py-2 fireproof text-white whitespace-nowrap font-medium rounded-lg outline focus:outline-none">
             Join</a>
     </li>
   </ul>

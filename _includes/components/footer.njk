@@ -1,9 +1,28 @@
 <!-- Footer -->
-<footer class="py-5 mt-12">
-  <img src="./static/img/lightup-big5.png" alt="Light up your data." style="height: 200px; width: auto; left: 1rem; position: absolute; transform: rotate(-5deg)"/>
+<footer class="py-5">
   <div class="container mx-auto px-5">
-    <ul class="flex justify-end">
-      {% set navPages = collections.all | eleventyNavigation %}
+
+    <ul class="buzzwords text-center w-1/2 mx-auto text-4xl font-bold mt-10 mb-5">
+      <li>Local</li>
+      <li>Immutable</li>
+      <li>Distributed</li>
+      <li>Realtime</li>
+      <li>Verifiable</li>
+      <li>Cloudless</li>
+    </ul>
+
+    <img src="/static/img/lightup-big5.png" alt="Light up your data." style="padding: 5%; width: 30%; margin: 0 auto; transform: rotate(-5deg)"/>
+
+    <ul class="flex mt-12 justify-center flex-wrap">
+      <li       class="mr-6">
+        <a href="https://use-fireproof.com/docs/welcome">Documentation</a>
+      </li>
+      <li class="mr-6">
+        <a href="/faq/">FAQ</a>
+      </li>
+      <li class="mr-6">
+        <a href="/contact-us/">Contact Us</a>
+      </li>{% set navPages = collections.all | eleventyNavigation %}
 
       <li class="mr-6">
         <a href="https://twitter.com/FireproofStorge">Twitter</a>
@@ -14,20 +33,15 @@
       <li class="mr-6">
         <a href="https://www.linkedin.com/company/fireproof-storage/">LinkedIn</a>
       </li>
-      <!-- <li class="mr-6">
-            <a href="#">TikTok</a>
-          </li>
-          <li class="mr-6">
-            <a href="#">Discord</a>
-          </li>
-          <li class="mr-6">
-            <a href="#">Stack Overflow</a>
-          </li> -->
+      <li class="mr-6">
+        <a href="https://discord.gg/xC55bhgf6n">Discord</a>
+      </li>
       {%- for entry in navPages %}
         <li class="mr-6">
           <a href="{{ entry.url | url }}"{% if entry.url == page.url %} data-current="current item"{% endif %}>{{ entry.title }}</a>
         </li>
       {%- endfor %}
+
       <li class="mr-6">
         <a href="/legal/privacy/">Privacy</a>
       </li>
@@ -35,17 +49,8 @@
         <a href="/legal/terms/">Terms of Service</a>
       </li>
     </ul>
-
-    <!-- Menu -->
-
-    <ul class="buzzwords w-1/2 mx-auto text-4xl sm:text-5xl md:text-6xl font-bold mt-10 mb-5">
-      <li>Local</li>
-      <li>Immutable</li>
-      <li>Distributed</li>
-      <li>Realtime</li>
-      <li>Verifiable</li>
-      <li>Cloudless</li>
-    </ul>
-    <img class="mx-auto py-6" src="/static/img/logo-animated-black.svg" alt="Fireproof Logo" style="width: 80%"/>
+    <p class="mt-4 text-center text-gray-500">
+        &copy; 2023 Fireproof Storage Incorporated
+    </p>
   </div>
 </footer>

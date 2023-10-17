@@ -8,18 +8,16 @@
 
   <nav class="flex py-4 my-8 mx-4">
     <ul id="tabList" class="flex space-x-4 text-xl">
-      <span class="py-2 rounded-lg">Choose your backend:</span>
+      <span class="py-2 rounded-lg font-bold">Choose your backend:</span>
       <li id="partyKitTab" class="py-2 px-4 rounded-lg selected">PartyKit</li>
-      <li id="s3Tab" class="py-2 px-4 rounded-lg">S3</li>
+      <li id="s3Tab" class="py-2 px-4 rounded-lg">S3 / R2</li>
       <li id="ipfsTab" class="py-2 px-4 rounded-lg">IPFS</li>
     </ul>
   </nav>
 
   <div id="tabContent" class="leading-relaxed">
-    {# {% include "components/quick-start-chatgpt.njk" %} #}
-    {% include "components/quick-start-partykit.njk" %}
-    {# {% include "components/quick-start-react.njk" %}
-      {% include "components/quick-start-s3.njk" %}
-      {% include "components/quick-start-ipfs.njk" %} #}
+    {% include "components/connect-partykit.njk" %}
+      {% include "components/connect-s3.njk" %}
+      {% include "components/connect-ipfs.njk" %} 
   </div>
 </section>

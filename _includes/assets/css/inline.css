@@ -369,11 +369,11 @@ article .byline {
   text-align: right;
 }
 
-article a {
+article a, footer a:hover {
   text-decoration: underline;
 }
 .buzzwords li {
-  padding: 0.25em;
+  padding: 0.3em;
   display: inline-block;
 }
 
@@ -422,7 +422,7 @@ article table td {
 }
 
 #featureTabList li:hover, #tabList li:hover {
-  background-color: #e1bd74;
+  background-color: #f7d38a;
 }
 
 #featureTabList li, #tabList li {
@@ -430,7 +430,7 @@ article table td {
 }
 
 li.selected {
-  background-color: #e1bd74 !important;
+  background-color: #edbf63 !important;
 }
 
 #featureTabContent article:not(.active), #tabContent article:not(.active) {

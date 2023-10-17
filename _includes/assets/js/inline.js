@@ -46,4 +46,20 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById(id).classList.add('active')
     })
   })
+
+  const ftabs = document.querySelectorAll('#featureTabList li')
+  const fcontentPanels = document.querySelectorAll('#featureTabContent article')
+
+  ftabs.forEach(tab => {
+    tab.addEventListener('click', function () {
+      // Deactivate all tabs
+      ftabs.forEach(t => t.classList.remove('selected'))
+      fcontentPanels.forEach(panel => panel.classList.remove('active'))
+
+      // Activate clicked tab
+      this.classList.add('selected')
+      const id = this.id.replace('Tab', 'Content')
+      document.getElementById(id).classList.add('active')
+    })
+  })
 })
