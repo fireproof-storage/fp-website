@@ -113,8 +113,8 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
     dir: {
-      input: '.',
-      includes: '_includes',
+      input: process.env.ELEVENTY_ENV === 'development' ? 'pages' : '.',
+      includes: process.env.ELEVENTY_ENV === 'development' ? '../_includes' : '_includes',
       data: '_data',
       output: '_site'
     }

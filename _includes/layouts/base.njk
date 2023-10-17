@@ -2,12 +2,14 @@
 <html {% if section %} data-current="{{ section }}"{% endif %} lang="en">
 
 	{% include "components/head.njk" %}
-	<body class="bg-gray-900 text-white">
-		<header class="bg-gray-800 pt-3 pb-1 px-5 flex items-center justify-between">
+	<body class="">
+		<header class="pt-3 pb-1 px-5 flex items-center justify-between">
 			{% include "components/nav.njk" %}
 		</header>
-		<main>
-			{{ layoutContent | safe }}
+		<main class="container mx-auto px-4 sm:px-6 md:px-8">
+			<div class="w-full lg:w-3/4 xl:w-2/3 mx-auto">
+				{{ layoutContent | safe }}
+			</div>
 		</main>
 		{% include "components/footer.njk" %}
 	</body>
@@ -18,4 +20,5 @@
 	<script>
 		{{ js | jsmin | safe }}
 	</script>
+	<script src="/site/main.js"></script>
 </html>
