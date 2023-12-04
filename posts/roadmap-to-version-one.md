@@ -13,7 +13,7 @@ This year I’m thankful that Fireproof has become a useful database for local-f
 
 Building in the open has been great for the community of users, developers, and customers who depend on us. Outside questions and contributions are where the energy that drives learning comes from, and the best code is always learning. This roadmap reflects what we've learned so far, but community feedback always has the most influence on our priorities.
 
-I love spending time helping contributors so if you care about CRDTs and want to learn, we should be on a call or something. Ping me in the Fireproof Discord.
+I love spending time helping contributors so if you care about CRDTs and want to learn, we should be on a call or something. [Ping me in the Fireproof Discord.](https://discord.gg/yFJpDz5W94)
 
 ## Just Released
 
