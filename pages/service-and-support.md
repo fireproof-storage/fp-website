@@ -6,13 +6,17 @@ date: 2017-01-01T00:00:00.000Z
 permalink: /service-and-support/index.html
 ---
 
-Fireproof provides priority support services, including proactive monitoring and technical assistance, complemented by a dedicated team of experts. We offer a Quickstart onboarding package, ensuring a seamless transition to the new database system by evaluating specific business needs, recommending optimal architecture, and collaborating on implementation. 
+Email us at [customer-success@fireproof.storage](mailto:customer-success@fireproof.storage)
 
-Certified installations guarantee the most stable version of Fireproof, complete with advanced security, scalability, and support. Their extensive network of application developer partners allows businesses to access innovative tools and services, and their comprehensive onboarding and installation services ensure efficient and smooth system integration.
+Or join the community:
 
-Get started today!
+[Discord](https://discord.gg/cCryrNHePH)
 
-[Click here to schedule your initial consultation](https://savvycal.com/jchris/fireproof).
+[GitHub](https://github.com/fireproof-storage/fireproof)
 
-Or if you prefer, you can email us at at [customer-success@fireproof.storage](mailto:customer-success@fireproof.storage)
+[Twitter](https://twitter.com/FireproofStorge)
+
+[LinkedIn](https://www.linkedin.com/company/fireproof-storage/)
+
+[Facebook](https://www.facebook.com/fireproof.storage/)
 
