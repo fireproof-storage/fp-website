@@ -7,17 +7,16 @@ permalink: /service-and-support/index.html
 ---
 
 Email us at [customer-success@fireproof.storage](mailto:customer-success@fireproof.storage)
-<br>
-<br>
+
 Or join the community:
-<br>
-<a href= https://discord.gg/cCryrNHePH>Discord</a> 
-<br>
-<a href= https://github.com/fireproof-storage/fireproof>GitHub</a> 
-<br>
-<a href= https://twitter.com/FireproofStorge>Twitter</a> 
-<br>
-<a href= https://www.linkedin.com/company/fireproof-storage/>LinkedIn</a> 
-<br>
-<a href= https://www.facebook.com/fireproof.storage/>Facebook</a> 
+
+[Discord](https://discord.gg/cCryrNHePH)
+
+[GitHub](https://github.com/fireproof-storage/fireproof)
+
+[Twitter](https://twitter.com/FireproofStorge)
+
+[LinkedIn](https://www.linkedin.com/company/fireproof-storage/)
+
+[Facebook](https://www.facebook.com/fireproof.storage/)
 
