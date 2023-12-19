@@ -82,7 +82,7 @@ In summary, the server-side implementation of a CRDT write works as follows:
 
 ### Reading the CRDT
 
-When the client requests the current version of the CRDT, the server responds by listing all the currently active payloads for the current database. These payloads can be managed using any data structure, depending on the host environment. For instance, in Netlify, the list capability of Netlify Blobs is used to track the payloads. 
+When the client requests the current version of the CRDT, the server responds by listing all the currently active payloads for the current database. These payloads can be managed using any data structure, depending on the host environment. For instance, in Netlify, the list capability of Netlify Blobs is used to track the payloads.
 
 #### Implementation Focus, Netlify Blobs
 
@@ -203,8 +203,8 @@ The system's most significant potential fault could arise if the client fails to
 
 ### Use Cases for the Storage System
 
-There are a ton of CRDTs that can be mapped to mergeable payload pointers as described above. Anyone wanting encrpyted storage for something like [Y.js](https://yjs.dev/) or [Automerge](https://automerge.org) could use this module to provide a secure, multi-writer-enabled, remote-access immutable append-only CRDT file format, wrapping the inner CRDT of their choice.
+Numerous CRDTs can be mapped to mergeable payload pointers as described above. For those seeking encrypted storage for systems like [Y.js](https://yjs.dev/) or [Automerge](https://automerge.org), this module can provide a secure, multi-writer-enabled, remote-access immutable append-only CRDT file format, encapsulating the inner CRDT of their choice.
 
-Also, anyone who has built apps that assume globally available clear text IPFS blocks, can trivially target this blockstore, and get encryption and replication "for free". This includes access to all of the Fireproof connectors and storage options. This allows apps that may have required a complex network to sustain, to run local-first in the browser or edge function.
+Furthermore, developers who have built applications that rely on globally available clear text IPFS blocks can easily target this blockstore, gaining encryption and replication "for free". This includes access to all of the Fireproof connectors and storage options, enabling applications that might have previously required a complex network to operate local-first in the browser or edge function.
 
 If you want to contribute to this effort, please join the discussion on [GitHub](https://github.com/fireproof-storage/fireproof/issues/48) or [Discord](https://discord.gg/cCryrNHePH).
