@@ -50,3 +50,34 @@ Fireproof's business model follows a familiar pattern in the database industry, 
 With its potential to drive a new era of agile app development, Fireproof is poised to be a significant contributor to the future of technology. Its approach to databases could provide a valuable opportunity for investors and developers keen on being part of the evolving landscape of data management and app development.
 
 [There is a longer version of this post available for the voracious.](https://gist.github.com/jchris/d0d98b0214d1a7d7d1a3d3c6f8615614)
+
+
+## 🧑‍💻 TikTok Script 🤳
+
+(Starts with a dynamic shot of an office worker, in her work environment, looking into the camera.)
+
+**Office Worker**: "Hey, TikTok! Just a few months ago, I was here, just another worker bee in this corporate hive. But then, everything changed. How? Let me introduce you to The Fireproof Effect."
+
+(Shows a quick montage of her working on a computer with code on the screen.)
+
+**Office Worker**: "Fireproof and React opened the door to the app development world for me. I started creating these cool little apps that my colleagues loved."
+
+(Cuts to a quick mockup of an app on a phone screen with imaginary positive reactions from colleagues in a messaging app.)
+
+**Office Worker**: "Fireproof made the process so simple. I didn't have to wrangle with complex databases or tricky setups. It was just me, my ideas, and the freedom to create."
+
+(Shows her smiling at the computer, satisfied, as code runs smoothly on the screen.)
+
+**Office Worker**: "And the results? Everyone in the office loved the apps I made. They made our work more efficient, more streamlined. They noticed, and so did the bosses."
+
+(Cuts to her receiving an email with the subject line, "Promotion – Leading New Dev Team!")
+
+**Office Worker**: "Guess what? I just got promoted to start a new dev team reporting directly to the C-suite! Can you believe it?"
+
+(Shows her reacting excitedly to the email, then standing up, looking proud and excited.)
+
+**Office Worker**: "That's the Fireproof Effect! It's not just about databases and apps, it's about unlocking potential, sparking innovation, and transforming careers. So what are you waiting for? Unleash your own Fireproof Effect!"
+
+(Ends with the office worker holding a superhero pose with a graphic of a fireproof logo and a 'Light Up Your Data' slogan appearing beside her.)
+
+(Background Music: Inspiring, upbeat corporate track)
