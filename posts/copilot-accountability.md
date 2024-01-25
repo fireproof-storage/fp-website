@@ -6,8 +6,8 @@ author: J Chris Anderson
 summary: AI copilots can be risky, especially without proper oversight. Fireproof's unforgeable sync makes AI safety logging simple and cheap.
 tags:
   - AI
-  - apps
-  - React
+  - safety
+  - proofs
 ---
 
 Existing workflow support tools for inventory rebalancing, managerial approvals, or call center interactions can all benefit from AI copilots to streamline routine operations and improve the quality of service for tasks that need human attention. The benefit of automating common cases shows up as reduced wait times and lower operating costs. But giving a machine control of management decisions is risky, and you don’t want to be in the dark about the decisions AI is making or recommending in the field.
