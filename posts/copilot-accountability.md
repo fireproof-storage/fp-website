@@ -18,7 +18,7 @@ Fireproof is the ideal database for capturing interactive user and AI agent beha
 
 Fireproof is designed for compatibility with any web app, so it fits securely in your existing context — you can add it to your project just like any other JavaScript package. It supports pluggable backends with common connectors, so working within your production-tested environment is easy. That’s just the beginning – once Fireproof is instantiated in every application instance, it unlocks powerful new capabilities. Read about one great example: [running real-time analytics queries across live session data.](https://fireproof.storage/posts/from-mlops-to-point-of-sale:-merkle-proofs-and-data-locality/)
 
-![Garden art- https://www.flickr.com/photos/internetarchivebookimages/20925143421/](/static/img/computer-accountable.jpeg)
+![https://twitter.com/SwiftOnSecurity/status/1385565737167724545](/static/img/computer-accountable.jpeg)
 
 The combination of provable event logs and multi-writer live interaction makes Fireproof ideal for workflows like real-time distributed analytics, ride-hailing sessions, live contract configurators, and quality control, in addition to supporting AI copilot safety. When you add [verifiable CRDTs](https://fireproof.storage/posts/why-verifiable-crdts-are-the-future-of-web-data/) in the mix, it unlocks the ability to dramatically simplify the architecture of most any SaaS or web application. 
 
