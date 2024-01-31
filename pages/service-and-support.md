@@ -20,3 +20,5 @@ Or join the community:
 
 [Facebook](https://www.facebook.com/fireproof.storage/)
 
+[YouTube](https://www.youtube.com/channel/UCfDatFbIMScofrlMiV2_fEg)
+
