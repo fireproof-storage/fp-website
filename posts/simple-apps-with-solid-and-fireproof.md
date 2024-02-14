@@ -9,7 +9,7 @@ tags:
 ---
 There are many web frameworks out there, the most popular being React, with Angular, Express, Next.js; even jQuery still maintains strong numbers. Given all the existing choices, it’s worth exploring why people are switching to Solid, and why the community chose this as our second supported framework, after React. In a sentence, Solid strikes the perfect balance of developer experience and application performance. 
 
-C﻿heck out the Fireproof/Solid adapter [here](https://github.com/fireproof-storage/fireproof/tree/main/packages/solid-js).
+C﻿heck out the Fireproof/Solid adapter [here](https://www.npmjs.com/package/@fireproof/solid-js).
 
 On the developer experience side, Solid aims to be Powerful, Pragmatic, and Productive, per [the website](https://www.solidjs.com/). It’s designed to be familiar to those coming from React, but even easier to use thanks to a few key features. First, the virtual DOM has been removed, so you don’t need to worry about optimizing that. It’s based on three main primitives — Signal for state management, Memo for caching, and Effect for tracking. All primitives are carefully designed to be lightweight and intuitive. Finally, Solid is declarative, based on JSX and unidirectional data flow, so React developers will feel right at home. 
 
