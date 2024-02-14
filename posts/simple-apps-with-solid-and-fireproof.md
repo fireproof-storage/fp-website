@@ -4,7 +4,8 @@ date: 2024-02-14T19:51:00.000Z
 author: Eric Jensen
 summary: Empowering developers who want better UX and application performance.
 tags:
-  - post
+  - applications
+  - technology
 ---
 There are many web frameworks out there, the most popular being React, with Angular, Express, Next.js; even jQuery still maintains strong numbers. Given all the existing choices, it’s worth exploring why people are switching to Solid, and why the community chose this as our second supported framework, after React. In a sentence, Solid strikes the perfect balance of developer experience and application performance. 
 
