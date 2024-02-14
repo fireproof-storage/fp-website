@@ -1,6 +1,6 @@
 ---
 title: Simple Apps with Solid and Fireproof
-date: 2024-01-04T19:51:07.854Z
+date: 2024-02-14T19:51:00.000Z
 author: Eric Jensen
 summary: Empowering developers who want better UX and application performance.
 tags:
