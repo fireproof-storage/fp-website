@@ -9,16 +9,16 @@ tags:
   - Solid
 ---
 > “Managing state is the hardest part of any complex application, but Solid arms you with all the tools you need and makes it enjoyable to manage,” - Daniel Sanchez
->
->
+
+![Dan Sanchez](/static/img/88a1bfe9-5701-46bf-bb36-1558ccf8379c_1_105_c.jpeg)
 
 [Daniel Sanchez](https://github.com/thedanchez) is a software engineer who specializes in frontend development and is passionate about Solid. Having worked with React for many years, he believes it has a very bright future as it is easier to step into, reason about, has better performance, and sees the community support behind it skyrocketing.
 
 While chatting with co-workers about open-source projects he discovered CRDTs and was fascinated by the possibility of mergable workable data. A co-worker mentioned how Fireproof uses CRDTs. Dan was new to database sync and [web APIs for cryptography](https://w3c.github.io/webcrypto/), two defining features of Fireproof. He quickly discovered Fireproof is a natural fit for Solid, because it is an embedded database so it doesn’t require the developer to step outside the tool box and add to the stack. But at that point Fireproof only shipped a ReactJS adapter, so Dan stepped into his first major open-source project as a contributor, and within just two months of first diving into the backend, he’s added a [Solid adapter](https://github.com/fireproof-storage/fireproof/tree/main/packages/solid-js) and [examples](https://github.com/fireproof-storage/fireproof/blob/ad83dc4aae5810027f2f2cacf4702afdd05f3cc6/examples/solid-js/src/pages/TodoList.tsx#L5)!
 
-Check out how clean the code to your Solid apps becomes:
+![code screenshot of app.tsx](https://lh7-us.googleusercontent.com/SCMY8CVeRqvQfK8s4imnUEQx_TAytQeICVdOzjGdi_on9JUOfYyDK5spzrQFTjzomE4oi0zHSMcfclVfGn0Zx4fDkL2l5MNQxtpOznR9TyRy_ftRjV32_hLK0zGS9bznu4y0VgmV9FJr34pgkNV3W8I)
 
-![](https://lh7-us.googleusercontent.com/SCMY8CVeRqvQfK8s4imnUEQx_TAytQeICVdOzjGdi_on9JUOfYyDK5spzrQFTjzomE4oi0zHSMcfclVfGn0Zx4fDkL2l5MNQxtpOznR9TyRy_ftRjV32_hLK0zGS9bznu4y0VgmV9FJr34pgkNV3W8I)
+Check out the screenshot to see how clean the code to your Solid apps can be.
 
 His heavy lift included two major additions. First, he added [tsup](https://tsup.egoist.dev/#what-can-it-bundle) – a bundler powered by esbuild. It allowed us to replace the spaghetti of build scripts that had evolved from Fireproof’s first modules to a better, declarative and more readable bundling structure. Now the build is easier to reason about and more similar across packages. Thanks Dan for cleaning the house here! Second, alongside adding the Solid adapter implementation, he worked hard to enable full integration testing capabilities by finding the polyfills required to do so. This took a lot of experimentation, and the resulting changes in Fireproof’s code layout also enabled some new features like memory mode and [edge function support](https://github.com/fireproof-storage/fireproof/issues/86). With this work done, we can now write tests that give us more robust confidence in the end product. Moreover, we can replicate the work so that other adapters can reap the benefits of full integration testing like Fireproof’s React adapter.
 
