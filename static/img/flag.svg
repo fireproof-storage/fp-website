@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="25" fill="#EE521C"/> <!-- Top stripe -->
+  <rect y="25" width="200" height="25" fill="#F16C12"/> <!-- Second stripe -->
+  <rect y="50" width="200" height="25" fill="#F58709"/> <!-- Third stripe -->
+  <rect y="75" width="200" height="25" fill="#F9A100"/> <!-- Bottom stripe -->
+</svg>

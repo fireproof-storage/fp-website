@@ -1,16 +1,23 @@
 ---
-layout: layouts/base.njk
+layout: layouts/base-home.njk
 section: home
 ---
-{% include "components/hero.njk" %}
+<main class="container text-8xl font-bold">
+  <p class="m-12">Realtime database</p>
+  <p class="m-12">Runs anywhere</p>
+</main>
+<main class="container mx-auto px-4 sm:px-6 md:px-8">
+  <div class="w-full lg:w-3/4 xl:w-2/3 mx-auto">
+    {% include "components/hero.njk" %}
+    {% include "components/features.njk" %}
+    {% include "components/connect.njk" %}
 
-{% include "components/features.njk" %}
-{% include "components/connect.njk" %}
+    {# {% include "components/quotes.njk" %} #}
 
-{# {% include "components/quotes.njk" %} #}
+    {% include "components/examples.njk" %}
 
-{% include "components/examples.njk" %}
+    {# {% include "components/cta.njk" %} #}
 
-{# {% include "components/cta.njk" %} #}
-
-{{ layoutContent | safe }}
+    {{ layoutContent | safe }}
+  </div>
+</main>
