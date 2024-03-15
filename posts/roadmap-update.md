@@ -1,6 +1,6 @@
 ---
 title: Roadmap Update
-date: 2024-01-01T20:15:19.984Z
+date: 2024-03-15
 author: J Chris Anderson
 summary: Progress and Plans on the Road to 1.0
 tags:
@@ -28,6 +28,7 @@ Second, a quick recap of the roadmap accomplishments:
 - Compaction enhancements: we now load online blocks in the case of multi-writer delete conflicts, making Fireproof more robust under concurrent compaction.
 
 Still cooking:
+
 - Netlify supports blob storage but needs a solution for realtime metadata. It can be used today with the PartyKit adapter or the upcoming AWS web socket adapter.
 - Executable feature specification for 1.0: we are still in learning mode, and while we don't plan to unintentionally churn the API, we don't want to set expectations that we won't until we have automated assurance that we can't. This would be a great place for a community contribution.
 - Build our own cloud.
