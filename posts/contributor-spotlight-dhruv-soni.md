@@ -7,7 +7,8 @@ summary: Fireproof's first Connectors Engineer brings a blend of talent and
   his current focus is on enhancing Fireproof's Chrome extension. He sees
   growing community involvement and looks forward to pursuing graduate studies
   in software engineering.
-tags: []
+tags:
+  - contributor
 ---
 Hey guys! I am Dhruv Soni, Employee Number 04 I guess at Fireproof as a Connectors Engineer. Born and brought up in Vapi, India I aspire to be a great software engineer and most importantly a good team member with a smile :) My love for pizzas and Daniel Ricciardo is just unmatched.
 
