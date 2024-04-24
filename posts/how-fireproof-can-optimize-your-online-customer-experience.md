@@ -24,4 +24,4 @@ The final example is perhaps the most important: optimizing for cost & performan
 
 Adopting Fireproof goes beyond merely upgrading your technology—it’s about enhancing your business’s core functions. Fireproof equips you with the tools to protect, engage, and understand your customers better. It provides your business with a competitive edge in a landscape where speed and accuracy are paramount. By integrating Fireproof, you position your company to thrive in an environment that demands agility and foresight. To help our customers achieve their goals quickly & efficiently, we’ve created Fireproof Build, a team of services and solutions experts to help you realize your goals. 
 
-To learn more about the power of real-time data management and what Fireproof can do for your business, [contact us today!](http://customer-success@fireproof.storage)
+To learn more about the power of real-time data management and what Fireproof can do for your business, [contact us today!](customer-success@fireproof.storage)
