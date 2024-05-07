@@ -24,7 +24,6 @@ Based on the [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog) re
 * Scores 100/100/100/100 in Lighthouse performance tests 🔥
 * Maintenance-free post author archives
 * Automatic navigation menus with [Eleventy Navigation](https://www.11ty.dev/docs/plugins/navigation/)
-* Includes a working contact form
 * CSS 2kb minified, inlined for fastest page render
 * Optional pipeline for minified inline JS
 * Pre-builds and minifies your HTML too
