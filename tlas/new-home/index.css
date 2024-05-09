@@ -1,0 +1,27 @@
+:root {
+  --color-text-primary: rgba(44, 44, 44, 1);
+  --color-text-secondary: rgba(44, 44, 44, 0.4);
+  --color-text-accent: rgba(219, 92, 6, 1);
+  --color-background-primary: rgba(255, 255, 255, 1);
+  --color-background-secondary: rgba(240, 240, 240, 1);
+  --color-background-accent: rgba(255, 129, 38, 1);
+  --color-border: rgba(224, 222, 222, 1);
+}
+
+* {
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
