@@ -103,7 +103,7 @@ h4 {
   line-height: 1.2;
 }
 
-.text-medium {
+.text-middle {
   font-family: 'Geist', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -111,7 +111,7 @@ h4 {
   line-height: 1.2;
 }
 
-.text-medium.bolder {
+.text-middle.bolder {
   font-weight: 700;
 }
 
@@ -126,6 +126,17 @@ h4 {
 
 .text-small .bolder {
   font-weight: 800;
+}
+
+section,
+header,
+footer {
+  max-width: var(--section-max-width);
+}
+
+section {
+  padding-left: var(--section-side-padding);
+  padding-right: var(--section-side-padding);
 }
 
 
