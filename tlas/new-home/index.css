@@ -1,11 +1,19 @@
 :root {
-  --color-text-primary: rgba(44, 44, 44, 1);
-  --color-text-secondary: rgba(44, 44, 44, 0.4);
-  --color-text-accent: rgba(219, 92, 6, 1);
+  --color-primary: rgba(44, 44, 44, 1);
+  --color-secondary: rgba(44, 44, 44, 1);
+  --color-accent: rgba(255, 129, 38, 1);
+  --color-text-links: rgba(219, 92, 6, 1);
+  --color-sup-text: rgba(44, 44, 44, 0.4);
   --color-background-primary: rgba(255, 255, 255, 1);
   --color-background-secondary: rgba(240, 240, 240, 1);
-  --color-background-accent: rgba(255, 129, 38, 1);
-  --color-border: rgba(224, 222, 222, 1);
+  --color-borders: rgba(224, 222, 222, 1);
+
+  --section-max-width: 1364px;
+  --section-side-padding: 98px;
+
+  --radius-large: 20px;
+  --radius-small: 12px;
+  --radius-button: 8px;
 }
 
 * {
@@ -16,6 +24,10 @@
 body {
   margin: 0;
   padding: 0;
+  line-height: 1.2;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
 }
 
 ul {
@@ -25,3 +37,100 @@ ul {
 a {
   text-decoration: none;
 }
+
+h1 {
+  font-family: 'Geist', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-family: 'Geist', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+h3 {
+  font-family: 'Inter Tight', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+h4 {
+  font-family: 'Geist', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.text {
+  font-family: 'Inter Tight', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.text.bolder {
+  font-weight: 700;
+}
+
+.text-buttons {
+  font-family: 'Geist', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.text-large {
+  font-family: 'Geist', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.text-medium {
+  font-family: 'Geist', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.text-medium.bolder {
+  font-weight: 700;
+}
+
+.text-small {
+  font-family: 'Inter Tight', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.text-small .bolder {
+  font-weight: 800;
+}
+
+
+
+
+
+
+
