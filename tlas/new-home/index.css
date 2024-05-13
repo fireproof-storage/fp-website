@@ -42,6 +42,7 @@ body {
   flex-direction: column;
   padding: 0 var(--body-side-padding);
   margin: 0;
+  color: var(--color-primary);
   line-height: 1.2;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -120,7 +121,7 @@ h4 {
   font-style: normal;
   font-weight: 500;
   font-size: 22px;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 .text-middle {
@@ -166,7 +167,7 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 28px;
+  gap: 30px;
   height: 70px;
 }
 
@@ -182,7 +183,7 @@ header {
 .header-link-icons {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 12px;
 }
 
 .header-discord,
@@ -207,6 +208,7 @@ section.hero {
   align-items: center;
   justify-content: space-between;
   gap: 10%;
+  margin-top: 28px;
   margin-bottom: 170px;
   background-color: var(--color-background-secondary);
   border-radius: var(--radius-large);
@@ -215,20 +217,49 @@ section.hero {
 
 .hero-heading {
   max-width: 500px;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .hero-text {
   max-width: 320px;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: inline-flex;
+  gap: 18px;
 }
 
 .hero-buttons .text-buttons {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  gap: 4px;
   width: 200px;
   height: 51px;
   border: 1px solid var(--color-borders);
   border-radius: var(--radius-button);
+}
+
+.hero-button-primary {
+  background-color: var(--color-primary);
+  color: var(--color-background-primary);
+}
+
+.hero-button-secondary {
+  background-color: var(--color-background-primary);
+}
+
+.hero-button-secondary::before {
+  content: ' ';
+  width: 28px;
+  height: 28px;
+  background-image: url('./images/github-icon.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: -8px;
 }
 
 .hero-app {
@@ -273,7 +304,7 @@ section.demo {
 
 /* testimonials */
 section.testimonials {
-  margin-bottom: 170px;
+  margin-bottom: 350px;
   max-width: unset;
 }
 
@@ -313,6 +344,13 @@ section.community {
   max-width: 660px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.community .trademark {
+  position: absolute;
+  top: -70px;
+  left: 7%;
+  transform: rotate(-10deg);
 }
 
 /* footer */
