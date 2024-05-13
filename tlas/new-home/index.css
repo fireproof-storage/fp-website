@@ -52,6 +52,7 @@ body {
 ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 a {
@@ -183,6 +184,12 @@ footer {
   background-color: var(--color-background-primary);
 }
 
+@media (max-width: 1150px) {
+  :root {
+  --section-side-padding: 68px;
+  }
+}
+
 /* header */
 header {
   display: flex;
@@ -225,10 +232,7 @@ header {
 
 /* hero */
 section.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10%;
+  position: relative;
   margin-top: 28px;
   margin-bottom: 170px;
   background-color: var(--color-background-secondary);
@@ -238,7 +242,7 @@ section.hero {
 
 .hero-heading {
   max-width: 500px;
-  margin-top: 0;
+  margin-top: 152px;
   margin-bottom: 20px;
 }
 
@@ -249,7 +253,7 @@ section.hero {
 }
 
 .hero-buttons {
-  display: inline-flex;
+  display: flex;
   gap: 18px;
 }
 
@@ -264,10 +268,48 @@ section.hero {
 }
 
 .hero-app {
-  width: 400px;
-  height: 200px;
-  background-color: darkgray;
-  flex-shrink: 0;
+  position: absolute;
+  top: 130px;
+  right: var(--section-side-padding);
+  width: 594px;
+  height: 365px;
+  background-color: #292828;
+  border-radius: var(--radius-small);
+}
+
+@media (max-width: 1370px) {
+  section.hero {
+    padding-bottom: 80px;
+  }
+
+  .hero-heading,
+  .hero-app,
+  .hero-buttons {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-heading {
+    margin-top: 92px;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+
+  .hero-app {
+    position: static;
+    width: 100%;
+    max-width: 594px;
+  }
+
+  .hero-text {
+    max-width: unset;
+    margin-top: 36px;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
 }
 
 /* benefits */
@@ -283,6 +325,22 @@ section.benefits {
 
 .benefit {
   max-width: 290px;
+}
+
+@media (max-width: 1150px) {
+  section.benefits {
+    margin-bottom: 140px;
+  }
+
+  .benefits-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefit {
+    text-align: center;
+    max-width: 440px;
+  }
 }
 
 /* demo */
@@ -328,15 +386,19 @@ section.demo {
 
 /* testimonials */
 section.testimonials {
-  margin-bottom: 380px;
+  margin-bottom: 180px;
   max-width: unset;
+  left: 0;
+  width: 100vw;
+  width: 100vw;
+  height: 240px;
+  overflow: hidden;
 }
 
 .testimonials-list {
   position: absolute;
   top: 0;
-  right: calc(-1 * var(--body-side-padding));
-  left: calc(-1 * var(--body-side-padding));
+  left: 0;
   display: flex;
   gap: 50px;
 }
@@ -434,8 +496,10 @@ footer {
 
 .footer-links {
   display: flex;
-  gap: 10px;
-  justify-content: space-between;
+  column-gap: 56px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-copyright {
@@ -443,4 +507,11 @@ footer {
   color: var(--color-sup-text);
   margin-top: 82px;
   margin-bottom: 22px;
+}
+
+@media (max-width: 1150px) {
+  footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
