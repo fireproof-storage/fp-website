@@ -186,7 +186,30 @@ footer {
 
 @media (max-width: 1150px) {
   :root {
-  --section-side-padding: 68px;
+    --section-side-padding: 38px;
+  }
+}
+
+@media (max-width: 770px) {
+  :root {
+    --section-side-padding: 30px;
+    --body-side-padding: 20px;
+  }
+
+  h1 {
+    font-size: 6.8vw;
+  }
+
+  h2 {
+    font-size: 7.8vw;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  .text-large { 
+    font-size: 19px;
   }
 }
 
@@ -280,6 +303,7 @@ section.hero {
 @media (max-width: 1370px) {
   section.hero {
     padding-bottom: 80px;
+    padding-top: 80px;
   }
 
   .hero-heading,
@@ -290,7 +314,7 @@ section.hero {
   }
 
   .hero-heading {
-    margin-top: 92px;
+    margin-top: unset;
     margin-bottom: 36px;
     text-align: center;
   }
@@ -312,6 +336,27 @@ section.hero {
   }
 }
 
+@media (max-width: 1150px) {
+  section.hero {
+    margin-bottom: 130px;
+  }
+}
+
+@media (max-width: 550px) {
+  section.hero {
+    padding-bottom: 60px;
+    padding-top: 60px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons .button {
+    width: 100%;
+  }
+}
+
 /* benefits */
 section.benefits {
   margin-bottom: 170px;
@@ -329,7 +374,7 @@ section.benefits {
 
 @media (max-width: 1150px) {
   section.benefits {
-    margin-bottom: 140px;
+    margin-bottom: 120px;
   }
 
   .benefits-list {
@@ -378,10 +423,34 @@ section.demo {
 }
 
 .demo-carusel-item.active {
-  width: 130%;
-  height: 32vw;
+  width: 140%;
+  height: 31vw;
   max-height: 460px;
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 1150px) {
+  .demo-text {
+    margin-bottom: 80px;
+  }
+
+  .demo-carusel {
+    gap: 0;
+  }
+
+  .demo-carusel-item {
+    border-radius: 10px;
+  }
+
+  .demo-carusel-item:first-of-type,
+  .demo-carusel-item:last-of-type {
+    transform: scale(0.85);
+  }
+
+  .demo-carusel-item.active {
+    width: 170%;
+    transform: scale(1.05, 1.25);
+  }
 }
 
 /* testimonials */
@@ -452,10 +521,20 @@ section.testimonials {
   color: var(--color-text-links);
 }
 
+@media (max-width: 550px) {
+  .testimonials-list {
+    gap: 30px;
+  }
+
+  .testimonials-item {
+    width: 258px;
+  }
+}
+
 /* community */
 section.community {
   margin-bottom: 40px;
-  padding: 108px 0;
+  padding: 108px var(--body-side-padding);
   text-align: center;
   background-color: var(--color-background-secondary);
   border-radius: var(--radius-large);
@@ -487,6 +566,13 @@ section.community {
   top: -70px;
   left: 7%;
   transform: rotate(-10deg);
+}
+
+@media (max-width: 550px) {
+  .community .trademark {
+     width: 200px;
+     height: 131px;
+  }
 }
 
 /* footer */
