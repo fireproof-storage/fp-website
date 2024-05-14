@@ -31,6 +31,19 @@
   --radius-button: 8px;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+     --color-primary: rgba(255, 255, 255, 1);
+    --color-secondary: rgba(255, 255, 255, 0.6);
+    --color-accent: rgba(255, 132, 63, 1);
+    --color-text-links: rgba(242, 100, 4, 1);
+    --color-sup-text: rgba(255, 255, 255, 0.4);
+    --color-background-primary: rgba(23, 22, 22, 1);
+    --color-background-secondary: rgba(32, 31, 32, 1);
+    --color-borders: rgba(65, 65, 65, 1);
+  }
+}
+
 * {
 -webkit-box-sizing: border-box;
         box-sizing: border-box;
@@ -47,6 +60,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
+  background-color: var(--color-background-primary);
 }
 
 ul {
@@ -103,6 +117,7 @@ h4 {
   font-size: 19px;
   line-height: 1.4;
   letter-spacing: 0.02em;
+  color: var(--color-secondary);
 }
 
 .text .bolder {
@@ -123,6 +138,7 @@ h4 {
   font-weight: 500;
   font-size: 22px;
   line-height: 1.4;
+  color: var(--color-secondary);
 }
 
 .text-middle {
@@ -253,6 +269,20 @@ header {
   background-image: url('./images/github-icon.svg');
 }
 
+@media (prefers-color-scheme: dark) {
+  .header-logo {
+    background-image: url('./images/fp-logo-white.svg');
+  }
+
+  .header-discord {
+    background-image: url('./images/discord-icon-white.svg');
+  }
+
+  .header-github {
+    background-image: url('./images/github-icon-white.svg');
+  }
+}
+
 /* hero */
 section.hero {
   position: relative;
@@ -288,6 +318,16 @@ section.hero {
   background-size: cover;
   background-repeat: no-repeat;
   margin-left: -8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero-buttons .button-secondary {
+    background-color: #262222;
+  }
+
+  .hero-buttons .button-secondary::before {
+    background-image: url('./images/github-icon-white.svg');
+  }
 }
 
 @media (max-width: 1370px) {
@@ -564,8 +604,7 @@ section.testimonials {
 .testimonials-author {
   order: 1;
   display: flex;
-  gap: 8px;
-  align-items: center;
+  gap: 12px;
 }
 
 .testimonials-name {
@@ -601,6 +640,12 @@ section.testimonials {
 
 .testimonilas-link {
   color: var(--color-text-links);
+}
+
+@media (prefers-color-scheme: dark) {
+  .testimonials-body .testimonial-text {
+    color: #A2A2A2;
+  }
 }
 
 @media (max-width: 550px) {
@@ -648,6 +693,12 @@ section.community {
   top: -70px;
   left: 7%;
   transform: rotate(-10deg);
+}
+
+@media (prefers-color-scheme: dark) {
+  .community .button::before {
+    background-image: url('./images/discord-icon.svg');
+  }
 }
 
 @media (max-width: 550px) {
