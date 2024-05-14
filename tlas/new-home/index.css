@@ -229,6 +229,14 @@ footer {
   }
 }
 
+/* flying hint */
+#flying-hint {
+  padding: 8px 20px;
+  border-radius: 30px;
+  background-color: var(--color-accent);
+  color: #2C2C2C;
+}
+
 /* header */
 header {
   display: flex;
@@ -392,6 +400,8 @@ section.hero {
   border: 1px solid #555453;
   border-radius: var(--radius-small);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-app-tabs {
@@ -444,7 +454,7 @@ section.hero {
 .app-header {
   position: relative;
   height: 16px;
-  margin-top: -16px;
+  margin-top: -15px;
   border-radius: 0 8px 0 0;
   font-size: 7px;
   text-align: center;
@@ -462,6 +472,10 @@ section.hero {
   height: 8px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 8'%3E%3Ccircle cx='4' cy='4' r='4' fill='%234C4C4B'/%3E%3C/svg%3E");
   background-repeat: repeat;
+}
+
+.app-body {
+  flex-grow: 1;
 }
 
 @media (max-width: 1370px) {
