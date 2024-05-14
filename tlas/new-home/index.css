@@ -370,6 +370,7 @@ section.hero {
   font-size: 9px;
   padding-top: 8px;
   flex-grow: 1;
+  flex-basis: 25%;
   margin-left: -10px;
   border: 1px solid #2C2C2C;
   border-radius: 8px 8px 0 0;
@@ -380,6 +381,7 @@ section.hero {
 .hero-app-tabs .tab:first-of-type {
   margin-left: 0;
   z-index: 4;
+  flex-basis: 30%;
 }
 
 .hero-app-tabs .tab:nth-child(2) {
