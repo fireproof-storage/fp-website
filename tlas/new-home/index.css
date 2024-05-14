@@ -290,16 +290,6 @@ section.hero {
   margin-left: -8px;
 }
 
-.hero-app {
-  position: absolute;
-  top: 130px;
-  right: var(--section-side-padding);
-  width: 594px;
-  height: 365px;
-  background-color: #292828;
-  border-radius: var(--radius-small);
-}
-
 @media (max-width: 1370px) {
   section.hero {
     padding-bottom: 80px;
@@ -317,12 +307,6 @@ section.hero {
     margin-top: unset;
     margin-bottom: 36px;
     text-align: center;
-  }
-
-  .hero-app {
-    position: static;
-    width: 100%;
-    max-width: 594px;
   }
 
   .hero-text {
@@ -354,6 +338,102 @@ section.hero {
 
   .hero-buttons .button {
     width: 100%;
+  }
+}
+
+/* hero app */
+.hero-app {
+  position: absolute;
+  top: 130px;
+  right: var(--section-side-padding);
+  width: 594px;
+  height: 365px;
+  background-color: #292828;
+  border: 1px solid #555453;
+  border-radius: var(--radius-small);
+  overflow: hidden;
+}
+
+.hero-app-tabs {
+  display: flex;
+  justify-content: space-between;
+  height: 46px;
+  margin: -1px;
+  background-color: #1F1E1E;
+  user-select: none;
+  cursor: pointer;
+}
+
+.hero-app-tabs .tab {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 9px;
+  padding-top: 8px;
+  flex-grow: 1;
+  margin-left: -10px;
+  border: 1px solid #2C2C2C;
+  border-radius: 8px 8px 0 0;
+  background-color: #1F1E1E;
+  z-index: 1;
+}
+
+.hero-app-tabs .tab:first-of-type {
+  margin-left: 0;
+  z-index: 4;
+}
+
+.hero-app-tabs .tab:nth-child(2) {
+  z-index: 3;
+}
+
+.hero-app-tabs .tab:nth-child(3) {
+  z-index: 2;
+}
+
+.hero-app-tabs .tab.active {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: #383736;
+  border: 1px solid #383736;
+  z-index: 100;
+}
+
+.app-header {
+  position: relative;
+  height: 16px;
+  margin-top: -16px;
+  border-radius: 0 8px 0 0;
+  font-size: 7px;
+  text-align: center;
+  padding-top: 4px;
+  background-color: #383736;
+  color: rgba(129, 127, 127, 0.7);
+  z-index: 100;
+}
+
+.app-header::before {
+  content: ' ';
+  position: absolute;
+  left: 8px;
+  width: 34px;
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 8'%3E%3Ccircle cx='4' cy='4' r='4' fill='%234C4C4B'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+@media (max-width: 1370px) {
+  .hero-app {
+    position: static;
+    width: 100%;
+    max-width: 594px;
+    border: 1px solid #555453;
+  }
+}
+
+@media (max-width: 550px) {
+  .hero-app-tabs .tab {
+    font-size: 7px;
   }
 }
 
