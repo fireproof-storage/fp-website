@@ -14,9 +14,12 @@ tabs.onclick = (e) => {
   targetTab.classList.add('active')
 }
 
+
 // flying hint API:
-// #flying-hint – id of a styled flying element 
-//  data-hint   – text that hint shows
+// 1. add #flying-hint to an empty styled element that will be a hint
+// 2. add data-hint attribute to all triggers; value is the hint text
+// 3. if trig elements are close to right and bottom edges of the screen
+//    add data-edge="true" attribute
 
 const hint = document.getElementById('flying-hint')
 const hintTriggers = document.querySelectorAll('[data-hint]')
@@ -24,12 +27,12 @@ const hintTriggers = document.querySelectorAll('[data-hint]')
 hint.style.opacity = '0'
 hint.style.position = 'absolute'
 hint.style.zIndex = '999'
-hint.style.transition = 'opacity 0.2s ease'
+hint.style.transition = 'opacity 0.4s ease'
 
 const w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
 const h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-const indentX = 50
-const indentY = 100
+const shiftX = 10
+const shiftY = 45
 const ease = 0.08
 
 let posX = 0
@@ -37,13 +40,19 @@ let posY = 0
 let mouseX = 0
 let mouseY = 0
 
+let indX = 0
+let indY = 0
+
 function showHint() {
-  // updating text
   hintTriggers.forEach(trigger => {
     trigger.onmouseenter = () => {
       hint.style.opacity = '1'
-      if (trigger.dataset.hint) {
-        hint.innerText = trigger.dataset.hint
+      hint.innerText = trigger.dataset.hint
+      if (trigger.dataset.edge) {
+        handleEdge()
+      } else {
+        indX = 0
+        indY = 0
       }
     }
     trigger.onmouseleave = () => {
@@ -52,23 +61,16 @@ function showHint() {
   })
 }
 
-function moveHint() {
+function handleEdge() {
+  indX = (mouseX > w - hint.offsetWidth + shiftX) ? hint.offsetWidth - shiftX : 0
+  indY = (mouseY > h - hint.offsetHeight - shiftY) ? hint.offsetHeight * 2 + shiftY : 0
+}
 
+function moveHint() {
   function easeTo() {
     const hintBounds = hint.getBoundingClientRect()
-
-    let indX = 0
-    let indY = 0
-
-    if (mouseX > w - hint.offsetWidth / 2 - 16) {
-      indX = hint.offsetWidth / 2 + indentX
-    }
-    if (mouseY > h - hint.offsetHeight - 50) {
-      indY = hint.offsetHeight / 2 + indentY
-    }
-
-    const dX = mouseX - (hintBounds.left + 16 + indX)
-    const dY = mouseY - (hintBounds.top - 50 + indY)
+    const dX = mouseX - (hintBounds.left + shiftX + indX)
+    const dY = mouseY - (hintBounds.top - shiftY + indY)
 
     posX += dX * ease
     posY += dY * ease
@@ -84,6 +86,7 @@ function moveHint() {
     mouseX = e.clientX
     mouseY = e.clientY
   }
+
   document.onmousemove = setCoords
   update()
 }
