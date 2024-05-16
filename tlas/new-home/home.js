@@ -20,6 +20,7 @@ tabs.onclick = (e) => {
 // 2. add data-hint attribute to all triggers; value is the hint text
 // 3. if trig elements are close to right and bottom edges of the screen
 //    add data-edge="true" attribute
+// 4. to make a part of a hint text bolder, wrap it into /b.../b 
 
 const hint = document.getElementById('flying-hint')
 const hintTriggers = document.querySelectorAll('[data-hint]')
@@ -47,7 +48,7 @@ function showHint() {
   hintTriggers.forEach(trigger => {
     trigger.onmouseenter = () => {
       hint.style.opacity = '1'
-      hint.innerText = trigger.dataset.hint
+      updateText(trigger.dataset.hint)
       if (trigger.dataset.edge) {
         handleEdge()
       } else {
@@ -59,6 +60,16 @@ function showHint() {
       hint.style.opacity = '0'
     }
   })
+}
+
+function updateText(text) {
+  const regex = /\/b.*?\/b/
+  if (text.match(regex)) {
+    const updatedText = text.match(regex)[0].slice(2, -2)
+    hint.innerHTML = text.replace(regex, `<span class="bolder">${updatedText}</span>`)
+  } else {
+    hint.innerText = text
+  }
 }
 
 function handleEdge() {

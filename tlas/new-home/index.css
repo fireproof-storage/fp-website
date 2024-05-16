@@ -132,6 +132,10 @@ h4 {
   line-height: 1.2;
 }
 
+.text-buttons .bolder {
+  font-weight: 800;
+}
+
 .text-large {
   font-family: 'Geist', sans-serif;
   font-style: normal;
