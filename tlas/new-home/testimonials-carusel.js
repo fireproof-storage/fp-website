@@ -1,11 +1,13 @@
 'use strict'
 
-// testimonials 
+// testimonials infinite slider
+// works toghether with css keyframes
+
 const tastimonials = document.querySelector('.testimonials-list')
 const duration = 4
 const innerContent = tastimonials.innerHTML
 
-function fillGaps() {
+function runTestimonialsAnimation() {
   const w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
   let d = duration
 
@@ -15,14 +17,13 @@ function fillGaps() {
   }
 
   tastimonials.style.animationDuration = `${d}s`
+  tastimonials.classList.add('testimonials-animate')
 }
 
-fillGaps()
+runTestimonialsAnimation()
 
 window.addEventListener('resize', () => {
-  tastimonials.style.animationDuration = `${duration}s`
   tastimonials.innerHTML = innerContent
-  fillGaps()
+  tastimonials.classList.remove('testimonials-animate')
+  runTestimonialsAnimation()
 })
-
-tastimonials.classList.add('testimonials-animate')
