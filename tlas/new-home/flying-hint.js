@@ -17,22 +17,25 @@ hint.style.left= '0'
 hint.style.zIndex = '999'
 hint.style.transition = 'opacity 0.4s ease'
 
+let posX = 0
+let posY = 0
+let mouseX = 0
+let mouseY = 0
+
+let indX = 0
+let indY = 0
+
+const shiftX = 10
+const shiftY = 45
+const ease = 0.08
+
+let isMobile = false
+
 function anymateFlyingHint() {
   if (!window.matchMedia('(hover: hover)').matches) return
 
   const w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
   const h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-  const shiftX = 10
-  const shiftY = 45
-  const ease = 0.08
-
-  let posX = 0
-  let posY = 0
-  let mouseX = 0
-  let mouseY = 0
-
-  let indX = 0
-  let indY = 0
 
   function showHint() {
     hintTriggers.forEach(trigger => {
@@ -78,7 +81,7 @@ function anymateFlyingHint() {
     }
 
     function update() {
-      easeTo()
+      if (!isMobile) easeTo()
       hint.style.transform = `translate3d(${posX}px, ${posY}px, 0)`
       window.requestAnimationFrame(update)
     }
@@ -98,12 +101,8 @@ function anymateFlyingHint() {
 
 anymateFlyingHint()
 
-// TO-DO: stop function if no hover
 window.addEventListener('resize', () => {
-  if (window.matchMedia('(hover: hover)').matches) {
-    
-  } else {
-    
-  }
+  isMobile = !window.matchMedia('(hover: hover)').matches
+  posX = posY = mouseX = mouseY = indX = indY = 0
+  anymateFlyingHint()
 })
-
