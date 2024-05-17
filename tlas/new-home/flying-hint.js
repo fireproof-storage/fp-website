@@ -1,38 +1,37 @@
 'use strict'
 
-// flying hint API:
-// 1. add #flying-hint to an empty styled element that will be a hint
-// 2. add data-hint attribute to all triggers; value is the hint text
-// 3. if trig elements are close to right and bottom edges of the screen
-//    add data-edge="true" attribute
-// 4. to make a part of a hint text bolder, wrap it into /b.../b
+{
+  // flying hint API:
+  // 1. add #flying-hint to an empty styled element that will be a hint
+  // 2. add data-hint attribute to all triggers; value is the hint text
+  // 3. if trig elements are close to right and bottom edges of the screen
+  //    add data-edge="true" attribute
+  // 4. to make a part of a hint text bolder, wrap it into /b.../b
 
-const hint = document.getElementById('flying-hint')
-const hintTriggers = document.querySelectorAll('[data-hint]')
+  const hint = document.getElementById('flying-hint')
+  const hintTriggers = document.querySelectorAll('[data-hint]')
 
-hint.style.opacity = '0'
-hint.style.position = 'absolute'
-hint.style.top = '0'
-hint.style.left= '0'
-hint.style.zIndex = '999'
-hint.style.transition = 'opacity 0.4s ease'
+  hint.style.position = 'absolute'
+  hint.style.top = '0'
+  hint.style.left= '0'
+  hint.style.opacity = '0'
+  hint.style.zIndex = '999'
+  hint.style.transition = 'opacity 0.4s ease'
 
-let posX = 0
-let posY = 0
-let mouseX = 0
-let mouseY = 0
+  let posX = 0
+  let posY = 0
+  let mouseX = 0
+  let mouseY = 0
 
-let indX = 0
-let indY = 0
+  let indX = 0
+  let indY = 0
 
-const shiftX = 10
-const shiftY = 45
-const ease = 0.08
+  const shiftX = 10
+  const shiftY = 45
+  const ease = 0.08
 
-let isMobile = false
-
-function anymateFlyingHint() {
-  if (!window.matchMedia('(hover: hover)').matches) return
+  let isMobile = !window.matchMedia('(hover: hover)').matches
+  let mobileReset = false
 
   const w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
   const h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
@@ -70,39 +69,43 @@ function anymateFlyingHint() {
     indY = (mouseY > h - hint.offsetHeight - shiftY) ? hint.offsetHeight * 2 + shiftY : 0
   }
 
-  function moveHint() {
-    function easeTo() {
-      const hintBounds = hint.getBoundingClientRect()
-      const dX = mouseX - (hintBounds.left + shiftX + indX)
-      const dY = mouseY - (hintBounds.top - shiftY + indY)
+  function easeTo() {
+    const hintBounds = hint.getBoundingClientRect()
+    const dX = mouseX - (hintBounds.left + shiftX + indX)
+    const dY = mouseY - (hintBounds.top - shiftY + indY)
 
-      posX += dX * ease
-      posY += dY * ease
-    }
+    posX += dX * ease
+    posY += dY * ease
+  }
 
-    function update() {
-      if (!isMobile) easeTo()
+  function update() {
+    if (!isMobile) {
+      easeTo()
       hint.style.transform = `translate3d(${posX}px, ${posY}px, 0)`
       window.requestAnimationFrame(update)
     }
+  }
 
-    function setCoords(e) {
-      mouseX = e.clientX
-      mouseY = e.clientY
-    }
+  function setCoords(e) {
+    mouseX = e.clientX
+    mouseY = e.clientY
+  }
 
+  function moveHint() {
+    mobileReset = false
     document.onmousemove = setCoords
     update()
   }
 
   moveHint()
   showHint()
+
+  window.addEventListener('resize', () => {
+    isMobile = !window.matchMedia('(hover: hover)').matches
+    if (mobileReset && !isMobile) moveHint()
+    if (isMobile) {
+      window.cancelAnimationFrame(update)
+      mobileReset = true
+    }
+  })
 }
-
-anymateFlyingHint()
-
-window.addEventListener('resize', () => {
-  isMobile = !window.matchMedia('(hover: hover)').matches
-  posX = posY = mouseX = mouseY = indX = indY = 0
-  anymateFlyingHint()
-})
