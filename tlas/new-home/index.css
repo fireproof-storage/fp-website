@@ -258,6 +258,10 @@ header {
   height: 70px;
 }
 
+header .text-buttons:hover {
+  opacity: 0.5;
+}
+
 .header-logo {
   width: 110px;
   height: 30px;
@@ -825,6 +829,10 @@ footer {
   row-gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.footer-links .text-buttons:hover {
+  opacity: 0.5;
 }
 
 .footer-copyright {
