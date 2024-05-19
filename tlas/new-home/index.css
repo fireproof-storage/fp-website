@@ -313,19 +313,37 @@ section.hero {
   min-height: 600px;
 }
 
+section.hero::before {
+  content: ' ';
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23E5E5E5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 10px;
+  border-radius: 10px;
+  z-index: 0;
+}
+
 .hero-heading {
+  position: relative;
   max-width: 500px;
   margin-top: 152px;
   margin-bottom: 20px;
 }
 
 .hero-text {
+  position: relative;
   max-width: 320px;
   margin-top: 0;
   margin-bottom: 30px;
 }
 
 .hero-buttons {
+  position: relative;
   display: flex;
   gap: 18px;
 }
@@ -341,8 +359,12 @@ section.hero {
 }
 
 @media (prefers-color-scheme: dark) {
+  section.hero::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23171616'/%3E%3C/svg%3E");
+  }
+
   .hero-buttons .button-secondary {
-    background-color: #262222;
+    background-color: #1F1E1E;
   }
 
   .hero-buttons .button-secondary::before {
@@ -492,7 +514,9 @@ section.hero {
 
 @media (max-width: 1370px) {
   .hero-app {
-    position: static;
+    position: relative;
+    top: unset;
+    right: unset;
     width: 100%;
     max-width: 594px;
     border: 1px solid #555453;
@@ -578,17 +602,19 @@ section.demo {
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.18);
 }
 
-.demo-carusel:hover .demo-carusel-item.active {
+/* .demo-carusel:hover .demo-carusel-item.active {
   width: 100%;
   height: 80%;
   box-shadow: unset;
-}
+} */
 
-.demo-carusel-item:hover {
+/* .demo-carusel-item:hover {
   width: 140% !important;
   height: 100% !important;
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.18) !important;
-}
+  z-index: 998;
+  margin: 0 30px;
+} */
 
 @media (max-width: 1150px) {
   .demo-text {
@@ -644,6 +670,7 @@ section.testimonials {
   order: 1;
   display: flex;
   gap: 12px;
+  user-select: none;
 }
 
 .testimonials-name {
@@ -675,6 +702,7 @@ section.testimonials {
   text-overflow: ellipsis;
   overflow: hidden;
   margin: 0;
+  user-select: none;
 }
 
 .testimonilas-link {
@@ -718,13 +746,29 @@ section.testimonials {
 /* community */
 section.community {
   margin-bottom: 40px;
-  padding: 108px var(--body-side-padding);
+  padding: 112px var(--body-side-padding);
   text-align: center;
   background-color: var(--color-background-secondary);
   border-radius: var(--radius-large);
 }
 
+section.community::before {
+  content: ' ';
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23E5E5E5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 10px;
+  border-radius: 10px;
+  z-index: 0;
+}
+
 .community-heading {
+  position: relative;
   max-width: 660px;
   margin-left: auto;
   margin-right: auto;
@@ -732,6 +776,7 @@ section.community {
 }
 
 .community .button {
+  position: relative;
   width: 235px;
 }
 
@@ -753,6 +798,10 @@ section.community {
 }
 
 @media (prefers-color-scheme: dark) {
+  section.community::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Ccircle cx='4' cy='4' r='4' fill='%23171616'/%3E%3C/svg%3E");
+  }
+
   .community .button::before {
     background-image: url('./images/discord-icon.svg');
   }
