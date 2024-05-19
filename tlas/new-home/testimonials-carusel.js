@@ -4,7 +4,7 @@
 // works toghether with css keyframes
 
 const tastimonials = document.querySelector('.testimonials-list')
-const duration = 4
+const duration = 8
 const innerContent = tastimonials.innerHTML
 
 function runTestimonialsAnimation() {
