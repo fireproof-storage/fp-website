@@ -26,14 +26,18 @@
       const x = (i - ind) * 50
       if (i === ind) {
         slide.style.transform = `scale(${s * 1.2}) translateX(${x}px)`
+        slide.style.width = '120%'
+        slide.style.height = '90%'
       } else {
+        slide.style.width = ''
+        slide.style.height = ''
         slide.style.transform = `scale(${s}) translateX(${x}px)`
       }
     })
 
     if (activeSlide !== appsCaruselslides[ind]) {
       activeSlide.style.width = '100%'
-      activeSlide.style.height = '80%'
+      activeSlide.style.height = '74%'
       activeSlide.style.boxShadow = 'unset'
     }
   }
