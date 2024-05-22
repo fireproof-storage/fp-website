@@ -442,57 +442,9 @@ section.hero::before {
   flex-direction: column;
 }
 
-.hero-app-tabs {
-  display: flex;
-  justify-content: space-between;
-  height: 46px;
-  margin: -1px;
-  background-color: #1F1E1E;
-  user-select: none;
-  cursor: pointer;
-}
-
-.hero-app-tabs .tab {
-  text-align: center;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 9px;
-  padding-top: 8px;
-  flex-grow: 1;
-  flex-basis: 25%;
-  margin-left: -10px;
-  border: 1px solid #2C2C2C;
-  border-radius: 8px 8px 0 0;
-  background-color: #1F1E1E;
-  z-index: 1;
-}
-
-.hero-app-tabs .tab:first-of-type {
-  margin-left: 0;
-  z-index: 4;
-  flex-basis: 30%;
-}
-
-.hero-app-tabs .tab:nth-child(2) {
-  z-index: 3;
-}
-
-.hero-app-tabs .tab:nth-child(3) {
-  z-index: 2;
-}
-
-.hero-app-tabs .tab.active {
-  color: rgba(255, 255, 255, 1);
-  font-weight: 500;
-  text-transform: uppercase;
-  background-color: #383736;
-  border: 1px solid #383736;
-  z-index: 100;
-}
-
 .app-header {
   position: relative;
   height: 16px;
-  margin-top: -15px;
   border-radius: 6px 6px 0 0;
   font-size: 7px;
   text-align: center;
@@ -514,6 +466,14 @@ section.hero::before {
 
 .app-body {
   flex-grow: 1;
+  margin-left: -1px;
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+
+.app-body .cp_embed_wrapper,
+.app-body .cp_embed_iframe {
+  height: 100%;
 }
 
 @media (max-width: 1370px) {
