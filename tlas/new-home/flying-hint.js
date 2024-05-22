@@ -38,7 +38,8 @@
 
   function showHint() {
     hintTriggers.forEach(trigger => {
-      trigger.onmouseenter = () => {
+      trigger.addEventListener('mouseenter', (e) => {
+        e.stopPropagation()
         hint.style.opacity = '1'
         updateText(trigger.dataset.hint)
         if (trigger.dataset.edge) {
@@ -47,10 +48,15 @@
           indX = 0
           indY = 0
         }
-      }
-      trigger.onmouseleave = () => {
-        hint.style.opacity = '0'
-      }
+      })
+      trigger.addEventListener('mouseout', (e) => {
+        e.stopPropagation()
+        if (!e.relatedTarget?.dataset?.hint) {
+          hint.style.opacity = '0'
+        } else {
+          updateText(e.relatedTarget.dataset.hint)
+        }
+      })
     })
   }
 
@@ -93,7 +99,7 @@
 
   function moveHint() {
     mobileReset = false
-    document.onmousemove = setCoords
+    document.addEventListener('mousemove', setCoords)
     update()
   }
 
