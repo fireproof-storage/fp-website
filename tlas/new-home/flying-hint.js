@@ -38,7 +38,7 @@
 
   function showHint() {
     hintTriggers.forEach(trigger => {
-      trigger.addEventListener('mouseenter', (e) => {
+      trigger.addEventListener('mouseover', (e) => {
         e.stopPropagation()
         hint.style.opacity = '1'
         updateText(trigger.dataset.hint)
