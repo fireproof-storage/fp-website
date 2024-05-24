@@ -7,6 +7,8 @@
   const activeSlide = appsCarusel.querySelector('.active')
 
   function resizeSlides(ind) {
+    if (!window.matchMedia('(hover: hover)').matches) return
+
     appsCaruselslides.forEach((slide, i)=> {
       const s = 1 - Math.abs(i - ind) / 8
       const x = (i - ind) * 50
@@ -25,6 +27,8 @@
   }
 
   appsCarusel.addEventListener('mouseleave', () => {
+    if (!window.matchMedia('(hover: hover)').matches) return
+  
     appsCaruselslides.forEach( slide => {
       slide.style = ' '
       slide.classList.remove('hovered')
