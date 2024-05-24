@@ -684,6 +684,16 @@ section.demo code {
   }
 }
 
+@media (max-width: 550px) {
+  .demo-carusel {
+    transform: scale(1.15);
+  }
+
+  .demo-carusel-item {
+    border-radius: 4px;
+  }
+}
+
 /* testimonials */
 section.testimonials {
   margin-bottom: 180px;
