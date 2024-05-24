@@ -525,7 +525,7 @@ section.benefits {
 
 /* demo */
 section.demo {
-  margin-bottom: 170px;
+  margin-bottom: 130px;
   text-align: center;
 }
 
@@ -694,9 +694,78 @@ section.demo code {
   }
 }
 
+/* logos */
+section.logos {
+  max-width: unset;
+  left: 0;
+  width: 100vw;
+  width: 100vw;
+  height: 240px;
+  overflow: hidden;
+  margin-bottom: 80px;
+}
+
+.logos-heading {
+  text-align: center;
+}
+
+.logos-list {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.logo-image {
+  height: 44px;
+  min-width: 50px;
+  max-width: 140px;
+  object-fit: contain;
+}
+
+.logos-animate {
+  animation: logo-move linear infinite;
+}
+
+.testimonials-animate:hover {
+  animation-play-state: paused;
+}
+
+@keyframes logo-move {
+  from {transform: translateX(0px);}
+  to {transform: translateX(calc(50% + 30px));}
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo-image {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}
+
+@media (max-width: 770px) {
+  section.logos {
+    height: 40vw;
+  }
+}
+
+@media (max-width: 550px) {
+  section.logos {
+    height: 47vw;
+    margin-bottom: 40px;
+  }
+
+  .logo-image {
+    height: 36px;
+    min-width: 40px;
+    max-width: 120px;
+  }
+}
+
 /* testimonials */
 section.testimonials {
-  margin-bottom: 180px;
+  margin-bottom: 200px;
   max-width: unset;
   left: 0;
   width: 100vw;
@@ -783,6 +852,10 @@ section.testimonials {
 }
 
 @media (max-width: 550px) {
+  section.testimonials {
+    margin-bottom: 160px;
+   }
+
   .testimonials-list {
     gap: 30px;
   }
