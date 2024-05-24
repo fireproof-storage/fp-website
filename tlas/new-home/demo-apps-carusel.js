@@ -6,47 +6,30 @@
   const appsCaruselslides = appsCarusel.querySelectorAll('.demo-carusel-item')
   const activeSlide = appsCarusel.querySelector('.active')
 
-  const shift = 4
-  let posX = 0
-
-  function moveCarusel(e) {
-    if (!window.matchMedia('(hover: hover)').matches) return
-
-    const w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-    posX = (w / 2 - e.clientX) / shift
-
-    appsCaruselslides.forEach( slide => {
-      slide.style.transform = `translateX(${posX}px)`
-    })
-  }
-
   function resizeSlides(ind) {
     appsCaruselslides.forEach((slide, i)=> {
       const s = 1 - Math.abs(i - ind) / 8
       const x = (i - ind) * 50
+
       if (i === ind) {
         slide.style.transform = `scale(${s * 1.2}) translateX(${x}px)`
-        slide.style.width = '120%'
-        slide.style.height = '90%'
       } else {
-        slide.style.width = ''
-        slide.style.height = ''
         slide.style.transform = `scale(${s}) translateX(${x}px)`
       }
+
+      slide.classList.remove('hovered')
     })
 
-    if (activeSlide !== appsCaruselslides[ind]) {
-      activeSlide.style.width = '100%'
-      activeSlide.style.height = '74%'
-      activeSlide.style.boxShadow = 'unset'
-    }
+    activeSlide.classList.remove('active')
+    appsCaruselslides[ind].classList.add('hovered')
   }
 
   appsCarusel.addEventListener('mouseleave', () => {
-    activeSlide.style = ' '
     appsCaruselslides.forEach( slide => {
       slide.style = ' '
+      slide.classList.remove('hovered')
     })
+    activeSlide.classList.add('active')
   })
 
   appsCaruselslides.forEach((slide, ind)=> {
