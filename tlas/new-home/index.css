@@ -242,6 +242,7 @@ footer {
   background-color: var(--color-accent);
   color: #2C2C2C;
   display: none;
+  pointer-events: none;
 }
 
 @media (hover: hover) {
