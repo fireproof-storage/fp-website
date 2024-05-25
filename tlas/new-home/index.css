@@ -570,23 +570,31 @@ section.demo code {
   transition: all 0.4s ease;
 }
 
-.demo-carusel-item.active {
-  width: 140%;
-  height: 100%;
+.demo-carusel-item.active,
+.demo-carusel-item.hovered {
+  margin: 0 50px;
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.18);
   z-index: 100;
+}
+
+.demo-carusel-item.active {
+  transform: scale(1.4);
 }
 
 .demo-carusel-item.hovered {
-  width: 140%;
+  transform: scale(1.5);
+}
+
+.demo-carusel-link {
+  padding: 10% 5%;
   height: 100%;
-  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.18);
-  z-index: 100;
+  width: 100%;
 }
 
 .demo-image {
-  width: 90% !important;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .demo-title,
@@ -611,13 +619,7 @@ section.demo code {
   text-wrap: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  padding-top: 20px;
-  padding-bottom: 16px;
-}
-
-.demo-carusel-item.active .demo-title,
-.demo-carusel-item.hovered .demo-title {
-  font-size: 30px;
+  padding: 16px;
 }
 
 .demo-description {
@@ -626,15 +628,17 @@ section.demo code {
   color: var(--color-primary);
 }
 
-.demo-carusel-item.active .demo-description,
-.demo-carusel-item.hovered .demo-description {
-  font-size: 16px;
-}
-
 @media (prefers-color-scheme: dark) {
   .demo-title,
   .demo-description {
     background: rgba(32, 31, 31, 0.6);
+  }
+}
+
+@media (max-width: 1370px) {
+  .demo-carusel-item.active,
+  .demo-carusel-item.hovered {
+    margin: 0 2vw;
   }
 }
 
@@ -651,36 +655,41 @@ section.demo code {
     border-radius: 10px;
   }
 
+  .demo-carusel-item.active {
+    transform: scale(1.55);
+     margin: 0 36px;
+  }
+
   .demo-carusel-item:first-of-type,
   .demo-carusel-item:last-of-type {
     transform: scale(0.85);
   }
 
-  .demo-carusel-item.active {
-    transform: scale(1.35, 1.35);
+  .demo-carusel-link {
+    padding: 20px 7%;
   }
 
   .demo-title,
   .demo-description {
-    padding: 1.5vw;
+    padding: 1.3vw;
   }
 
   .demo-title {
     font-size: 1.8vw;
   }
 
-  .demo-carusel-item.active .demo-title,
-  .demo-carusel-item.hovered .demo-title {
-    font-size: 2.6vw;
-  }
-
   .demo-description {
     font-size: 1vw;
   }
+}
 
-  .demo-carusel-item.active .demo-description,
-  .demo-carusel-item.hovered .demo-description {
-    font-size: 1.2vw;
+@media (max-width: 770px) {
+  section.demo {
+    margin-bottom: 100px;
+  }
+
+  .demo-carusel-item.active {
+    margin: 0 2vw;
   }
 }
 

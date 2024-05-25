@@ -1,4 +1,8 @@
 'use strict'
+// TO-DO
+//
+// 1. Add throtling
+// 2. Change font size to transform only
 
 {
   // demo apps carusel
@@ -14,7 +18,7 @@
       const x = (i - ind) * 50
 
       if (i === ind) {
-        slide.style.transform = `scale(${s * 1.2}) translateX(${x}px)`
+        slide.style.transform = `scale(1.5) translateX(${x}px)`
       } else {
         slide.style.transform = `scale(${s}) translateX(${x}px)`
       }
