@@ -1,8 +1,4 @@
 'use strict'
-// TO-DO
-//
-// 1. Add throtling
-// 2. Change font size to transform only
 
 {
   // demo apps carusel
@@ -30,6 +26,13 @@
     appsCaruselslides[ind].classList.add('hovered')
   }
 
+  appsCaruselslides.forEach((slide, ind) => {
+    slide.addEventListener('mouseenter', (e) => {
+      e.stopPropagation()
+      resizeSlides(ind)
+    })
+  })
+
   appsCarusel.addEventListener('mouseleave', () => {
     if (!window.matchMedia('(hover: hover)').matches) return
   
@@ -38,9 +41,5 @@
       slide.classList.remove('hovered')
     })
     activeSlide.classList.add('active')
-  })
-
-  appsCaruselslides.forEach((slide, ind)=> {
-    slide.addEventListener('mouseenter', () => resizeSlides(ind))
   })
 }
