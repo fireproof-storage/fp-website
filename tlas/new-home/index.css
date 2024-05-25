@@ -91,6 +91,7 @@ h2 {
   font-size: 52px;
   line-height: 1.2;
   letter-spacing: -0.04em;
+  text-wrap: balance;
 }
 
 h3 {
@@ -311,7 +312,7 @@ header .text-buttons:hover {
 section.hero {
   position: relative;
   margin-top: 28px;
-  margin-bottom: 170px;
+  margin-bottom: 140px;
   background-color: var(--color-background-secondary);
   border-radius: var(--radius-large);
   min-height: 600px;
@@ -494,7 +495,11 @@ section.hero::before {
 
 /* benefits */
 section.benefits {
-  margin-bottom: 170px;
+  margin-bottom: 160px;
+}
+
+.benefits-heading {
+  text-align: center;
 }
 
 .benefits-list {
