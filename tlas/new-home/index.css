@@ -734,7 +734,7 @@ section.logos {
 }
 
 @keyframes logo-move {
-  from {transform: translateX(0px);}
+  from {transform: translateX(0);}
   to {transform: translateX(calc(50% + 30px));}
 }
 
