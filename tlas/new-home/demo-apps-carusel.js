@@ -6,8 +6,18 @@
   const appsCaruselslides = appsCarusel.querySelectorAll('.demo-carusel-item')
   const activeSlide = appsCarusel.querySelector('.active')
 
+  const debounceDelay = 400
+  let debounceTimeout = null
+  let isRuning = false
+
   function resizeSlides(ind) {
     if (!window.matchMedia('(hover: hover)').matches) return
+
+    isRuning = true
+    clearTimeout(debounceTimeout)
+    debounceTimeout = setTimeout(() => {
+      isRuning = false
+    }, debounceDelay)
 
     appsCaruselslides.forEach((slide, i)=> {
       const s = 1 - Math.abs(i - ind) / 8
@@ -26,6 +36,16 @@
     appsCaruselslides[ind].classList.add('hovered')
   }
 
+  function resetSlides(e) {
+    if (!window.matchMedia('(hover: hover)').matches) return
+  
+    appsCaruselslides.forEach( slide => {
+      slide.style = ' '
+      slide.classList.remove('hovered')
+    })
+    activeSlide.classList.add('active')
+  }
+
   appsCaruselslides.forEach((slide, ind) => {
     slide.addEventListener('mouseenter', (e) => {
       e.stopPropagation()
@@ -34,12 +54,10 @@
   })
 
   appsCarusel.addEventListener('mouseleave', () => {
-    if (!window.matchMedia('(hover: hover)').matches) return
-  
-    appsCaruselslides.forEach( slide => {
-      slide.style = ' '
-      slide.classList.remove('hovered')
-    })
-    activeSlide.classList.add('active')
+    if (isRuning) {
+      setTimeout(resetSlides, debounceDelay)
+    } else {
+      resetSlides()
+    }
   })
 }
