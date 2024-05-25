@@ -6,10 +6,13 @@
 const testimonials = document.querySelector('.testimonials-list')
 const logos = document.querySelector('.logos-list')
 
-const duration = 8
+const duration = 12
 
 const innerContentTestimonials = testimonials.innerHTML
 const innerContentLogos = logos.innerHTML
+
+testimonials.innerHTML += innerContentTestimonials
+logos.innerHTML += innerContentLogos
 
 function runTestimonialsAnimation() {
   const w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
@@ -18,12 +21,12 @@ function runTestimonialsAnimation() {
 
   while (testimonials.offsetWidth < w * 2) {
     testimonialsDuration += duration
-    testimonials.innerHTML += innerContentTestimonials
+    testimonials.innerHTML += innerContentTestimonials + innerContentTestimonials
   }
 
   while (logos.offsetWidth < w * 2) {
     logosDuration += duration
-    logos.innerHTML += innerContentLogos
+    logos.innerHTML += innerContentLogos + innerContentLogos
   }
 
   logos.style.animationDuration = `${logosDuration}s`
@@ -36,8 +39,8 @@ function runTestimonialsAnimation() {
 runTestimonialsAnimation()
 
 window.addEventListener('resize', () => {
-  testimonials.innerHTML = innerContentTestimonials
-  logos.innerHTML = innerContentLogos
+  testimonials.innerHTML = innerContentTestimonials + innerContentTestimonials
+  logos.innerHTML = innerContentLogos + innerContentLogos
   testimonials.classList.remove('testimonials-animate')
   logos.classList.remove('logos-animate')
   runTestimonialsAnimation()
