@@ -353,6 +353,7 @@ section.hero::before {
   position: relative;
   display: flex;
   gap: 18px;
+  width: fit-content;
 }
 
 .hero-buttons .button-secondary::before {
