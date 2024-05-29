@@ -426,9 +426,6 @@ section.hero::before {
     flex-direction: column;
   }
 
-  .hero-buttons .button {
-    width: 100%;
-  }
 }
 
 /* hero app */
