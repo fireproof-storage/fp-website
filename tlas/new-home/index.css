@@ -554,6 +554,10 @@ section.demo code {
   margin-bottom: 70px;
 }
 
+.demo-text a {
+  text-decoration: underline
+}
+
 .demo-carusel {
   display: flex;
   justify-content: space-between;
