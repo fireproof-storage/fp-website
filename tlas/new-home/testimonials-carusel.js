@@ -6,7 +6,7 @@
 const testimonials = document.querySelector('.testimonials-list')
 const logos = document.querySelector('.logos-list')
 
-const duration = 12
+const duration = 60
 
 const innerContentTestimonials = testimonials.innerHTML
 const innerContentLogos = logos.innerHTML
