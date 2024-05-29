@@ -750,6 +750,7 @@ section.logos {
   display: flex;
   gap: 60px;
   align-items: center;
+  filter: grayscale(90%);
 }
 
 .logo-image {
@@ -826,7 +827,6 @@ section.testimonials {
 
 .testimonials-text a {
   text-decoration: underline;
-
 }
 
 .testimonials-list-container {
