@@ -992,7 +992,13 @@ section.community::before {
   position: absolute;
   top: -70px;
   left: 7%;
-  transform: rotate(-10deg);
+  transform: rotate(-5deg);
+  transition: transform .2s ease-in-out;
+}
+
+.community .trademark:hover {
+  transform: rotate(0deg);
+  transform: scale(1.2);
 }
 
 @media (prefers-color-scheme: dark) {
