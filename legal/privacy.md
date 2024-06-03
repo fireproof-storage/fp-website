@@ -36,7 +36,7 @@ This Privacy Policy ("Policy") describes the "Personal Data" that we collect abo
 
 
 
-"Sites" refers to Fireproof Storage, accessible from [fireproof.storage](http://fireproof.storage/), and the other websites, apps, and online services that Fireproof indicates are covered by this Policy. Collectively, we refer to Sites, Business Services, and End User Services as "Services."
+"Sites" refers to Fireproof Storage, accessible from [https://fireproof.storage](/), and the other websites, apps, and online services that Fireproof indicates are covered by this Policy. Collectively, we refer to Sites, Business Services, and End User Services as "Services."
 
 
 

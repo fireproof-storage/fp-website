@@ -200,7 +200,7 @@ Limit of Liability and Waiver of Consequential Damages. EXCEPT FOR YOUR BREACH O
 
 24. Miscellaneous. 
 
-Fireproof may update this Agreement with a 30-day notice, sent to your account's email address or posted at [https://fireproof.com](https://fireproof.com/). The most recent version can be found at <https://fireproof.com/legal/terms>. The updated Agreement takes effect 30 days after notification, and using the Services after that date signifies acceptance. If you disagree with any changes, cease using the Services and contact Fireproof Support. If any provision is deemed unenforceable, the remaining provisions stay in effect. You may not assign or transfer this Agreement without Fireproof's prior written consent, but Fireproof may do so without restriction. Attempts to transfer or assign this Agreement against these terms are void. This Agreement constitutes the complete understanding between parties and supersedes prior agreements related to this subject. Amendments must be in writing, signed by both parties. Failure to enforce any provision is not a waiver. No agency, partnership, joint venture, or employment is created under this Agreement, and neither party has authority to bind the other. The prevailing party in legal actions to enforce this Agreement may recover costs and attorneys' fees. Notices must be in writing and are considered duly given upon receipt, depending on the delivery method.
+Fireproof may update this Agreement with a 30-day notice, sent to your account's email address or posted [here](/). The most recent version can be found [here](/legal/terms). The updated Agreement takes effect 30 days after notification, and using the Services after that date signifies acceptance. If you disagree with any changes, cease using the Services and contact Fireproof Support. If any provision is deemed unenforceable, the remaining provisions stay in effect. You may not assign or transfer this Agreement without Fireproof's prior written consent, but Fireproof may do so without restriction. Attempts to transfer or assign this Agreement against these terms are void. This Agreement constitutes the complete understanding between parties and supersedes prior agreements related to this subject. Amendments must be in writing, signed by both parties. Failure to enforce any provision is not a waiver. No agency, partnership, joint venture, or employment is created under this Agreement, and neither party has authority to bind the other. The prevailing party in legal actions to enforce this Agreement may recover costs and attorneys' fees. Notices must be in writing and are considered duly given upon receipt, depending on the delivery method.
 
 Delays or failures in Fireproof's performance are not considered a default or grounds for damages if caused by events beyond reasonable control, including acts of God, terrorism, pandemics, epidemics, labor strikes, expropriation or confiscation of facilities, compliance with unexpected governmental orders, acts of war, rebellion, sabotage or damage, fires, floods, explosions, or riots.
 
@@ -218,7 +218,7 @@ These terms will be governed by and interpreted in accordance with California la
 
 
 
-You agree to use the Website in compliance with Fireproof's current policies (including Fireproof's Privacy Policy at <https://www.fireproof.com/privacy/>) and all applicable laws and regulations.
+You agree to use the Website in compliance with Fireproof's current policies (including Fireproof's [Privacy Policy](/legal/privacy/)) and all applicable laws and regulations.
 
 
 
