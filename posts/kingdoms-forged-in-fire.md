@@ -32,4 +32,4 @@ In the new frontier of AI-enabled web applications, the lines between different 
 
 [](https://fireproof.storage/service-and-support/)
 
-[Come find us](https://fireproof.storage/service-and-support/), and we’ll show you how.
+[](https://fireproof.storage/service-and-support/)[We’ll show you how](https://fireproof.storage/service-and-support/).
