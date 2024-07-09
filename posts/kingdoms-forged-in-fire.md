@@ -2,16 +2,14 @@
 title: Kingdoms Forged In Fire
 date: 2024-07-09T00:36:46.389Z
 author: Eric Jensen
-summary: "As we enter the AI era, there’s another important trend underway – the
+summary: As we enter the AI era, there’s another important trend underway – the
   shifting development focus to the frontend, keeping data near the users, where
-  it is created and used. In her recent series of articles on frontend
-  developers as the “newest new kingmakers,” Kate Holterhoff provided a
-  comprehensive and compelling analysis of what’s driving this trend, and where
-  it’s heading. This post will elaborate a few of the key points from these
-  articles, how it will continue to unfold against the backdrop of AI, and the
-  role Fireproof is playing. "
+  it is created and used.
 tags:
-  - post
+  - frontend
+  - applications
+  - web
+  - architecture
 ---
 The story of software has been one of successive waves of technology, each one transforming the existing landscape. From the earliest computers, to gigantic mainframes, to the rise of video games and embedded devices, the personal computer, the cloud, mobile devices, and now AI, new waves of technology disrupt the previous ones. As we enter the AI era, there’s another important trend underway – the shifting development focus to the frontend, keeping data near the users, where it is created and used. In her recent series of articles on frontend developers as the “newest new kingmakers,” [Kate Holterhoff](https://redmonk.com/kholterhoff/author/kholterhoff/) provided a comprehensive and compelling analysis of what’s driving this trend, and where it’s heading. This post will elaborate a few of the key points from these articles, how it will continue to unfold against the backdrop of AI, and the role [Fireproof](https://fireproof.storage/) is playing. It’s worth starting with the forces accelerating this from the backend. In a [recent article](https://redmonk.com/kholterhoff/2024/04/26/whither-serverless-compute/), Kate says: “The future of compute will not occur at remote data centers, but will instead take place locally and close to the user … This shift matters because streaming data is finicky … making edge computing, in the sense of data processing occurring at a relative position near the user, absolutely essential.”\
 *(quote is slightly condensed)*
