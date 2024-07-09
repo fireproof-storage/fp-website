@@ -26,4 +26,10 @@ A great UX is about much more than the design – it must be implemented with ca
 
 ![A programmer collaborating with an AI on their laptop](/static/img/screenshot-2024-07-08-at-6.10.22 pm.png "A Fire Wizard IRL")
 
-In the new frontier of AI-enabled web applications, the lines between different types of developers are already blurry, and will continue to erode. What will be left is a large and growing developer population that is empowered to create the next generation of software we’ll all use. If you’d like to be part of all this before it explodes, now is the time! [Come find us](https://fireproof.storage/service-and-support/), and we’ll show you how.
+In the new frontier of AI-enabled web applications, the lines between different types of developers are already blurry, and will continue to erode. What will be left is a large and growing developer population that is empowered to create the next generation of software we’ll all use. If you’d like to be part of all this before it explodes, now is the time! [](https://fireproof.storage/service-and-support/)
+
+[](https://fireproof.storage/service-and-support/)
+
+[](https://fireproof.storage/service-and-support/)
+
+[Come find us](https://fireproof.storage/service-and-support/), and we’ll show you how.
