@@ -2,14 +2,8 @@
 title: "Use Case Spotlight: Provable event data recorder with priority delivery"
 date: 2024-08-07T22:03:13.201Z
 author: J Chris Anderson
-summary: Modern vehicles generate vast telemetry data, with critical events
-  triggering data capture via the Event Data Recorder (EDR). This data is
-  uploaded for analysis to enhance safety systems. Cryptographic proofs validate
-  data integrity with minimal information, and end-to-end encryption ensures
-  privacy. Fireproof manages telemetry data efficiently, prioritizing uploads
-  and using cryptographic proofs for secure, reliable data across various
-  applications, including self-driving cars, agriculture, industrial IoT, and
-  financial sectors.
+summary: 
+Modern vehicles collect event data to enhance safety, using cryptographic proofs to ensure data integrity and security. Event Data Recorders (EDRs) capture critical information during incidents, providing valuable insights for safety improvements and analysis. By prioritizing data uploads and leveraging cryptographic proofs, manufacturers can enhance safety features and protect user privacy.
 tags:
   - usecase
 ---
