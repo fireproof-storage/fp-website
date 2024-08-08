@@ -3,7 +3,7 @@ title: "Use Case Spotlight: Provable event data recorder with priority delivery"
 date: 2024-08-07T22:03:13.201Z
 author: J Chris Anderson
 summary: 
-Modern vehicles collect event data to enhance safety, using cryptographic proofs to ensure data integrity and security. Event Data Recorders (EDRs) capture critical information during incidents, providing valuable insights for safety improvements and analysis. By prioritizing data uploads and leveraging cryptographic proofs, manufacturers can enhance safety features and protect user privacy.
+  Modern vehicles collect event data to enhance safety, using cryptographic proofs to ensure data integrity and security. Event Data Recorders (EDRs) capture critical information during incidents, providing valuable insights for safety improvements and analysis. By prioritizing data uploads and leveraging cryptographic proofs, manufacturers can enhance safety features and protect user privacy.
 tags:
   - usecase
 ---
