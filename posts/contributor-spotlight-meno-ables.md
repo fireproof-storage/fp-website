@@ -3,9 +3,9 @@ title: "Contributor Spotlight: Meno Ables"
 date: 2024-08-12T15:11:16.029Z
 author: Meghan Sinnott
 summary: Read about contributor Meno Abels who has refactored Fireproof's core
-  database engine, enhanced our TypeScript structure to support decentralized
-  data handling, implemented a pluggable storage system, and worked on a new
-  connector structure.
+  database engine, enhanced our TypeScript structure to support dynamic
+  runtimes, implemented a pluggable storage system, and worked on a new
+  connector gateway.
 tags:
   - contributor-spotlight
 ---
