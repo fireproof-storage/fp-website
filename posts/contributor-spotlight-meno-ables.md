@@ -1,5 +1,5 @@
 ---
-title: "Contributor Spotlight: Meno Ables"
+title: "Contributor Spotlight: Meno Abels"
 date: 2024-08-12T15:11:16.029Z
 author: Meghan Sinnott
 summary: Read about contributor Meno Abels who has refactored Fireproof's core
