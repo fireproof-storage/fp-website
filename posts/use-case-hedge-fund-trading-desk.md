@@ -10,7 +10,7 @@ tags:
 ---
 In the high-stakes arena of global finance, where fortunes pivot on single trades, the need for robust, transparent systems has never been more critical. Wall Street's history is marred by scandals that expose vulnerabilities in traditional oversight mechanisms. Bernie Madoff's Ponzi scheme, Raj Rajaratnam's insider trading at Galleon Group, and Angelo Mozilo's exploitation of the housing bubble at Countrywide Financial serve as cautionary tales of greed and deception.
 
-![/static/img/trading.jpg](https://www.flickr.com/photos/petrick/2291498814)
+[![Trading desk](/static/img/trading.jpg)](https://www.flickr.com/photos/petrick/2291498814)
 
 These incidents highlight a critical weakness: the absence of systems capable of catching fraudulent activity before it spirals out of control. More granular audit logging and cryptographically signed authorizations could have exposed these schemes earlier, preventing widespread damage.
 
