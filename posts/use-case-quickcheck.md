@@ -2,13 +2,14 @@
 title: "QuickCheck: Print checks at home"
 date: 2024-08-26T20:16:37.844Z
 author: Selem Delul
-summary: ""
+summary: "Selem Delul was surprised by how often he needed to write checks after moving to the US, so he created a simple app, QuickCheck, to print them at home, leveraging Fireproof for secure, offline-capable data management."
 tags:
   - use-case
 ---
-![QuickCheck Demo](/static/img/quickcheck-optimized.gif)
 
 When I moved to the US last year, I was in for a surprise. Despite all the talk about digital payments and cashless societies, I found myself needing to write checks more often than I ever imagined. Rent, utilities, even some local services – they all seemed to prefer those little rectangular pieces of paper. As a newcomer, I was stumped. (If you're interested in the fascinating history and persistence of checks in the US, [this article](https://www.bitsaboutmoney.com/archive/the-long-shadow-of-checks/) is a great read.)
+
+![QuickCheck Demo](/static/img/quickcheck-optimized.gif)
 
 ### My Lightbulb Moment
 
