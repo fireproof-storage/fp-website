@@ -2,7 +2,7 @@
 title: "QuickCheck: Print checks at home"
 date: 2024-08-26T20:16:37.844Z
 author: Selem Delul
-summary: 
+summary: ""
 tags:
   - use-case
 ---
@@ -32,7 +32,7 @@ I started using QuickCheck for my own needs, but word got around. Soon, some sma
 
 What people seem to love most is the simplicity. No frills, no fuss – just create your check template, fill in the details, and print. And because I built it on Fireproof, I can honestly tell them their data is secure and accessible, even if their internet goes down right before an important payment is due.
 
-The best part? Because Fireproof handled all the complex data management stuff, I could keep QuickCheck lean and mean. No need for expensive servers or complex infrastructure. This means I can offer it at a fraction of the cost of those fancy check-printing services.
+Because Fireproof handled all the complex data management stuff, I could keep QuickCheck lean and mean. With everything running on a $5/month Cloudflare plan, there's no need for expensive servers or complex infrastructure. This efficient setup means I can offer QuickCheck at a fraction of the cost of those fancy check-printing services, while still providing a robust and reliable service.
 
 So here I am, solving a very American problem with a bit of tech ingenuity. It's not going to make me the next Silicon Valley billionaire, but it's making life a little easier for folks like me who are still figuring out the quirks of financial life in the US. And honestly? That feels pretty good.
 
