@@ -6,7 +6,7 @@ summary: ""
 tags:
   - use-case
 ---
-
+![QuickCheck Demo](/static/img/quickcheck-optimized.gif)
 
 When I moved to the US last year, I was in for a surprise. Despite all the talk about digital payments and cashless societies, I found myself needing to write checks more often than I ever imagined. Rent, utilities, even some local services – they all seemed to prefer those little rectangular pieces of paper. As a newcomer, I was stumped. (If you're interested in the fascinating history and persistence of checks in the US, [this article](https://www.bitsaboutmoney.com/archive/the-long-shadow-of-checks/) is a great read.)
 
