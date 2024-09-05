@@ -12,9 +12,11 @@ tags:
 
 Fireproof is first and foremost designed to make it trivial for developers of any skill level to enhance legacy sites with live data, or write new collaborative apps. The number one goal is making Fireproof the easiest option for someone just starting their web programming journey and the most powerful way expert developers can extend legacy apps and write backend-independent components.
 
+> Fireproof is the most convenient database for beginners and experts alike.
+
 We are informed by CouchDB (sync), SQLite (zero setup), IPFS (data anywhere) and Supabase (go-to-market). Fireproof is optimized to be lightweight and easy to install, so we take care that every line of code in the package matters. We ship rich JSDoc and type hints, and our examples, starter kits, and APIs are designed so developers fall into the right patterns because they are the easiest.
 
-Our experience with NoSQL, IPFS, and browser implementation teaches us that the most inclusive communities and technologies win. We foster outside contributions, from docs and design to plugins and core improvements.
+Our experience with NoSQL, IPFS, and browser implementation teaches us that **the most inclusive communities and technologies win**. We foster outside contributions, from docs and design to plugins and core improvements.
 
 The database architecture is aligned with this purpose. Below the core is the lightweight encrypted blockstore, which can be swapped with other implementations like a public or private blockstore, as well as leverage IPFS and WebRTC community code.
 
