@@ -27,11 +27,15 @@ The difference between a profitable trader and loss-making one is often very sli
 
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcgSUE4Ntx6bZ-x3K0EVxM3u0Uz1zKTc-W3IvRb5OWWVVg-2EmKXJvloY2F1bx7qI7Hbb6IU1yBdmDSrdahTMuY7Y_3BwtouKM3MbCnTEyAYjAQZu45k5CWq-vsLENQ9izxwuLQS_J39Q0iY_8WypGI3fI?key=teP9RgJBG4-DCPxKIj9FFg)
 
+<br/> 
+
 - - -
 
 # **The hunt for the next ‘edge’ in trading is neverending.** 
 
 - - -
+
+<br/>
 
 One thing a trader can do to increase their chances of success is painstakingly assemble their own collection of intricate rituals and bizarre talismans, designed to increase their good luck. Kidding! You can't actually control your luck, but you *can* increase your luck surface area, but optimizing your tools. They must be fast, reliable, intuitive, and above all, secure. As technology evolves, it continuously grants unique advantages to early adopters. Fireproof is part of the newest rising trend – software from the ‘local first’ movement that’s being adopted in financial circles. 
 
@@ -43,11 +47,15 @@ The team behind Fireproof has deep roots in the financial sector, evidenced by t
 
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXfZkqofqmv0c0QjZjrOItSseEgv9l97FoCtVs06b1ROhEY3l-dbPY9ao31w7KbiU9i-C26cg6sgZxcjDaymVHx7pgsJMYV8ORIe-uusDVJ9pftHimdxrSt49yLt0nTWFUKDf64QYKu9uhtaJdEZmJUApB8?key=teP9RgJBG4-DCPxKIj9FFg)
 
-- - -
-
-# Fireproof is a harbinger of the next generation in trading application architecture.
+<br/>
 
 - - -
+
+# **Fireproof is the harbinger of the next generation in trading application architecture.**
+
+- - -
+
+<br/>
 
 Fireproof offers two key benefits: accelerated application performance, which results in faster, more accurate trades, and the peace of mind that comes with knowing your financial research and strategies are safely stored on hardware you control. For professional traders looking to get ahead in their intensely competitive profession, there aren’t many other moves available that can offer such impressive results. Fireproof is a harbinger of the next generation in trading application architecture. The lions share of the rewards will go to the early adopters, as usual. 
 
