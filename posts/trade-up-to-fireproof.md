@@ -1,6 +1,6 @@
 ---
 title: "Trade Up To Fireproof "
-date: 2024-09-13T02:46:03.003Z
+date: 2024-09-13T14:46:03.003Z
 author: Eric Jensen
 summary: >-
   Being a professional trader is a demanding job. One thing a trader can do to
