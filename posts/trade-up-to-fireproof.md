@@ -27,7 +27,11 @@ The difference between a profitable trader and loss-making one is often very sli
 
 - - -
 
+ ⁢
+
 # **The hunt for the next ‘edge’ in trading is neverending.** 
+
+ ⁢
 
 - - -
 
@@ -47,7 +51,11 @@ The team behind Fireproof has deep roots in the financial sector, evidenced by t
 
 - - -
 
+ ⁢
+
 # **Fireproof is a leading indicator of where trading apps are heading.**
+
+ ⁢
 
 - - -
 
