@@ -323,6 +323,10 @@ body {
   position: relative;
 }
 
+article.post .byline {
+  text-align: right;
+}
+
 article.post p {
   padding-bottom: 1rem;
   text-justify: inter-word;
@@ -359,19 +363,18 @@ article.post ol {
   list-style: decimal;
   padding-left: 2rem;
 }
+
 article.post ul {
   list-style: disc;
   padding-left: 2rem;
   margin-bottom: 1rem;
 }
 
-article .byline {
-  text-align: right;
-}
-
-article a, footer a:hover {
+article a,
+footer a:hover {
   text-decoration: underline;
 }
+
 .buzzwords li {
   padding: 0.3em;
   display: inline-block;
@@ -406,15 +409,13 @@ article table {
   width: 100%;
   margin: 1rem 0;
 }
-article table tr {
-  /* border-bottom: 12px solid rgba(0,0,0,0); */
 
-}
 article table th {
   /* border: 24px solid rgba(0,0,0,0); */
   /* background-color: rgba(35,35,15,0.25); */
   padding: 0.5rem 1rem;
 }
+
 article table td {
   /* border: 24px solid rgba(0,0,0,0); */
   background-color: rgba(0,0,25,0.25);
@@ -436,3 +437,130 @@ li.selected {
 #featureTabContent article:not(.active), #tabContent article:not(.active) {
   display: none;
 }
+
+/* new blog post starts */
+article.post.newpost {
+  min-width: 830px;
+}
+
+article.post.newpost h1 {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 650;
+  font-size: 52px;
+  line-height: 57px;
+  letter-spacing: -0.04em;
+  margin: 10px 0;
+  color: #2C2C2C;
+}
+
+article.post.newpost h2,
+article.post.newpost blockquote p {
+  font-family: 'Inter Tight', sans-serif;
+  font-style: normal;
+  text-align: left;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: 0.01em;
+  color: #2C2C2C;
+  margin-bottom: 36px;
+  margin-top: 26px;
+  text-wrap: balance;
+  padding-bottom: unset;
+}
+
+article.post.newpost p {
+  font-family: 'Geist', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 29px;
+  letter-spacing: 0.02em;
+  color: #2C2C2C;
+  padding-bottom: 40px;
+}
+
+article.post.newpost .byline {
+  text-align: unset;
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  color: #2C2C2C;
+  opacity: 0.4;
+  padding-top: 10px !important;
+}
+
+article.post.newpost .byline * {
+  font-size: 16px;
+}
+
+article.post.newpost .byline a {
+  color: #2C2C2C !important;
+}
+
+article.post.newpost strong {
+  font-weight: 700;
+}
+
+article.post.newpost pre {
+  border-radius: 10px;
+  margin-bottom: 40px;
+  padding: 24px;
+  background: #2d2d2d;
+}
+
+article.post.newpost p > code {
+  background-color: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+article.post.newpost a {
+  font-weight: 700;
+  color: #F16C12;
+}
+
+article.post.newpost a:hover {
+  color: #2C2C2C;
+}
+
+article.post.newpost img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  margin: 0 0 40px 0;
+}
+
+article.post.newpost .tags {
+  text-align: unset;
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+  color: #2C2C2C;
+  opacity: 0.4;
+}
+
+article.post.newpost .tags a { 
+  color: #2C2C2C;
+  text-decoration: unset;
+  font-weight: 500;
+}
+
+article.post.newpost .tags a:hover {
+  text-decoration: underline;
+}
+
+article.post.newpost .tags a:before { 
+  content: '#';
+}
+
+article.post.newpost nav {
+  padding-top: unset;
+  padding-left: unset;
+}
+/* new blog post ends */
