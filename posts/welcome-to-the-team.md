@@ -12,7 +12,7 @@ newpost: newpost
 
 Fireproof is first and foremost designed to make it trivial for **developers of any skill level** to enhance legacy sites with live data, or write new collaborative apps. The number one goal is making Fireproof the easiest option for someone just starting their web programming journey and the most powerful way expert developers can extend legacy apps and write backend-independent components.
 
-[![bonfire](/static/img/bonfire.jpg)](https://www.flickr.com/photos/petrick/2291498814)
+![bonfire](/static/img/bonfire.jpg)
 
 > Fireproof is the most convenient database for beginners and experts alike.
 

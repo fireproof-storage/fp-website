@@ -127,8 +127,8 @@ html .feature-grid .code-sample code {
   }
 
   /* 100% {
-			  background-image: url('./copied-small.png');
-		  } */
+        background-image: url('./copied-small.png');
+      } */
 }
 
 #install-command {
@@ -388,7 +388,7 @@ form[name='contact'] textarea {
 
 a[href$='#subscribe'] {
   color: #011;
-  background: linear-gradient(-45deg,#ff0,#ff6f00,#ffa000,#ff0,#ff8200);
+  background: linear-gradient(-45deg, #ff0, #ff6f00, #ffa000, #ff0, #ff8200);
   background-size: 400% 400%;
   animation: gradient 30s ease infinite;
   padding: 0.33rem;
@@ -396,7 +396,7 @@ a[href$='#subscribe'] {
   text-align: center;
   margin: 0.25rem;
   border-radius: 0.5rem;
-  transition: transform .2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 a[href$='#subscribe']:hover {
@@ -418,15 +418,17 @@ article table th {
 
 article table td {
   /* border: 24px solid rgba(0,0,0,0); */
-  background-color: rgba(0,0,25,0.25);
+  background-color: rgba(0, 0, 25, 0.25);
   padding: 0.5rem 1rem;
 }
 
-#featureTabList li:hover, #tabList li:hover {
+#featureTabList li:hover,
+#tabList li:hover {
   background-color: #f7d38a;
 }
 
-#featureTabList li, #tabList li {
+#featureTabList li,
+#tabList li {
   text-decoration: underline;
 }
 
@@ -434,13 +436,14 @@ li.selected {
   background-color: #edbf63 !important;
 }
 
-#featureTabContent article:not(.active), #tabContent article:not(.active) {
+#featureTabContent article:not(.active),
+#tabContent article:not(.active) {
   display: none;
 }
 
 /* new blog post starts */
 article.post.newpost {
-  min-width: 830px;
+  max-width: 830px;
 }
 
 article.post.newpost h1 {
@@ -451,11 +454,10 @@ article.post.newpost h1 {
   line-height: 57px;
   letter-spacing: -0.04em;
   margin: 10px 0;
-  color: #2C2C2C;
+  color: #2c2c2c;
 }
 
-article.post.newpost h2,
-article.post.newpost blockquote p {
+article.post.newpost h2 {
   font-family: 'Inter Tight', sans-serif;
   font-style: normal;
   text-align: left;
@@ -463,11 +465,27 @@ article.post.newpost blockquote p {
   font-size: 30px;
   line-height: 40px;
   letter-spacing: 0.01em;
-  color: #2C2C2C;
+  color: #2c2c2c;
   margin-bottom: 36px;
   margin-top: 26px;
   text-wrap: balance;
   padding-bottom: unset;
+}
+
+article.post.newpost blockquote {
+  box-shadow: inset 3px 0px 0px 0px #e0dede;
+  background-color: #f7f7f7;
+  padding: 16px 26px;
+  margin: 40px 0;
+  border-radius: 8px;
+  display: flow-root;
+}
+
+article.post.newpost blockquote p {
+  margin-bottom: unset;
+  padding-bottom: unset;
+  font-style: italic;
+  opacity: 0.8;
 }
 
 article.post.newpost p {
@@ -477,17 +495,18 @@ article.post.newpost p {
   font-size: 19px;
   line-height: 29px;
   letter-spacing: 0.02em;
-  color: #2C2C2C;
-  padding-bottom: 40px;
+  color: #2c2c2c;
+  margin-bottom: 40px;
+  padding-bottom: unset;
 }
 
 article.post.newpost .byline {
-  text-align: unset;
   font-family: 'Geist';
   font-style: normal;
+  text-align: unset;
   font-weight: 500;
   line-height: 25px;
-  color: #2C2C2C;
+  color: #2c2c2c;
   opacity: 0.4;
   padding-top: 10px !important;
 }
@@ -497,7 +516,7 @@ article.post.newpost .byline * {
 }
 
 article.post.newpost .byline a {
-  color: #2C2C2C !important;
+  color: #2c2c2c !important;
 }
 
 article.post.newpost strong {
@@ -520,11 +539,11 @@ article.post.newpost p > code {
 
 article.post.newpost a {
   font-weight: 700;
-  color: #F16C12;
+  color: #f16c12;
 }
 
 article.post.newpost a:hover {
-  color: #2C2C2C;
+  color: #2c2c2c;
 }
 
 article.post.newpost img {
@@ -535,18 +554,18 @@ article.post.newpost img {
 }
 
 article.post.newpost .tags {
-  text-align: unset;
   font-family: 'Geist';
+  text-align: unset;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 25px;
-  color: #2C2C2C;
+  color: #2c2c2c;
   opacity: 0.4;
 }
 
-article.post.newpost .tags a { 
-  color: #2C2C2C;
+article.post.newpost .tags a {
+  color: #2c2c2c;
   text-decoration: unset;
   font-weight: 500;
 }
@@ -555,7 +574,7 @@ article.post.newpost .tags a:hover {
   text-decoration: underline;
 }
 
-article.post.newpost .tags a:before { 
+article.post.newpost .tags a:before {
   content: '#';
 }
 
