@@ -22,3 +22,4 @@ Or join the community:
 
 [YouTube](https://www.youtube.com/channel/UCfDatFbIMScofrlMiV2_fEg)
 
+{% include "components/form.njk" %}
