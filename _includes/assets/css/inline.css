@@ -8,7 +8,6 @@ footer h1 {
 
 .blurbblur {
   background: #000;
-
   filter: blur(60px);
 }
 
@@ -20,16 +19,10 @@ footer h1 {
   background-color: transparent;
 }
 
-html code[class*='language-'],
-html pre[class*='language-'] {
+code[class*='language-'],
+pre[class*='language-'] {
   text-shadow: 0 1px #000;
   font-size: 0.75rem;
-}
-
-html article.post code[class*='language-'],
-html article.post pre[class*='language-'] {
-  text-shadow: 0 1px #000;
-  font-size: 1rem;
 }
 
 html .feature-grid .code-sample code {
@@ -323,54 +316,6 @@ body {
   position: relative;
 }
 
-article.post .byline {
-  text-align: right;
-}
-
-article.post p {
-  padding-bottom: 1rem;
-  text-justify: inter-word;
-}
-
-article.post h4 {
-  font-size: 1.6rem;
-  padding: 0.6rem 0;
-  clear: both;
-}
-
-article.post h3 {
-  font-size: 2rem;
-  padding: 1rem 0;
-  clear: both;
-}
-
-article.post h2 {
-  font-size: 2rem;
-  padding: 2rem 0;
-  text-align: center;
-  font-weight: 700;
-  clear: both;
-}
-
-article.post img {
-  width: 22em;
-  float: left;
-  margin-right: 1em;
-  margin-bottom: 1em;
-}
-
-article.post ol {
-  list-style: decimal;
-  padding-left: 2rem;
-}
-
-article.post ul {
-  list-style: disc;
-  padding-left: 2rem;
-  margin-bottom: 1rem;
-}
-
-article a,
 footer a:hover {
   text-decoration: underline;
 }
@@ -404,24 +349,6 @@ a[href$='#subscribe']:hover {
   transform: scale(1.2);
 }
 
-article table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 1rem 0;
-}
-
-article table th {
-  /* border: 24px solid rgba(0,0,0,0); */
-  /* background-color: rgba(35,35,15,0.25); */
-  padding: 0.5rem 1rem;
-}
-
-article table td {
-  /* border: 24px solid rgba(0,0,0,0); */
-  background-color: rgba(0, 0, 25, 0.25);
-  padding: 0.5rem 1rem;
-}
-
 #featureTabList li:hover,
 #tabList li:hover {
   background-color: #f7d38a;
@@ -441,12 +368,12 @@ li.selected {
   display: none;
 }
 
-/* new blog post starts */
-article.post.newpost {
+/* blog post starts */
+article.post {
   max-width: 830px;
 }
 
-article.post.newpost h1 {
+article.post h1 {
   font-family: 'Geist';
   font-style: normal;
   font-weight: 650;
@@ -457,7 +384,9 @@ article.post.newpost h1 {
   color: #2c2c2c;
 }
 
-article.post.newpost h2 {
+article.post h2,
+article.post h3,
+article.post h4 {
   font-family: 'Inter Tight', sans-serif;
   font-style: normal;
   text-align: left;
@@ -468,11 +397,18 @@ article.post.newpost h2 {
   color: #2c2c2c;
   margin-bottom: 36px;
   margin-top: 26px;
-  text-wrap: balance;
   padding-bottom: unset;
 }
 
-article.post.newpost blockquote {
+article.post h3 {
+  font-size: 24px;
+}
+
+article.post h4 {
+  font-size: 20px;
+}
+
+article.post blockquote {
   box-shadow: inset 3px 0px 0px 0px #e0dede;
   background-color: #f7f7f7;
   padding: 16px 26px;
@@ -481,14 +417,14 @@ article.post.newpost blockquote {
   display: flow-root;
 }
 
-article.post.newpost blockquote p {
+article.post blockquote p {
   margin-bottom: unset;
   padding-bottom: unset;
   font-style: italic;
   opacity: 0.8;
 }
 
-article.post.newpost p {
+article.post p {
   font-family: 'Geist', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -500,7 +436,39 @@ article.post.newpost p {
   padding-bottom: unset;
 }
 
-article.post.newpost .byline {
+article.post ol {
+  padding-left: 24px;
+  list-style: auto;
+}
+
+article.post ol li::marker {
+  font-weight: bold;
+}
+
+article.post ul {
+  list-style: disc;
+  padding-left: 16px;
+}
+
+article table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+article table th {
+  /* border: 24px solid rgba(0,0,0,0); */
+  /* background-color: rgba(35,35,15,0.25); */
+  padding: 0.5rem 1rem;
+}
+
+article table td {
+  /* border: 24px solid rgba(0,0,0,0); */
+  background-color: rgba(0, 0, 25, 0.25);
+  padding: 0.5rem 1rem;
+}
+
+article.post .byline {
   font-family: 'Geist';
   font-style: normal;
   text-align: unset;
@@ -511,49 +479,54 @@ article.post.newpost .byline {
   padding-top: 10px !important;
 }
 
-article.post.newpost .byline * {
+article.post .byline * {
   font-size: 16px;
 }
 
-article.post.newpost .byline a {
+article.post .byline a {
   color: #2c2c2c !important;
 }
 
-article.post.newpost strong {
+article.post strong {
   font-weight: 700;
 }
 
-article.post.newpost pre {
+article.post pre,
+article.post code {
+  font-size: 17px;
+}
+
+article.post pre {
   border-radius: 10px;
   margin-bottom: 40px;
   padding: 24px;
   background: #2d2d2d;
 }
 
-article.post.newpost p > code {
+article.post p > code {
   background-color: #f0f0f0;
   padding: 2px 8px;
   border-radius: 4px;
   font-weight: 700;
 }
 
-article.post.newpost a {
+article.post a {
   font-weight: 700;
   color: #f16c12;
 }
 
-article.post.newpost a:hover {
+article.post a:hover {
   color: #2c2c2c;
 }
 
-article.post.newpost img {
+article.post img {
   width: 100%;
   border-radius: 16px;
   object-fit: cover;
   margin: 0 0 40px 0;
 }
 
-article.post.newpost .tags {
+article.post .tags {
   font-family: 'Geist';
   text-align: unset;
   font-style: normal;
@@ -564,22 +537,22 @@ article.post.newpost .tags {
   opacity: 0.4;
 }
 
-article.post.newpost .tags a {
+article.post .tags a {
   color: #2c2c2c;
   text-decoration: unset;
   font-weight: 500;
 }
 
-article.post.newpost .tags a:hover {
+article.post .tags a:hover {
   text-decoration: underline;
 }
 
-article.post.newpost .tags a:before {
+article.post .tags a:before {
   content: '#';
 }
 
-article.post.newpost nav {
+article.post nav {
   padding-top: unset;
   padding-left: unset;
 }
-/* new blog post ends */
+/* blog post ends */

@@ -52,14 +52,14 @@ module.exports = function (eleventyConfig) {
   // Minify CSS
   eleventyConfig.addFilter('cssmin', function (code) {
     // Disable minify for dev to speed up hot reload
-    // if (process.env.ELEVENTY_RUN_MODE === 'serve') return code
+    if (process.env.ELEVENTY_RUN_MODE === 'serve') return code
     return new CleanCSS({}).minify(code).styles
   })
 
   // Minify JS
   eleventyConfig.addFilter('jsmin', function (code) {
     // Disable minify for dev to speed up hot reload
-    // if (process.env.ELEVENTY_RUN_MODE === 'serve') return code
+    if (process.env.ELEVENTY_RUN_MODE === 'serve') return code
     let minified = UglifyJS.minify(code)
     if (minified.error) {
       console.log('UglifyJS error: ', minified.error)
