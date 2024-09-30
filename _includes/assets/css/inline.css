@@ -8,7 +8,6 @@ footer h1 {
 
 .blurbblur {
   background: #000;
-
   filter: blur(60px);
 }
 
@@ -20,16 +19,10 @@ footer h1 {
   background-color: transparent;
 }
 
-html code[class*='language-'],
-html pre[class*='language-'] {
+code[class*='language-'],
+pre[class*='language-'] {
   text-shadow: 0 1px #000;
   font-size: 0.75rem;
-}
-
-html article.post code[class*='language-'],
-html article.post pre[class*='language-'] {
-  text-shadow: 0 1px #000;
-  font-size: 1rem;
 }
 
 html .feature-grid .code-sample code {
@@ -127,8 +120,8 @@ html .feature-grid .code-sample code {
   }
 
   /* 100% {
-			  background-image: url('./copied-small.png');
-		  } */
+        background-image: url('./copied-small.png');
+      } */
 }
 
 #install-command {
@@ -323,55 +316,10 @@ body {
   position: relative;
 }
 
-article.post p {
-  padding-bottom: 1rem;
-  text-justify: inter-word;
-}
-
-article.post h4 {
-  font-size: 1.6rem;
-  padding: 0.6rem 0;
-  clear: both;
-}
-
-article.post h3 {
-  font-size: 2rem;
-  padding: 1rem 0;
-  clear: both;
-}
-
-article.post h2 {
-  font-size: 2rem;
-  padding: 2rem 0;
-  text-align: center;
-  font-weight: 700;
-  clear: both;
-}
-
-article.post img {
-  width: 22em;
-  float: left;
-  margin-right: 1em;
-  margin-bottom: 1em;
-}
-
-article.post ol {
-  list-style: decimal;
-  padding-left: 2rem;
-}
-article.post ul {
-  list-style: disc;
-  padding-left: 2rem;
-  margin-bottom: 1rem;
-}
-
-article .byline {
-  text-align: right;
-}
-
-article a, footer a:hover {
+footer a:hover {
   text-decoration: underline;
 }
+
 .buzzwords li {
   padding: 0.3em;
   display: inline-block;
@@ -385,7 +333,7 @@ form[name='contact'] textarea {
 
 a[href$='#subscribe'] {
   color: #011;
-  background: linear-gradient(-45deg,#ff0,#ff6f00,#ffa000,#ff0,#ff8200);
+  background: linear-gradient(-45deg, #ff0, #ff6f00, #ffa000, #ff0, #ff8200);
   background-size: 400% 400%;
   animation: gradient 30s ease infinite;
   padding: 0.33rem;
@@ -393,7 +341,7 @@ a[href$='#subscribe'] {
   text-align: center;
   margin: 0.25rem;
   border-radius: 0.5rem;
-  transition: transform .2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 a[href$='#subscribe']:hover {
@@ -401,31 +349,13 @@ a[href$='#subscribe']:hover {
   transform: scale(1.2);
 }
 
-article table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 1rem 0;
-}
-article table tr {
-  /* border-bottom: 12px solid rgba(0,0,0,0); */
-
-}
-article table th {
-  /* border: 24px solid rgba(0,0,0,0); */
-  /* background-color: rgba(35,35,15,0.25); */
-  padding: 0.5rem 1rem;
-}
-article table td {
-  /* border: 24px solid rgba(0,0,0,0); */
-  background-color: rgba(0,0,25,0.25);
-  padding: 0.5rem 1rem;
-}
-
-#featureTabList li:hover, #tabList li:hover {
+#featureTabList li:hover,
+#tabList li:hover {
   background-color: #f7d38a;
 }
 
-#featureTabList li, #tabList li {
+#featureTabList li,
+#tabList li {
   text-decoration: underline;
 }
 
@@ -433,6 +363,196 @@ li.selected {
   background-color: #edbf63 !important;
 }
 
-#featureTabContent article:not(.active), #tabContent article:not(.active) {
+#featureTabContent article:not(.active),
+#tabContent article:not(.active) {
   display: none;
 }
+
+/* blog post starts */
+article.post {
+  max-width: 830px;
+}
+
+article.post h1 {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 650;
+  font-size: 52px;
+  line-height: 57px;
+  letter-spacing: -0.04em;
+  margin: 10px 0;
+  color: #2c2c2c;
+}
+
+article.post h2,
+article.post h3,
+article.post h4 {
+  font-family: 'Inter Tight', sans-serif;
+  font-style: normal;
+  text-align: left;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: 0.01em;
+  color: #2c2c2c;
+  margin-bottom: 36px;
+  margin-top: 26px;
+  padding-bottom: unset;
+}
+
+article.post h3 {
+  font-size: 24px;
+}
+
+article.post h4 {
+  font-size: 20px;
+}
+
+article.post blockquote {
+  box-shadow: inset 3px 0px 0px 0px #e0dede;
+  background-color: #f7f7f7;
+  padding: 16px 26px;
+  margin: 40px 0;
+  border-radius: 8px;
+  display: flow-root;
+}
+
+article.post blockquote p {
+  margin-bottom: unset;
+  padding-bottom: unset;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+article.post p {
+  font-family: 'Geist', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 29px;
+  letter-spacing: 0.02em;
+  color: #2c2c2c;
+  margin-bottom: 40px;
+  padding-bottom: unset;
+}
+
+article.post ol {
+  padding-left: 24px;
+  list-style: auto;
+}
+
+article.post ol li::marker {
+  font-weight: bold;
+}
+
+article.post ul {
+  list-style: disc;
+  padding-left: 16px;
+}
+
+article table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+article table th {
+  /* border: 24px solid rgba(0,0,0,0); */
+  /* background-color: rgba(35,35,15,0.25); */
+  padding: 0.5rem 1rem;
+}
+
+article table td {
+  /* border: 24px solid rgba(0,0,0,0); */
+  background-color: rgba(0, 0, 25, 0.25);
+  padding: 0.5rem 1rem;
+}
+
+article.post .byline {
+  font-family: 'Geist';
+  font-style: normal;
+  text-align: unset;
+  font-weight: 500;
+  line-height: 25px;
+  color: #2c2c2c;
+  opacity: 0.4;
+  padding-top: 10px !important;
+}
+
+article.post .byline * {
+  font-size: 16px;
+}
+
+article.post .byline a {
+  color: #2c2c2c !important;
+}
+
+article.post strong {
+  font-weight: 700;
+}
+
+article.post pre,
+article.post code {
+  font-size: 17px;
+}
+
+article.post pre {
+  border-radius: 10px;
+  margin-bottom: 40px;
+  padding: 24px;
+  background: #2d2d2d;
+}
+
+article.post p > code {
+  background-color: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+article.post a {
+  font-weight: 700;
+  color: #f16c12;
+}
+
+article.post a:hover {
+  color: #2c2c2c;
+}
+
+article.post img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  margin: 0 0 40px 0;
+}
+
+article.post .tags {
+  font-family: 'Geist';
+  text-align: unset;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+  color: #2c2c2c;
+  opacity: 0.4;
+}
+
+article.post .tags a {
+  color: #2c2c2c;
+  text-decoration: unset;
+  font-weight: 500;
+}
+
+article.post .tags a:hover {
+  text-decoration: underline;
+}
+
+article.post .tags a:before {
+  content: '#';
+}
+
+article.post nav {
+  padding-top: unset;
+  padding-left: unset;
+}
+/* blog post ends */

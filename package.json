@@ -6,6 +6,7 @@
     "build": "npx @11ty/eleventy",
     "watch": "npx @11ty/eleventy --watch",
     "serve": "npx @11ty/eleventy --serve --incremental  --port 8081",
+    "dev": "npx @11ty/eleventy --serve --port 8081",
     "debug": "DEBUG=* npx @11ty/eleventy",
     "newpost": "node ./scripts/newPost.js"
   },
