@@ -14,13 +14,7 @@ tags:
 ---
 Web apps built using [local first](https://localfirstweb.dev/) principles provide responsive, fluid user interfaces that people love. Utilized by high profile mega-hits such as Canva, Figma, and Notion, local first is getting quite a bit of attention. Investors have noticed as well, and are willing to pay a premium in this space. Fireproof builds on existing concepts to create a new type of [data anywhere](https://fireproof.storage/posts/from-local-first-to-data-anywhere:-fireproof-in-2023/) application. The pure JavaScript zero config database enables designers and front end teams to start creating immediately, and evolve the data model in parallel with the user interface. This creates an environment that is naturally conducive to [creating top-tier user experiences](https://fireproof.storage/posts/how-fireproof-can-optimize-your-online-customer-experience/). 
 
-- - -
-
-# People love the responsive, fluid interfaces local-first apps provide.
-
-# Investors are taking notice.
-
-- - -
+## People love the responsive, fluid interfaces local-first apps provide. Investors are taking notice.
 
 One of the latest products to use Fireproof is [Quick Check](https://usequickcheck.com/). I recently sat down with its creator, [Selem Delul](https://fireproof.storage/authors/selem-delul/). Here’s a fun fact I learned while talking with Selem – did you know anything can be a check? [It’s true](https://www.straightdope.com/21341724/can-you-write-a-check-on-any-old-piece-of-paper)! You mischievous, chaotic tricksters out there can continue using doors and cows for your banking needs – for the rest of us, there's Quick Check. When asked why he chose Fireproof, he said: *"Fireproof enables me to deliver the features users want, iterate and ship quickly, and sell the product at a tiny fraction of competitor prices."*  Selem and others building new apps with Fireproof today are part of the latest emerging trend – a shift towards data storage and processing on the client application side, especially for data that directly relates to application and user state. 
 
@@ -32,10 +26,6 @@ These benefits shine brightly in the finance sector, where Fireproof’s transac
 
 With just a few lines of Fireproof code, any web application becomes locally persistent, allowing individuals and teams to iterate on the design and feature. For apps with straightforward backend requirements, adding in PartyKit, now a [subsidiary of Cloudflare](https://blog.cloudflare.com/cloudflare-acquires-partykit/), is only a lines more. AWS S3 is also available for enterprise customers, and many more options are on the way, when [Fireproof Cloud](https://fireproof.storage/posts/beyond-the-cloud/) arrives later this year. If you’d like to get started now, check out the demos and tutorials on [GitHub](https://github.com/fireproof-storage/fireproof) and hop into [Discord](https://discord.gg/cCryrNHePH) to tell us what you’re working on!
 
-- - -
-
-# Starting with Fireproof avoids dangerous guesswork that can result in sluggish sites, or worse — operating costs too high to be competitive. 
-
-- - -
+## Starting with Fireproof avoids dangerous guesswork that can result in sluggish sites, or worse — operating costs too high to be competitive. 
 
 The Fireproof Way makes web development better, but it’s not a panacea. Scaling is still tough, especially for data intensive projects. Integrating with existing tools is never a cakewalk – everything has its own unique characteristics and idiosyncrasies. For these and other hard problems, we’ve created Fireproof Build, a services team that delivers outcomes, not project plans. If you need help with the hard stuff, [give us a shout](https://fireproof.storage/service-and-support/)!
