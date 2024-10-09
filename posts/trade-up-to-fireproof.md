@@ -31,8 +31,6 @@ One thing a trader can do to increase their chances of success is painstakingly 
 
 By eliminating the need constant communication with backend servers, Fireproof addresses two critical needs simultaneously: speed and security. This local-first approach minimizes latency, allowing traders to execute decisions with unprecedented speed. More importantly, it keeps proprietary algorithms and strategies exactly where they belong – under the trader's control. In an industry where intellectual property can make or break a firm, this level of security is not just an advantage; it's a necessity.
 
-![](/static/img/view.jpg)
-
 The benefits of Fireproof extend beyond the trading session. The intuitive API and flexible data model enable developers to iterate faster than ever – strategies can be tested & deployed as soon as they’re created. Fireproof's ability to sync across devices when needed ensures that traders, individually or in teams, have **seamless access to data,** locally or around the world. Lastly, Fireproof’s immutable transactions also assist with research, analysis, focus and records keeping, four out of the five requisite skills mentioned earlier.
 
 The team behind Fireproof has deep roots in the financial sector, evidenced by their growing list of clients including Jump Trading, a leader in quantitative trading. This focus has allowed them to tailor their product to the unique demands of professional trading. Their commitment to the industry is further demonstrated by spin-off products like QuickCheck, which applies the same secure, local-first principles to other financial operations. The hunt for the next ‘edge’ in trading is neverending.
@@ -41,5 +39,7 @@ The team behind Fireproof has deep roots in the financial sector, evidenced by t
 ## Fireproof is a leading indicator of where trading apps are heading.
 
 Fireproof offers two key benefits: accelerated application performance, which results in faster, more accurate trades, and the peace of mind that comes with knowing your financial research and strategies are safely stored on hardware you control. For professional traders looking to get ahead in their intensely competitive profession, there aren’t many other moves available that can offer such impressive results. Fireproof is a leading indicator of where trading apps are heading. The lions share of the rewards will go to the early adopters, as usual. 
+
+![](/static/img/view.jpg)
 
 If you'd like to learn more, you can check out the two previous articles in this series: [Data Provenance In Every Click](https://fireproof.storage/posts/data-provenance-in-every-click/) by yours truly. Or if you'd like a taste of the technical details, check out [the first in the series](https://fireproof.storage/posts/use-case:-hedge-fund-strategy-approval-workflow-for-live-trading-desk/), by our CEO, J. Chris Anderson. Once you're ready to explore how Fireproof can transform your trading operations, reach out to [the team!](https://fireproof.storage/service-and-support/)

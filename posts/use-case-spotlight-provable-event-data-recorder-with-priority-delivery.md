@@ -13,6 +13,8 @@ tags:
 ---
 Modern vehicles generate extensive telemetry data, including video feeds, sensor readings, and software process snapshots. This can amount to several terabytes of data per day, effectively turning a car into a mobile data center.
 
+![car navigation system](/static/img/car.jpg)
+
 While continuous uploading of all this information is impractical, certain critical events trigger data capture and transmission. For example, if you're driving with limited visibility and a tree suddenly falls in your path, the Event Data Recorder (EDR) would activate, capturing crucial information about the incident.
 
 The EDR, often referred to as a "black box" for cars, is designed to record vital data in the seconds before, during, and after a crash or near-crash event. This includes vehicle speed, throttle position, brake application, steering angle, and other critical parameters. Unlike the continuous stream of telemetry data, the EDR focuses on preserving a snapshot of these key moments.

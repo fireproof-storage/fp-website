@@ -424,7 +424,9 @@ article.post blockquote p {
   opacity: 0.8;
 }
 
-article.post p {
+article.post p,
+article.post ol,
+article.post ul {
   font-family: 'Geist', sans-serif;
   font-style: normal;
   font-weight: 400;
