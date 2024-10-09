@@ -19,6 +19,7 @@ Web apps built using [local first](https://localfirstweb.dev/) principles provid
 One of the latest products to use Fireproof is [Quick Check](https://usequickcheck.com/). I recently sat down with its creator, [Selem Delul](https://fireproof.storage/authors/selem-delul/). Here’s a fun fact I learned while talking with Selem – did you know anything can be a check? [It’s true](https://www.straightdope.com/21341724/can-you-write-a-check-on-any-old-piece-of-paper)! You mischievous, chaotic tricksters out there can continue using doors and cows for your banking needs – for the rest of us, there's Quick Check. When asked why he chose Fireproof, he said: 
 
 > "Fireproof enables me to deliver the features users want, iterate and ship quickly, and sell the product at a tiny fraction of competitor prices."
+> — Selem Delul
 
 Selem and others building new apps with Fireproof today are part of the latest emerging trend – a shift towards data storage and processing on the client application side, especially for data that directly relates to application and user state.
 
