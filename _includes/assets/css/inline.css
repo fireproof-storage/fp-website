@@ -41,7 +41,7 @@ pre[class*='language-'] {
 
 html .feature-grid .code-sample code {
   max-width: 18em;
-  font-family: 'Inter Tight', sans-serif;
+  /* font-family: 'Inter Tight', sans-serif; */
   /* font-size: 0.5rem; */
   /* line-height: 1; */
 }
