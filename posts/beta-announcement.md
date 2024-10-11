@@ -32,7 +32,7 @@ const result = await myIndex.query()
 
 To anyone who is caught by this change, thank you for being an early adopter, your feedback is making Fireproof better.
 
-### Beta release status
+## Beta release status
 
 The latest versions of [`@fireproof/core`](https://www.npmjs.com/package/@fireproof/core) and [`use-fireproof`](https://www.npmjs.com/package/use-fireproof) are now available on npm. We are updating the website and documentation at the time of this writing. 
 

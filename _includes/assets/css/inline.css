@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "Inter Tight", sans-serif;
+  font-style: normal;
+  font-display: swap;
+  src: url("./fonts/InterTight-VariableFont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Geist", sans-serif;
+  font-style: normal;
+  font-display: swap;
+  src: url("./fonts/GeistVariableVF.woff2") format("woff2");
+}
+
 footer h1 {
   font-size: 5rem;
 }
@@ -19,24 +33,10 @@ footer h1 {
   background-color: transparent;
 }
 
-code[class*='language-'],
-pre[class*='language-'] {
+code[class*="language-"],
+pre[class*="language-"] {
   text-shadow: 0 1px #000;
   font-size: 0.75rem;
-}
-
-@font-face {
-  font-family: 'Inter Tight';
-  font-style: normal;
-  font-display: swap;
-  src: url('/fonts/InterTight-VariableFont.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Geist';
-  font-style: normal;
-  font-display: swap;
-  src: url('/fonts/GeistVariableVF.woff2') format('woff2');
 }
 
 html .feature-grid .code-sample code {
@@ -125,7 +125,7 @@ html .feature-grid .code-sample code {
 
 @keyframes beat {
   0% {
-    background-image: url('/static/img/copied-small.png');
+    background-image: url("/static/img/copied-small.png");
     background-size: 5%;
     /* background-origin: top right; */
   }
@@ -340,13 +340,13 @@ footer a:hover {
   display: inline-block;
 }
 
-form[name='contact'] input,
-form[name='contact'] textarea {
+form[name="contact"] input,
+form[name="contact"] textarea {
   margin: 0.5em 0;
   padding: 4px;
 }
 
-a[href$='#subscribe'] {
+a[href$="#subscribe"] {
   color: #011;
   background: linear-gradient(-45deg, #ff0, #ff6f00, #ffa000, #ff0, #ff8200);
   background-size: 400% 400%;
@@ -359,7 +359,7 @@ a[href$='#subscribe'] {
   transition: transform 0.2s ease-in-out;
 }
 
-a[href$='#subscribe']:hover {
+a[href$="#subscribe"]:hover {
   color: #229;
   transform: scale(1.2);
 }
@@ -389,7 +389,7 @@ article.post {
 }
 
 article.post h1 {
-  font-family: 'Geist';
+  font-family: "Geist", sans-serif;
   font-style: normal;
   font-weight: 650;
   font-size: 52px;
@@ -402,7 +402,7 @@ article.post h1 {
 article.post h2,
 article.post h3,
 article.post h4 {
-  font-family: 'Inter Tight', sans-serif;
+  font-family: "Inter Tight", sans-serif;
   font-style: normal;
   text-align: left;
   font-weight: 600;
@@ -413,6 +413,11 @@ article.post h4 {
   margin-bottom: 36px;
   margin-top: 26px;
   padding-bottom: unset;
+}
+
+article.post h3,
+article.post h4 {
+  margin-bottom: 16px;
 }
 
 article.post h3 {
@@ -442,7 +447,7 @@ article.post blockquote p {
 article.post p,
 article.post ol,
 article.post ul {
-  font-family: 'Geist', sans-serif;
+  font-family: "Geist", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 19px;
@@ -486,7 +491,7 @@ article table td {
 }
 
 article.post .byline {
-  font-family: 'Geist';
+  font-family: "Geist", sans-serif;
   font-style: normal;
   text-align: unset;
   font-weight: 500;
@@ -520,7 +525,9 @@ article.post pre {
   background: #2d2d2d;
 }
 
-article.post p > code {
+article.post p > code, 
+article.post a > code,
+article.post li > code  {
   background-color: #f0f0f0;
   padding: 2px 8px;
   border-radius: 4px;
@@ -544,7 +551,7 @@ article.post img {
 }
 
 article.post .tags {
-  font-family: 'Geist';
+  font-family: "Geist", sans-serif;
   text-align: unset;
   font-style: normal;
   font-weight: 500;
@@ -565,7 +572,7 @@ article.post .tags a:hover {
 }
 
 article.post .tags a:before {
-  content: '#';
+  content: "#";
 }
 
 article.post nav {
