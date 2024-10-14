@@ -152,7 +152,7 @@ main.new-main {
 }
 
 .new-main .contact-form-btn {
-  font-family: 'Geist';
+  font-family: "Geist", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -243,7 +243,7 @@ pre[class*="language-"] {
 
 html .feature-grid .code-sample code {
   max-width: 18em;
-  /* font-family: 'Inter Tight', sans-serif; */
+  /*  font-family: 'Inter Tight', sans-serif;  */
   /* font-size: 0.5rem; */
   /* line-height: 1; */
 }
@@ -581,6 +581,30 @@ li.selected {
   display: none;
 }
 /* blog page */
+section.blog {
+  font-family: "Geist", sans-serif;
+  font-style: normal;
+  color: #2c2c2c;
+}
+.blog .page-title {
+  font-weight: 650;
+  font-size: 52px;
+  line-height: 57px;
+  letter-spacing: -0.04em;
+  margin: 10px 0;
+}
+.blog .blog-post-title {
+
+}
+.blog .blog-post-info {
+  
+}
+.blog .tags {
+  
+}
+.blog .tags .tag {
+  
+}
 /* blog page ends */
 
 /* blog post page */

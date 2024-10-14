@@ -27,4 +27,3 @@ The next frontier is offline and latency-free payments, because while tap-to-pay
 > Latency-free payments, even when the network is down.
 
 Beyond the airline industry, there is increasing demand for distributed, real-time, collaborative applications that work no matter what, especially at **the far edge of the network.** Whether you are building a supply chain management system for a factory, a smart home platform, or a collaborative workflow for a law firm, Fireproof is a syncable database that puts data under your control.
-
