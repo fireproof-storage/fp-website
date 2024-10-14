@@ -12,11 +12,11 @@ For airline data workloads, **continuous availability is essential**; even brief
 
 > Data infrastructure that works no matter what.
 
-As the creator of Couchbase Mobile, one of the leaders of the first wave of syncable databases, I understand the challenges and benefits of building **data infrastructure that works no matter what** happens to the network. Our technology showed a path forward, not only for airlines, but for any organization that can't let network outages disrupt their operations. Today I am building a next generation syncable database, delivering on the promise of data anywhere by building a syncable database that's at home wherever JavaScript runs, allowing your data to power web experiences, mobile apps, and internal workflows.
+As the creator of Couchbase Mobile, one of the leaders of the first wave of syncable databases, I understand the challenges and benefits of building **data infrastructure that works no matter what** happens to the network. Our technology showed the path forward, not only for airlines, but for any organization that can't let network outages disrupt their operations. Today I am building a next generation syncable database, delivering on the promise of data anywhere by building a syncable database that's at home wherever JavaScript runs, allowing your data to power web experiences, mobile apps, and internal workflows.
 
 [![in-flight service](/static/img/in-flight-service.png)](https://in-flight-service.fireproof.storage/)
 
-Fireproof advances the computer science behind CRDTs (the mergeable data structure that makes sync possible) by adding cryptographic merges tracking, like git or the blockchain, in a package lightweight enough to run in a tablet, browser, or edge function. The end result is seamless collaboration, no matter what network conditions happen to be, and trustworthy data provenance, allowing developers of any skill level to build enterprise-critical front-line applications.
+Fireproof [advances the computer science behind CRDTs](https://fireproof.storage/posts/from-mlops-to-point-of-sale:-merkle-proofs-and-data-locality/) (the mergeable data structure that makes sync possible) by adding cryptographic merge tracking, like git or the blockchain, in a package lightweight enough to run in a tablet, browser, or edge function. The end result is seamless collaboration, no matter what network conditions happen to be, and trustworthy data provenance, allowing developers of any skill level to build enterprise-critical front-line applications.
 
 > Seamless collaboration, no matter the network conditions.
 
