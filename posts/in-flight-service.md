@@ -12,7 +12,7 @@ For airline data workloads, **continuous availability is essential**; even brief
 
 > Data infrastructure that works no matter what.
 
-As the creator of Couchbase Mobile, one of the leaders of the first wave of syncable databases, I understand the challenges and benefits of building **data infrastructure that works no matter what** happens to the network. Our technology showed the path forward, not only for airlines, but for any organization that can't let network outages disrupt their operations. Today I am building a next generation syncable database, delivering on the promise of data anywhere by building a syncable database that's at home wherever JavaScript runs, allowing your data to power web experiences, mobile apps, and internal workflows.
+As the creator of Couchbase Mobile, one of the leaders of the first wave of syncable databases, I understand the challenges and benefits of building **data infrastructure that works no matter what** happens to the network. Our technology showed the path forward, not only for airlines, but for any organization that can't let network outages disrupt their operations. Today I am building next generation data tools, delivering on the promise of data anywhere by building a syncable database that's at home wherever JavaScript runs, allowing your data to power web experiences, mobile apps, and internal workflows.
 
 [![in-flight service](/static/img/in-flight-service.png)](https://in-flight-service.fireproof.storage/)
 
