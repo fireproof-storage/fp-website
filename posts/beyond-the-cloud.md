@@ -5,7 +5,7 @@ date: 2024-05-05
 author: J Chris Anderson
 summary: Roadmap for Fireproof Cloud features
 tags:
-  - tech
+  - technology
   - roadmap
 ---
 

@@ -7,7 +7,7 @@ summary: One year of development has taught us about the features that are most
   important to our users.
 tags:
   - roadmap
-  - tech
+  - technology
 ---
 This year I’m thankful that Fireproof has become a useful database for local-first apps. I wouldn’t start a new project today without it. 
 
