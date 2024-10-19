@@ -207,4 +207,4 @@ Numerous CRDTs can be mapped to mergeable payload pointers as described above. F
 
 Furthermore, developers who have built applications that rely on globally available clear text IPFS blocks can easily target this blockstore, gaining encryption and replication "for free". This includes access to all of the Fireproof connectors and storage options, enabling applications that might have previously required a complex network to operate local-first in the browser or edge function.
 
-If you want to contribute to this effort, please join the discussion on [GitHub](https://github.com/fireproof-storage/fireproof/issues/48) or [Discord](https://discord.gg/cCryrNHePH).
+If you want to contribute to this effort, please join the discussion on [GitHub](https://github.com/fireproof-storage/fireproof/issues/48) or [Discord](https://discord.gg/DbSXGqvxFc).
