@@ -32,4 +32,4 @@ Send us an email at [customer-success@fireproof.storage](mailto:customer-success
 
 I﻿f you're a developer interested in contributing, find us on [GitHub](https://github.com/fireproof-storage/fireproof)
 
-J﻿oin Dan and other Solid community members on our [Discord](https://discord.gg/cCryrNHePH)
+J﻿oin Dan and other Solid community members on our [Discord](https://discord.gg/DbSXGqvxFc)

@@ -10,7 +10,7 @@ Email us at [customer-success@fireproof.storage](mailto:customer-success@firepro
 
 Or join the community:
 
-[Discord](https://discord.gg/cCryrNHePH)
+[Discord](https://discord.gg/DbSXGqvxFc)
 
 [GitHub](https://github.com/fireproof-storage/fireproof)
 
