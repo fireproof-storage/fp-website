@@ -10,11 +10,13 @@ tags:
   - proofs
 ---
 
-Existing workflow support tools for inventory rebalancing, managerial approvals, or call center interactions can all benefit from AI copilots to streamline routine operations and improve the quality of service for tasks that need human attention. The benefit of automating common cases shows up as reduced wait times and lower operating costs. But giving a machine control of management decisions is risky, and you don’t want to be in the dark about the decisions AI is making or recommending in the field.
+Existing workflow support tools for inventory rebalancing, managerial approvals, or call center interactions can all benefit from AI copilots to streamline routine operations and improve the quality of service for tasks that need human attention. The benefit of automating common cases shows up as **reduced wait times and lower operating costs.** But giving a machine control of management decisions is risky, and you don’t want to be in the dark about the decisions AI is making or recommending in the field.
 
 [![Garden art](/static/img/garden-art.jpg)](https://www.flickr.com/photos/internetarchivebookimages/20925143421/)
 
-Fireproof is the ideal database for capturing interactive user and AI agent behavior in web applications. Fireproof’s flexible schema and indelible event tracking make it easy to use as part of your app development process, with a result that allows AI safety and app design teams to replay sessions and understand application behavior in the wild. For a deeper, more technical exploration of how to improve AI authenticity, efficiency and reliability, take a look at [Why proofs matter for AI.](https://fireproof.storage/posts/why-proofs-matter-for-ai/)
+Fireproof is the ideal database for capturing interactive user and AI agent behavior in web applications. Each transaction in Fireproof is part of a cryptographic proof chain, so **the provenance of every interaction is captured.** Fireproof’s flexible schema and indelible event tracking make it easy to use as part of your app development process, with a result that allows AI safety and app design teams to replay sessions and understand application behavior in the wild. For a deeper, more technical exploration of how to improve AI authenticity, efficiency and reliability, take a look at [Why proofs matter for AI.](https://fireproof.storage/posts/why-proofs-matter-for-ai/)
+
+> Data infrastructure that works no matter what.
 
 Fireproof is designed for compatibility with any web app, so it fits securely in your existing context — you can add it to your project just like any other JavaScript package. It supports pluggable backends with common connectors, so working within your production-tested environment is easy. That’s just the beginning – once Fireproof is instantiated in every application instance, it unlocks powerful new capabilities. Read about one great example: [running real-time analytics queries across live session data.](https://fireproof.storage/posts/from-mlops-to-point-of-sale:-merkle-proofs-and-data-locality/)
 
