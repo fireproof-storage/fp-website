@@ -35,6 +35,25 @@
 }
 
 /* new base */
+.base-body {
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  display: flex;
+  gap: 40px;
+}
+
+.base-body header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.base-body main {
+  margin: auto;
+}
+
 main.new-main {
   display: flex;
   flex-direction: column;
@@ -43,11 +62,13 @@ main.new-main {
   padding-right: var(--body-side-padding);
 }
 
+/* contact */
+
 .new-main .contact-wrap {
   display: flex;
   width: 100%;
   max-width: var(--section-max-width);
-  margin-top: 80px;
+  margin-top: 110px;
   padding: 50px var(--section-side-padding);
   background-color: #F0F0F0;
   border-radius: var(--radius-large);
@@ -68,7 +89,6 @@ main.new-main {
 .new-main a {
   color: #F16C12;
   font-weight: 700;
-  word-break: break-all;
 }
 
 .new-main a:hover {
@@ -103,6 +123,7 @@ main.new-main {
 .new-main .contact-form {
   width: 350px;
   margin: 0 80px;
+  flex-shrink: 0;
 }
 
 .new-main .contact-input {
@@ -150,6 +171,12 @@ main.new-main {
   .new-main .contact-form-btn:hover {
     background-color: #F16C12;
     color: #2C2C2C;
+  }
+}
+
+@media (max-width: 1270px) {
+  .new-main .contact-form {
+    margin: 0 20px 0 60px;
   }
 }
 
@@ -506,10 +533,6 @@ body {
   position: relative;
 }
 
-footer a:hover {
-  text-decoration: underline;
-}
-
 .buzzwords li {
   padding: 0.3em;
   display: inline-block;
@@ -558,9 +581,10 @@ li.selected {
   display: none;
 }
 
-/* blog post starts */
-article.post {
-  max-width: 830px;
+/* blog post */
+[data-current="post"] article.post {
+  max-width: 800px;
+  margin-top: 150px;
 }
 
 article.post h1 {
@@ -759,10 +783,19 @@ article.post nav {
 /* new footer */
 footer {
   width: 100%;
-  margin-top: 30px;
+  margin-top: auto;
+  padding-left: var(--section-side-padding);
+  padding-right: var(--section-side-padding);
+}
+
+[data-current="post"] footer {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-links {
+  font-weight: 600;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -790,10 +823,4 @@ footer {
   margin-bottom: 22px;
 }
 
-@media (max-width: 1150px) {
-  footer {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
 /* new footer ends */

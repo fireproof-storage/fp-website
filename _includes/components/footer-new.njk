@@ -5,7 +5,7 @@
       <a class="text-buttons" href="https://use-fireproof.com/docs/welcome" rel="noopener noreferrer" target="_blank">Docs</a>
     </li>
     <li>
-      <a class="text-buttons" href="/service-and-support/" target="_blank" rel="history">Contact Us</a>
+      <a class="text-buttons" href="/service-and-support/" rel="history">Contact Us</a>
     </li>
     {% set navPages = collections.all | eleventyNavigation %}
     <li>
@@ -24,13 +24,10 @@
       <a class="text-buttons" href="https://discord.gg/cCryrNHePH" rel="noopener noreferrer" target="_blank">Discord</a>
     </li>
     {%- for entry in navPages %}
-      <li class="mr-6">
-        <a href="{{ entry.url | url }}"{% if entry.url == page.url %} data-current="current item"{% endif %} class="text-buttons" rel="noopener noreferrer" target="_blank">{{ entry.title }}</a>
+      <li>
+        <a href="{{ entry.url | url }}"{% if entry.url == page.url %} data-current="current item"{% endif %} class="text-buttons" rel="noopener noreferrer">{{ entry.title }}</a>
       </li>
     {%- endfor %}
-    <li>
-      <a class="text-buttons" href="/blog" target="_blank" rel="history">Blog</a>
-    </li>
     <li>
       <a class="text-buttons" href="/legal/privacy/" target="_blank" rel="history">Privacy</a>
     </li>
