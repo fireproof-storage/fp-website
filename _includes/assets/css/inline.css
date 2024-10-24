@@ -580,8 +580,10 @@ li.selected {
 #tabContent article:not(.active) {
   display: none;
 }
+/* blog page */
+/* blog page ends */
 
-/* blog post */
+/* blog post page */
 [data-current="post"] article.post {
   max-width: 800px;
   margin-top: 150px;
@@ -778,7 +780,7 @@ article.post nav {
   padding-top: unset;
   padding-left: unset;
 }
-/* blog post ends */
+/* blog post page ends */
 
 /* new footer */
 footer {
