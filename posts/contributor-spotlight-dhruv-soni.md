@@ -14,7 +14,6 @@ Hey guys! I am Dhruv Soni, Employee Number 04 I guess at Fireproof as a Connecto
 
 ![Dhruv before Fireproof](/static/img/dhruv1.jpg)
 
-![Dhruv after Fireproof](/static/img/dhruv2.jpg)
 
 ### How did you hear about Fireproof?
 
@@ -28,13 +27,15 @@ I can probably say 50 good things about Fireproof and its architecture and call 
 
 I am currently in my final year of undergraduate studies pursuing a Bachelors Degree in Information Technology and would be graduating this summer. I am developer who likes to integrate software into the existing code, write backend infrastructure, work with solidity smart contracts and create React applications with terrible UIs. I thought I was decent at these technologies until I started contributing at Fireproof and realized that delusion is in fact a real thing and I am still far away from being a good developer. But with time I have realized that my speciality lies in taking up new tasks and challenging myself in accomplishing those. This trait is reflected in my works of creating a Chrome extension, publishing an npm package, working with AWS without having any prior knowledge or experience in any of them.
 
+![Dhruv after Fireproof](/static/img/dhruv2.jpg)
+
 ### What makes you excited about Fireproof now?
 
 Four things:
-The community and the best teammates
-Developers and contributors
-Disruptive potential
-Its architecture and the roadmap ahead
+- The community and the best teammates
+- Developers and contributors
+- Disruptive potential
+- Its architecture and the roadmap ahead
 
 Also the most exciting thing right now at Fireproof are those stickers that Akasha made, but somehow you guys forgot to ship those to India. If you plan to send stuff in the future those hats and t shirts look pretty cool as well. Just kidding!
 
