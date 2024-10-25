@@ -332,7 +332,7 @@ section.hero {
   margin-bottom: 100px;
   background-color: var(--color-background-secondary);
   border-radius: var(--radius-large);
-  min-height: 540px;
+  /* min-height: 540px; */
   padding-left: var(--section-side-padding);
   padding-right: var(--section-side-padding);
 }
