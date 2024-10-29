@@ -10,7 +10,10 @@ tags:
   - cloudless
   - development
 ---
-Quickly add live data to any app or page with our embedded database. Reduce risk, cost, and complexity with provable secure synchronization via any backend.
+
+[**Share the original version of this product sheet as a PDF**](https://fireproof.storage/embedded-database-sync-product-sheet.pdf).
+
+Quickly add live data to any app or page with our embedded database. Reduce risk, cost, and complexity with provable secure synchronization via any backend. 
 
 * **Collaborative:** Multi-user sync for interactive apps
 * **Fast:** Local-first zero latency database queries
