@@ -152,7 +152,7 @@ main.new-main {
 }
 
 .new-main .contact-form-btn {
-  font-family: 'Geist';
+  font-family: "Geist", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -243,7 +243,7 @@ pre[class*="language-"] {
 
 html .feature-grid .code-sample code {
   max-width: 18em;
-  /* font-family: 'Inter Tight', sans-serif; */
+  /*  font-family: 'Inter Tight', sans-serif;  */
   /* font-size: 0.5rem; */
   /* line-height: 1; */
 }
@@ -581,7 +581,79 @@ li.selected {
   display: none;
 }
 
-/* blog post */
+/* blog page */
+section.blog {
+  font-family: "Geist", sans-serif;
+  font-style: normal;
+  color: #2c2c2c;
+}
+
+.blog .page-title {
+  font-size: 52px;
+  line-height: 57px;
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  margin: 50px 0;
+}
+
+.blog-post {
+  margin-top: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #E0DEDE;
+}
+
+.blog-post:last-of-type {
+  border-bottom: unset;
+}
+
+.blog .blog-post-title {
+  font-size: 34px;
+  line-height: 44px;
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  margin-bottom: 12px;
+}
+
+.blog .blog-post-text {
+  font-size: 21px;
+  line-height: 29px;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+
+.blog .blog-post-info {
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  opacity: 0.4;
+}
+.blog .blog-post-info a {
+  text-decoration: underline;
+}
+
+.blog .tags {
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.blog .tags .tag {
+  color: #F16C12;
+}
+
+.blog .tags .tag:hover {
+  color: #2C2C2C;
+  text-decoration: underline;
+}
+
+.blog .tags .tag:before {
+  content: '#';
+}
+/* blog page ends */
+
+/* blog post page */
 [data-current="post"] article.post {
   max-width: 800px;
   margin-top: 150px;
@@ -778,7 +850,7 @@ article.post nav {
   padding-top: unset;
   padding-left: unset;
 }
-/* blog post ends */
+/* blog post page ends */
 
 /* new footer */
 footer {

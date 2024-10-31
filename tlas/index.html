@@ -364,7 +364,7 @@
       section.hero {
         position: relative;
         margin-top: 28px;
-        margin-bottom: 120px;
+        margin-bottom: 80px;
         background-color: var(--color-background-secondary);
         border-radius: var(--radius-large);
         min-height: 600px;
@@ -433,7 +433,6 @@
 
       @media (max-width: 1370px) {
         section.hero {
-          padding-bottom: 80px;
           padding-top: 80px;
         }
 
@@ -447,6 +446,7 @@
         .hero-heading {
           margin-top: unset;
           margin-bottom: 36px;
+          margin-top: 36px;
           text-align: center;
         }
 
@@ -545,11 +545,13 @@
 
       /* benefits */
       section.benefits {
-        margin-bottom: 160px;
+        margin-bottom: 120px;
       }
 
       .benefits-heading {
         text-align: center;
+        margin-top: 36px;
+        margin-bottom: 36px;
       }
 
       .benefits-list {
@@ -564,7 +566,7 @@
 
       @media (max-width: 1150px) {
         section.benefits {
-          margin-bottom: 120px;
+          margin-bottom: 80px;
         }
 
         .benefits-list {
@@ -580,8 +582,12 @@
 
       /* demo */
       section.demo {
-        margin-bottom: 130px;
+        margin-bottom: 60px;
         text-align: center;
+      }
+
+      section.demo.deploy {
+        margin-bottom: 20px;
       }
 
       section.demo code {
@@ -592,8 +598,7 @@
 
       .demo-heading {
         max-width: 740px;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 36px auto;
       }
 
       .demo-text {
@@ -792,11 +797,13 @@
 
       .logos-heading {
         text-align: center;
+        margin-top: 36px;
+        margin-bottom: 36px;
       }
 
       .logos-list-container {
         position: relative;
-        padding-top: 130px;
+        padding-top: 100px;
         width: 100%;
       }
 
@@ -861,7 +868,7 @@
 
       /* testimonials */
       section.testimonials {
-        margin-bottom: 200px;
+        margin-bottom: 130px;
         max-width: unset;
         left: 0;
         width: 100vw;
@@ -871,6 +878,8 @@
 
       .testimonials-heading {
         text-align: center;
+        margin-top: 36px;
+        margin-bottom: 36px;
       }
 
       .testimonials-text {
@@ -878,7 +887,7 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 0;
-        margin-bottom: 70px;
+        margin-bottom: 60px;
         text-align: center;
       }
 
@@ -983,6 +992,14 @@
           gap: 30px;
         }
 
+        .testimonials-body {
+          height: 168px;
+        }
+
+        .testimonials-body .testimonial-text {
+          -webkit-line-clamp: 8;
+        }
+
         .testimonials-item {
           width: 258px;
         }
@@ -1028,6 +1045,7 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 0;
+        margin-bottom: 36px;
       }
 
       .community .button {
