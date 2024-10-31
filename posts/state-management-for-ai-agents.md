@@ -31,7 +31,7 @@ The model likely runs in a cloud environment, but the database can be used anywh
 
 Here is a quick video showing a custom workflow that uses a Fireproof database to manage a multi-step agent process, simulating a focus group discussion.
 
-![Fireproof Storage](https://x.com/FireproofStorge/status/1648541950843256832)
+> [Four Steps to the Epiphany](https://x.com/FireproofStorge/status/1648541950843256832)
 
 Watching the video is easier than using the app, as for now it requires an API key to run. The [app is available here.](https://epiphany.fireproof.storage/)
 
