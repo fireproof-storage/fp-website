@@ -614,6 +614,10 @@ section.blog {
   margin-bottom: 12px;
 }
 
+.blog .blog-post-title a {
+  color: #2c2c2c;
+}
+
 .blog .blog-post-text {
   font-size: 21px;
   line-height: 29px;
@@ -626,10 +630,14 @@ section.blog {
   line-height: 25px;
   font-weight: 400;
   letter-spacing: -0.02em;
+  margin: 0;
   opacity: 0.4;
 }
+
 .blog .blog-post-info a {
-  text-decoration: underline;
+  font-weight: 400 !important;
+  text-decoration: underline !important;
+  color: inherit !important;
 }
 
 .blog .tags {
@@ -637,6 +645,8 @@ section.blog {
   line-height: 25px;
   font-weight: 500;
   margin-top: 30px;
+  margin-bottom: 0;
+  opacity: 1 !important;
 }
 
 .blog .tags .tag {
@@ -896,3 +906,7 @@ footer {
 }
 
 /* new footer ends */
+
+.sub-footer {
+  margin: 40px 0;
+}
