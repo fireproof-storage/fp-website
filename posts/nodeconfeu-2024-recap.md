@@ -49,7 +49,7 @@ And no trip around the world is complete without reaching out to local friends. 
 
 In addition to nightly music (including Chris snagging the karaoke mic for some database raps…), walks around the island and a stroll on the beach in Tramore, and lots of great late night conversations, we got to play a good old fashioned game of Capture the Flag. 
 
-![NodeConfEU 2014 flag on top of Waterford Castle in 2024](/static/img/91e242cc-d1e0-49e2-b0d8-97c6cf06456c.jpg "NodeConfEU Flag")
+![NodeConfEU 2014 flag and Fireproof flag at Waterford Castle in 2024](/static/img/nodeconffireproofflags.jpeg "NodeConfEU Flags")
 
 The NodeConfEU 2024 flag proudly hung from the battlements of Waterford Castle for less than 24 hours before it was liberated. A slew of mischievous conference attendees found the hidden passage up the ancient tower to the roof, eager to swipe the flag, only to find it had already been replaced with a Fireproof flag. 😉
 
