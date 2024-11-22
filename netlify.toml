@@ -55,3 +55,13 @@
   from = "/call"
   to = "https://savvycal.com/jchris/fireproof"
   status = 301
+
+[[redirects]]
+  from = "/esm/cloud"
+  to = "https://esm.sh/@fireproof/cloud@latest"
+  status = 301
+
+[[redirects]]
+  from = "/esm/core"
+  to = "https://esm.sh/@fireproof/core@latest"
+  status = 301
