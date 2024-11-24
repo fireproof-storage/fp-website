@@ -1,3 +1,6 @@
+[dev]
+targetPort = 8081
+
 [build]
   publish = "_site"
   command = "eleventy"
@@ -59,9 +62,11 @@
 [[redirects]]
   from = "/esm/cloud"
   to = "https://esm.sh/@fireproof/cloud@latest"
-  status = 301
+  force = true
+  status = 200
 
 [[redirects]]
   from = "/esm/core"
   to = "https://esm.sh/@fireproof/core@latest"
-  status = 301
+  force = true
+  status = 200
