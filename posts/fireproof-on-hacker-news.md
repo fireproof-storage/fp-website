@@ -3,7 +3,7 @@ title: Fireproof on Hacker News
 date: 2024-12-03T23:34:32.450Z
 author: Meghan Sinnott
 summary: Welcome to all of our new users! Here's a little write up about what
-  makes fireproof unique and how you can get involved in this open source
+  makes Fireproof unique and how you can get involved in this open source
   project.
 tags:
   - database
