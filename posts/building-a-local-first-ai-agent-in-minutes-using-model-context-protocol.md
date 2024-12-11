@@ -15,9 +15,10 @@ Fireproof’s secure multi-user sync capabilities are designed to serve [state m
 
 First, adding Fireproof support to an MCP server is just this easy:
 
-`import { fireproof } from "use-fireproof";`
-
-`const db = fireproof("mcp_todo", { public: true });`
+```js
+import { fireproof } from "use-fireproof";
+const db = fireproof("mcp_todo");
+```
 
 Then with a few lines of code, you can define your fields, subscribe to changes, and seamlessly read and write data via an AI chat interface. 
 
