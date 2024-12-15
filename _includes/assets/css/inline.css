@@ -70,7 +70,7 @@ main.new-main {
   max-width: var(--section-max-width);
   margin-top: 110px;
   padding: 50px var(--section-side-padding);
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
   border-radius: var(--radius-large);
 }
 
@@ -87,7 +87,7 @@ main.new-main {
 }
 
 .new-main a {
-  color: #F16C12;
+  color: #f16c12;
   font-weight: 700;
 }
 
@@ -131,7 +131,7 @@ main.new-main {
   width: 100%;
   margin-bottom: 40px;
   background: transparent;
-  border-bottom: 1px solid #A5A5A5;
+  border-bottom: 1px solid #a5a5a5;
   padding-left: 0;
 }
 
@@ -157,7 +157,7 @@ main.new-main {
   font-weight: 600;
   font-size: 16px;
   width: 100%;
-  background-color: #2C2C2C;
+  background-color: #2c2c2c;
   color: white;
   padding: 16px 0;
   border-radius: 8px;
@@ -165,12 +165,12 @@ main.new-main {
 
 @media (hover: hover) {
   .new-main .contact-link-icon:hover svg {
-    color: #F16C12;
+    color: #f16c12;
   }
 
   .new-main .contact-form-btn:hover {
-    background-color: #F16C12;
-    color: #2C2C2C;
+    background-color: #f16c12;
+    color: #2c2c2c;
   }
 }
 
@@ -206,7 +206,7 @@ main.new-main {
   .new-main .contact-wrap {
     padding: 60px 36px;
   }
-  
+
   .new-main p {
     font-size: 19px;
   }
@@ -581,41 +581,57 @@ li.selected {
   display: none;
 }
 
-/* blog page */
-section.blog {
+/* blog pages */
+section.blog,
+section.authors .author {
   font-family: "Geist", sans-serif;
   font-style: normal;
   color: #2c2c2c;
+}
+
+section.authors {
+  margin-top: 60px;
 }
 
 .blog .page-title {
   font-size: 52px;
   line-height: 57px;
   font-weight: 650;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   margin: 50px 0;
 }
 
 .blog-post {
   margin-top: 40px;
   padding-bottom: 40px;
-  border-bottom: 1px solid #E0DEDE;
+  border-bottom: 1px solid #e0dede;
 }
 
 .blog-post:last-of-type {
   border-bottom: unset;
 }
 
-.blog .blog-post-title {
+.blog .blog-post-title,
+.authors .blog-authors {
   font-size: 34px;
   line-height: 44px;
   font-weight: 650;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   margin-bottom: 12px;
 }
 
-.blog .blog-post-title a {
+.blog-authors {
+  margin: 50px 0 50px 0;
+}
+
+.blog .blog-post-title a,
+.authors .blog-authors .author {
   color: #2c2c2c;
+}
+
+.blog .blog-post-title a:hover,
+.authors .blog-authors:hover .author {
+  color: #f16c12 !important;
 }
 
 .blog .blog-post-text {
@@ -650,18 +666,18 @@ section.blog {
 }
 
 .blog .tags .tag {
-  color: #F16C12;
+  color: #f16c12;
 }
 
 .blog .tags .tag:hover {
-  color: #2C2C2C;
+  color: #2c2c2c;
   text-decoration: underline;
 }
 
 .blog .tags .tag:before {
-  content: '#';
+  content: "#";
 }
-/* blog page ends */
+/* blog pages ends */
 
 /* blog post page */
 [data-current="post"] article.post {
@@ -806,9 +822,9 @@ article.post pre {
   background: #2d2d2d;
 }
 
-article.post p > code, 
+article.post p > code,
 article.post a > code,
-article.post li > code  {
+article.post li > code {
   background-color: #f0f0f0;
   padding: 2px 8px;
   border-radius: 4px;
@@ -860,20 +876,35 @@ article.post nav {
   padding-top: unset;
   padding-left: unset;
 }
+
+@media (max-width: 770px) {
+  article.post h1 {
+    font-size: 8vw;
+    line-height: 1.2;
+  }
+}
 /* blog post page ends */
+
+/* blog back navigation */
+.back-nav {
+  margin-top: 20px;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.authors-nav {
+  margin-top: 60px;
+}
 
 /* new footer */
 footer {
   width: 100%;
-  margin-top: auto;
-  padding-left: var(--section-side-padding);
-  padding-right: var(--section-side-padding);
-}
-
-[data-current="post"] footer {
   max-width: 1000px;
+  margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: var(--section-side-padding);
+  padding-right: var(--section-side-padding);
+  color: #2c2c2c;
 }
 
 .footer-links {
@@ -882,14 +913,14 @@ footer {
   display: -ms-flexbox;
   display: flex;
   -webkit-column-gap: 56px;
-     -moz-column-gap: 56px;
-          column-gap: 56px;
+  -moz-column-gap: 56px;
+  column-gap: 56px;
   row-gap: 20px;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .footer-links .text-buttons:hover {
