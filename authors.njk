@@ -9,15 +9,15 @@ permalink: "authors/index.html"
 ---
 
 
-<section>
+<section class="authors">
   {% for author in pagination.items %}
-    <article>
-      <h3>
-        <a href="/authors/{{ author | slug }}">{{ author | safe }}</a>
-      </h3>
+    <article class="post">
+      <h2 class="blog-authors">
+        <a href="/authors/{{ author | slug }}" class="author">{{ author | safe }}</a>
+      </h2>
     </article>
   {% endfor %}
-  <nav>
-    <a href="{{ '/blog/' | url }}">← Blog index</a>
+  <nav class="authors-nav">
+    <a href="{{ '/blog/' | url }}" class="back-nav">← Blog index</a>
   </nav>
 </section>
