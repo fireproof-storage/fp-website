@@ -589,7 +589,7 @@ function App() {
                 <div
                   key={index}
                   className="w-10 h-10 rounded"
-                  style={{ backgroundColor: color }}
+                  style={({ backgroundColor: color })}
                 />
               ))}
             </div>
