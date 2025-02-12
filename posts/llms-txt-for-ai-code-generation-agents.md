@@ -253,7 +253,7 @@ While the snippets above illustrate basic usage, here are some important conside
      const userControlledQuery = useLiveQuery(
        (doc) => {
          // Hypothetical user-defined constraints
-         if (doc && doc.text && doc.type === currentTypeFilter) {
+         if (doc.text && doc.type === currentTypeFilter) {
            return [doc.text?.length ?? 0, doc.timestamp ?? 0];
          }
        },
