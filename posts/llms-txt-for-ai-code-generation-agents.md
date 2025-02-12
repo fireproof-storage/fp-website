@@ -218,19 +218,19 @@ While the snippets above illustrate basic usage, here are some important conside
    Use optional chaining safely to avoid errors:
    ```js
    const queryResult = useLiveQuery(
-     (doc) => doc?.text?.length ?? 0,
+     (doc) => doc.text?.length ?? 0,
      { descending: true, limit: 5 }
    );
    ```
    This ensures that if `doc.text` is undefined or null, we treat the length as 0 rather than leading to errors or unintended falsy values.
 
 2. **Sorting by Multiple Fields**  
-   If you want to sort by multiple fields (e.g. `doc?.text?.length` as a primary key and `doc?.timestamp` as a fallback), return an array:
+   If you want to sort by multiple fields (e.g. `doc.text?.length` as a primary key and `doc.timestamp` as a fallback), return an array:
    ```js
    const queryResult = useLiveQuery(
      (doc) => [
-       doc?.text?.length ?? 0,
-       doc?.timestamp ?? Number.MAX_SAFE_INTEGER
+       doc.text?.length ?? 0,
+       doc.timestamp ?? Number.MAX_SAFE_INTEGER
      ],
      { prefix: [4] }
    );
@@ -244,7 +244,7 @@ While the snippets above illustrate basic usage, here are some important conside
    - Using incremental or partial queries instead of a single large, sorted dataset.
 
 4. **Common Pitfalls**  
-   - Avoid using something like `doc.text && doc.text.length || 0` because `doc.text && doc.text.length` can result in `false` if `doc.text.length` is 0. Use optional chaining: `doc?.text?.length ?? 0`.  
+   - Avoid using something like `doc.text && doc.text.length || 0` because `doc.text && doc.text.length` can result in `false` if `doc.text.length` is 0. Use optional chaining: `doc.text?.length ?? 0`.  
 
 5. **Real-time Updates and User Interaction**  
    - For interactive lists or queries that need to filter or sort in real time, structure your `useLiveQuery` to keep the user experience responsive.  
