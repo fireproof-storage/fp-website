@@ -36,7 +36,7 @@ Works with ⚡️ ESM.sh:
 import { useFireproof } from "https://esm.sh/use-fireproof";
 ```
 
-## Basic Usage (with React)
+## ⚛️ React Usage
 
 React hooks are the recommended way to use Fireproof in LLM code generation contexts. Here's how to use them:
 
@@ -590,7 +590,7 @@ function App() {
                 <div
                   key={index}
                   className="w-10 h-10 rounded"
-                  style={{ backgroundColor: color }}
+                  style={({ backgroundColor: color })}
                 />
               ))}
             </div>
