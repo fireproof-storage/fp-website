@@ -9,11 +9,13 @@ tags:
   - code
 ---
 
-TLDR: Copy the content of our [llms.txt](https://use-fireproof.com/llms.txt) file to any code generator to dramatically increase the changes of a working one-shot app, with all the benefits of Fireproof's encrypted live sync. You can also use this [Vibe Coding with Fireproof ChatGPT GPT](https://chatgpt.com/g/g-67bd0ebe210081918561667c08662d03-vibe-coding-with-fireproof) which comes preloaded and ready to deliver running apps to your specifications.
+TLDR: Copy the content of our [llms-mini.txt](https://use-fireproof.com/llms-mini.txt) file to any code generator to dramatically increase the changes of a working one-shot app, with all the benefits of Fireproof's encrypted live sync. You can also use this [Vibe Coding with Fireproof ChatGPT GPT](https://chatgpt.com/g/g-67bd0ebe210081918561667c08662d03-vibe-coding-with-fireproof) which comes preloaded and ready to deliver running apps to your specifications.
+
+PS: We've noticed that DeepSeek performs better with [llms-mini.txt](https://use-fireproof.com/llms-mini.txt) instead of the full [llms-full.txt](https://use-fireproof.com/llms-full.txt) or the standard [llms.txt](https://use-fireproof.com/llms.txt).
 
 The `/llms.txt` file is a standardized markdown document that enhances website accessibility for large language models (LLMs). It provides a concise, machine-readable overview of a website's content, enabling LLMs to efficiently process relevant information. Proposed by Jeremy Howard in September 2024, it complements existing standards like [`robots.txt`](https://www.robotstxt.org/) and [`sitemap.xml`](https://www.sitemaps.org/), focusing on AI reasoning engines. The file is typically hosted at `https://example.com/llms.txt` and includes essential website information, documentation links, and resources. For more details, visit [llmstxt.org](https://llmstxt.org) or read about its [functionality and benefits](https://www.tryprofound.com/guides/what-is-llms-txt-guide).
 
-*Below is the content of the [llms-full.txt file for the Fireproof project](https://use-fireproof.com/llms-full.txt). In constrained environments, use the smaller [llms.txt](https://use-fireproof.com/llms.txt) file. Learn more about llms.txt at [llmstxt.org](https://llmstxt.org/).*
+*Below is the content of the [llms-mini.txt file for the Fireproof project](https://use-fireproof.com/llms-mini.txt). In constrained environments, use the smaller [llms.txt](https://use-fireproof.com/llms.txt) file. Learn more about llms.txt at [llmstxt.org](https://llmstxt.org/).*
 
 # Fireproof browser database API
 
