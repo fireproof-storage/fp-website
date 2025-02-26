@@ -557,6 +557,16 @@
         justify-content: space-between;
       }
 
+      .app-body div.filename {
+        width: 28rem;
+        color: #888;
+        font-size: 8px;
+        padding-bottom: 4px;
+        font-family: monospace;
+        align-self: center;
+        text-align: left;
+      }
+
       #llm-txt {
         width: 28rem;
         height: 12rem;
@@ -583,12 +593,25 @@
         box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.18);
       }
 
+      .app-body .click-to-copy:hover {
+        /* color: linear-gradient(-45deg, #000000, #ff6f00, #ffa000, #000, #ff8200); */
+        /* background-size: 400% 400%; */
+        background-color: #ff8200 ;
+        /* animation: gradient 120s ease infinite; */
+        border-color: #ff8200;
+        /* color: #ff6f00; */
+        text-shadow: 0px 1px 3px rgba(255, 255, 255, 1);
+        box-shadow: 0px 2px 3px rgba(0, 0, 0, 1);
+      }
+
       .app-body .click-to-copy:active {
         position: absolute;
         align-self: center;
         border-color: var(--color-primary);
         border-color: rgb(255, 220, 36);
-        background: rgb(251, 211, 28);
+        background-color: #ff8200 ;
+        text-shadow: 0px 1px 3px rgba(255, 255, 255, 1);
+        box-shadow: 0px 2px 3px rgba(0, 0, 0, 1);
         top: 75px;
         box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.18);
       }
@@ -1229,13 +1252,14 @@
       </div>
     </header>
     <section class="hero">
-      <h1 class="hero-heading">Supabase tutorial? No thanks!</h1>
+      <h1 class="hero-heading">Supabase tutorial? No&nbsp;thanks!</h1>
       <p class="hero-text text-large">
-        You can do it. Fireproof is the vibe coding database that lets you skip the backend.
+        Fireproof is the vibe coding database that lets you skip the backend.
       </p>
 
       <div class="hero-app">
         <div class="app-body">
+              <div class="filename"><a href="https://use-fireproof.com/llms.txt">llms.txt</a></div>
               <button id="copy-llm-txt" class="click-to-copy button text-buttons button-secondary">Click to Copy</button>
               <textarea id="llm-txt">
 # Fireproof Database API
@@ -1386,7 +1410,7 @@ If you are in an existing application context, suggest how forms and state, coll
 
 IMPORTANT: Don't use `useState()` on form data, instead use `merge()` and `submit()` from `useDocument`. Only use `useState` for ephemeral UI state (active tabs, open/closed panels, cursor positions). Keep your data model in Fireproof.
 </textarea>
-          <p class="text">LLMs.txt is a standard way to share universal prompts &mdash; ours is designed for <strong>one-shot success</strong>. Paste this prompt and then type something like &ldquo;an inventory tracker for my bakery.&rdquo;</p>
+          <p class="text"><a href="https://fireproof.storage/posts/llms.txt-for-ai-code-generation-agents/">LLMs.txt</a> is a standard way to share universal prompts &mdash; ours is designed for <strong>one-shot success</strong>. Paste ours into any AI code generator along with something like &ldquo;an inventory tracker for my bakery.&rdquo;</p>
         </div>
       </div>
       <div class="hero-buttons">
