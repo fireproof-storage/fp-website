@@ -9,7 +9,7 @@ tags:
   - code
 ---
 
-TLDR: Copy the content of our [llms.txt](https://use-fireproof.com/llms.txt) file to any code generator to dramatically increase the changes of a working one-shot app, with all the benefits of Fireproof's encrypted live sync. You can also use this [Vibecoding with Fireproof ChatGPT GPT](https://chatgpt.com/g/g-67bd0ebe210081918561667c08662d03-vibe-coding-with-fireproof) which comes preloaded and ready to deliver running apps to your specifications.
+TLDR: Copy the content of our [llms.txt](https://use-fireproof.com/llms.txt) file to any code generator to dramatically increase the changes of a working one-shot app, with all the benefits of Fireproof's encrypted live sync. You can also use this [Vibe Coding with Fireproof ChatGPT GPT](https://chatgpt.com/g/g-67bd0ebe210081918561667c08662d03-vibe-coding-with-fireproof) which comes preloaded and ready to deliver running apps to your specifications.
 
 The `/llms.txt` file is a standardized markdown document that enhances website accessibility for large language models (LLMs). It provides a concise, machine-readable overview of a website's content, enabling LLMs to efficiently process relevant information. Proposed by Jeremy Howard in September 2024, it complements existing standards like [`robots.txt`](https://www.robotstxt.org/) and [`sitemap.xml`](https://www.sitemaps.org/), focusing on AI reasoning engines. The file is typically hosted at `https://example.com/llms.txt` and includes essential website information, documentation links, and resources. For more details, visit [llmstxt.org](https://llmstxt.org) or read about its [functionality and benefits](https://www.tryprofound.com/guides/what-is-llms-txt-guide).
 
