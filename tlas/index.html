@@ -557,10 +557,6 @@
         justify-content: space-between;
       }
 
-      :root {
-        --circle-color: #fe0;
-      }
-
       #llm-txt {
         width: 28rem;
         height: 12rem;
@@ -571,11 +567,6 @@
         resize: none;
         user-select: var(--circle-color);
       }
-
-      #llm-txt::selection {
-        background: var(--circle-color);
-      }
-
 
       .app-body p {
         width: 28rem;
@@ -613,8 +604,18 @@
           top: unset;
           right: unset;
           width: 100%;
-          max-width: 594px;
-          border: 1px solid #555453;
+          max-width: unset;
+          margin: 2rem auto;
+        }
+
+        .app-body {
+          width: unset;
+        }
+
+        .app-body p {
+          max-width: unset;
+          width: unset;
+          text-align: center;
         }
       }
 
@@ -1276,7 +1277,7 @@ import { useState, useEffect } from "react";
 // Optional component for displaying uploaded images
 function ImageDisplay({ meta }) {
   const [imgUrl, setImgUrl] = useState("");
-  
+
   useEffect(() => {
     if (meta?.file) {
       meta.file().then(file => {
@@ -1292,8 +1293,8 @@ function ImageDisplay({ meta }) {
 
 function App() {
   const { useDocument, useLiveQuery } = useFireproof("my-ledger");
-  const { doc, merge, submit } = useDocument({ 
-    text: "", 
+  const { doc, merge, submit } = useDocument({
+    text: "",
     timestamp: Date.now(),
     _files: {} // Optional for file handling
   });
@@ -1335,7 +1336,7 @@ To sort documents by more than one field, use a sandboxed function instead of a 
 
 ```js
 const { docs } = useLiveQuery(
-  (doc) => [doc.list_id, doc.author], 
+  (doc) => [doc.list_id, doc.author],
   { descending: true, limit: 5, prefix: ["zyx-456-list-id"] }
 );
 ```
@@ -1364,13 +1365,13 @@ putAndQuery();
 
 ## Best Practices
 
-- **Leverage `useLiveQuery`:**  
+- **Leverage `useLiveQuery`:**
   Use this hook to effortlessly build UIs that update in real time as data changes.
 
-- **Granular Documents:**  
+- **Granular Documents:**
   Save small, individual data pieces (e.g., one per user action) to simplify conflict resolution via CRDTs.
 
-- **Single File Deployment:**  
+- **Single File Deployment:**
   Ideal for constrained environments, bundle everything into one file without external dependencies.
 
 For more details and advanced usage (such as file attachments and cloud syncing), refer to the full documentation at [Fireproof Docs](https://use-fireproof.com/).
@@ -1951,45 +1952,37 @@ IMPORTANT: Don't use `useState()` on form data, instead use `merge()` and `submi
     <script type="text/javascript" src="testimonials-carusel.js" defer></script>
     <script type="text/javascript" src="demo-apps-carusel.js" defer></script>
     <script>
-      const fetchLlmTxt = async () => {
-        const llmTxtUrl = "https://use-fireproof.com/llms.txt";
-        try {
-          const response = await fetch(llmTxtUrl);
-          if (!response.ok) {
-            throw new Error(`Response status: ${response.status}`);
-          }
-          const text = await response.text();
-          console.log(text);
-        } catch (error) {
-          console.error(error.message);
-        }
-      }
 
       document.addEventListener('DOMContentLoaded', () => {
-        fetchLlmTxt();
-        console.log('aa');
-        const llmTxt = document.getElementById('llm-txt');
+
+        const llmTxtDisplay = document.getElementById('llm-txt');
         const llmTxtButton = document.getElementById('copy-llm-txt');
         const buttonText = llmTxtButton.innerText;
+        let llmTxt = '';
 
-        const copyLLMText = () => {
-          console.log(llmTxt.value);
-          navigator.clipboard.writeText(llmTxt.value);
+        const fetchLlmTxt = async () => {
+          const llmTxtUrl = "https://use-fireproof.com/llms.txt";
+          try {
+            const response = await fetch(llmTxtUrl);
+            llmTxt = await response.text();
+          } catch (error) {
+            console.error(error.message);
+          }
+        }
+
+        ['wheel', 'scroll', 'mousedown'].forEach((eventType) => {
+          llmTxtDisplay.addEventListener(eventType, (e) => { e.preventDefault() })
+        });
+
+        llmTxtButton.addEventListener('click', (e) => {
+          navigator.clipboard.writeText(llmTxt);
           llmTxtButton.innerText = "Copied!"
           setTimeout(() => {
             llmTxtButton.innerText = buttonText;
           }, 2000)
-        }
-        llmTxt.addEventListener('wheel', (e) => {e.preventDefault() })
-        llmTxt.addEventListener('scroll', (e) => {e.preventDefault() })
-        llmTxt.addEventListener('mousedown', (e) => {e.preventDefault() })
-        llmTxt.addEventListener('click', (e) => {
-          e.preventDefault()
-          copyLLMText();
         })
-        llmTxtButton.addEventListener('click', (e) => {
-          copyLLMText();
-        })
+
+        fetchLlmTxt();
       })
     </script>
   </body>
