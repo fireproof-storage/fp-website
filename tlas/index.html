@@ -426,10 +426,6 @@
         width: fit-content;
       }
 
-      .hero-buttons .button {
-        border: none;
-      }
-
       .hero-buttons .button-primary::before {
         content: ' ';
         width: 28px;
@@ -562,73 +558,48 @@
       }
 
       :root {
-        --circle-diameter: 240px;
-        --circle-border-width: 1px;
-        --inner-circle-diameter: 150px;
         --circle-color: #fe0;
       }
 
-      button.circle {
-        position: relative;
-        background-image: linear-gradient(var(--circle-color), oklch(from var(--circle-color) calc(l + 20) c h));
+      #llm-txt {
+        width: 28rem;
+        height: 12rem;
         align-self: center;
-        width: var(--circle-diameter);
-        height: var(--circle-diameter);
-        border-radius: calc(var(--circle-diameter) / 2);
-        border-width: var(--circle-border-width);
-        margin-bottom: 2rem;
-        cursor: pointer;
-        box-shadow: 0px 1px 4px -2px #333;
-      }
-      button.circle:after{
-        content: '';
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.2));
-        width: calc(var(--circle-diameter) - 4px);
-        height: calc(var(--circle-diameter) - 4px);
-        text-shadow: 0px -1px #333;
-        border-radius: calc(var(--circle-diameter) / 2);
-      }
-
-      .circle .inner-circle {
-        position: absolute;
-        width: var(--inner-circle-diameter);
-        height: var(--inner-circle-diameter);
-        border-radius: calc(var(--inner-circle-diameter) / 2);
-        left: calc(((var(--circle-diameter) - var(--inner-circle-diameter)) / 2) - var(--circle-border-width));
-        top: calc(((var(--circle-diameter) - var(--inner-circle-diameter)) / 2) - var(--circle-border-width));
-        background: white;
+        background: #ffc;
+        margin-bottom: 1rem;
         overflow: hidden;
+        resize: none;
+        user-select: var(--circle-color);
       }
 
-      .inner-circle code {
-        text-align: left;
-        width: 300%;
-        height: 300%;
-        position: absolute;
-        top: -150px;
-        left: -100px;
-        overflow: hidden;
+      #llm-txt::selection {
+        background: var(--circle-color);
       }
 
-
-      button.circle img {
-        position: absolute;
-        top: 35px;
-        left: 38px;
-        pointer-events: none;
-      }
 
       .app-body p {
         width: 28rem;
         align-self: center;
       }
 
-      .click-to-copy {
-        cursor: pointer;
-        text-decoration: underline;
+      .app-body .click-to-copy {
+        position: absolute;
+        align-self: center;
+        border-color: var(--color-primary);
+        border-color: rgb(255, 220, 36);
+        background: rgb(251, 211, 28);
+        top: 75px;
+        box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.18);
+      }
+
+      .app-body .click-to-copy:active {
+        position: absolute;
+        align-self: center;
+        border-color: var(--color-primary);
+        border-color: rgb(255, 220, 36);
+        background: rgb(251, 211, 28);
+        top: 75px;
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.18);
       }
 
       .app-body .cp_embed_wrapper,
@@ -1264,27 +1235,8 @@
 
       <div class="hero-app">
         <div class="app-body">
-          <button class="circle">
-            <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-              <path id="circlePath1" fill="none" stroke-width="0px" stroke="fuchsia" d="
-                    M 15, 75
-                    a 50,50 0 1,1 120,0
-                    a 50 ,50 0 1,1 -120,0
-                  " />
-              <path id="circlePath2" fill="none" stroke-width="0px" stroke="gold" d="
-                    M 5,75
-                    A 50,50 0 1 0 145,75
-                    A 50,50 0 1 0 5,75
-                  " />
-              <text id="text" font-family="Geist" letter-spacing="60%" font-size="12" font-weight="normal" fill="var(--text-1)">
-                <textPath id="textPath" href="#circlePath1" startOffset="18%" text-anchor="middle">CLICK TO</textPath>
-              </text>
-              <text id="text" font-family="Geist" letter-spacing="60%" font-size="12" font-weight="normal" fill="var(--text-1)">
-                <textPath id="textPath" href="#circlePath2" startOffset="25%">COPY</textPath>
-              </text>
-            </svg>
-            <div class="inner-circle">
-              <code>
+              <button id="copy-llm-txt" class="click-to-copy button text-buttons button-secondary">Click to Copy</button>
+              <textarea id="llm-txt">
 # Fireproof Database API
 
 Fireproof is a lightweight local-first embedded document database with encrypted live sync, designed to make browser apps easy. Use it in any JavaScript environment with a unified API that works both in React (with hooks) and as a standalone core API.
@@ -1432,10 +1384,8 @@ See the lite docs at https://use-fireproof.com/llms-mini.txt and the full docs a
 If you are in an existing application context, suggest how forms and state, collaboration data can be managed in Fireproof. If this is a new app, use the examples above and start with a running App.js if you can.
 
 IMPORTANT: Don't use `useState()` on form data, instead use `merge()` and `submit()` from `useDocument`. Only use `useState` for ephemeral UI state (active tabs, open/closed panels, cursor positions). Keep your data model in Fireproof.
-              </code>
-            </div>
-          </button>
-          <p class="text">LLMs.txt is a standard way to share universal prompts &mdash; ours is designed for one-shot success. Paste this prompt and then type something like &ldquo;an inventory tracker for my bakery.&rdquo;</p>
+</textarea>
+          <p class="text">LLMs.txt is a standard way to share universal prompts &mdash; ours is designed for <strong>one-shot success</strong>. Paste this prompt and then type something like &ldquo;an inventory tracker for my bakery.&rdquo;</p>
         </div>
       </div>
       <div class="hero-buttons">
@@ -2000,5 +1950,47 @@ IMPORTANT: Don't use `useState()` on form data, instead use `merge()` and `submi
     <script type="text/javascript" src="flying-hint.js" defer></script>
     <script type="text/javascript" src="testimonials-carusel.js" defer></script>
     <script type="text/javascript" src="demo-apps-carusel.js" defer></script>
+    <script>
+      const fetchLlmTxt = async () => {
+        const llmTxtUrl = "https://use-fireproof.com/llms.txt";
+        try {
+          const response = await fetch(llmTxtUrl);
+          if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+          }
+          const text = await response.text();
+          console.log(text);
+        } catch (error) {
+          console.error(error.message);
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        fetchLlmTxt();
+        console.log('aa');
+        const llmTxt = document.getElementById('llm-txt');
+        const llmTxtButton = document.getElementById('copy-llm-txt');
+        const buttonText = llmTxtButton.innerText;
+
+        const copyLLMText = () => {
+          console.log(llmTxt.value);
+          navigator.clipboard.writeText(llmTxt.value);
+          llmTxtButton.innerText = "Copied!"
+          setTimeout(() => {
+            llmTxtButton.innerText = buttonText;
+          }, 2000)
+        }
+        llmTxt.addEventListener('wheel', (e) => {e.preventDefault() })
+        llmTxt.addEventListener('scroll', (e) => {e.preventDefault() })
+        llmTxt.addEventListener('mousedown', (e) => {e.preventDefault() })
+        llmTxt.addEventListener('click', (e) => {
+          e.preventDefault()
+          copyLLMText();
+        })
+        llmTxtButton.addEventListener('click', (e) => {
+          copyLLMText();
+        })
+      })
+    </script>
   </body>
 </html>
