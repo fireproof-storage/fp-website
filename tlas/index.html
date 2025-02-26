@@ -368,6 +368,7 @@
         background-color: var(--color-background-secondary);
         border-radius: var(--radius-large);
         min-height: 600px;
+        overflow: hidden;
       }
 
       section.hero::before {
@@ -377,6 +378,24 @@
         top: 0;
         right: 0;
         bottom: 0;
+        transform: translateX(-650px) translateY(100px) rotate(75deg);
+        background-image: url('./images/dot-pattern.png');
+        background-repeat: repeat;
+        background-position: center;
+        background-size: auto 100%;
+        border-radius: var(--radius-large);
+        opacity: 0.025;
+        z-index: 0;
+      }
+
+      section.hero::after {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transform: translateX(650px) translateY(100px) rotate(-105deg);
         background-image: url('./images/dot-pattern.png');
         background-repeat: repeat;
         background-position: center;
@@ -405,6 +424,21 @@
         display: flex;
         gap: 18px;
         width: fit-content;
+      }
+
+      .hero-buttons .button {
+        border: none;
+      }
+
+      .hero-buttons .button-primary::before {
+        content: ' ';
+        width: 28px;
+        height: 28px;
+        background-image: url('./images/openai-icon-white.svg');
+        background-size: 75%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin-left: -8px;
       }
 
       .hero-buttons .button-secondary::before {
@@ -486,11 +520,12 @@
         top: 130px;
         right: var(--section-side-padding);
         width: 594px;
-        height: 365px;
-        background-color: #292828;
-        border: 1px solid #555453;
+        border: 0px solid #555453;
+        /*height: 365px;
+        /* background-color: #292828;
+        /*background: white;*/
         border-radius: var(--radius-small);
-        overflow: hidden;
+        /* overflow: hidden; */
         display: flex;
         flex-direction: column;
       }
@@ -520,6 +555,80 @@
       .app-body {
         flex-grow: 1;
         margin: -1px;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: space-between;
+      }
+
+      :root {
+        --circle-diameter: 240px;
+        --circle-border-width: 1px;
+        --inner-circle-diameter: 150px;
+        --circle-color: #fe0;
+      }
+
+      button.circle {
+        position: relative;
+        background-image: linear-gradient(var(--circle-color), oklch(from var(--circle-color) calc(l + 20) c h));
+        align-self: center;
+        width: var(--circle-diameter);
+        height: var(--circle-diameter);
+        border-radius: calc(var(--circle-diameter) / 2);
+        border-width: var(--circle-border-width);
+        margin-bottom: 2rem;
+        cursor: pointer;
+        box-shadow: 0px 1px 4px -2px #333;
+      }
+      button.circle:after{
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+        width: calc(var(--circle-diameter) - 4px);
+        height: calc(var(--circle-diameter) - 4px);
+        text-shadow: 0px -1px #333;
+        border-radius: calc(var(--circle-diameter) / 2);
+      }
+
+      .circle .inner-circle {
+        position: absolute;
+        width: var(--inner-circle-diameter);
+        height: var(--inner-circle-diameter);
+        border-radius: calc(var(--inner-circle-diameter) / 2);
+        left: calc(((var(--circle-diameter) - var(--inner-circle-diameter)) / 2) - var(--circle-border-width));
+        top: calc(((var(--circle-diameter) - var(--inner-circle-diameter)) / 2) - var(--circle-border-width));
+        background: white;
+        overflow: hidden;
+      }
+
+      .inner-circle code {
+        text-align: left;
+        width: 300%;
+        height: 300%;
+        position: absolute;
+        top: -150px;
+        left: -100px;
+        overflow: hidden;
+      }
+
+
+      button.circle img {
+        position: absolute;
+        top: 35px;
+        left: 38px;
+        pointer-events: none;
+      }
+
+      .app-body p {
+        width: 28rem;
+        align-self: center;
+      }
+
+      .click-to-copy {
+        cursor: pointer;
+        text-decoration: underline;
       }
 
       .app-body .cp_embed_wrapper,
@@ -1148,39 +1257,187 @@
       </div>
     </header>
     <section class="hero">
-      <h1 class="hero-heading">End lock-in.</h1>
-      <p class="hero-text text-large">The fastest way to ship a cloudless app. Backend optional, framework agnostic.</p>
+      <h1 class="hero-heading">Supabase tutorial? No thanks!</h1>
+      <p class="hero-text text-large">
+        You can do it. Fireproof is the vibe coding database that lets you skip the backend.
+      </p>
 
       <div class="hero-app">
         <div class="app-body">
-          <p
-            class="codepen"
-            data-height="300"
-            data-default-tab="js,result"
-            data-slug-hash="bGOGvBz"
-            data-pen-title="Hello Fireproof"
-            data-editable="true"
-            data-user="jchrisa"
-            style="
-              height: 100%;
-              box-sizing: border-box;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              border: 2px solid;
-              margin: 1em 0;
-              padding: 1em;
-            "
-          >
-            <span
-              >See the Pen <a href="https://codepen.io/jchrisa/pen/bGOGvBz"> Hello Fireproof</a> by
-              Chris Anderson (<a href="https://codepen.io/jchrisa">@jchrisa</a>) on
-              <a href="https://codepen.io">CodePen</a>.</span
-            >
-          </p>
+          <button class="circle">
+            <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+              <path id="circlePath1" fill="none" stroke-width="0px" stroke="fuchsia" d="
+                    M 15, 75
+                    a 50,50 0 1,1 120,0
+                    a 50 ,50 0 1,1 -120,0
+                  " />
+              <path id="circlePath2" fill="none" stroke-width="0px" stroke="gold" d="
+                    M 5,75
+                    A 50,50 0 1 0 145,75
+                    A 50,50 0 1 0 5,75
+                  " />
+              <text id="text" font-family="Geist" letter-spacing="60%" font-size="12" font-weight="normal" fill="var(--text-1)">
+                <textPath id="textPath" href="#circlePath1" startOffset="18%" text-anchor="middle">CLICK TO</textPath>
+              </text>
+              <text id="text" font-family="Geist" letter-spacing="60%" font-size="12" font-weight="normal" fill="var(--text-1)">
+                <textPath id="textPath" href="#circlePath2" startOffset="25%">COPY</textPath>
+              </text>
+            </svg>
+            <div class="inner-circle">
+              <code>
+# Fireproof Database API
+
+Fireproof is a lightweight local-first embedded document database with encrypted live sync, designed to make browser apps easy. Use it in any JavaScript environment with a unified API that works both in React (with hooks) and as a standalone core API.
+
+## Key Features
+
+- **Apps run anywhere:** Bundle UI, data, and logic in one file.
+- **Real-Time & Offline-First:** Automatic persistence and live queries, runs in the browser - no loading or error states.
+- **Unified API:** TypeScript works with Deno, Bun, Node.js, and the browser.
+- **React Hooks:** Leverage `useLiveQuery` and `useDocument` for live collaboration.
+
+Fireproof enforces cryptographic causal consistency and ledger integrity using hash history, providing git-like version history with lightweight blockchain-style verification. Data is stored and replicated as content-addressed encrypted blobs, making it safe and easy to sync via commodity object storage providers.
+
+## Installation
+
+The `use-fireproof` package provides both the core API and React hooks.
+
+```bash
+npm install use-fireproof
+```
+Works with ⚡️ ESM.sh:
+
+```js
+import { useFireproof } from "https://esm.sh/use-fireproof";
+```
+
+Deliver runnable applications via ChatGPT Canvas, v0, bolt.new, or Claude Artifacts. Deploy single page apps with React and Tailwind here: https://codepen.io/useFireproof/pen/MYgNYdx
+
+## ⚛️ React Example
+
+You can use Fireproof's hooks to build a complete application in a single component. The example below demonstrates both basic document handling and optional file uploads:
+
+```js
+import { useFireproof } from "use-fireproof";
+import { useState, useEffect } from "react";
+
+// Optional component for displaying uploaded images
+function ImageDisplay({ meta }) {
+  const [imgUrl, setImgUrl] = useState("");
+  
+  useEffect(() => {
+    if (meta?.file) {
+      meta.file().then(file => {
+        const url = URL.createObjectURL(file);
+        setImgUrl(url);
+        return () => URL.revokeObjectURL(url);
+      });
+    }
+  }, [meta]);
+
+  return imgUrl ? (&lt;img src={imgUrl} alt=&quot;Uploaded&quot; /&gt;) : null;
+}
+
+function App() {
+  const { useDocument, useLiveQuery } = useFireproof("my-ledger");
+  const { doc, merge, submit } = useDocument({ 
+    text: "", 
+    timestamp: Date.now(),
+    _files: {} // Optional for file handling
+  });
+  const { docs } = useLiveQuery("_id", { limit: 10, descending: true });
+
+  return (
+    &lt;div&gt;
+      &lt;form onSubmit={submit}&gt;
+        {/* Optional file input */}
+        &lt;input
+          type=&quot;file&quot;
+          accept=&quot;image/*&quot;
+          onChange={(e) =&gt; e.target.files[0] &amp;&amp; merge({ _files: { image: e.target.files[0] } })}
+        /&gt;
+        &lt;input
+          value={doc.text}
+          onChange={(e) =&gt; merge({ text: e.target.value })}
+          placeholder=&quot;Enter text&quot;
+        /&gt;
+        &lt;button type=&quot;submit&quot;&gt;Save&lt;/button&gt;
+      &lt;/form&gt;
+
+      &lt;h3&gt;Recent Documents&lt;/h3&gt;
+      &lt;ul&gt;
+        {docs.map((doc) =&gt; (
+          &lt;li key={doc._id}&gt;
+            {/* Optional image display */}
+            {doc._files?.image &amp;&amp; &lt;ImageDisplay meta={doc._files.image} /&gt;}
+            &lt;div&gt;{doc.text}&lt;/div&gt;
+          &lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+```
+
+To sort documents by more than one field, use a sandboxed function instead of a field name:
+
+```js
+const { docs } = useLiveQuery(
+  (doc) => [doc.list_id, doc.author], 
+  { descending: true, limit: 5, prefix: ["zyx-456-list-id"] }
+);
+```
+
+### Using the Core API in Plain JavaScript
+
+If you're not using React, the core API offers similar capabilities:
+
+```js
+import { fireproof } from "use-fireproof";
+
+const database = fireproof("my-ledger");
+
+async function putAndQuery() {
+  await database.put({ text: "Sample Data" });
+  const latest = await database.query("_id", { limit: 10, descending: true });
+  console.log("Latest documents:", latest.docs);
+}
+
+database.subscribe((changes) => {
+  console.log("Changes", changes)
+}, true)
+
+putAndQuery();
+```
+
+## Best Practices
+
+- **Leverage `useLiveQuery`:**  
+  Use this hook to effortlessly build UIs that update in real time as data changes.
+
+- **Granular Documents:**  
+  Save small, individual data pieces (e.g., one per user action) to simplify conflict resolution via CRDTs.
+
+- **Single File Deployment:**  
+  Ideal for constrained environments, bundle everything into one file without external dependencies.
+
+For more details and advanced usage (such as file attachments and cloud syncing), refer to the full documentation at [Fireproof Docs](https://use-fireproof.com/).
+
+## See also
+
+See the lite docs at https://use-fireproof.com/llms-mini.txt and the full docs at https://use-fireproof.com/llms-full.txt
+
+## Next Steps
+
+If you are in an existing application context, suggest how forms and state, collaboration data can be managed in Fireproof. If this is a new app, use the examples above and start with a running App.js if you can.
+
+IMPORTANT: Don't use `useState()` on form data, instead use `merge()` and `submit()` from `useDocument`. Only use `useState` for ephemeral UI state (active tabs, open/closed panels, cursor positions). Keep your data model in Fireproof.
+              </code>
+            </div>
+          </button>
+          <p class="text">LLMs.txt is a standard way to share universal prompts &mdash; ours is designed for one-shot success. Paste this prompt and then type something like &ldquo;an inventory tracker for my bakery.&rdquo;</p>
         </div>
       </div>
-      <p class="hero-text text-large">Run your app the browser—no backend required. Why tie yourself to a single vendor framework?</p>
       <div class="hero-buttons">
         <a
           class="button text-buttons button-primary"
@@ -1188,7 +1445,7 @@
           href="https://dashboard.fireproof.storage/"
           rel="noopener noreferrer"
           target="_blank"
-          >Try free</a
+          >Build now</a
         >
         <a
           class="button text-buttons button-secondary"
