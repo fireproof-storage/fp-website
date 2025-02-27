@@ -1977,39 +1977,6 @@ IMPORTANT: Don't use `useState()` on form data, instead use `merge()` and `submi
     <script type="text/javascript" src="flying-hint.js" defer></script>
     <script type="text/javascript" src="testimonials-carusel.js" defer></script>
     <script type="text/javascript" src="demo-apps-carusel.js" defer></script>
-    <script>
-
-      document.addEventListener('DOMContentLoaded', () => {
-
-        const llmTxtDisplay = document.getElementById('llm-txt');
-        const llmTxtButton = document.getElementById('copy-llm-txt');
-        const buttonText = llmTxtButton.innerText;
-        let llmTxt = '';
-
-        const fetchLlmTxt = async () => {
-          const llmTxtUrl = "https://use-fireproof.com/llms.txt";
-          try {
-            const response = await fetch(llmTxtUrl);
-            llmTxt = await response.text();
-          } catch (error) {
-            console.error(error.message);
-          }
-        }
-
-        ['scroll', 'mousedown'].forEach((eventType) => {
-          llmTxtDisplay.addEventListener(eventType, (e) => { e.preventDefault() })
-        });
-
-        llmTxtButton.addEventListener('click', (e) => {
-          navigator.clipboard.writeText(llmTxt);
-          llmTxtButton.innerText = "Copied!"
-          setTimeout(() => {
-            llmTxtButton.innerText = buttonText;
-          }, 2000)
-        })
-
-        fetchLlmTxt();
-      })
-    </script>
+    <script type="text/javascript" src="llms-txt.js" defer></script>
   </body>
 </html>
