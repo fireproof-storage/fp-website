@@ -13,6 +13,7 @@
       try {
         const response = await fetch(llmTxtUrl);
         llmTxt = await response.text();
+        llmTxtDisplay.innerText = llmTxt;
       } catch (error) {
         console.error(error.message);
       }
