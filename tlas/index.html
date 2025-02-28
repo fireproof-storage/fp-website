@@ -599,7 +599,8 @@
         background: rgb(251, 211, 28);
         top: 75px;
         box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.18);
-      }
+        text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+      } 
 
       .app-body .click-to-copy:hover {
         background-color: #ff8200 ;
@@ -1232,6 +1233,23 @@
           padding-right: 16px;
         }
       }
+
+      /* Clipboard icon styles */
+      .clipboard-icon {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-left: 5px;
+        background-image: url('./images/clipboard-icon.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        vertical-align: middle;
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
+      }
+      .app-body .click-to-copy:hover .clipboard-icon {
+        filter: drop-shadow(0px 1px 2px rgba(255, 255, 255, 1));
+      }
     </style>
   </head>
   <body class="body-home">
@@ -1264,7 +1282,7 @@
       <div class="hero-app">
         <div class="app-body">
           <div class="filename"><a href="https://use-fireproof.com/llms.txt">llms.txt</a></div>
-          <button id="copy-llm-txt" class="click-to-copy button text-buttons button-secondary">Click to Copy</button>
+          <button id="copy-llm-txt" class="click-to-copy button text-buttons button-secondary">Click to Copy <span class="clipboard-icon"></span></button>
           <textarea id="llm-txt"></textarea>
           <p class="text"><a href="https://fireproof.storage/posts/llms.txt-for-ai-code-generation-agents/">LLMs.txt</a> is a universal way to share prompts &mdash; ours is designed for <strong>one-shot success</strong>. Paste it into any AI code generator along with something like &ldquo;an inventory tracker for my bakery.&rdquo;</p>
         </div>
@@ -1272,8 +1290,8 @@
       <div class="hero-buttons">
         <a
           class="button text-buttons button-primary"
-          data-hint="experience /bFireproof/b"
-          href="https://chatgpt.com/g/g-67a6a6c809cc8191adf4c785b8638138-vibe-coding-with-fireproof"
+          data-hint="one-shot apps in /bChatGPT/b"
+          href="https://chatgpt.com/g/g-67bd0ebe210081918561667c08662d03-vibecoding-with-fireproof"
           rel="noopener noreferrer"
           target="_blank"
           >Build now</a
