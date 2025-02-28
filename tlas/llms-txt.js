@@ -18,12 +18,18 @@
       }
     }
 
-    const setClipboard = () => {
-      navigator.clipboard.writeText(llmTxt);
-      llmTxtButton.innerText = "Copied!"
-      setTimeout(() => {
-        llmTxtButton.innerText = buttonText;
-      }, 2000)
+    const setClipboard = async () => {
+      try {
+        await navigator.clipboard.writeText(llmTxt);
+        const confirmationResponse = await fetch('./llms-txt-copied.json');
+        const confirmationMessage = await confirmationResponse.json();
+        llmTxtButton.innerText = confirmationMessage.message;
+        setTimeout(() => {
+          llmTxtButton.innerText = buttonText;
+        }, 2000)
+      } catch(e) {
+        console.error(e.message);
+      }
     }
 
     ['scroll', 'mousedown'].forEach((eventType) => {
@@ -31,7 +37,6 @@
     });
 
     llmTxtButton.addEventListener('click', (e) => {
-      fetch('./llms-txt-copied.json'); // fire and forget for rough analytics
       setClipboard();
     });
 
