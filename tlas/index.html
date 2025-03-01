@@ -559,13 +559,20 @@
         justify-content: space-between;
       }
 
+      .app-body .file-wrapper {
+        max-width: 28rem;
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       .app-body div.filename {
-        width: 28rem;
         color: #888;
         font-size: 8px;
         padding-bottom: 4px;
         font-family: monospace;
-        align-self: center;
         text-align: left;
       }
 
@@ -577,10 +584,15 @@
         height: 12rem;
         align-self: center;
         background: #ffc;
+        color: #320;
         margin-bottom: 1rem;
         cursor: default;
         overflow: hidden;
         resize: none;
+        line-height: 140%;
+        letter-spacing: 4%;
+        font-size: 11px;
+        font-family: monospace;
       }
 
       .app-body p {
@@ -597,12 +609,13 @@
         background: rgb(251, 211, 28);
         top: 75px;
         box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.18);
-      }
+        text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.5);
+      } 
 
       .app-body .click-to-copy:hover {
         background-color: #ff8200 ;
         border-color: #ff8200;
-        text-shadow: 0px 1px 3px rgba(255, 255, 255, 1);
+        text-shadow: 0px 1px 3px rgba(255, 255, 255, 0.5);
         box-shadow: 0px 2px 3px rgba(0, 0, 0, 1);
       }
 
@@ -1230,6 +1243,23 @@
           padding-right: 16px;
         }
       }
+
+      /* Clipboard icon styles */
+      .clipboard-icon {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-left: 5px;
+        background-image: url('./images/clipboard-icon.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        vertical-align: middle;
+        filter: drop-shadow(0px 1px 2px rgba(255, 255, 255, 0.5));
+      }
+      .app-body .click-to-copy:hover .clipboard-icon {
+        filter: drop-shadow(0px 1px 2px rgba(255, 255, 255, 0.5));
+      }
     </style>
   </head>
   <body class="body-home">
@@ -1261,165 +1291,19 @@
 
       <div class="hero-app">
         <div class="app-body">
-              <div class="filename"><a href="https://use-fireproof.com/llms.txt">llms.txt</a></div>
-              <button id="copy-llm-txt" class="click-to-copy button text-buttons button-secondary">Click to Copy</button>
-              <textarea id="llm-txt">
-# Fireproof Database API
-
-Fireproof is a lightweight local-first embedded document database with encrypted live sync, designed to make browser apps easy. Use it in any JavaScript environment with a unified API that works both in React (with hooks) and as a standalone core API.
-
-## Key Features
-
-- **Apps run anywhere:** Bundle UI, data, and logic in one file.
-- **Real-Time & Offline-First:** Automatic persistence and live queries, runs in the browser - no loading or error states.
-- **Unified API:** TypeScript works with Deno, Bun, Node.js, and the browser.
-- **React Hooks:** Leverage `useLiveQuery` and `useDocument` for live collaboration.
-
-Fireproof enforces cryptographic causal consistency and ledger integrity using hash history, providing git-like version history with lightweight blockchain-style verification. Data is stored and replicated as content-addressed encrypted blobs, making it safe and easy to sync via commodity object storage providers.
-
-## Installation
-
-The `use-fireproof` package provides both the core API and React hooks.
-
-```bash
-npm install use-fireproof
-```
-Works with ⚡️ ESM.sh:
-
-```js
-import { useFireproof } from "https://esm.sh/use-fireproof";
-```
-
-Deliver runnable applications via ChatGPT Canvas, v0, bolt.new, or Claude Artifacts. Deploy single page apps with React and Tailwind here: https://codepen.io/useFireproof/pen/MYgNYdx
-
-## ⚛️ React Example
-
-You can use Fireproof's hooks to build a complete application in a single component. The example below demonstrates both basic document handling and optional file uploads:
-
-```js
-import { useFireproof } from "use-fireproof";
-import { useState, useEffect } from "react";
-
-// Optional component for displaying uploaded images
-function ImageDisplay({ meta }) {
-  const [imgUrl, setImgUrl] = useState("");
-
-  useEffect(() => {
-    if (meta?.file) {
-      meta.file().then(file => {
-        const url = URL.createObjectURL(file);
-        setImgUrl(url);
-        return () => URL.revokeObjectURL(url);
-      });
-    }
-  }, [meta]);
-
-  return imgUrl ? (&lt;img src={imgUrl} alt=&quot;Uploaded&quot; /&gt;) : null;
-}
-
-function App() {
-  const { useDocument, useLiveQuery } = useFireproof("my-ledger");
-  const { doc, merge, submit } = useDocument({
-    text: "",
-    timestamp: Date.now(),
-    _files: {} // Optional for file handling
-  });
-  const { docs } = useLiveQuery("_id", { limit: 10, descending: true });
-
-  return (
-    &lt;div&gt;
-      &lt;form onSubmit={submit}&gt;
-        {/* Optional file input */}
-        &lt;input
-          type=&quot;file&quot;
-          accept=&quot;image/*&quot;
-          onChange={(e) =&gt; e.target.files[0] &amp;&amp; merge({ _files: { image: e.target.files[0] } })}
-        /&gt;
-        &lt;input
-          value={doc.text}
-          onChange={(e) =&gt; merge({ text: e.target.value })}
-          placeholder=&quot;Enter text&quot;
-        /&gt;
-        &lt;button type=&quot;submit&quot;&gt;Save&lt;/button&gt;
-      &lt;/form&gt;
-
-      &lt;h3&gt;Recent Documents&lt;/h3&gt;
-      &lt;ul&gt;
-        {docs.map((doc) =&gt; (
-          &lt;li key={doc._id}&gt;
-            {/* Optional image display */}
-            {doc._files?.image &amp;&amp; &lt;ImageDisplay meta={doc._files.image} /&gt;}
-            &lt;div&gt;{doc.text}&lt;/div&gt;
-          &lt;/li&gt;
-        ))}
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  );
-}
-```
-
-To sort documents by more than one field, use a sandboxed function instead of a field name:
-
-```js
-const { docs } = useLiveQuery(
-  (doc) => [doc.list_id, doc.author],
-  { descending: true, limit: 5, prefix: ["zyx-456-list-id"] }
-);
-```
-
-### Using the Core API in Plain JavaScript
-
-If you're not using React, the core API offers similar capabilities:
-
-```js
-import { fireproof } from "use-fireproof";
-
-const database = fireproof("my-ledger");
-
-async function putAndQuery() {
-  await database.put({ text: "Sample Data" });
-  const latest = await database.query("_id", { limit: 10, descending: true });
-  console.log("Latest documents:", latest.docs);
-}
-
-database.subscribe((changes) => {
-  console.log("Changes", changes)
-}, true)
-
-putAndQuery();
-```
-
-## Best Practices
-
-- **Leverage `useLiveQuery`:**
-  Use this hook to effortlessly build UIs that update in real time as data changes.
-
-- **Granular Documents:**
-  Save small, individual data pieces (e.g., one per user action) to simplify conflict resolution via CRDTs.
-
-- **Single File Deployment:**
-  Ideal for constrained environments, bundle everything into one file without external dependencies.
-
-For more details and advanced usage (such as file attachments and cloud syncing), refer to the full documentation at [Fireproof Docs](https://use-fireproof.com/).
-
-## See also
-
-See the lite docs at https://use-fireproof.com/llms-mini.txt and the full docs at https://use-fireproof.com/llms-full.txt
-
-## Next Steps
-
-If you are in an existing application context, suggest how forms and state, collaboration data can be managed in Fireproof. If this is a new app, use the examples above and start with a running App.js if you can.
-
-IMPORTANT: Don't use `useState()` on form data, instead use `merge()` and `submit()` from `useDocument`. Only use `useState` for ephemeral UI state (active tabs, open/closed panels, cursor positions). Keep your data model in Fireproof.
-</textarea>
+          <div class="file-wrapper">
+            <div class="filename"><a href="https://use-fireproof.com/llms.txt">llms.txt</a></div>
+            <button id="copy-llm-txt" class="click-to-copy button text-buttons button-secondary">Click to Copy <span class="clipboard-icon"></span></button>
+            <textarea id="llm-txt"></textarea>
+          </div>
           <p class="text"><a href="https://fireproof.storage/posts/llms.txt-for-ai-code-generation-agents/">LLMs.txt</a> is a universal way to share prompts &mdash; ours is designed for <strong>one-shot success</strong>. Paste it into any AI code generator along with something like &ldquo;an inventory tracker for my bakery.&rdquo;</p>
         </div>
       </div>
       <div class="hero-buttons">
         <a
           class="button text-buttons button-primary"
-          data-hint="experience /bFireproof/b"
-          href="https://chatgpt.com/g/g-67a6a6c809cc8191adf4c785b8638138-vibe-coding-with-fireproof"
+          data-hint="one-shot apps in /bChatGPT/b"
+          href="https://chatgpt.com/g/g-67bd0ebe210081918561667c08662d03-vibecoding-with-fireproof"
           rel="noopener noreferrer"
           target="_blank"
           >Build now</a
@@ -1977,39 +1861,6 @@ IMPORTANT: Don't use `useState()` on form data, instead use `merge()` and `submi
     <script type="text/javascript" src="flying-hint.js" defer></script>
     <script type="text/javascript" src="testimonials-carusel.js" defer></script>
     <script type="text/javascript" src="demo-apps-carusel.js" defer></script>
-    <script>
-
-      document.addEventListener('DOMContentLoaded', () => {
-
-        const llmTxtDisplay = document.getElementById('llm-txt');
-        const llmTxtButton = document.getElementById('copy-llm-txt');
-        const buttonText = llmTxtButton.innerText;
-        let llmTxt = '';
-
-        const fetchLlmTxt = async () => {
-          const llmTxtUrl = "https://use-fireproof.com/llms.txt";
-          try {
-            const response = await fetch(llmTxtUrl);
-            llmTxt = await response.text();
-          } catch (error) {
-            console.error(error.message);
-          }
-        }
-
-        ['scroll', 'mousedown'].forEach((eventType) => {
-          llmTxtDisplay.addEventListener(eventType, (e) => { e.preventDefault() })
-        });
-
-        llmTxtButton.addEventListener('click', (e) => {
-          navigator.clipboard.writeText(llmTxt);
-          llmTxtButton.innerText = "Copied!"
-          setTimeout(() => {
-            llmTxtButton.innerText = buttonText;
-          }, 2000)
-        })
-
-        fetchLlmTxt();
-      })
-    </script>
+    <script type="text/javascript" src="llms-txt.js" defer></script>
   </body>
 </html>
