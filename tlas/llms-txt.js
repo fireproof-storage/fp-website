@@ -6,7 +6,6 @@
     const llmTxtUrl = "https://use-fireproof.com/llms.txt";
     const llmTxtDisplay = document.getElementById('llm-txt');
     const llmTxtButton = document.getElementById('copy-llm-txt');
-    const buttonText = llmTxtButton.innerText;
     const buttonContent = llmTxtButton.innerHTML;
 
     const fetchMedium = async () => {
@@ -15,13 +14,8 @@
         llmTxt = await response.text();
         // Replace newlines with spaces and ensure max one space in a row
       } catch (error) {
-        console.error('Error fetching mini text:', error.message);
+        console.error('Error fetching llms.txt:', error.message);
       }
-    }
-
-    const displayMedium = () => {
-      const formattedText = llmTxt.replace(/\n/g, ' ').replace(/\s+/g, ' ');
-      llmTxtDisplay.innerText = formattedText;
     }
 
     const setClipboard = async () => {
@@ -44,10 +38,9 @@
       setClipboard();
     });
 
-    // On page load, fetch llm.txt and display it
+    // On page load, fetch llm.txt
     (async () => {
       await fetchMedium();
-      displayMedium();
     })();
   })
 }
