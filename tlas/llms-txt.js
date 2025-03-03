@@ -2,6 +2,8 @@
 
 {
   document.addEventListener('DOMContentLoaded', () => {
+    let llmTxt = "";
+    let llmMiniTxt = "";
     const llmTxtUrl = "https://use-fireproof.com/llms.txt";
     const llmMiniTxtUrl = "https://use-fireproof.com/llms-mini.txt";
 
@@ -11,22 +13,38 @@
     const buttonContent = llmTxtButton.innerHTML;
 
     const fetchMiniAndDisplay = async () => {
+        await fetchMini();
+        displayMini(llmMiniTxt)
+    }
+
+    const fetchMedium = async () => {
       try {
-        const response = await fetch(llmMiniTxtUrl);
-        const miniText = await response.text();
+        const response = await fetch(llmTxtUrl);
+        llmTxt = await response.text();
         // Replace newlines with spaces and ensure max one space in a row
-        const formattedText = miniText.replace(/\n/g, ' ').replace(/\s+/g, ' ');
-        llmTxtDisplay.innerText = formattedText;
       } catch (error) {
         console.error('Error fetching mini text:', error.message);
       }
     }
 
+    const fetchMini = async () => {
+      try {
+        const response = await fetch(llmMiniTxtUrl);
+        llmMiniTxt = await response.text();
+      } catch (error) {
+        console.error('Error fetching mini text:', error.message);
+      }
+    }
+
+    const displayMini = (miniText) => {
+        const formattedText = miniText.replace(/\n/g, ' ').replace(/\s+/g, ' ');
+        llmTxtDisplay.innerText = formattedText;
+    }
+
+
     const setClipboard = async () => {
       try {
-        const response = await fetch(llmTxtUrl);
-        const fullText = await response.text();
-        await navigator.clipboard.writeText(fullText);
+        await navigator.clipboard.writeText(llmTxt);
         
         llmTxtButton.innerText = "Copied llms.txt to Clipboard!";
         setTimeout(() => {
@@ -47,5 +65,6 @@
 
     // On page load, fetch mini text and display it
     fetchMiniAndDisplay();
+    fetchMedium();
   })
 }
