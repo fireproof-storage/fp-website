@@ -2,32 +2,25 @@
 
 {
   document.addEventListener('DOMContentLoaded', () => {
+    let llmTxt = "";
     const llmTxtUrl = "https://use-fireproof.com/llms.txt";
-    const llmMiniTxtUrl = "https://use-fireproof.com/llms-mini.txt";
-
     const llmTxtDisplay = document.getElementById('llm-txt');
     const llmTxtButton = document.getElementById('copy-llm-txt');
-    const buttonText = llmTxtButton.innerText;
     const buttonContent = llmTxtButton.innerHTML;
 
-    const fetchMiniAndDisplay = async () => {
+    const fetchMedium = async () => {
       try {
-        const response = await fetch(llmMiniTxtUrl);
-        const miniText = await response.text();
+        const response = await fetch(llmTxtUrl);
+        llmTxt = await response.text();
         // Replace newlines with spaces and ensure max one space in a row
-        const formattedText = miniText.replace(/\n/g, ' ').replace(/\s+/g, ' ');
-        llmTxtDisplay.innerText = formattedText;
       } catch (error) {
-        console.error('Error fetching mini text:', error.message);
+        console.error('Error fetching llms.txt:', error.message);
       }
     }
 
     const setClipboard = async () => {
       try {
-        const response = await fetch(llmTxtUrl);
-        const fullText = await response.text();
-        await navigator.clipboard.writeText(fullText);
-        
+        await navigator.clipboard.writeText(llmTxt);
         llmTxtButton.innerText = "Copied llms.txt to Clipboard!";
         setTimeout(() => {
           llmTxtButton.innerHTML = buttonContent;
@@ -45,7 +38,9 @@
       setClipboard();
     });
 
-    // On page load, fetch mini text and display it
-    fetchMiniAndDisplay();
+    // On page load, fetch llm.txt
+    (async () => {
+      await fetchMedium();
+    })();
   })
 }
