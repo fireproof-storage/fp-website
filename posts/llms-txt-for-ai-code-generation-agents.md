@@ -17,7 +17,7 @@ The `/llms.txt` file is a standardized markdown document that enhances website a
 
 *Below is the content of the [llms-mini.txt file for the Fireproof project](https://use-fireproof.com/llms-mini.txt). In constrained environments, use the smaller [llms.txt](https://use-fireproof.com/llms.txt) file. Learn more about llms.txt at [llmstxt.org](https://llmstxt.org/).*
 
-# Fireproof browser database API
+# Fireproof Database API Guide
 
 Fireproof is a lightweight embedded document database with encrypted live sync, designed to make browser apps easy. Use it in any JavaScript environment with a unified API that works both in React (with hooks) and as a standalone core API.
 
@@ -422,22 +422,8 @@ This React example shows a simple image uploader application that uses Fireproof
 
 Code listing for App.jsx:
 ```js
-import { useFireproof } from "use-fireproof";
+import { useFireproof, ImgFile } from "use-fireproof";
 import { useState, useEffect } from "react";
-
-function ImgFile({ meta, alt, className }) {
-  const [imgDataUrl, setImgDataUrl] = useState("");
-  useEffect(() => {
-    if (meta.file && /image/.test(meta.type)) {
-      meta.file().then(file => {
-        const src = URL.createObjectURL(file);
-        setImgDataUrl(src);
-        return () => URL.revokeObjectURL(src);
-      });
-    }
-  }, [meta]);
-  return imgDataUrl ? <img className={`${className} max-w-full max-h-60 object-contain`} alt={alt} src={imgDataUrl} /> : null;
-}
 
 export default function App() {
   const { useDocument, useLiveQuery } = useFireproof("image-uploads");
@@ -461,7 +447,7 @@ export default function App() {
       <div className="grid grid-cols-2 gap-4 mt-2">
         {docs.map(doc => (
           <div key={doc._id} className="border p-2 rounded shadow-sm bg-gray-50">
-            {doc._files?.uploaded && <ImgFile meta={doc._files.uploaded} alt="Uploaded Image" className="w-full h-auto rounded" />}
+            {doc._files?.uploaded && <ImgFile file={doc._files.uploaded} alt="Uploaded Image" className="w-full h-auto rounded" />}
             <p className="text-sm text-gray-700 mt-2">{doc.description || "No description"}</p>
           </div>
         ))}
