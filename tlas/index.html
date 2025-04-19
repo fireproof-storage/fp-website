@@ -59,8 +59,10 @@
         --color-background-secondary: rgba(240, 240, 240, 1);
         --color-borders: rgba(224, 222, 222, 1);
 
-        --section-max-width: 1364px;
-        --section-side-padding: 98px;
+        --section-max-width: 1168px;
+        --section-bg-max-width: 1364px;
+        --section-side-padding: 136px;
+        --section-bottom-padding: 80px;
         --body-side-padding: 38px;
 
         --radius-large: 20px;
@@ -91,7 +93,6 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        padding: 0 var(--body-side-padding);
         margin: 0;
         color: var(--color-primary);
         line-height: 1.2;
@@ -126,7 +127,7 @@
         font-family: 'Geist', sans-serif;
         font-style: normal;
         font-weight: 700;
-        font-size: 52px;
+        font-size: 42px;
         line-height: 1.2;
         letter-spacing: -0.04em;
         text-wrap: balance;
@@ -136,7 +137,7 @@
         font-family: 'Inter Tight', sans-serif;
         font-style: normal;
         font-weight: 600;
-        font-size: 30px;
+        font-size: 23px;
         line-height: 1.2;
         letter-spacing: 0.01em;
       }
@@ -145,7 +146,7 @@
         font-family: 'Geist', sans-serif;
         font-style: normal;
         font-weight: 600;
-        font-size: 19px;
+        font-size: 16px;
         line-height: 1.2;
         letter-spacing: 0.01em;
       }
@@ -154,8 +155,8 @@
         font-family: 'Inter Tight', sans-serif;
         font-style: normal;
         font-weight: 480;
-        font-size: 19px;
-        line-height: 1.4;
+        font-size: 16px;
+        line-height: 1.5;
         letter-spacing: 0.02em;
         color: var(--color-secondary);
       }
@@ -189,7 +190,7 @@
         font-family: 'Geist', sans-serif;
         font-style: normal;
         font-weight: 500;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1.2;
       }
 
@@ -215,7 +216,6 @@
       footer {
         position: relative;
         width: 100%;
-        max-width: var(--section-max-width);
       }
 
       section,
@@ -224,15 +224,30 @@
         padding-right: var(--section-side-padding);
       }
 
+      .section-conteiner {
+        max-width: var(--section-max-width);
+        margin: 0 auto;
+      }
+
       .button {
         display: inline-flex;
         justify-content: center;
         align-items: center;
         gap: 4px;
+        font-family: 'Geist', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.2;
         width: 200px;
         height: 51px;
         border: 1px solid var(--color-borders);
         border-radius: var(--radius-button);
+        transition: all 0.2s ease-in-out;
+      }
+
+      .button-small {
+        height: 45px;
       }
 
       .button-primary {
@@ -240,19 +255,28 @@
         color: var(--color-background-primary);
       }
 
+      .button-primary:hover {
+        opacity: 0.7;
+      }
+
       .button-secondary {
         background-color: var(--color-background-primary);
       }
 
+      .button-secondary:hover {
+        background-color: var(--color-borders);
+      }
+
       @media (max-width: 1150px) {
         :root {
-          --section-side-padding: 38px;
+          --section-side-padding: 58px;
         }
       }
 
       @media (max-width: 770px) {
         :root {
-          --section-side-padding: 30px;
+          --section-side-padding: 50px;
+          --section-bottom-padding: 60px;
           --body-side-padding: 20px;
         }
 
@@ -261,7 +285,7 @@
         }
 
         h2 {
-          font-size: 7.8vw;
+          font-size: 6vw;
         }
 
         h3 {
@@ -270,6 +294,16 @@
 
         .text-large {
           font-size: 19px;
+        }
+      }
+
+      @media (max-width: 550px) {
+        h1 {
+          font-size: 9vw;
+        }
+
+        h2 {
+          font-size: 34px;
         }
       }
 
@@ -297,6 +331,7 @@
         align-items: center;
         gap: 30px;
         height: 70px;
+        padding: 0 var(--body-side-padding);
       }
 
       header .text-buttons:hover {
@@ -362,16 +397,26 @@
 
       /* hero */
       section.hero {
+        padding: 0 var(--body-side-padding);
+      }
+
+      section.hero .section-conteiner {
         position: relative;
+        display: flex;
+        gap: 60px;
+        align-items: center;
+        justify-content: space-between;
         margin-top: 28px;
-        margin-bottom: 80px;
+        margin-bottom: var(--section-bottom-padding);
         background-color: var(--color-background-secondary);
         border-radius: var(--radius-large);
         min-height: 600px;
+        padding: 0px 120px;
         overflow: hidden;
+        max-width: var(--section-bg-max-width);
       }
 
-      section.hero::before {
+      section.hero .section-conteiner::before {
         content: ' ';
         position: absolute;
         left: 0;
@@ -389,7 +434,7 @@
         pointer-events: none;
       }
 
-      section.hero::after {
+      section.hero .section-conteiner::after {
         content: ' ';
         position: absolute;
         left: 0;
@@ -410,7 +455,7 @@
       .hero-heading {
         position: relative;
         max-width: 500px;
-        margin-top: 162px;
+        margin-top: 0;
         margin-bottom: 20px;
       }
 
@@ -450,7 +495,7 @@
       }
 
       @media (prefers-color-scheme: dark) {
-        section.hero::before {
+        section.hero .section-conteiner::before {
           filter: invert(75%);
         }
 
@@ -467,10 +512,13 @@
         }
       }
 
-      @media (max-width: 1370px) {
-        section.hero {
+      @media (max-width: 1150px) {
+        section.hero .section-conteiner {
           padding-top: 80px;
-          padding-bottom: 80px;
+          padding-bottom: 160px;
+          flex-direction: column;
+          align-items: center;
+          gap: 0;
         }
 
         .hero-heading,
@@ -481,453 +529,215 @@
         }
 
         .hero-heading {
-          margin-top: unset;
-          margin-bottom: 36px;
-          margin-top: 36px;
           text-align: center;
+          max-width: unset;
         }
 
         .hero-text {
-          max-width: unset;
-          margin-top: 36px;
           text-align: center;
+          margin-bottom: 0;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .hero-buttons {
+          position: absolute;
+          bottom: 90px;
+          left: 0;
           justify-content: center;
+          align-items: center;
+          width: 100%;
         }
       }
 
-      @media (max-width: 1150px) {
-        section.hero {
-          margin-bottom: 130px;
+      @media (max-width: 770px) {
+         section.hero .section-conteiner {
+          padding-left: 60px;
+          padding-right: 60px;
         }
       }
 
       @media (max-width: 550px) {
-        section.hero {
-          padding-bottom: 60px;
-          padding-top: 60px;
-          margin-bottom: 110px;
+        section.hero .section-conteiner {
+          padding: 60px 30px 200px 30px;
         }
 
         .hero-buttons {
           flex-direction: column;
+          bottom: 60px;
         }
       }
 
       /* hero app */
       .hero-app {
-        position: absolute;
-        top: 130px;
-        right: var(--section-side-padding);
-        width: 594px;
-        border: 0px solid #555453;
-        /*height: 365px;
-        /* background-color: #292828;
-        /*background: white;*/
-        border-radius: var(--radius-small);
-        /* overflow: hidden; */
-        display: flex;
-        flex-direction: column;
+        width: 520px;
+        margin-top: 20px;
       }
 
-      .app-header {
+      .hero-app .file-wrapper {
         position: relative;
-        height: 16px;
-        border-radius: 6px 6px 0 0;
-        font-size: 7px;
-        text-align: center;
-        padding-top: 4px;
-        background-color: #383736;
-        color: rgba(129, 127, 127, 0.7);
-        z-index: 100;
+        width: 450px;
+        z-index: 1;
       }
 
-      .app-header::before {
-        content: ' ';
-        position: absolute;
-        left: 8px;
-        width: 34px;
-        height: 8px;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 8'%3E%3Ccircle cx='4' cy='4' r='4' fill='%234C4C4B'/%3E%3C/svg%3E");
-        background-repeat: repeat;
-      }
-
-      .app-body {
-        flex-grow: 1;
-        margin: -1px;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: space-between;
-      }
-
-      .app-body .file-wrapper {
-        max-width: 28rem;
-        margin: 0 auto;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .app-body div.filename {
+      .hero-app .filename {
         color: #888;
         font-size: 8px;
         padding-bottom: 4px;
         font-family: monospace;
-        text-align: left;
       }
 
       #llm-txt {
-        position: relative;
-        z-index: 1;
         width: 100%;
-        max-width: 28rem;
         height: 12rem;
-        align-self: center;
         background: #ffc;
         color: #320;
-        margin-bottom: 1rem;
-        cursor: default;
         overflow: hidden;
-        resize: none;
         line-height: 140%;
-        letter-spacing: 4%;
         font-size: 11px;
         font-family: monospace;
+        resize: none;
+        pointer-events: none;
       }
 
-      .app-body p {
-        width: 28rem;
-        align-self: center;
-      }
-
-      .app-body .click-to-copy {
+      .hero-app .click-to-copy {
         position: absolute;
-        z-index: 2;
-        align-self: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         color: rgba(44, 44, 44, 1);
         border-color: rgb(255, 220, 36);
         background: rgb(251, 211, 28);
-        top: 75px;
         box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.18);
         text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.5);
+        cursor: pointer;
       } 
 
-      .app-body .click-to-copy:hover {
-        background-color: #ff8200 ;
+      .hero-app .click-to-copy:hover {
+        background-color: #ff8200;
         border-color: #ff8200;
         text-shadow: 0px 1px 3px rgba(255, 255, 255, 0.5);
         box-shadow: 0px 2px 3px rgba(0, 0, 0, 1);
       }
 
-      .app-body .click-to-copy:active {
-        position: absolute;
-        align-self: center;
-        border-color: var(--color-primary);
+      .hero-app .click-to-copy:active {
         border-color: rgb(255, 220, 36);
-        background-color: #ff8200 ;
+        background-color: #ff8200;
         text-shadow: 0px 1px 3px rgba(255, 255, 255, 1);
-        box-shadow: 0px 2px 3px rgba(0, 0, 0, 1);
-        top: 75px;
         box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.18);
       }
 
-      .app-body .cp_embed_wrapper,
-      .app-body .cp_embed_iframe {
-        height: 100%;
+      .hero-app .text-large {
+        line-height: 1.2;
+        margin-bottom: 0;
       }
 
-      @media (max-width: 1370px) {
-        .hero-app {
-          position: relative;
-          top: unset;
-          right: unset;
+      /* clipboard icon styles */
+      .clipboard-icon {
+        width: 16px;
+        height: 16px;
+        margin-left: 5px;
+        background-image: url('./images/clipboard-icon.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        filter: drop-shadow(0px 1px 2px rgba(255, 255, 255, 0.5));
+      }
+
+      @media (max-width: 1150px) {
+        .hero-app,
+        .hero-app .file-wrapper {
           width: 100%;
-          max-width: unset;
-          margin: 2rem auto;
         }
 
-        .app-body {
-          width: unset;
-        }
-
-        .app-body p {
-          max-width: unset;
-          width: unset;
+        .hero-app .text {
           text-align: center;
-        }
-      }
-
-      @media (max-width: 550px) {
-        .hero-app-tabs .tab {
-          font-size: 7px;
         }
       }
 
       /* benefits */
       section.benefits {
-        margin-bottom: 120px;
+        position: relative;
+        margin-bottom: var(--section-bottom-padding);
+        padding-bottom: 36px;
+        border-bottom: 1px solid var(--color-borders);
+        overflow: hidden;
+      }
+
+      section.benefits::after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(360deg, #F0F0F0 50.33%, rgba(255, 255, 255, 0) 96.06%);
+        z-index: -1;
       }
 
       .benefits-heading {
-        text-align: center;
-        margin-top: 36px;
-        margin-bottom: 36px;
+        margin-top: 0;
+        margin-bottom: 28px;
       }
 
       .benefits-list {
         display: flex;
-        gap: 40px;
+        gap: 14px;
         justify-content: space-between;
       }
 
       .benefit {
-        max-width: 290px;
+        border: 1px solid var(--color-borders);
+        border-radius: 12px;
+        padding: 26px 30px 14px 30px;
+        background-color: var(--color-background-primary);
       }
 
-      @media (max-width: 1150px) {
-        section.benefits {
-          margin-bottom: 80px;
-        }
-
-        .benefits-list {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .benefit {
-          text-align: center;
-          max-width: 440px;
-        }
+      .benefit p {
+        max-width: 80%;
       }
 
-      /* demo */
-      section.demo {
-        margin-bottom: 60px;
-        text-align: center;
+      .benefit h3 {
+        margin: unset;
       }
 
-      section.demo.deploy {
-        margin-bottom: 20px;
-      }
-
-      section.demo code {
-        background-color: var(--color-background-secondary);
-        padding: 2px 8px;
-        border-radius: 4px;
-      }
-
-      .demo-heading {
-        max-width: 740px;
-        margin: 36px auto;
-      }
-
-      .demo-text {
-        max-width: 820px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 70px;
-      }
-
-      .demo-text a {
-        text-decoration: underline;
-      }
-
-      .centered-image {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 75%;
-        border-radius: 8px;
-        border: 2px solid black;
-      }
-
-      .demo-carusel {
+      .benefit-title {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-        height: 32vw;
-        max-height: 460px;
+        gap: 8px;
       }
 
-      .demo-carusel-item {
-        position: relative;
-        width: 100%;
-        height: 74%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--color-background-secondary);
-        border-radius: var(--radius-large);
-        overflow: hidden;
-        transition: all 0.4s ease;
-      }
-
-      .demo-carusel-item.active,
-      .demo-carusel-item.hovered {
-        margin: 0 50px;
-        box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.18);
-        z-index: 100;
-      }
-
-      .demo-carusel-item.active {
-        transform: scale(1.4);
-      }
-
-      .demo-carusel-item.hovered {
-        transform: scale(1.5);
-      }
-
-      .demo-carusel-link {
-        padding: 10% 5%;
-        height: 100%;
-        width: 100%;
-      }
-
-      .demo-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .demo-title,
-      .demo-description {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        margin: 0;
-        text-align: left;
-        padding: 14px;
-        pointer-events: none;
-        user-select: none;
-        z-index: 2;
-        background: rgba(240, 240, 240, 0.4);
-        backdrop-filter: blur(8px);
-        transition: all 0.4s ease;
-      }
-
-      .demo-title {
-        font-size: 20px;
-        top: 0;
-        text-wrap: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        padding: 16px;
-      }
-
-      .demo-description {
-        font-size: 12px;
-        bottom: 0;
+      .benefit-icon {
+        opacity: 0.3;
         color: var(--color-primary);
       }
 
       @media (prefers-color-scheme: dark) {
-        .demo-title,
-        .demo-description {
-          background: rgba(32, 31, 31, 0.6);
+        section.benefits::after {
+          background: linear-gradient(360deg, #0e0e0f 33.92%, #171616 96.06%);
         }
-      }
 
-      @media (max-width: 1370px) {
-        .demo-carusel-item.active,
-        .demo-carusel-item.hovered {
-          margin: 0 2vw;
+        .benefit {
+          background-color: var(--color-background-secondary);
         }
       }
 
       @media (max-width: 1150px) {
-        .demo-text {
-          margin-bottom: 80px;
+        .benefits-list {
+          flex-direction: column;
         }
 
-        .demo-carusel {
-          gap: 0;
+        .benefit {
+          width: 100%;
         }
 
-        .demo-carusel-item {
-          border-radius: 10px;
-        }
-
-        .demo-carusel-item.active {
-          transform: scale(1.55);
-          margin: 0 36px;
-        }
-
-        .demo-carusel-item:first-of-type,
-        .demo-carusel-item:last-of-type {
-          transform: scale(0.85);
-        }
-
-        .demo-carusel-link {
-          padding: 20px 7%;
-        }
-
-        .demo-title,
-        .demo-description {
-          padding: 1.3vw;
-        }
-
-        .demo-title {
-          font-size: 1.8vw;
-        }
-
-        .demo-description {
-          font-size: 1vw;
-        }
-      }
-
-      @media (max-width: 770px) {
-        section.demo {
-          margin-bottom: 100px;
-        }
-
-        .demo-carusel-item.active {
-          margin: 0 2vw;
-        }
-      }
-
-      @media (max-width: 550px) {
-        .demo-carusel {
-          transform: scale(1.15);
-        }
-
-        .demo-carusel-item {
-          border-radius: 4px;
-        }
-
-        section.demo.deploy {
-          margin-bottom: 30px;
-        }
-
-        section.demo.deploy .centered-image {
-          width: 95%;
+        .benefit p {
+          max-width: unset;
         }
       }
 
       /* logos */
-      section.logos {
-        max-width: unset;
-        left: 0;
-        width: 100vw;
-        width: 100vw;
-        height: 240px;
-        overflow: hidden;
-        margin-bottom: 80px;
-      }
-
-      .logos-heading {
-        text-align: center;
-        margin-top: 36px;
-        margin-bottom: 36px;
-      }
-
       .logos-list-container {
         position: relative;
-        padding-top: 100px;
+        height: 120px;
         width: 100%;
       }
 
@@ -938,13 +748,13 @@
         display: flex;
         gap: 60px;
         align-items: center;
-        filter: grayscale(90%);
+        filter: grayscale(10%);
       }
 
       .logo-image {
-        height: 44px;
+        height: 40px;
         min-width: 50px;
-        max-width: 140px;
+        max-width: 100px;
         object-fit: contain;
       }
 
@@ -967,22 +777,11 @@
 
       @media (prefers-color-scheme: dark) {
         .logo-image {
-          filter: invert(1) hue-rotate(180deg);
-        }
-      }
-
-      @media (max-width: 770px) {
-        section.logos {
-          height: 40vw;
+          filter: invert(1) brightness(1.1) hue-rotate(180deg);
         }
       }
 
       @media (max-width: 550px) {
-        section.logos {
-          height: 47vw;
-          margin-bottom: 40px;
-        }
-
         .logo-image {
           height: 36px;
           min-width: 40px;
@@ -990,37 +789,404 @@
         }
       }
 
+      /* demo */
+      section.demo {
+        margin-bottom: var(--section-bottom-padding);
+      }
+
+      .demo-heading {
+        margin: 10px 0 4px 0;
+      }
+
+      .demo-text {
+        margin-bottom: 32px;
+      }
+
+      .demo-text a {
+        text-decoration: underline;
+      }
+
+      .demo-content {
+        display: flex;
+        gap: 70px;
+      }
+
+      .demo-code {
+        position: relative;
+        padding: 12px 36px 12px 18px;
+        background-color: var(--color-background-secondary);
+        border: 1px solid var(--color-borders);
+        border-radius: 6px;
+        width: 445px;
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      .copyicon,
+      .copiedicon {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        opacity: 0.3;
+        transform: translateY(-50%);
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+
+      .copyicon {
+        background-image: url('./images/clipboard-icon.svg');
+        background-size: 14px 18px;
+        cursor: pointer;
+      }
+
+      .copiedicon {
+        display: none;
+        background-image: url('./images/copied-icon.svg');
+      }
+
+      .demo-links {
+        width: 515px;
+        border: 1px solid var(--color-borders);
+        border-radius: 12px;
+        padding: 18px 28px;
+        flex-shrink: 0;
+      }
+
+      .demo-links a {
+        text-decoration: underline;
+      }
+
+      .demo-buttons {
+        display: flex;
+        gap: 14px;
+        margin-bottom: 10px;
+        margin-top: 35px;
+      }
+
+      .demo-button {
+        gap: 8px;
+        padding: 6px 16px 6px 8px;
+        width: 100%;
+        text-decoration: unset !important;
+      }
+
+      .demo-button .react-icon,
+      .demo-button .solid-icon {
+        width: 28px;
+        height: 28px;
+        background-size: cover;
+      }
+
+      .demo-button .react-icon {
+        background-image: url('./images/react-icon.svg');
+      }
+
+      .demo-button .solid-icon {
+        background-image: url('./images/solid-icon.png');
+      }
+
+      .demo-apps {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 14px;
+        margin-top: 30px;
+      }
+
+      .demo-apps-item {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.18);
+        cursor: pointer;
+        transition: all 0.4s ease;
+      }
+
+      .demo-apps-item:hover {
+        transform: scale(1.02);
+        z-index: 99;
+      }
+
+      .demo-apps-item::after {
+        content: ' ';
+        background-color: rgba(40, 40, 44, 0.65);
+        backdrop-filter: blur(4px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: all 0.4s ease;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .demo-apps-item {
+          box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.25);
+        }
+
+        .copyicon,
+        .copiedicon {
+          filter: invert(1);
+        }
+
+        .demo-links {
+          background-color: var(--color-background-secondary);
+        }
+
+        .demo-button {
+          background-color: #1f1e1e;
+        }
+
+        .demo-button .react-icon,
+        .demo-button .solid-icon {
+          filter: brightness(1.5);
+        }
+      }
+
+      .demo-apps-item:hover::after {
+        opacity: 1;
+      }
+
+      .demo-apps-link {
+        display: block;
+      }
+
+      .demo-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 380 / 240;
+      }
+
+      .demo-title,
+      .demo-description {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        margin: 0;
+        padding: 20px 24px;
+        color: white;
+        ointer-events: none;
+        user-select: none;
+        opacity: 0;
+        z-index: 2;
+        transition: all 0.4s ease;
+      }
+
+      .demo-apps-item:hover .demo-title,
+      .demo-apps-item:hover .demo-description {
+        opacity: 1;
+      }
+
+      .demo-title {
+        font-size: 24px;
+        font-weight: 700;
+        top: 0;
+        text-wrap: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      .demo-description {
+        font-size: 18px;
+        bottom: 0;
+      }
+
+      @media (max-width: 1370px) {
+        .demo-content {
+          flex-direction: column;
+          gap: 40px;
+        }
+
+        .demo-links {
+          width: 100%;
+        }
+
+        .demo-links .text {
+          max-width: 610px;
+        }
+      }
+
+      @media (max-width: 1150px) {
+        .demo-apps {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 770px) {
+        .demo-apps {
+          grid-template-columns: 1fr;
+          margin-top: 40px;
+        }
+
+        .demo-title {
+          font-size: 4.6vw;
+        }
+      }
+
+      @media (max-width: 550px) {
+        .demo-title {
+          font-size: 5.5vw;
+        }
+
+        .demo-code {
+          width: 100%;
+        }
+
+        .demo-buttons {
+          flex-direction: column;
+        }
+      }
+
+      /* delpoy */
+      section.deploy {
+        border-top: 1px solid var(--color-borders);
+        border-bottom: 1px solid var(--color-borders);
+        padding-top: 105px;
+        padding-bottom: 160px;
+        background: linear-gradient(360deg, #F0F0F0 50.33%, rgba(255, 255, 255, 0) 96.06%);
+        overflow: hidden;
+        margin-bottom: 68px;
+      }
+
+      section.deploy .deploy-content {
+        width: 48%;
+      }
+
+      .deploy-heading {
+        margin-top: unset;
+        margin-bottom: 20px;
+      }
+
+      .deploy-text {
+        margin: 16px 0 0 0;
+      }
+
+      .deploy-text a {
+        text-decoration: underline;
+      }
+
+      .deploy-subtitle {
+        text-transform: uppercase;
+        font-size: 13px;
+        opacity: 0.4;
+        margin-top: 6px;
+      }
+
+      .deploy-image {
+        position: absolute;
+        width: 55vw;
+        max-width: 750px;
+        left: 55%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .deploy-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        section.deploy {
+          background: linear-gradient(360deg, #0e0e0f 33.92%, #171616 96.06%);
+        }
+
+        .deploy-text em {
+          color: var(--color-primary);
+        }
+
+        .deploy-image {
+          filter: brightness(1.2);
+        }
+      }
+
+      @media (max-width: 1150px) {
+        section.deploy {
+          padding-top: 70px;
+          padding-bottom: 70px;
+        }
+      }
+
+      @media (max-width: 770px) {
+        section.deploy {
+          padding-top: 50px;
+          padding-bottom: 50px;
+        }
+
+        section.deploy .deploy-content {
+          width: 100%;
+          margin-bottom: 36px;
+        }
+
+        .deploy-image {
+          position: static;
+          transform: unset;
+        }
+
+        .deploy-image img {
+          border-radius: 10px;
+        }
+      }
+
       /* testimonials */
       section.testimonials {
-        margin-bottom: 130px;
-        max-width: unset;
+        margin-bottom: var(--section-bottom-padding);
         left: 0;
-        width: 100vw;
         width: 100vw;
         overflow: hidden;
       }
 
       .testimonials-heading {
-        text-align: center;
-        margin-top: 36px;
-        margin-bottom: 36px;
+        margin-top: 0;
+        margin-bottom: 20px;
       }
 
       .testimonials-text {
-        max-width: 740px;
-        margin-left: auto;
-        margin-right: auto;
+        max-width: 730px;
         margin-top: 0;
-        margin-bottom: 60px;
-        text-align: center;
+        margin-bottom: 30px;
       }
 
       .testimonials-text a {
         text-decoration: underline;
       }
 
+      .testimonials-buttons {
+        display: flex;
+        gap: 14px;
+      }
+
+      .testimonials-buttons .button {
+        height: 44px;
+      }
+
+      .testimonials-buttons .star-button {
+        position: relative;
+        padding-left: 12px;
+      }
+
+      .testimonials-buttons .star-button::before {
+        content: " ";
+        position: absolute;
+        background-image: url('./images/star-icon.svg');
+        background-size: contain;
+        color: var(--color-primary);
+        opacity: 0.2;
+        top: 50%;
+        left: 11px;
+        transform: translateY(-50%);
+        width: 22px;
+        height: 22px;
+        margin-top: -1px;
+      }
+
       .testimonials-list-container {
-        margin-top: 60px;
+        margin-top: 40px;
         position: relative;
         width: 100%;
         height: 240px;
@@ -1105,11 +1271,32 @@
         .testimonials-body .testimonial-text {
           color: #a2a2a2;
         }
+
+        .testimonials-buttons .button-primary {
+          background-color: var(--color-borders);
+          color: var(--color-primary);
+        }
+
+        .testimonials-buttons .star-button::before {
+          filter: invert(1);
+        }
       }
 
       @media (max-width: 550px) {
         section.testimonials {
-          margin-bottom: 160px;
+          margin-bottom: 110px;
+        }
+
+        .testimonials-buttons {
+          flex-direction: column;
+        }
+
+        .testimonials-buttons .button {
+          width: 100%;
+        }
+
+        .testimonials-buttons .star-button::before {
+          left: calc(50% - 90px);
         }
 
         .testimonials-list {
@@ -1140,14 +1327,20 @@
 
       /* community */
       section.community {
+        padding: 0 var(--body-side-padding);
+      }
+
+      section.community .section-conteiner {
+        position: relative;
         margin-bottom: 40px;
         padding: 112px var(--body-side-padding);
         text-align: center;
         background-color: var(--color-background-secondary);
         border-radius: var(--radius-large);
+        max-width: var(--section-bg-max-width);
       }
 
-      section.community::before {
+      section.community .section-conteiner::before {
         content: ' ';
         position: absolute;
         left: 0;
@@ -1172,19 +1365,54 @@
         margin-bottom: 36px;
       }
 
-      .community .button {
-        position: relative;
-        width: 235px;
+      .community-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-top: 16px;
       }
 
-      .community .button::before {
+      .community .button {
+        position: relative;
+        width: 100%;
+      }
+
+      .community .button:first-of-type::before {
         content: ' ';
         width: 28px;
         height: 28px;
-        background-image: url('./images/discord-icon-white.svg');
+        background-image: url('./images/discord-icon.svg');
         background-size: cover;
         background-repeat: no-repeat;
         margin-left: -8px;
+      }
+
+      .community-content {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .community .subscribe-input {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 45px;
+        border: 1px solid var(--color-borders);
+        border-radius: 6px;
+        background-color: var(--color-background-primary);
+        outline: unset;
+        padding: 8px 18px;
+        z-index: 1;
+      }
+
+      .community .subscribe-input::placeholder {
+        color: var(--color-primary);
+        opacity: 0.2;
+      }
+ 
+      .community .subscribe-input:focus::placeholder {
+        opacity: 0;
       }
 
       .community .trademark {
@@ -1205,12 +1433,16 @@
           filter: invert(75%);
         }
 
-        .community .button::before {
-          background-image: url('./images/discord-icon.svg');
+        .community .button:first-of-type::before {
+          background-image: url('./images/discord-icon-white.svg');
         }
       }
 
       @media (max-width: 550px) {
+        .community .community-buttons {
+          flex-direction: column;
+        }
+
         .community .trademark {
           width: 200px;
           height: 131px;
@@ -1247,23 +1479,6 @@
           padding-right: 16px;
         }
       }
-
-      /* Clipboard icon styles */
-      .clipboard-icon {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        margin-left: 5px;
-        background-image: url('./images/clipboard-icon.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        vertical-align: middle;
-        filter: drop-shadow(0px 1px 2px rgba(255, 255, 255, 0.5));
-      }
-      .app-body .click-to-copy:hover .clipboard-icon {
-        filter: drop-shadow(0px 1px 2px rgba(255, 255, 255, 0.5));
-      }
     </style>
   </head>
   <body class="body-home">
@@ -1288,489 +1503,585 @@
       </div>
     </header>
     <section class="hero">
-      <h1 class="hero-heading">The vibe coding database</h1>
-      <p class="hero-text text-large">
-        Runs in the browser, fits in the context window, and syncs anywhere.
-      </p>
-
-      <div class="hero-app">
-        <div class="app-body">
-          <div class="file-wrapper">
-            <div class="filename"><a href="https://use-fireproof.com/llms.txt">llms.txt</a></div>
-            <button id="copy-llm-txt" class="click-to-copy button text-buttons button-secondary">Click to Copy <span class="clipboard-icon"></span></button>
-            <textarea id="llm-txt">
-# Fireproof Database API Fireproof is a lightweight local-first embedded document database with encrypted live sync, designed to make browser apps easy. ```sh npm install use-fireproof ``` Works with ⚡️ ESM.sh: ```js import { useFireproof } from "https://esm.sh/use-fireproof"; ``` React example creating, listing, and toggling todos: ```js import { useFireproof } from "use-fireproof"; function App() { const { database, useDocument, useLiveQuery } = useFireproof("my-todos"); const { doc, merge, submit } = useDocument({ text: "" }); const { docs } = useLiveQuery("_id", { descending: true }); return (<div><input value={doc.text} onChange={e => merge({ text: e.target.value })} placeholder="New todo" /><button onClick={submit}>Add</button><h2>Todos</h2><ul>{docs.map(todo => <li key={todo._id} onClick={() => database.put({...todo, done: !todo.done})} >{/* Update existing document */}{todo.done ? "✅" : "❌"} {todo.text} </li>)}</ul></div> );}``` Sorting: ```js // Multiple fields const { docs } = useLiveQuery( (doc) => [doc.list_id, doc.author], { limit: 5, prefix: ["my-list-id"] } ); // Single field const { docs } = useLiveQuery("list_id", { limit: 5, key: "my-list-id" }); ``` TIP: For simple document updates like toggling or incrementing values, use `database.put()` directly as shown in the todo example: `onClick={() => database.put({...todo, done: !todo.done})}`. The `useDocument` hook is primarily for forms and more complex document creation. Data is local-first, you don't need to handle loading or error states. Deliver running applications via ChatGPT Canvas, v0, bolt.new, or Claude Artifacts. Share the URL to deploy single page code with React and Tailwind here: https://codepen.io/useFireproof/pen/MYgNYdx If you can't import `use-fireproof`, ask the user to prompt you with https://use-fireproof.com/llms-mock.txt For JavaScript see https://use-fireproof.com/llms-full.txt and full docs at https://use-fireproof.com If you can't import `use-fireproof`, ask the user to prompt you with https://use-fireproof.com/llms-mock.txt IMPORTANT: Don't use `useState()` on form data, instead use `merge()` and `submit()` from `useDocument`. Only use `useState` for ephemeral UI state (tabs, panels, etc.). Keep data in Fireproof.
-            </textarea>
+      <div class="section-conteiner">
+        <div>
+          <h1 class="hero-heading">The vibe coding database</h1>
+          <p class="hero-text text-large">
+            Runs in the browser, fits in the context window, and syncs anywhere.
+          </p>
+          <div class="hero-buttons">
+            <a
+              class="button button-primary"
+              data-hint="one-shot apps in /bChatGPT/b"
+              href="https://chatgpt.com/g/g-67bd0ebe210081918561667c08662d03-vibecoding-with-fireproof"
+              rel="noopener noreferrer"
+              target="_blank"
+              >Build now</a
+            >
+            <a
+              class="button button-secondary"
+              data-hint="contribute on /bGitHub/b"
+              href="https://github.com/fireproof-storage/fireproof"
+              rel="noopener noreferrer"
+              target="_blank"
+              >Open source</a
+            >
           </div>
-          <p class="text"><a href="https://fireproof.storage/posts/llms.txt-for-ai-code-generation-agents/">LLMs.txt</a> is a universal way to share prompts &mdash; ours is designed for <strong>one-shot success</strong>. Paste it into any AI code generator along with something like &ldquo;an inventory tracker for my bakery.&rdquo;</p>
         </div>
-      </div>
-      <div class="hero-buttons">
-        <a
-          class="button text-buttons button-primary"
-          data-hint="one-shot apps in /bChatGPT/b"
-          href="https://chatgpt.com/g/g-67bd0ebe210081918561667c08662d03-vibecoding-with-fireproof"
-          rel="noopener noreferrer"
-          target="_blank"
-          >Build now</a
-        >
-        <a
-          class="button text-buttons button-secondary"
-          data-hint="contribute on /bGitHub/b"
-          href="https://github.com/fireproof-storage/fireproof"
-          rel="noopener noreferrer"
-          target="_blank"
-          >Open source</a
-        >
+
+        <div class="hero-app">
+          <div class="filename"><a href="https://use-fireproof.com/llms.txt">llms.txt</a></div>
+          <div class="file-wrapper">
+            <button id="copy-llm-txt" class="click-to-copy button button-secondary">Click to Copy <span class="clipboard-icon"></span></button>
+            <textarea id="llm-txt">
+    # Fireproof Database API Fireproof is a lightweight local-first embedded document database with encrypted live sync, designed to make browser apps easy. ```sh npm install use-fireproof ``` Works with ⚡️ ESM.sh: ```js import { useFireproof } from "https://esm.sh/use-fireproof"; ``` React example creating, listing, and toggling todos: ```js import { useFireproof } from "use-fireproof"; function App() { const { database, useDocument, useLiveQuery } = useFireproof("my-todos"); const { doc, merge, submit } = useDocument({ text: "" }); const { docs } = useLiveQuery("_id", { descending: true }); return (<div><input value={doc.text} onChange={e => merge({ text: e.target.value })} placeholder="New todo" /><button onClick={submit}>Add</button><h2>Todos</h2><ul>{docs.map(todo => <li key={todo._id} onClick={() => database.put({...todo, done: !todo.done})} >{/* Update existing document */}{todo.done ? "✅" : "❌"} {todo.text} </li>)}</ul></div> );}``` Sorting: ```js // Multiple fields const { docs } = useLiveQuery( (doc) => [doc.list_id, doc.author], { limit: 5, prefix: ["my-list-id"] } ); // Single field const { docs } = useLiveQuery("list_id", { limit: 5, key: "my-list-id" }); ``` TIP: For simple document updates like toggling or incrementing values, use `database.put()` directly as shown in the todo example: `onClick={() => database.put({...todo, done: !todo.done})}`. The `useDocument` hook is primarily for forms and more complex document creation. Data is local-first, you don't need to handle loading or error states. Deliver running applications via ChatGPT Canvas, v0, bolt.new, or Claude Artifacts. Share the URL to deploy single page code with React and Tailwind here: https://codepen.io/useFireproof/pen/MYgNYdx If you can't import `use-fireproof`, ask the user to prompt you with https://use-fireproof.com/llms-mock.txt For JavaScript see https://use-fireproof.com/llms-full.txt and full docs at https://use-fireproof.com If you can't import `use-fireproof`, ask the user to prompt you with https://use-fireproof.com/llms-mock.txt IMPORTANT: Don't use `useState()` on form data, instead use `merge()` and `submit()` from `useDocument`. Only use `useState` for ephemeral UI state (tabs, panels, etc.). Keep data in Fireproof.
+          </textarea>
+          </div>
+          <p class="text">
+            <a href="https://fireproof.storage/posts/llms.txt-for-ai-code-generation-agents/"><strong>LLMs.txt</strong></a> is a universal way to share prompts &mdash; ours is designed for <strong>one-shot success.</strong>
+            Paste it into any AI code generator along with something like &ldquo;an inventory tracker for my bakery.&rdquo;
+          </p>
+        </div>
       </div>
     </section>
 
     <section class="benefits">
-      <h2 class="benefits-heading">Works with your existing stack</h2>
+      <div class="section-conteiner">
+        <h2 class="benefits-heading">Works with your existing stack</h2>
 
-      <ul class="benefits-list">
-        <li class="benefit">
-          <h3>Local first</h3>
-          <p class="text">All you need to write an app is your web browser.</p>
-        </li>
-        <li class="benefit">
-          <h3>Zero setup</h3>
-          <p class="text">Easier to get started than any other database.</p>
-        </li>
-        <li class="benefit">
-          <h3>Data anywhere</h3>
-          <p class="text">Connectors for AWS, Cloudflare, Netlify, and more.</p>
-        </li>
-      </ul>
-
-      <div class="logos-list-container" data-hint="connectors are simple to write">
-        <ul class="logos-list">
-          <li class="logo">
-            <img class="logo-image" loading="lazy" src="images/logos/socket-supply.svg" />
+        <ul class="benefits-list">
+          <li class="benefit">
+            <div class="benefit-title">
+              <svg class="benefit-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4317 15.865V10.809C16.6412 10.4933 17.5338 9.39329 17.5338 8.08483C17.5338 6.52998 16.2734 5.26953 14.7185 5.26953C13.1637 5.26953 11.9032 6.52998 11.9032 8.08483C11.9032 9.36655 12.7598 10.4482 13.9317 10.7887V15.8846L9.38307 19.3554C8.9103 18.9959 8.3199 18.7829 7.68016 18.7829C6.12532 18.7829 4.86487 20.0434 4.86487 21.5982C4.86487 23.1531 6.12532 24.4135 7.68016 24.4135C9.23501 24.4135 10.4955 23.1531 10.4955 21.5982C10.4955 21.2269 10.4236 20.8724 10.293 20.5479L14.7009 17.1844L19.6656 20.657C19.5612 20.9513 19.5044 21.2681 19.5044 21.5982C19.5044 23.1531 20.7648 24.4135 22.3197 24.4135C23.8745 24.4135 25.135 23.1531 25.135 21.5982C25.135 20.0434 23.8745 18.7829 22.3197 18.7829C21.638 18.7829 21.013 19.0252 20.5259 19.4283L15.4317 15.865ZM15.0528 9.35766L14.6998 9.44981L14.3501 9.34824C13.8017 9.1889 13.4032 8.68145 13.4032 8.08483C13.4032 7.35841 13.9921 6.76953 14.7185 6.76953C15.445 6.76953 16.0338 7.35841 16.0338 8.08483C16.0338 8.69406 15.6183 9.21004 15.0528 9.35766ZM8.47469 20.5498L8.76604 20.7713L8.90142 21.1078C8.9616 21.2574 8.99546 21.422 8.99546 21.5982C8.99546 22.3246 8.40658 22.9135 7.68016 22.9135C6.95375 22.9135 6.36487 22.3246 6.36487 21.5982C6.36487 20.8718 6.95375 20.2829 7.68016 20.2829C7.98073 20.2829 8.25387 20.3819 8.47469 20.5498ZM21.0793 21.1584L21.2003 20.8172L21.4823 20.5839C21.7103 20.3951 21.9999 20.2829 22.3197 20.2829C23.0461 20.2829 23.635 20.8718 23.635 21.5982C23.635 22.3246 23.0461 22.9135 22.3197 22.9135C21.5933 22.9135 21.0044 22.3246 21.0044 21.5982C21.0044 21.4413 21.0312 21.2939 21.0793 21.1584Z" fill="currentColor"/>
+              </svg>
+              <h3>Local first</h3>
+            </div>
+            <p class="text">All you need to write an app is your web browser.</p>
           </li>
-          <li class="logo">
-            <img class="logo-image" loading="lazy" src="images/logos/bun.svg" />
+          <li class="benefit">
+            <div class="benefit-title">
+              <svg class="benefit-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.2753 7.5047C18.3983 7.08523 18.1627 6.6441 17.7489 6.51939C17.3352 6.39468 16.9001 6.63363 16.7771 7.0531L12.1301 22.9004C12.0071 23.3199 12.2428 23.761 12.6565 23.8857C13.0703 24.0104 13.5054 23.7715 13.6284 23.352L18.2753 7.5047Z" fill="currentColor"/>
+                <path d="M8.96705 11.6855C9.26767 11.3715 9.26028 10.8698 8.95055 10.5651C8.64082 10.2603 8.14604 10.2678 7.84542 10.5818L3.8694 14.735C3.57511 15.0425 3.57511 15.5314 3.8694 15.8388L8.09392 20.2516C8.39454 20.5656 8.88932 20.5731 9.19905 20.2683C9.50878 19.9635 9.51617 19.4619 9.21555 19.1479L5.51934 15.2869L8.96705 11.6855Z" fill="currentColor"/>
+                <path d="M22.5601 10.5818C22.2594 10.2678 21.7646 10.2603 21.4549 10.5651C21.1452 10.8698 21.1378 11.3715 21.4384 11.6855L24.8861 15.2869L21.1899 19.1479C20.8893 19.4619 20.8967 19.9635 21.2064 20.2683C21.5161 20.5731 22.0109 20.5656 22.3116 20.2516L26.5361 15.8388C26.8304 15.5314 26.8304 15.0425 26.5361 14.735L22.5601 10.5818Z" fill="currentColor"/>
+              </svg>
+              <h3>Zero setup</h3>
+            </div>
+            <p class="text">Easier to get started than any other database.</p>
           </li>
-          <li class="logo">
-            <img class="logo-image" loading="lazy" src="images/logos/aws.svg" />
-          </li>
-          <li class="logo">
-            <img class="logo-image" loading="lazy" src="images/logos/nodejs.svg" />
-          </li>
-          <li class="logo">
-            <img class="logo-image" loading="lazy" src="images/logos/npm.png" />
-          </li>
-          <li class="logo">
-            <img class="logo-image" loading="lazy" src="images/logos/htmx.svg" />
-          </li>
-          <li class="logo">
-            <img class="logo-image" loading="lazy" src="images/logos/netlify.svg" />
-          </li>
-          <li class="logo">
-            <img class="logo-image" loading="lazy" src="images/logos/js.png" />
-          </li>
-          <li class="logo">
-            <img class="logo-image" loading="lazy" src="images/logos/react.svg" />
-          </li>
-          <li class="logo">
-            <img class="logo-image" loading="lazy" src="images/logos/partykit.svg" />
-          </li>
-          <li class="logo">
-            <img class="logo-image" loading="lazy" src="images/logos/cloudflare.svg" />
-          </li>
-          <li class="logo">
-            <img class="logo-image" loading="lazy" src="images/logos/azure.png" />
-          </li>
-          <li class="logo">
-            <img class="logo-image" loading="lazy" src="images/logos/ipfs.png" />
-          </li>
-          <li class="logo">
-            <img class="logo-image" loading="lazy" src="images/logos/jsr.svg" />
+          <li class="benefit">
+            <div class="benefit-title">
+              <svg class="benefit-icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15 6C12.6512 6 10.4931 6.3589 8.89649 6.96287C8.10103 7.26377 7.40696 7.63966 6.89847 8.09442C6.39189 8.54747 6 9.14634 6 9.87342C6 10.6005 6.39189 11.1994 6.89847 11.6524C7.18212 11.9061 7.5235 12.1352 7.90802 12.3405C7.57485 12.5246 7.27536 12.7263 7.01797 12.9456C6.44429 13.4345 6 14.0849 6 14.8779C6 15.6106 6.38045 16.2234 6.88824 16.6952C7.1855 16.9714 7.54669 17.2199 7.95496 17.4414C7.60294 17.6323 7.28738 17.8426 7.01797 18.0722C6.44429 18.5611 6 19.2114 6 20.0045C6 20.7371 6.38045 21.3499 6.88824 21.8218C7.39619 22.2938 8.09082 22.6849 8.88802 22.9982C10.4874 23.6267 12.6485 24 15 24C17.3515 24 19.5126 23.6267 21.112 22.9982C21.9092 22.6849 22.6038 22.2938 23.1118 21.8218C23.6195 21.3499 24 20.7371 24 20.0045C24 19.2115 23.5559 18.5612 22.9822 18.0722C22.7128 17.8426 22.3972 17.6323 22.0451 17.4413C22.4534 17.2199 22.8145 16.9714 23.1118 16.6952C23.6195 16.2234 24 15.6106 24 14.8779C24 14.085 23.5559 13.4346 22.9822 12.9456C22.7248 12.7263 22.4253 12.5246 22.0921 12.3404C22.4766 12.1352 22.8179 11.9061 23.1015 11.6524C23.6081 11.1994 24 10.6005 24 9.87342C24 9.14634 23.6081 8.54747 23.1015 8.09442C22.593 7.63966 21.899 7.26377 21.1035 6.96287C19.5069 6.3589 17.3488 6 15 6ZM7.43558 9.87342C7.43558 9.73537 7.5072 9.51005 7.83882 9.21348C8.16854 8.9186 8.68737 8.61941 9.3907 8.35336C10.7916 7.82344 12.7747 7.48101 15 7.48101C17.2253 7.48101 19.2084 7.82344 20.6093 8.35336C21.3126 8.61941 21.8315 8.9186 22.1612 9.21348C22.4928 9.51005 22.5644 9.73537 22.5644 9.87342C22.5644 10.0115 22.4928 10.2368 22.1612 10.5334C21.8315 10.8282 21.3126 11.1274 20.6093 11.3935C19.2084 11.9234 17.2253 12.2658 15 12.2658C12.7747 12.2658 10.7916 11.9234 9.3907 11.3935C8.68737 11.1274 8.16854 10.8282 7.83882 10.5334C7.5072 10.2368 7.43558 10.0115 7.43558 9.87342ZM9.75029 13.1385C9.78435 13.1267 9.81697 13.1125 9.84805 13.0962C11.3064 13.5095 13.0901 13.7468 15 13.7468C16.9099 13.7468 18.6936 13.5095 20.1519 13.0962C20.183 13.1125 20.2157 13.1267 20.2498 13.1385C21.0619 13.4205 21.6736 13.7514 22.0679 14.0874C22.4662 14.4269 22.5644 14.6988 22.5644 14.8779C22.5644 15.0442 22.4814 15.2878 22.151 15.5948C21.8207 15.9016 21.3025 16.2119 20.6009 16.4876C19.2028 17.0371 17.2228 17.3924 15 17.3924C12.7772 17.3924 10.7972 17.0371 9.39907 16.4876C8.6975 16.2119 8.17925 15.9016 7.84902 15.5948C7.51862 15.2878 7.43558 15.0442 7.43558 14.8779C7.43558 14.6989 7.53378 14.427 7.93222 14.0875C8.32659 13.7514 8.93837 13.4205 9.75029 13.1385ZM9.75029 18.2651C9.79494 18.2496 9.83713 18.23 9.87661 18.2069C11.3307 18.6306 13.1034 18.8734 15 18.8734C16.8966 18.8734 18.6693 18.6306 20.1234 18.2069C20.1629 18.23 20.2051 18.2496 20.2498 18.2651C21.0619 18.5471 21.6736 18.878 22.0679 19.214C22.4662 19.5535 22.5644 19.8254 22.5644 20.0045C22.5644 20.1708 22.4814 20.4143 22.151 20.7214C21.8207 21.0282 21.3025 21.3385 20.6009 21.6142C19.2028 22.1637 17.2228 22.519 15 22.519C12.7772 22.519 10.7972 22.1637 9.39907 21.6142C8.6975 21.3385 8.17925 21.0282 7.84902 20.7214C7.51862 20.4143 7.43558 20.1708 7.43558 20.0045C7.43558 19.8254 7.53378 19.5536 7.93222 19.2141C8.32659 18.878 8.93837 18.547 9.75029 18.2651Z" fill="currentColor"/>
+              </svg>
+              <h3>Data anywhere</h3>
+            </div>
+            <p class="text">Connectors for AWS, Cloudflare, Netlify, and more.</p>
           </li>
         </ul>
+
+        <div class="logos-list-container" data-hint="connectors are simple to write">
+          <ul class="logos-list">
+            <li class="logo">
+              <img class="logo-image" loading="lazy" src="images/logos/socket-supply.svg" />
+            </li>
+            <li class="logo">
+              <img class="logo-image" loading="lazy" src="images/logos/bun.svg" />
+            </li>
+            <li class="logo">
+              <img class="logo-image" loading="lazy" src="images/logos/aws.svg" />
+            </li>
+            <li class="logo">
+              <img class="logo-image" loading="lazy" src="images/logos/nodejs.svg" />
+            </li>
+            <li class="logo">
+              <img class="logo-image" loading="lazy" src="images/logos/npm.png" />
+            </li>
+            <li class="logo">
+              <img class="logo-image" loading="lazy" src="images/logos/htmx.svg" />
+            </li>
+            <li class="logo">
+              <img class="logo-image" loading="lazy" src="images/logos/netlify.svg" />
+            </li>
+            <li class="logo">
+              <img class="logo-image" loading="lazy" src="images/logos/js.png" />
+            </li>
+            <li class="logo">
+              <img class="logo-image" loading="lazy" src="images/logos/react.svg" />
+            </li>
+            <li class="logo">
+              <img class="logo-image" loading="lazy" src="images/logos/partykit.svg" />
+            </li>
+            <li class="logo">
+              <img class="logo-image" loading="lazy" src="images/logos/cloudflare.svg" />
+            </li>
+            <li class="logo">
+              <img class="logo-image" loading="lazy" src="images/logos/azure.png" />
+            </li>
+            <li class="logo">
+              <img class="logo-image" loading="lazy" src="images/logos/ipfs.png" />
+            </li>
+            <li class="logo">
+              <img class="logo-image" loading="lazy" src="images/logos/jsr.svg" />
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <section class="demo">
-      <h2 class="demo-heading">Write features first</h2>
-      <p class="demo-text text">
-        Write your app first, choose your backend later. Getting started is as easy as adding a
-        script tag or running <span class="bolder"><code>npm install use-fireproof</code></span> in
-        your project. Experience live updates across peers so everyone can collaborate together,
-        using your existing backend. <br /><br />
-        Try the
-        <a
-          href="https://use-fireproof.com/docs/react-tutorial"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-hint="/bReact/b tutorial"
-          >React</a
-        > or
-        <a
-          href="https://use-fireproof.com/docs/solid-tutorial"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-hint="/bSolid/b tutorial"
-          >Solid</a
-        >
-        tutorials, open
-        <a
-          href="https://codepen.io/jchrisa/pen/bGOGvBz"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-hint="include in /bVanilla JS/b as a script tag"
-          >the code pen above</a
-        >
-        , hack on this
-        <a
-          href="https://github.com/fireproof-storage/hyperwave-hello"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-hint="with /bHyperwave/b"
-          >HTMX example</a
-        >, or check out these open-source starters:
-      </p>
-      <ul class="demo-carusel">
-        <li class="demo-carusel-item">
-          <a
-            class="demo-carusel-link"
-            href="https://magnetic-poetry.use-fireproof.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-hint="play the game"
-          >
-            <h3 class="demo-title">Magnetic Poetry</h3>
-            <img class="demo-image" loading="lazy" src="images/demo-apps/partykit-poem.jpg" />
-            <p class="demo-description text">
-              Realtime fun and collaboration via PartyKit and Fireproof.
+      <div class="section-conteiner">
+        <h2 class="demo-heading">Write features first</h2>
+        <div class="demo-content">
+          <div>
+            <p class="demo-text text">
+              Write your app first, choose your backend later. Getting started is as easy as adding a
+              script tag or running <span class="bolder"><code>npm install use-fireproof</code></span> in
+              your project. Experience live updates across peers so everyone can collaborate together,
+              using your existing backend.
             </p>
-          </a>
-        </li>
-        <li class="demo-carusel-item">
-          <a
-            class="demo-carusel-link"
-            href="https://github.com/fireproof-storage/react-typescript-starter-kit"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-hint="win your next coding contest"
-          >
-            <h3 class="demo-title">React Starter Kit</h3>
-            <img class="demo-image" loading="lazy" src="images/demo-apps/starter-kit.jpg" />
-            <p class="demo-description text">
-              Get started using Fireproof with TypeScript by forking this repo.
-            </p>
-          </a>
-        </li>
-        <li class="demo-carusel-item active">
-          <a
-            class="demo-carusel-link"
-            href="https://firehouse-chat.jchris.partykit.dev/channel/Friends"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-hint="invite AI to the chat"
-          >
-            <h3 class="demo-title">Group Chat</h3>
-            <img class="demo-image" loading="lazy" src="images/demo-apps/team-chat.jpg" />
-            <p class="demo-description text">
-              AI-enabled chat, illustrates collaborative data model.
-            </p>
-          </a>
-        </li>
-        <li class="demo-carusel-item">
-          <a
-            class="demo-carusel-link"
-            href="https://botcat.netlify.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-hint="the /bbackend/b syncs Fireproof"
-          >
-            <h3 class="demo-title">AI Image Gen</h3>
-            <img class="demo-image" loading="lazy" src="images/demo-apps/business-cat.jpg" />
-            <p class="demo-description text">
-              Provable logs enable AI safety teams to audit outputs.
-            </p>
-          </a>
-        </li>
-        <li class="demo-carusel-item">
-          <a
-            class="demo-carusel-link"
-            href="https://epiphany.fireproof.storage"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-hint="prompt engineering in the browser"
-          >
-            <h3 class="demo-title">Focus Group Sim</h3>
-            <img class="demo-image" loading="lazy" src="images/demo-apps/epiphany.jpg" />
-            <p class="demo-description text">
-              Use the methodology of Four Steps to the Epiphany to validate your startup idea.
-            </p>
-          </a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="demo deploy">
-      <h2 class="demo-heading">Deploy anywhere</h2>
-
-      <p class="demo-text text">
-        Fireproof is simple to sync via any backend. Open-source connectors make it easy to add
-        Fireproof to any environment, including
-        <a
-          href="https://use-fireproof.com/docs/connect/"
-          rel="noopener noreferrer"
-          target="_blank"
-          data-hint="read the /bconnectors/b documentation"
-          >Cloudflare, AWS, Netlify, and more</a
-        >. <br /><br />
-        <em>Coming soon — live data anywhere via Fireproof Cloud. Preview the dashboard:</em>
-        <br /><br />
-        <a
-          data-hint="connect with one line of code"
-          href="/try-free/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <img
-            src="images/demo-apps/dashboard.jpg"
-            class="centered-image"
-            loading="lazy"
-            alt="Dashboard Image"
-          />
-        </a>
-      </p>
-    </section>
-
-    <section class="testimonials">
-      <h2 class="testimonials-heading">Loved by developers</h2>
-
-      <p class="testimonials-text text">
-        Our passionate community contributes documentation, code, and camaraderie across the stack.
-        Say hello in our
-        <a
-          href="https://discord.gg/DbSXGqvxFc"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-hint="everyone is welcome!"
-          >Discord server</a
-        >
-        or
-        <a
-          href="https://github.com/fireproof-storage/fireproof/discussions"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-hint="guide the roadmap"
-          >GitHub discussions</a
-        >, or read the
-        <a
-          href="/blog"
-          target="_blank"
-          data-hint="open source is made of people"
-          >contributor spotlights</a>
-        on our blog.
-      </p>
-
-      <div class="testimonials-list-container">
-        <ul class="testimonials-list">
-          <li class="testimonials-item">
-            <div class="testimonials-author">
-              <h4 class="testimonials-name">
-                Sunil Pai
-                <span class="text-middle">PartyKit creator, Cloudflare</span>
-              </h4>
-              <img
-                class="testimonials-avatar"
-                loading="lazy"
-                src="images/testimonials/sunil.jpg"
-                width="33"
-                height="33"
-              />
+            <div class="demo-code">
+              <code class="copytext">npm install use-fireproof</code>
+              <div class="copyicon"></div>
+              <div class="copiedicon"></div>
             </div>
-            <div class="testimonials-body text-small">
-              <p class="testimonial-text">
-                Fireproof looks like a
-                <a
-                  class="bolder testimonials-link"
-                  href="https://x.com/threepointone/status/1714695510261461363"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  >game changer</a
-                >
-                and I can&apos;t wait for the rest of the world to see it too.
+          </div>
+          <div class="demo-links">  
+            <p class="text">
+              Try the React or Solid tutorials, open
+              <a
+                href="https://codepen.io/jchrisa/pen/bGOGvBz"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-hint="include in /bVanilla JS/b as a script tag">
+                the code pen above
+              </a>
+              , hack on this
+              <a
+                href="https://github.com/fireproof-storage/hyperwave-hello"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-hint="with /bHyperwave/b">
+              HTMX example
+              </a>
+              , or check out these open-source starters:
+            </p>
+            <div class="demo-buttons">
+              <a
+                class="demo-button button button-small button-secondary"
+                href="https://use-fireproof.com/docs/react-tutorial"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-hint="/bReact/b tutorial"
+              >
+                <div class="react-icon"></div>
+                React
+              </a>
+              <a
+                class="demo-button button button-small button-secondary"
+                href="https://use-fireproof.com/docs/solid-tutorial"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-hint="/bSolid/b tutorial"
+              >
+                <div class="solid-icon"></div>
+                Solid
+              </a>
+            </div>
+          </div>
+        </div>
+        <ul class="demo-apps">
+          <li class="demo-apps-item">
+            <a
+              class="demo-apps-link"
+              href="https://bloopernet.netlify.app/jam/welcome"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3 class="demo-title">Bloopernet</h3>
+              <img class="demo-image" loading="lazy" src="images/demo-apps/bloopernet.jpg" />
+              <p class="demo-description text">
+                Bloopernet Drum Machine with Fireproof
               </p>
-            </div>
+            </a>
           </li>
-
-          <li class="testimonials-item">
-            <div class="testimonials-author">
-              <h4 class="testimonials-name">
-                Brad Anderson
-                <span class="text-middle">Founder, SpicyGolf</span>
-              </h4>
-              <img
-                class="testimonials-avatar"
-                loading="lazy"
-                src="images/testimonials/brad.jpg"
-                width="33"
-                height="33"
-              />
-            </div>
-            <div class="testimonials-body text-small">
-              <p class="testimonial-text">
-                Fireproof’s sync technology makes the server side super-cheap and trivial to use.
-                Using <span class="bolder">PartyKit, Netlify, S3</span> or
-                <span class="bolder">DynamoDB</span> instead of fully running instances with
-                database clusters to maintain and backup &dash; easy decision!
+          <li class="demo-apps-item">
+            <a
+              class="demo-apps-link"
+              href="https://tripgenius-omega.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3 class="demo-title">TripGenius</h3>
+              <img class="demo-image" loading="lazy" src="images/demo-apps/tripgenius.jpg" />
+              <p class="demo-description text">
+                Personalized trip plans generator
               </p>
-            </div>
+            </a>
           </li>
-          <li class="testimonials-item">
-            <div class="testimonials-author">
-              <h4 class="testimonials-name">
-                Logan Lentz
-                <span class="text-middle">Engineer, Lilypad Network</span>
-              </h4>
-              <img
-                class="testimonials-avatar"
-                loading="lazy"
-                src="images/testimonials/logan.jpg"
-                width="33"
-                height="33"
-              />
-            </div>
-            <div class="testimonials-body text-small">
-              <p class="testimonial-text">
-                Every time I use anything built by
-                <a
-                  class="bolder testimonials-link"
-                  href="#"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  >@FireproofStorage</a
-                >
-                I appreciate how fun it is! Thank you
-                <a
-                  class="bolder testimonials-link"
-                  href="/authors/j-chris-anderson/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  >@jchris</a
-                >
-                for keeping fun in the house! Databases made easy 😃
-                <br /><br />
-                <a
-                  class="bolder testimonials-link"
-                  href="https://twitter.com/ZaphodB17/status/1665258106048192513"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  >#JavaScript</a
-                >
+          <li class="demo-apps-item active">
+            <a
+              class="demo-apps-link"
+              href="https://spend-sage-gules.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3 class="demo-title">SpendSage</h3>
+              <img class="demo-image" loading="lazy" src="images/demo-apps/spend-sage.jpg" />
+              <p class="demo-description text">
+                Playful finances tracker
               </p>
-            </div>
+            </a>
           </li>
-
-          <li class="testimonials-item">
-            <div class="testimonials-author">
-              <h4 class="testimonials-name">
-                Daniel Sanchez
-                <span class="text-middle">Developer, Jump Trading</span>
-              </h4>
-              <img
-                class="testimonials-avatar"
-                loading="lazy"
-                src="images/testimonials/daniel.jpg"
-                width="33"
-                height="33"
-              />
-            </div>
-            <div class="testimonials-body text-small">
-              <p class="testimonial-text">
-                Fireproof is an
-                <a
-                  class="bolder testimonials-link"
-                  href="/posts/contributor-spotlight:-daniel-sanchez-solid/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  embedded database
-                </a>
-                so it doesn&apos;t require the developer to step outside the tool box and add to the
-                stack.
+          <li class="demo-apps-item">
+            <a
+              class="demo-apps-link"
+              href="https://taskify-gilt-psi.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3 class="demo-title">Taskify</h3>
+              <img class="demo-image" loading="lazy" src="images/demo-apps/taskify.jpg" />
+              <p class="demo-description text">
+                Task management system app
               </p>
-            </div>
+            </a>
           </li>
-
-          <!-- <li class="testimonials-item">
-            <div class="testimonials-author">
-              <h4 class="testimonials-name">
-                Tiago Freitas
-                <span class="text-middle">CEO, SomeCompanyName</span>
-              </h4>
-              <img
-                class="testimonials-avatar" loading="lazy"
-                src="images/testimonials/default.jpg"
-                width="33"
-                height="33"
-              />
-            </div>
-            <div class="testimonials-body text-small">
-              <p class="testimonial-text">
-                Wow this looks amazing, just what I was looking for as a builder... serverless means
-                I can start locally and <strong>not worry</strong> about lock-in or privacy at all.
+          <li class="demo-apps-item">
+            <a
+              class="demo-apps-link"
+              href="https://firehouse-chat.jchris.partykit.dev/channel/Friends"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3 class="demo-title">Group Chat</h3>
+              <img class="demo-image" loading="lazy" src="images/demo-apps/firehouse-chat.jpg" />
+              <p class="demo-description text">
+                AI-enabled chat, illustrates collaborative data model
               </p>
-            </div>
-          </li> -->
-
-          <li class="testimonials-item">
-            <div class="testimonials-author">
-              <h4 class="testimonials-name">
-                Dhruv Soni
-                <span class="text-middle">Contributor, Fireproof</span>
-              </h4>
-              <img
-                class="testimonials-avatar"
-                loading="lazy"
-                src="images/testimonials/dhruv.jpg"
-                width="33"
-                height="33"
-              />
-            </div>
-            <div class="testimonials-body text-small">
-              <p class="testimonial-text">
-                What
-                <a
-                  href="/posts/contributor-spotlight:-dhruv-soni/"
-                  rel="noopener noreferrer"
-                  class="bolder testimonials-link"
-                  target="_blank"
-                  >intrigued me the most</a
-                >
-                about Fireproof was the convenience and simplicity in its approach. I think
-                Fireproof storage is all about its developer experience and people get the approach
-                behind this straight away.
+            </a>
+          </li>
+          <li class="demo-apps-item">
+            <a
+              class="demo-apps-link"
+              href="https://usequickcheck.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3 class="demo-title">Quick Check</h3>
+              <img class="demo-image" loading="lazy" src="images/demo-apps/usequickcheck.jpg" />
+              <p class="demo-description text">
+                Check printing application
               </p>
-            </div>
+            </a>
           </li>
         </ul>
       </div>
     </section>
+
+    <section class="deploy">
+      <div class="section-conteiner">
+        <div class="deploy-content">
+          <h2 class="deploy-heading">Deploy anywhere</h2>
+          <p class="deploy-text text">
+            Fireproof is simple to sync via any backend. Open-source connectors make it easy to add
+            Fireproof to any environment, including
+            <a
+              href="https://use-fireproof.com/docs/connect/"
+              rel="noopener noreferrer"
+              target="_blank"
+              data-hint="read the /bconnectors/b docs"
+            >
+              Cloudflare, AWS, Netlify, and more.
+            </a>
+            <br/><br/>
+            <em>
+              <b>Coming soon — live data anywhere via Fireproof Cloud.</b>
+            </em>
+            <p class="deploy-subtitle text">Preview the dashboard:</p>
+          </div>
+          <a
+            class="deploy-image"
+            data-hint="connect with one line of code"
+            href="/try-free/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              src="images/demo-apps/dashboard.jpg"
+              loading="lazy"
+              alt="Dashboard Image"
+            />
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="section-conteiner">
+        <h2 class="testimonials-heading">Loved by developers</h2>
+
+        <p class="testimonials-text text">
+          Our passionate community contributes documentation, code, and camaraderie across the stack.
+          Say hello in our
+          <a
+            href="https://discord.gg/DbSXGqvxFc"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-hint="everyone is welcome!"
+            >Discord server</a
+          >
+          or
+          <a
+            href="https://github.com/fireproof-storage/fireproof/discussions"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-hint="guide the roadmap"
+            >GitHub discussions</a
+          >, or read the
+          <a
+            href="/blog"
+            target="_blank"
+            data-hint="open source is made of people"
+            >contributor spotlights</a>
+          on our blog.
+        </p>
+
+        <div class="testimonials-buttons">
+          <a
+            class="button button-small button-primary"
+            href="/blog"
+            rel="noopener noreferrer"
+            target="_blank">
+            Fireproof  Blog
+          </a>
+          <a
+            class="button button-small button-secondary star-button"
+            href="https://github.com/fireproof-storage/fireproof"
+            rel="noopener noreferrer"
+            target="_blank">
+            Star us on GitHub
+          </a>
+        </div>
+
+        <div class="testimonials-list-container">
+          <ul class="testimonials-list">
+            <li class="testimonials-item">
+              <div class="testimonials-author">
+                <h4 class="testimonials-name">
+                  Sunil Pai
+                  <span class="text-middle">PartyKit creator, Cloudflare</span>
+                </h4>
+                <img
+                  class="testimonials-avatar"
+                  loading="lazy"
+                  src="images/testimonials/sunil.jpg"
+                  width="33"
+                  height="33"
+                />
+              </div>
+              <div class="testimonials-body text-small">
+                <p class="testimonial-text">
+                  Fireproof looks like a
+                  <a
+                    class="bolder testimonials-link"
+                    href="https://x.com/threepointone/status/1714695510261461363"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >game changer</a
+                  >
+                  and I can&apos;t wait for the rest of the world to see it too.
+                </p>
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="testimonials-author">
+                <h4 class="testimonials-name">
+                  Brad Anderson
+                  <span class="text-middle">Founder, SpicyGolf</span>
+                </h4>
+                <img
+                  class="testimonials-avatar"
+                  loading="lazy"
+                  src="images/testimonials/brad.jpg"
+                  width="33"
+                  height="33"
+                />
+              </div>
+              <div class="testimonials-body text-small">
+                <p class="testimonial-text">
+                  Fireproof’s sync technology makes the server side super-cheap and trivial to use.
+                  Using <span class="bolder">PartyKit, Netlify, S3</span> or
+                  <span class="bolder">DynamoDB</span> instead of fully running instances with
+                  database clusters to maintain and backup &dash; easy decision!
+                </p>
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="testimonials-author">
+                <h4 class="testimonials-name">
+                  Logan Lentz
+                  <span class="text-middle">Engineer, Lilypad Network</span>
+                </h4>
+                <img
+                  class="testimonials-avatar"
+                  loading="lazy"
+                  src="images/testimonials/logan.jpg"
+                  width="33"
+                  height="33"
+                />
+              </div>
+              <div class="testimonials-body text-small">
+                <p class="testimonial-text">
+                  Every time I use anything built by
+                  <a
+                    class="bolder testimonials-link"
+                    href="#"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >@FireproofStorage</a
+                  >
+                  I appreciate how fun it is! Thank you
+                  <a
+                    class="bolder testimonials-link"
+                    href="/authors/j-chris-anderson/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >@jchris</a
+                  >
+                  for keeping fun in the house! Databases made easy 😃
+                  <br /><br />
+                  <a
+                    class="bolder testimonials-link"
+                    href="https://twitter.com/ZaphodB17/status/1665258106048192513"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >#JavaScript</a
+                  >
+                </p>
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="testimonials-author">
+                <h4 class="testimonials-name">
+                  Daniel Sanchez
+                  <span class="text-middle">Developer, Jump Trading</span>
+                </h4>
+                <img
+                  class="testimonials-avatar"
+                  loading="lazy"
+                  src="images/testimonials/daniel.jpg"
+                  width="33"
+                  height="33"
+                />
+              </div>
+              <div class="testimonials-body text-small">
+                <p class="testimonial-text">
+                  Fireproof is an
+                  <a
+                    class="bolder testimonials-link"
+                    href="/posts/contributor-spotlight:-daniel-sanchez-solid/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    embedded database
+                  </a>
+                  so it doesn&apos;t require the developer to step outside the tool box and add to the
+                  stack.
+                </p>
+              </div>
+            </li>
+
+            <!-- <li class="testimonials-item">
+              <div class="testimonials-author">
+                <h4 class="testimonials-name">
+                  Tiago Freitas
+                  <span class="text-middle">CEO, SomeCompanyName</span>
+                </h4>
+                <img
+                  class="testimonials-avatar" loading="lazy"
+                  src="images/testimonials/default.jpg"
+                  width="33"
+                  height="33"
+                />
+              </div>
+              <div class="testimonials-body text-small">
+                <p class="testimonial-text">
+                  Wow this looks amazing, just what I was looking for as a builder... serverless means
+                  I can start locally and <strong>not worry</strong> about lock-in or privacy at all.
+                </p>
+              </div>
+            </li> -->
+
+            <li class="testimonials-item">
+              <div class="testimonials-author">
+                <h4 class="testimonials-name">
+                  Dhruv Soni
+                  <span class="text-middle">Contributor, Fireproof</span>
+                </h4>
+                <img
+                  class="testimonials-avatar"
+                  loading="lazy"
+                  src="images/testimonials/dhruv.jpg"
+                  width="33"
+                  height="33"
+                />
+              </div>
+              <div class="testimonials-body text-small">
+                <p class="testimonial-text">
+                  What
+                  <a
+                    href="/posts/contributor-spotlight:-dhruv-soni/"
+                    rel="noopener noreferrer"
+                    class="bolder testimonials-link"
+                    target="_blank"
+                    >intrigued me the most</a
+                  >
+                  about Fireproof was the convenience and simplicity in its approach. I think
+                  Fireproof storage is all about its developer experience and people get the approach
+                  behind this straight away.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
     <section class="community">
-      <h2 class="community-heading">Become part of the community today!</h2>
-      <a
-        class="button button-primary text-buttons"
-        href="https://discord.gg/DbSXGqvxFc"
-        rel="noopener noreferrer"
-        target="_blank"
-        data-hint="everyone is welcome!"
-        >Join on Discord</a
-      >
-      <img
-        src="images/lightup.png"
-        loading="lazy"
-        class="trademark"
-        alt="Light up your data"
-        width="254"
-        height="166"
-      />
+      <div class="section-conteiner">
+        <h2 class="community-heading">Become part of the community today!</h2>
+        <div class="community-content">
+          <input class="subscribe-input text" name="email" type="text" placeholder="Email" />
+          <div class="community-buttons">
+            <a
+              class="button button-secondary"
+              href="https://discord.gg/DbSXGqvxFc"
+              rel="noopener noreferrer"
+              target="_blank"
+              data-hint="everyone is welcome!">
+              Join on Discord
+            </a>
+            <span class="text">or</span>
+            <a
+              href=""
+              class="button button-primary"
+              data-hint="learn about our updates first!">
+              Subscribe to news
+            </a>
+          </div>
+        </div>
+        <img
+          src="images/lightup.png"
+          loading="lazy"
+          class="trademark"
+          alt="Light up your data"
+          width="254"
+          height="166"
+        />
+      </div>
     </section>
     <footer>
       <ul class="footer-links">
@@ -1866,7 +2177,8 @@
     <script defer src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
     <script type="text/javascript" src="flying-hint.js" defer></script>
     <script type="text/javascript" src="testimonials-carusel.js" defer></script>
-    <script type="text/javascript" src="demo-apps-carusel.js" defer></script>
+    <!-- <script type="text/javascript" src="demo-apps-carusel.js" defer></script> -->
     <script type="text/javascript" src="llms-txt.js" defer></script>
+    <script type="text/javascript" src="copy-to-clipboard.js" defer></script>
   </body>
 </html>
