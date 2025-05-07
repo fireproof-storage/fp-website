@@ -293,23 +293,29 @@
       /* header */
       header {
         display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 30px;
-        height: 70px;
+        justify-content: space-between;
+        flex-wrap: wrap;
       }
 
       header .text-buttons:hover {
         opacity: 0.5;
       }
 
+      header nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 30px;
+        height: 70px;
+      }
+
       .header-logo {
         width: 110px;
         height: 30px;
         background-image: url('./images/fp-logo.svg');
+        margin: 20px 0 0 0;
         background-size: cover;
         background-repeat: no-repeat;
-        margin-right: auto;
       }
 
       .header-link-icons {
@@ -357,6 +363,14 @@
           width: 100px;
           height: 27px;
           transform: translateY(-4px);
+        }
+
+        header nav {
+          gap: 20px;
+        }
+
+        .header-link-icons {
+          display: none;
         }
       }
 
@@ -1270,22 +1284,25 @@
     <div id="flying-hint" class="text-buttons"></div>
     <header>
       <a class="header-logo" href="/" rel="history"></a>
-      <a class="text-buttons" href="https://use-fireproof.com/docs/welcome/" rel="noopener noreferrer">Docs</a>
-      <a class="text-buttons" href="/blog/" rel="history">Blog</a>
-      <div class="header-link-icons">
-        <a
-          class="header-discord"
-          href="https://discord.gg/DbSXGqvxFc"
-          rel="noopener noreferrer"
-          target="_blank"
-        ></a>
-        <a
-          class="header-github"
-          href="https://github.com/fireproof-storage/fireproof"
-          rel="noopener noreferrer"
-          target="_blank"
-        ></a>
-      </div>
+      <nav>
+        <a class="text-buttons" href="https://use-fireproof.com/docs/welcome/" rel="noopener noreferrer">Docs</a>
+        <a class="text-buttons" href="/blog/" rel="history">Blog</a>
+        <a class="text-buttons" href="https://connect.fireproof.storage">Sign in</a>
+        <div class="header-link-icons">
+          <a
+            class="header-discord"
+            href="https://discord.gg/DbSXGqvxFc"
+            rel="noopener noreferrer"
+            target="_blank"
+          ></a>
+          <a
+            class="header-github"
+            href="https://github.com/fireproof-storage/fireproof"
+            rel="noopener noreferrer"
+            target="_blank"
+          ></a>
+        </div>
+      </nav>
     </header>
     <section class="hero">
       <h1 class="hero-heading">The vibe coding database</h1>
