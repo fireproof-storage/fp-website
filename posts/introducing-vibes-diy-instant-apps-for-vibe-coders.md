@@ -30,10 +30,10 @@ and out comes an app!
 
 ![](/static/img/screenshot-2025-05-08-at-11.56.13 am.png)
 
-Watch Meghan, who only recently took up vibecoding, make a real, sharable app instantly.
-
+Watch Meghan, who only recently took up vibe coding, make a real, sharable app instantly.
 
 https://www.youtube.com/watch?v=7fMk0ICptrQ
+
 
 
 Not sure what you’d like to build? Take an existing app and remix it! All you do is tell Vibes DIY what needs to change. It’s seriously that easy.
