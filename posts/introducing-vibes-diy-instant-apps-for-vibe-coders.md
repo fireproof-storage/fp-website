@@ -26,13 +26,15 @@ Type an idea like
 
 > “A journaling app with a cozy theme”
 
-a﻿nd out comes an app!
+and out comes an app!
 
 ![](/static/img/screenshot-2025-05-08-at-11.56.13 am.png)
 
 Watch Meghan, who only recently took up vibecoding, make a real, sharable app instantly.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7fMk0ICptrQ?si=axnpYacWVuAjORiw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+https://www.youtube.com/watch?v=7fMk0ICptrQ
+
 
 Not sure what you’d like to build? Take an existing app and remix it! All you do is tell Vibes DIY what needs to change. It’s seriously that easy.
 
@@ -58,7 +60,7 @@ Whether you’re making a tool, a toy, a mockup, or a micro-SaaS—Vibes DIY let
 
 ### Show Us the Vibes!
 
-H﻿ere are just a few Vibes created recently by community members. Apps clockwise from top left; [A game to see who is more likely amongst your friends to do something](https://juicy-aardvark-5097.vibecode.garden), [a music maker studio complete with a customizable sound library](https://busy-tuna-8255.vibecode.garden), [a silly recipe maker combining oddball ingredients](https://genetic-ermine-8836.vibecode.garden), and [a music licensing studio to help you draft license terms](https://intact-reindeer-5475.vibecode.garden).
+Here are just a few Vibes created recently by community members. Apps clockwise from top left; [A game to see who is more likely amongst your friends to do something](https://juicy-aardvark-5097.vibecode.garden), [a music maker studio complete with a customizable sound library](https://busy-tuna-8255.vibecode.garden), [a silly recipe maker combining oddball ingredients](https://genetic-ermine-8836.vibecode.garden), and [a music licensing studio to help you draft license terms](https://intact-reindeer-5475.vibecode.garden).
 
 ![](/static/img/vibesdiyapps.png)
 

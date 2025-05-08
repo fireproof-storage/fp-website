@@ -3,10 +3,14 @@ const CleanCSS = require('clean-css')
 const UglifyJS = require('uglify-js')
 const htmlmin = require('html-minifier')
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation')
+const embedEverything = require('eleventy-plugin-embed-everything')
 
 module.exports = function (eleventyConfig) {
   // Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
   eleventyConfig.addPlugin(eleventyNavigationPlugin)
+
+  // Embed Everything plugin for YouTube, etc.
+  eleventyConfig.addPlugin(embedEverything)
 
   // Configuration API: use eleventyConfig.addLayoutAlias(from, to) to add
   // layout aliases! Say you have a bunch of existing content using
@@ -17,6 +21,11 @@ module.exports = function (eleventyConfig) {
   // Merge data instead of overriding
   // https://www.11ty.dev/docs/data-deep-merge/
   eleventyConfig.setDataDeepMerge(true)
+
+  // YouTube embed shortcode
+  eleventyConfig.addShortcode("youtube", function(id, title) {
+    return `<div class="video-embed"><iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" title="${title || 'YouTube video player'}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`;
+  });
 
   // Add support for maintenance-free post authors
   // Adds an authors collection using the author key in our post frontmatter
