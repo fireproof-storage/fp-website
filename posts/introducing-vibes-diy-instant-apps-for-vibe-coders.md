@@ -26,7 +26,11 @@ Type an idea like
 
 > “A journaling app with a cozy theme”
 
-a﻿nd out comes an app! Watch Meghan, who only recently took up vibecoding, make a real, sharable app instantly in the video below.
+a﻿nd out comes an app!
+
+![](/static/img/screenshot-2025-05-08-at-11.56.13 am.png)
+
+Watch Meghan, who only recently took up vibecoding, make a real, sharable app instantly.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7fMk0ICptrQ?si=axnpYacWVuAjORiw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
