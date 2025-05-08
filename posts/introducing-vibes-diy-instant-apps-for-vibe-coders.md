@@ -10,6 +10,8 @@ tags:
   - ai
   - vibecode
 ---
+![](/static/img/vibesdiy-logo-lockup-bubble-gum.svg)
+
 We built something for the dreamers, builders, tinkerers, and late-night prompt whisperers out there. It’s called [Vibes DIY](https://vibes.diy). Vibes DIY is a new playground for generating shareable mini apps in seconds. It’s powered by AI, backed by Fireproof, and built for creators who want to turn an idea into something real—fast.
 
 What’s more? It’s easy.
@@ -33,8 +35,6 @@ and out comes an app!
 Watch Meghan, who only recently took up vibe coding, make a real, sharable app instantly.
 
 https://www.youtube.com/watch?v=7fMk0ICptrQ
-
-
 
 Not sure what you’d like to build? Take an existing app and remix it! All you do is tell Vibes DIY what needs to change. It’s seriously that easy.
 
