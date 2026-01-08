@@ -1,7 +1,7 @@
 ---
 title:  Bio JChris Anderson
 metaDescription: 
-summary: Founder of Fireproof
+summary: Founder of Fireproof, cofounder Vibes DIY
 tags:
   - Bio
 ---
